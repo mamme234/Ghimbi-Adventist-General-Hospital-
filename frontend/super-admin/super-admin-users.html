@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management - MediCare Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="dashboard-sidebar" id="sidebar" style="background: linear-gradient(180deg, #1e1b4b, #312e81);">
+            <div class="sidebar-brand" style="border-color: rgba(255,255,255,0.1);">
+                <img src="../images/logo-white.svg" alt="MediCare">
+                <span style="color: white;">Medi<span style="color: #8b5cf6;">Care</span></span>
+            </div>
+            <div class="sidebar-user" style="border-color: rgba(255,255,255,0.1);">
+                <img src="https://ui-avatars.com/api/?name=Super+Admin&background=7c3aed&color=fff" alt="Super Admin" class="sidebar-user-avatar">
+                <div class="sidebar-user-info">
+                    <h4 style="color: white;">Super Admin</h4>
+                    <p style="color: #94a3b8;">System Administrator</p>
+                </div>
+            </div>
+            <nav class="sidebar-menu">
+                <div class="sidebar-menu-group">
+                    <div class="sidebar-menu-group-title" style="color: #94a3b8;">Main</div>
+                    <a href="super-admin-dashboard.html" class="sidebar-menu-item" style="color: #94a3b8;"><i class="fas fa-th-large" style="color: #8b5cf6;"></i><span>Dashboard</span></a>
+                    <a href="super-admin-hospitals.html" class="sidebar-menu-item" style="color: #94a3b8;"><i class="fas fa-hospital" style="color: #8b5cf6;"></i><span>Hospitals</span><span class="badge" style="background: #8b5cf6;">3</span></a>
+                    <a href="super-admin-branches.html" class="sidebar-menu-item" style="color: #94a3b8;"><i class="fas fa-code-branch" style="color: #8b5cf6;"></i><span>Branches</span><span class="badge" style="background: #8b5cf6;">5</span></a>
+                </div>
+                <div class="sidebar-menu-group">
+                    <div class="sidebar-menu-group-title" style="color: #94a3b8;">Management</div>
+                    <a href="super-admin-users.html" class="sidebar-menu-item active" style="color: white;"><i class="fas fa-users-cog" style="color: #8b5cf6;"></i><span>User Management</span></a>
+                    <a href="super-admin-roles.html" class="sidebar-menu-item" style="color: #94a3b8;"><i class="fas fa-user-tag" style="color: #8b5cf6;"></i><span>Roles & Permissions</span></a>
+                </div>
+                <div class="sidebar-menu-group">
+                    <div class="sidebar-menu-group-title" style="color: #94a3b8;">System</div>
+                    <a href="super-admin-security.html" class="sidebar-menu-item" style="color: #94a3b8;"><i class="fas fa-shield-alt" style="color: #8b5cf6;"></i><span>Security</span></a>
+                    <a href="super-admin-api.html" class="sidebar-menu-item" style="color: #94a3b8;"><i class="fas fa-plug" style="color: #8b5cf6;"></i><span>API Settings</span></a>
+                    <a href="super-admin-ai.html" class="sidebar-menu-item" style="color: #94a3b8;"><i class="fas fa-robot" style="color: #8b5cf6;"></i><span>AI Settings</span></a>
+                </div>
+                <div class="sidebar-menu-group">
+                    <div class="sidebar-menu-group-title" style="color: #94a3b8;">Maintenance</div>
+                    <a href="super-admin-backup.html" class="sidebar-menu-item" style="color: #94a3b8;"><i class="fas fa-database" style="color: #8b5cf6;"></i><span>Backup & Restore</span></a>
+                    <a href="super-admin-logs.html" class="sidebar-menu-item" style="color: #94a3b8;"><i class="fas fa-history" style="color: #8b5cf6;"></i><span>System Logs</span></a>
+                    <a href="super-admin-monitoring.html" class="sidebar-menu-item" style="color: #94a3b8;"><i class="fas fa-chart-line" style="color: #8b5cf6;"></i><span>Server Monitoring</span></a>
+                    <a href="super-admin-settings.html" class="sidebar-menu-item" style="color: #94a3b8;"><i class="fas fa-cog" style="color: #8b5cf6;"></i><span>Settings</span></a>
+                </div>
+            </nav>
+            <div class="sidebar-footer" style="border-color: rgba(255,255,255,0.1);">
+                <a href="super-admin-login.html" class="sidebar-menu-item" onclick="logout()" style="color: #94a3b8;">
+                    <i class="fas fa-sign-out-alt" style="color: #8b5cf6;"></i><span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="dashboard-header-left">
+                    <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+                    <div>
+                        <h1>User Management</h1>
+                        <p>Manage all users across the system</p>
+                    </div>
+                </div>
+                <div class="dashboard-header-right">
+                    <div class="dashboard-search">
+                        <input type="text" placeholder="Search users...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="dashboard-header-actions">
+                        <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+                        <img src="https://ui-avatars.com/api/?name=Super+Admin&background=7c3aed&color=fff" alt="Super Admin" class="user-avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- User Stats -->
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin-bottom: 25px;">
+                <div style="background: var(--white); border-radius: 12px; padding: 15px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 24px; font-weight: 700; color: var(--primary-color);">1,245</div>
+                    <div style="font-size: 12px; color: var(--mid-gray);">Total Users</div>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 15px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 24px; font-weight: 700; color: var(--accent-green);">1,120</div>
+                    <div style="font-size: 12px; color: var(--mid-gray);">Active</div>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 15px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 24px; font-weight: 700; color: var(--accent-yellow);">85</div>
+                    <div style="font-size: 12px; color: var(--mid-gray);">Pending</div>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 15px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 24px; font-weight: 700; color: var(--accent-red);">40</div>
+                    <div style="font-size: 12px; color: var(--mid-gray);">Suspended</div>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 15px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 24px; font-weight: 700; color: var(--secondary-color);">8</div>
+                    <div style="font-size: 12px; color: var(--mid-gray);">Admins</div>
+                </div>
+            </div>
+
+            <!-- User Table -->
+            <div class="dashboard-table-container">
+                <div class="dashboard-table-header">
+                    <h3>All Users</h3>
+                    <div style="display: flex; gap: 10px;">
+                        <button class="btn btn-sm btn-primary" onclick="addUser()"><i class="fas fa-user-plus"></i> Add User</button>
+                        <button class="btn btn-sm btn-outline" onclick="exportUsers()"><i class="fas fa-download"></i> Export</button>
+                    </div>
+                </div>
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Hospital</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>John Doe</strong></td>
+                            <td>john@medicare.com</td>
+                            <td><span class="badge badge-info">Patient</span></td>
+                            <td>MediCare Main</td>
+                            <td><span class="status-badge completed">Active</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewUser(1)"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="editUser(1)"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-delete" onclick="deleteUser(1)"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dr. Sarah Johnson</strong></td>
+                            <td>sarah.j@medicare.com</td>
+                            <td><span class="badge badge-success">Doctor</span></td>
+                            <td>MediCare Main</td>
+                            <td><span class="status-badge completed">Active</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewUser(2)"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="editUser(2)"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-delete" onclick="deleteUser(2)"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mary Williams</strong></td>
+                            <td>mary.w@medicare.com</td>
+                            <td><span class="badge badge-primary">Nurse</span></td>
+                            <td>MediCare North</td>
+                            <td><span class="status-badge warning">Pending</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewUser(3)"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="editUser(3)"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-success" onclick="approveUser(3)"><i class="fas fa-check"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'super-admin-login.html';
+            }
+        }
+
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+            localStorage.setItem('theme', html.getAttribute('data-theme'));
+        }
+
+        function viewUser(id) {
+            alert(`Viewing user #${id}`);
+        }
+
+        function editUser(id) {
+            alert(`Editing user #${id}`);
+        }
+
+        function deleteUser(id) {
+            if (confirm(`Are you sure you want to delete user #${id}?`)) {
+                alert(`User #${id} deleted`);
+            }
+        }
+
+        function approveUser(id) {
+            if (confirm(`Approve user #${id}?`)) {
+                alert(`User #${id} approved`);
+            }
+        }
+
+        function addUser() {
+            alert('Adding new user...');
+        }
+
+        function exportUsers() {
+            alert('Exporting user list...');
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+</body>
+                                                                                                             </html>
