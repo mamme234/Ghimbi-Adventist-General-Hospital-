@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy - MediCare Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/component-styles.css">
+</head>
+<body>
+    <div id="loading-screen"><div class="loader-container"><div class="hospital-loader"><div class="heartbeat"></div><div class="pulse-ring"></div></div><div class="loader-text"><span>M</span><span>e</span><span>d</span><span>i</span><span>C</span><span>a</span><span>r</span><span>e</span></div><div class="loader-progress"><div class="progress-bar" id="loader-progress-bar"></div></div><p class="loading-message">Loading pharmacy...</p></div></div>
+
+    <!-- Top Bar -->
+    <div class="top-bar" id="topBar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <div class="contact-info">
+                        <a href="tel:+251911234567"><i class="fas fa-phone-alt"></i> +251 911 234 567</a>
+                        <a href="mailto:info@medicare.com"><i class="fas fa-envelope"></i> info@medicare.com</a>
+                        <span><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</span>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <div class="emergency-number"><i class="fas fa-ambulance"></i><span>Emergency: <strong>911</strong></span></div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="mainNav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo"><a href="index.html"><img src="images/logo.svg" alt="MediCare Hospital" class="logo-img"><span class="logo-text">Medi<span>Care</span></span></a></div>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a href="departments.html" class="nav-link"><i class="fas fa-hospital"></i> Departments</a></li>
+                    <li class="nav-item"><a href="doctors.html" class="nav-link"><i class="fas fa-user-md"></i> Doctors</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link active"><i class="fas fa-stethoscope"></i> Services</a></li>
+                    <li class="nav-item"><a href="appointments.html" class="nav-link"><i class="fas fa-calendar-check"></i> Book Appointment</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="search-toggle" id="searchToggle"><i class="fas fa-search"></i></button>
+                    <a href="patient-login.html" class="btn-login"><i class="fas fa-user-circle"></i> Login</a>
+                    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Pharmacy Services</h1>
+                <p>Quality medications and pharmaceutical care</p>
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="separator"><i class="fas fa-chevron-right"></i></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li class="separator"><i class="fas fa-chevron-right"></i></li>
+                        <li aria-current="page">Pharmacy</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pharmacy Overview -->
+    <section class="pharmacy-overview">
+        <div class="container">
+            <div class="pharmacy-content">
+                <div class="pharmacy-text animate-on-scroll">
+                    <span class="section-tag">Our Pharmacy</span>
+                    <h2>Full-Service Hospital Pharmacy</h2>
+                    <p>Our pharmacy provides comprehensive pharmaceutical services including prescription dispensing, medication management, and patient education. We stock a wide range of quality medications to meet all your healthcare needs.</p>
+                    <div class="pharmacy-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="2000">0</span>
+                            <span class="stat-label">Medications Available</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="99">0</span>
+                            <span class="stat-label">% Stock Availability</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="24">0</span>
+                            <span class="stat-label">Hour Service</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pharmacy-image animate-on-scroll">
+                    <img src="images/pharmacy.jpg" alt="MediCare Pharmacy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medicine Availability -->
+    <section class="medicine-availability">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Medications</span>
+                <h2>Medicine Availability</h2>
+                <p>Search for available medications at our pharmacy</p>
+            </div>
+            <div class="medicine-search">
+                <div class="search-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="medicineSearch" placeholder="Search for medicine by name or category..." class="filter-input">
+                </div>
+            </div>
+            <div class="medicine-grid" id="medicineGrid">
+                <div class="medicine-card">
+                    <i class="fas fa-prescription-bottle"></i>
+                    <h4>Cardiovascular</h4>
+                    <ul>
+                        <li>Atenolol</li>
+                        <li>Lisinopril</li>
+                        <li>Atorvastatin</li>
+                        <li>Amlodipine</li>
+                    </ul>
+                    <span class="status available"><i class="fas fa-check-circle"></i> In Stock</span>
+                </div>
+                <div class="medicine-card">
+                    <i class="fas fa-prescription-bottle"></i>
+                    <h4>Antibiotics</h4>
+                    <ul>
+                        <li>Amoxicillin</li>
+                        <li>Azithromycin</li>
+                        <li>Ciprofloxacin</li>
+                        <li>Doxycycline</li>
+                    </ul>
+                    <span class="status available"><i class="fas fa-check-circle"></i> In Stock</span>
+                </div>
+                <div class="medicine-card">
+                    <i class="fas fa-prescription-bottle"></i>
+                    <h4>Pain Relief</h4>
+                    <ul>
+                        <li>Ibuprofen</li>
+                        <li>Paracetamol</li>
+                        <li>Naproxen</li>
+                        <li>Tramadol</li>
+                    </ul>
+                    <span class="status limited"><i class="fas fa-exclamation-triangle"></i> Limited Stock</span>
+                </div>
+                <div class="medicine-card">
+                    <i class="fas fa-prescription-bottle"></i>
+                    <h4>Diabetes</h4>
+                    <ul>
+                        <li>Metformin</li>
+                        <li>Insulin</li>
+                        <li>Glipizide</li>
+                        <li>Sitagliptin</li>
+                    </ul>
+                    <span class="status available"><i class="fas fa-check-circle"></i> In Stock</span>
+                </div>
+                <div class="medicine-card">
+                    <i class="fas fa-prescription-bottle"></i>
+                    <h4>Respiratory</h4>
+                    <ul>
+                        <li>Salbutamol</li>
+                        <li>Budesonide</li>
+                        <li>Montelukast</li>
+                        <li>Theophylline</li>
+                    </ul>
+                    <span class="status available"><i class="fas fa-check-circle"></i> In Stock</span>
+                </div>
+                <div class="medicine-card">
+                    <i class="fas fa-prescription-bottle"></i>
+                    <h4>Vitamins & Supplements</h4>
+                    <ul>
+                        <li>Vitamin D</li>
+                        <li>Vitamin B12</li>
+                        <li>Iron Supplements</li>
+                        <li>Calcium</li>
+                    </ul>
+                    <span class="status available"><i class="fas fa-check-circle"></i> In Stock</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prescription Pickup -->
+    <section class="prescription-pickup">
+        <div class="container">
+            <div class="pickup-content">
+                <div class="pickup-info">
+                    <h2><i class="fas fa-prescription"></i> Prescription Pickup</h2>
+                    <p>Quick and convenient prescription pickup service</p>
+                    <ul class="pickup-features">
+                        <li><i class="fas fa-clock"></i> Same-day prescription filling</li>
+                        <li><i class="fas fa-qrcode"></i> QR code scanning for quick pickup</li>
+                        <li><i class="fas fa-user-md"></i> Pharmacist consultation available</li>
+                        <li><i class="fas fa-truck"></i> Home delivery available</li>
+                    </ul>
+                    <div class="pickup-actions">
+                        <a href="patient-login.html" class="btn btn-primary"><i class="fas fa-prescription"></i> Request Prescription</a>
+                        <a href="#" class="btn btn-secondary"><i class="fas fa-qrcode"></i> Scan QR for Pickup</a>
+                    </div>
+                </div>
+                <div class="pickup-image">
+                    <img src="images/prescription-pickup.jpg" alt="Prescription Pickup">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opening Hours -->
+    <section class="pharmacy-hours">
+        <div class="container">
+            <div class="hours-content">
+                <div class="hours-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Opening Hours</h3>
+                    <ul>
+                        <li><span>Monday - Friday</span><span>7:00 AM - 10:00 PM</span></li>
+                        <li><span>Saturday</span><span>8:00 AM - 8:00 PM</span></li>
+                        <li><span>Sunday</span><span>9:00 AM - 6:00 PM</span></li>
+                        <li><span>Emergency</span><span>24/7 Available</span></li>
+                    </ul>
+                </div>
+                <div class="hours-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Contact Pharmacy</h3>
+                    <p>Phone: +251 911 234 567 ext. 303</p>
+                    <p>Email: pharmacy@medicare.com</p>
+                    <a href="tel:+251911234567" class="btn btn-primary btn-sm">Call Now</a>
+                </div>
+                <div class="hours-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Ground Floor, Near Main Entrance</p>
+                    <p>Addis Ababa, Ethiopia</p>
+                    <a href="#" class="btn btn-primary btn-sm">Get Directions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Banner -->
+    <section class="emergency-banner">
+        <div class="container">
+            <div class="emergency-content">
+                <div class="emergency-text">
+                    <i class="fas fa-ambulance"></i>
+                    <div><h2>Emergency Services Available 24/7</h2><p>Immediate medical attention when you need it most</p></div>
+                </div>
+                <div class="emergency-contact">
+                    <a href="tel:911" class="emergency-number"><i class="fas fa-phone"></i> Emergency: 911</a>
+                    <a href="emergency.html" class="btn btn-light">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo"><img src="images/logo-white.svg" alt="MediCare"><span>MediCare Hospital</span></div>
+                    <p>Providing quality healthcare services with compassion and excellence since 2010.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="about.html">About Us</a></li><li><a href="departments.html">Departments</a></li><li><a href="doctors.html">Doctors</a></li><li><a href="services.html">Services</a></li></ul></div>
+                <div class="footer-links"><h4>Patient Services</h4><ul><li><a href="appointments.html">Book Appointment</a></li><li><a href="patient-login.html">Patient Portal</a></li><li><a href="laboratory.html">Lab Results</a></li><li><a href="pharmacy.html">Pharmacy</a></li></ul></div>
+                <div class="footer-contact"><h4>Contact Info</h4><ul><li><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</li><li><i class="fas fa-phone"></i> +251 911 234 567</li><li><i class="fas fa-envelope"></i> info@medicare.com</li><li><i class="fas fa-clock"></i> 24/7 Emergency Services</li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 MediCare Hospital. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms & Conditions</a><a href="faq.html">FAQ</a></div></div>
+        </div>
+    </footer>
+
+    <!-- AI Assistant -->
+    <div class="ai-assistant" id="aiAssistant">
+        <button class="ai-toggle" id="aiToggle"><i class="fas fa-robot"></i><span class="ai-badge">AI</span></button>
+        <div class="ai-chat" id="aiChat">
+            <div class="ai-header"><i class="fas fa-robot"></i><h4>AI Health Assistant</h4><button class="ai-close"><i class="fas fa-times"></i></button></div>
+            <div class="ai-messages" id="aiMessages"><div class="message ai"><p>👋 Hello! I'm your AI health assistant.</p></div></div>
+            <div class="ai-input"><input type="text" placeholder="Ask me anything..." id="aiInput"><button id="aiSend"><i class="fas fa-paper-plane"></i></button></div>
+        </div>
+    </div>
+
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/qr.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/scanner.js"></script>
+</body>
+                                                                                                                     </html>
