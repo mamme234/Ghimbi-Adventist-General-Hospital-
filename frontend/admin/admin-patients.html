@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Patients - MediCare Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar (same as admin-dashboard) -->
+        <aside class="dashboard-sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <img src="../images/logo.svg" alt="MediCare">
+                <span>Medi<span>Care</span></span>
+            </div>
+            <div class="sidebar-user">
+                <img src="https://ui-avatars.com/api/?name=Admin&background=2563eb&color=fff" alt="Admin" class="sidebar-user-avatar">
+                <div class="sidebar-user-info">
+                    <h4>Admin User</h4>
+                    <p>Hospital Administrator</p>
+                </div>
+            </div>
+            <nav class="sidebar-menu">
+                <div class="sidebar-menu-group">
+                    <div class="sidebar-menu-group-title">Main</div>
+                    <a href="admin-dashboard.html" class="sidebar-menu-item"><i class="fas fa-th-large"></i><span>Dashboard</span></a>
+                    <a href="admin-patients.html" class="sidebar-menu-item active"><i class="fas fa-users"></i><span>Patients</span><span class="badge">156</span></a>
+                    <a href="admin-staff.html" class="sidebar-menu-item"><i class="fas fa-user-md"></i><span>Staff</span><span class="badge">45</span></a>
+                    <a href="admin-departments.html" class="sidebar-menu-item"><i class="fas fa-hospital"></i><span>Departments</span><span class="badge">8</span></a>
+                </div>
+                <div class="sidebar-menu-group">
+                    <div class="sidebar-menu-group-title">Content</div>
+                    <a href="admin-website.html" class="sidebar-menu-item"><i class="fas fa-globe"></i><span>Website</span></a>
+                    <a href="admin-news.html" class="sidebar-menu-item"><i class="fas fa-newspaper"></i><span>News</span><span class="badge" style="background: #f59e0b;">3</span></a>
+                    <a href="admin-gallery.html" class="sidebar-menu-item"><i class="fas fa-images"></i><span>Gallery</span></a>
+                </div>
+                <div class="sidebar-menu-group">
+                    <div class="sidebar-menu-group-title">Reports</div>
+                    <a href="admin-reports.html" class="sidebar-menu-item"><i class="fas fa-file-alt"></i><span>Reports</span></a>
+                    <a href="admin-analytics.html" class="sidebar-menu-item"><i class="fas fa-chart-line"></i><span>Analytics</span></a>
+                    <a href="admin-settings.html" class="sidebar-menu-item"><i class="fas fa-cog"></i><span>Settings</span></a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="admin-login.html" class="sidebar-menu-item" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i><span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="dashboard-header-left">
+                    <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+                    <div>
+                        <h1>Manage Patients</h1>
+                        <p>View and manage all patient records</p>
+                    </div>
+                </div>
+                <div class="dashboard-header-right">
+                    <div class="dashboard-search">
+                        <input type="text" placeholder="Search patients...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="dashboard-header-actions">
+                        <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=2563eb&color=fff" alt="Admin" class="user-avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Filters -->
+            <div style="display: flex; gap: 15px; margin-bottom: 25px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 200px;">
+                    <input type="text" placeholder="Search by name or ID..." style="width: 100%; padding: 10px; border: 1px solid var(--light-gray); border-radius: 8px;">
+                </div>
+                <div style="min-width: 150px;">
+                    <select style="width: 100%; padding: 10px; border: 1px solid var(--light-gray); border-radius: 8px;">
+                        <option value="">All Departments</option>
+                        <option value="cardiology">Cardiology</option>
+                        <option value="neurology">Neurology</option>
+                        <option value="orthopedics">Orthopedics</option>
+                    </select>
+                </div>
+                <div style="min-width: 150px;">
+                    <select style="width: 100%; padding: 10px; border: 1px solid var(--light-gray); border-radius: 8px;">
+                        <option value="">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                        <option value="discharged">Discharged</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" onclick="addPatient()"><i class="fas fa-plus"></i> Add Patient</button>
+                <button class="btn btn-outline" onclick="exportPatients()"><i class="fas fa-download"></i> Export</button>
+            </div>
+
+            <!-- Patients Table -->
+            <div class="dashboard-table-container">
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Patient Name</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Department</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>P-2024-001</td>
+                            <td><strong>John Doe</strong></td>
+                            <td>45</td>
+                            <td>Male</td>
+                            <td>Cardiology</td>
+                            <td><span class="status-badge in-progress">Active</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewPatient(1)"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="editPatient(1)"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-delete" onclick="deletePatient(1)"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>P-2024-002</td>
+                            <td><strong>Jane Smith</strong></td>
+                            <td>32</td>
+                            <td>Female</td>
+                            <td>Neurology</td>
+                            <td><span class="status-badge completed">Active</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewPatient(2)"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="editPatient(2)"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-delete" onclick="deletePatient(2)"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>P-2024-003</td>
+                            <td><strong>David Williams</strong></td>
+                            <td>58</td>
+                            <td>Male</td>
+                            <td>Orthopedics</td>
+                            <td><span class="status-badge warning">Discharged</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewPatient(3)"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="editPatient(3)"><i class="fas fa-edit"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                <span style="color: var(--mid-gray);">Showing 1-10 of 156 patients</span>
+                <div style="display: flex; gap: 5px;">
+                    <button class="btn btn-sm btn-outline">Previous</button>
+                    <button class="btn btn-sm btn-primary">1</button>
+                    <button class="btn btn-sm btn-outline">2</button>
+                    <button class="btn btn-sm btn-outline">3</button>
+                    <button class="btn btn-sm btn-outline">...</button>
+                    <button class="btn btn-sm btn-outline">16</button>
+                    <button class="btn btn-sm btn-outline">Next</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'admin-login.html';
+            }
+        }
+
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+            localStorage.setItem('theme', html.getAttribute('data-theme'));
+        }
+
+        function viewPatient(id) {
+            alert(`Viewing patient #${id}`);
+        }
+
+        function editPatient(id) {
+            alert(`Editing patient #${id}`);
+        }
+
+        function deletePatient(id) {
+            if (confirm(`Are you sure you want to delete patient #${id}?`)) {
+                alert(`Patient #${id} deleted`);
+            }
+        }
+
+        function addPatient() {
+            alert('Adding new patient...');
+        }
+
+        function exportPatients() {
+            alert('Exporting patient list...');
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+</body>
+  </html>
