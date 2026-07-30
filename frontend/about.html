@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - MediCare Hospital</title>
+    <meta name="description" content="Learn about MediCare Hospital's history, mission, vision, and commitment to healthcare excellence.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/component-styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="hospital-loader">
+                <div class="heartbeat"></div>
+                <div class="pulse-ring"></div>
+            </div>
+            <div class="loader-text">
+                <span>M</span><span>e</span><span>d</span><span>i</span>
+                <span>C</span><span>a</span><span>r</span><span>e</span>
+            </div>
+            <div class="loader-progress">
+                <div class="progress-bar" id="loader-progress-bar"></div>
+            </div>
+            <p class="loading-message">Loading your healthcare experience...</p>
+        </div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar" id="topBar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <div class="contact-info">
+                        <a href="tel:+251911234567"><i class="fas fa-phone-alt"></i> +251 911 234 567</a>
+                        <a href="mailto:info@medicare.com"><i class="fas fa-envelope"></i> info@medicare.com</a>
+                        <span><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</span>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <div class="emergency-number">
+                        <i class="fas fa-ambulance"></i>
+                        <span>Emergency: <strong>911</strong></span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="mainNav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="MediCare Hospital" class="logo-img">
+                        <span class="logo-text">Medi<span>Care</span></span>
+                    </a>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle"><i class="fas fa-hospital"></i> Departments <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="departments.html">All Departments</a></li>
+                            <li><a href="department.html?dept=cardiology">Cardiology</a></li>
+                            <li><a href="department.html?dept=neurology">Neurology</a></li>
+                            <li><a href="department.html?dept=orthopedics">Orthopedics</a></li>
+                            <li><a href="department.html?dept=pediatrics">Pediatrics</a></li>
+                            <li><a href="department.html?dept=gynecology">Gynecology</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="doctors.html" class="nav-link"><i class="fas fa-user-md"></i> Doctors</a></li>
+                    <li class="nav-item"><a href="appointments.html" class="nav-link"><i class="fas fa-calendar-check"></i> Book Appointment</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="search-toggle" id="searchToggle"><i class="fas fa-search"></i></button>
+                    <a href="patient-login.html" class="btn-login"><i class="fas fa-user-circle"></i> Login</a>
+                    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>About MediCare Hospital</h1>
+                <p>Excellence in healthcare since 2010</p>
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="separator"><i class="fas fa-chevron-right"></i></li>
+                        <li aria-current="page">About Us</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hospital History -->
+    <section class="history-section">
+        <div class="container">
+            <div class="history-content">
+                <div class="history-text animate-on-scroll">
+                    <span class="section-tag">Our History</span>
+                    <h2>A Legacy of Healthcare Excellence</h2>
+                    <p>Founded in 2010, MediCare Hospital has grown from a small clinic to one of Ethiopia's leading healthcare institutions. Our journey is marked by continuous innovation, compassionate care, and unwavering commitment to patient well-being.</p>
+                    <p>Over the past decade, we have expanded our services, invested in cutting-edge technology, and assembled a team of world-class medical professionals. Today, we stand as a beacon of hope for thousands of patients across the country.</p>
+                    <div class="history-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="14">0</div>
+                            <div class="stat-label">Years of Service</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="50000">0</div>
+                            <div class="stat-label">Patients Treated</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="500">0</div>
+                            <div class="stat-label">Expert Doctors</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="history-image animate-on-scroll">
+                    <img src="images/hospital-history.jpg" alt="MediCare Hospital History">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mission-vision-grid">
+                <div class="mission-card animate-on-scroll">
+                    <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>To provide accessible, high-quality healthcare services with compassion, integrity, and excellence, improving the health and well-being of our community.</p>
+                </div>
+                <div class="vision-card animate-on-scroll">
+                    <div class="card-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Our Vision</h3>
+                    <p>To become the leading healthcare institution in East Africa, setting standards for medical excellence, innovation, and patient-centered care.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="core-values">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Core Values</span>
+                <h2>What We Stand For</h2>
+                <p>Our values guide everything we do</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card animate-on-scroll">
+                    <div class="value-icon"><i class="fas fa-heart"></i></div>
+                    <h4>Compassion</h4>
+                    <p>We treat every patient with kindness, empathy, and respect.</p>
+                </div>
+                <div class="value-card animate-on-scroll">
+                    <div class="value-icon"><i class="fas fa-star"></i></div>
+                    <h4>Excellence</h4>
+                    <p>We strive for the highest standards in everything we do.</p>
+                </div>
+                <div class="value-card animate-on-scroll">
+                    <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                    <h4>Integrity</h4>
+                    <p>We are honest, transparent, and ethical in all our dealings.</p>
+                </div>
+                <div class="value-card animate-on-scroll">
+                    <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h4>Innovation</h4>
+                    <p>We embrace new ideas and technologies to improve care.</p>
+                </div>
+                <div class="value-card animate-on-scroll">
+                    <div class="value-icon"><i class="fas fa-users"></i></div>
+                    <h4>Teamwork</h4>
+                    <p>We collaborate across disciplines to achieve the best outcomes.</p>
+                </div>
+                <div class="value-card animate-on-scroll">
+                    <div class="value-icon"><i class="fas fa-globe-africa"></i></div>
+                    <h4>Community</h4>
+                    <p>We are committed to serving and strengthening our community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CEO Message -->
+    <section class="ceo-message">
+        <div class="container">
+            <div class="ceo-content">
+                <div class="ceo-image animate-on-scroll">
+                    <img src="images/ceo.jpg" alt="CEO - Dr. Abebe Kebede">
+                </div>
+                <div class="ceo-text animate-on-scroll">
+                    <span class="section-tag">CEO Message</span>
+                    <h2>Dr. Abebe Kebede</h2>
+                    <p class="ceo-title">Founder & CEO, MediCare Hospital</p>
+                    <blockquote>
+                        "At MediCare, we believe that healthcare is not just about treating illnesses—it's about healing lives. Every day, we are inspired by the trust our patients place in us, and we are committed to exceeding their expectations with compassionate, innovative, and world-class care."
+                    </blockquote>
+                    <p>Under Dr. Kebede's leadership, MediCare has grown into a comprehensive healthcare system serving thousands of patients annually. His vision for accessible, high-quality healthcare continues to guide our mission.</p>
+                    <div class="ceo-signature">
+                        <img src="images/signature.png" alt="Dr. Abebe Kebede Signature">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Management Team -->
+    <section class="management-team">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Leadership</span>
+                <h2>Our Management Team</h2>
+                <p>Experienced leaders dedicated to healthcare excellence</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card animate-on-scroll">
+                    <img src="images/team/ceo.jpg" alt="Dr. Abebe Kebede">
+                    <h4>Dr. Abebe Kebede</h4>
+                    <span>CEO & Founder</span>
+                    <p>30 years of experience in healthcare management</p>
+                </div>
+                <div class="team-card animate-on-scroll">
+                    <img src="images/team/medical-director.jpg" alt="Dr. Sarah Johnson">
+                    <h4>Dr. Sarah Johnson</h4>
+                    <span>Medical Director</span>
+                    <p>Cardiology specialist with international experience</p>
+                </div>
+                <div class="team-card animate-on-scroll">
+                    <img src="images/team/nursing-director.jpg" alt="Ms. Tsehay Tilahun">
+                    <h4>Ms. Tsehay Tilahun</h4>
+                    <span>Nursing Director</span>
+                    <p>20 years of nursing leadership experience</p>
+                </div>
+                <div class="team-card animate-on-scroll">
+                    <img src="images/team/admin-director.jpg" alt="Mr. Dawit Girma">
+                    <h4>Mr. Dawit Girma</h4>
+                    <span>Administrative Director</span>
+                    <p>Expert in healthcare administration and operations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Accreditation -->
+    <section class="awards">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Recognition</span>
+                <h2>Awards & Accreditation</h2>
+                <p>Recognized for excellence in healthcare delivery</p>
+            </div>
+            <div class="awards-grid">
+                <div class="award-card animate-on-scroll">
+                    <i class="fas fa-award"></i>
+                    <h4>Best Hospital Award</h4>
+                    <p>Ethiopian Healthcare Excellence Awards 2022</p>
+                </div>
+                <div class="award-card animate-on-scroll">
+                    <i class="fas fa-certificate"></i>
+                    <h4>ISO 9001:2015</h4>
+                    <p>Quality Management System Certification</p>
+                </div>
+                <div class="award-card animate-on-scroll">
+                    <i class="fas fa-trophy"></i>
+                    <h4>Patient Choice Award</h4>
+                    <p>Most Trusted Hospital 2023</p>
+                </div>
+                <div class="award-card animate-on-scroll">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Safety Excellence</h4>
+                    <p>Occupational Health & Safety Award 2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Journey</span>
+                <h2>Milestone Timeline</h2>
+                <p>Key moments in our history</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2010</div>
+                        <h4>Foundation</h4>
+                        <p>MediCare Hospital established with 20 beds and 10 doctors</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2013</div>
+                        <h4>Expansion</h4>
+                        <p>New wing added with 50 beds and advanced diagnostic equipment</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2016</div>
+                        <h4>Technology Upgrade</h4>
+                        <p>Digital health records and telemedicine services introduced</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019</div>
+                        <h4>Accreditation</h4>
+                        <p>Received international healthcare accreditation</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022</div>
+                        <h4>Multi-Specialty</h4>
+                        <p>Expanded to 15 specialties with 200+ beds</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <h4>Digital Transformation</h4>
+                        <p>Launched comprehensive digital health platform</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Outreach -->
+    <section class="community-outreach">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Community</span>
+                <h2>Community Outreach</h2>
+                <p>Committed to making healthcare accessible to all</p>
+            </div>
+            <div class="outreach-grid">
+                <div class="outreach-card animate-on-scroll">
+                    <i class="fas fa-heartbeat"></i>
+                    <h4>Free Health Camps</h4>
+                    <p>Regular medical camps in underserved communities</p>
+                </div>
+                <div class="outreach-card animate-on-scroll">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>Health Education</h4>
+                    <p>Community health awareness programs and workshops</p>
+                </div>
+                <div class="outreach-card animate-on-scroll">
+                    <i class="fas fa-ambulance"></i>
+                    <h4>Emergency Response</h4>
+                    <p>24/7 emergency services for the community</p>
+                </div>
+                <div class="outreach-card animate-on-scroll">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h4>Charity Care</h4>
+                    <p>Financial assistance for patients in need</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="images/logo-white.svg" alt="MediCare">
+                        <span>MediCare Hospital</span>
+                    </div>
+                    <p>Providing quality healthcare services with compassion and excellence since 2010.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="departments.html">Departments</a></li>
+                        <li><a href="doctors.html">Doctors</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Patient Services</h4>
+                    <ul>
+                        <li><a href="appointments.html">Book Appointment</a></li>
+                        <li><a href="patient-login.html">Patient Portal</a></li>
+                        <li><a href="laboratory.html">Lab Results</a></li>
+                        <li><a href="pharmacy.html">Pharmacy</a></li>
+                        <li><a href="emergency.html">Emergency</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</li>
+                        <li><i class="fas fa-phone"></i> +251 911 234 567</li>
+                        <li><i class="fas fa-envelope"></i> info@medicare.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Emergency Services</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MediCare Hospital. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="faq.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Assistant -->
+    <div class="ai-assistant" id="aiAssistant">
+        <button class="ai-toggle" id="aiToggle"><i class="fas fa-robot"></i><span class="ai-badge">AI</span></button>
+        <div class="ai-chat" id="aiChat">
+            <div class="ai-header"><i class="fas fa-robot"></i><h4>AI Health Assistant</h4><button class="ai-close"><i class="fas fa-times"></i></button></div>
+            <div class="ai-messages" id="aiMessages"><div class="message ai"><p>👋 Hello! I'm your AI health assistant. How can I help you today?</p></div></div>
+            <div class="ai-input"><input type="text" placeholder="Ask me anything..." id="aiInput"><button id="aiSend"><i class="fas fa-paper-plane"></i></button></div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/qr.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/scanner.js"></script>
+</body>
+  </html>
