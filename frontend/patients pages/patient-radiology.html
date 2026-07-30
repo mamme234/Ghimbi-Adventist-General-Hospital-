@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radiology Results - MediCare Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar (same as previous) -->
+        <aside class="dashboard-sidebar" id="sidebar">...</aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="dashboard-header-left">
+                    <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+                    <div>
+                        <h1>Radiology Results</h1>
+                        <p>View and download your imaging reports</p>
+                    </div>
+                </div>
+                <div class="dashboard-header-right">
+                    <div class="dashboard-search">
+                        <input type="text" placeholder="Search imaging results...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="dashboard-header-actions">
+                        <button><i class="fas fa-bell"></i></button>
+                        <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=2563eb&color=fff" alt="John Doe" class="user-avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Results Summary -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 25px;">
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 28px; font-weight: 700; color: var(--primary-color);">6</div>
+                    <div style="font-size: 14px; color: var(--mid-gray);">Total Imaging</div>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 28px; font-weight: 700; color: var(--accent-green);">4</div>
+                    <div style="font-size: 14px; color: var(--mid-gray);">Reports Available</div>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 28px; font-weight: 700; color: var(--accent-yellow);">2</div>
+                    <div style="font-size: 14px; color: var(--mid-gray);">Images Available</div>
+                </div>
+            </div>
+
+            <!-- Radiology Results List -->
+            <div class="dashboard-table-container">
+                <div class="dashboard-table-header">
+                    <h3>Imaging Studies</h3>
+                    <button class="btn btn-sm btn-outline" onclick="downloadAllRadiology()"><i class="fas fa-download"></i> Download All</button>
+                </div>
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Imaging Type</th>
+                            <th>Date</th>
+                            <th>Body Area</th>
+                            <th>Report</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><i class="fas fa-x-ray" style="color: var(--primary-color);"></i> X-Ray</td>
+                            <td>Jan 20, 2024</td>
+                            <td>Chest</td>
+                            <td>Normal</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewRadiology(1)"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="downloadRadiology(1)"><i class="fas fa-download"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-wave-square" style="color: var(--secondary-color);"></i> Ultrasound</td>
+                            <td>Jan 15, 2024</td>
+                            <td>Abdomen</td>
+                            <td>Pending</td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewRadiology(2)"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-brain" style="color: var(--accent-purple);"></i> MRI</td>
+                            <td>Dec 10, 2023</td>
+                            <td>Brain</td>
+                            <td>Normal</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewRadiology(3)"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="downloadRadiology(3)"><i class="fas fa-download"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-ct-scan" style="color: var(--accent-red);"></i> CT Scan</td>
+                            <td>Nov 5, 2023</td>
+                            <td>Chest</td>
+                            <td>Normal</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewRadiology(4)"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="downloadRadiology(4)"><i class="fas fa-download"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Image Viewer Preview -->
+            <div style="margin-top: 25px; background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray);">
+                <h3>Recent Images</h3>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 15px;">
+                    <div style="background: #f8fafc; border-radius: 8px; padding: 10px; text-align: center; border: 1px solid var(--light-gray);">
+                        <div style="height: 120px; background: #e2e8f0; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-x-ray" style="font-size: 40px; color: #94a3b8;"></i>
+                        </div>
+                        <p style="margin-top: 8px; font-size: 12px; color: var(--mid-gray);">Chest X-Ray</p>
+                        <button class="btn btn-sm btn-primary" onclick="viewImage(1)">View</button>
+                    </div>
+                    <div style="background: #f8fafc; border-radius: 8px; padding: 10px; text-align: center; border: 1px solid var(--light-gray);">
+                        <div style="height: 120px; background: #e2e8f0; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-brain" style="font-size: 40px; color: #94a3b8;"></i>
+                        </div>
+                        <p style="margin-top: 8px; font-size: 12px; color: var(--mid-gray);">Brain MRI</p>
+                        <button class="btn btn-sm btn-primary" onclick="viewImage(2)">View</button>
+                    </div>
+                    <div style="background: #f8fafc; border-radius: 8px; padding: 10px; text-align: center; border: 1px solid var(--light-gray);">
+                        <div style="height: 120px; background: #e2e8f0; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-ct-scan" style="font-size: 40px; color: #94a3b8;"></i>
+                        </div>
+                        <p style="margin-top: 8px; font-size: 12px; color: var(--mid-gray);">CT Scan</p>
+                        <button class="btn btn-sm btn-primary" onclick="viewImage(3)">View</button>
+                    </div>
+                    <div style="background: #f8fafc; border-radius: 8px; padding: 10px; text-align: center; border: 1px solid var(--light-gray);">
+                        <div style="height: 120px; background: #e2e8f0; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-wave-square" style="font-size: 40px; color: #94a3b8;"></i>
+                        </div>
+                        <p style="margin-top: 8px; font-size: 12px; color: var(--mid-gray);">Ultrasound</p>
+                        <button class="btn btn-sm btn-primary" onclick="viewImage(4)">View</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'patient-login.html';
+            }
+        }
+
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+            localStorage.setItem('theme', html.getAttribute('data-theme'));
+        }
+
+        function viewRadiology(id) {
+            alert(`Viewing radiology report #${id}`);
+        }
+
+        function downloadRadiology(id) {
+            alert(`Downloading radiology report #${id}`);
+        }
+
+        function viewImage(id) {
+            alert(`Viewing image #${id}`);
+        }
+
+        function downloadAllRadiology() {
+            alert('Downloading all radiology reports...');
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+</body>
+                          </html>
