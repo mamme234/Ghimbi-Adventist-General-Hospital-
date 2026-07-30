@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Management - MediCare Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar" id="sidebar">...</aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="dashboard-header-left">
+                    <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+                    <div>
+                        <h1>News Management</h1>
+                        <p>Manage hospital news and announcements</p>
+                    </div>
+                </div>
+                <div class="dashboard-header-right">
+                    <div class="dashboard-header-actions">
+                        <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=2563eb&color=fff" alt="Admin" class="user-avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- News Stats -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 25px;">
+                <div style="background: var(--white); border-radius: 12px; padding: 15px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 24px; font-weight: 700; color: var(--primary-color);">12</div>
+                    <div style="font-size: 12px; color: var(--mid-gray);">Total Articles</div>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 15px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 24px; font-weight: 700; color: var(--accent-green);">8</div>
+                    <div style="font-size: 12px; color: var(--mid-gray);">Published</div>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 15px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 24px; font-weight: 700; color: var(--accent-yellow);">4</div>
+                    <div style="font-size: 12px; color: var(--mid-gray);">Drafts</div>
+                </div>
+            </div>
+
+            <!-- News List -->
+            <div class="dashboard-table-container">
+                <div class="dashboard-table-header">
+                    <h3>News Articles</h3>
+                    <button class="btn btn-sm btn-primary" onclick="addNews()"><i class="fas fa-plus"></i> Add News</button>
+                </div>
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>New Telemedicine Service Launched</strong></td>
+                            <td>Announcement</td>
+                            <td>Jan 20, 2024</td>
+                            <td><span class="status-badge completed">Published</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewNews(1)"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="editNews(1)"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-delete" onclick="deleteNews(1)"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>10 Tips for a Healthy Heart</strong></td>
+                            <td>Health Article</td>
+                            <td>Jan 15, 2024</td>
+                            <td><span class="status-badge in-progress">Published</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewNews(2)"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="editNews(2)"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-delete" onclick="deleteNews(2)"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Free Health Camp Coming Soon</strong></td>
+                            <td>Event</td>
+                            <td>Jan 10, 2024</td>
+                            <td><span class="status-badge warning">Draft</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewNews(3)"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="editNews(3)"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-delete" onclick="deleteNews(3)"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Add News Modal (Simplified) -->
+            <div style="margin-top: 25px; background: var(--white); border-radius: 12px; padding: 25px; border: 1px solid var(--light-gray);">
+                <h3 style="margin-bottom: 20px;"><i class="fas fa-plus-circle" style="color: var(--primary-color);"></i> Quick Add News</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" placeholder="Enter news title" style="width: 100%; padding: 10px; border: 1px solid var(--light-gray); border-radius: 8px;">
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select style="width: 100%; padding: 10px; border: 1px solid var(--light-gray); border-radius: 8px;">
+                            <option value="">Select Category</option>
+                            <option value="announcement">Announcement</option>
+                            <option value="health">Health Article</option>
+                            <option value="event">Event</option>
+                            <option value="achievement">Achievement</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Content</label>
+                    <textarea rows="4" placeholder="Enter news content..." style="width: 100%; padding: 10px; border: 1px solid var(--light-gray); border-radius: 8px;"></textarea>
+                </div>
+                <button class="btn btn-primary" onclick="publishNews()"><i class="fas fa-paper-plane"></i> Publish News</button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'admin-login.html';
+            }
+        }
+
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+            localStorage.setItem('theme', html.getAttribute('data-theme'));
+        }
+
+        function viewNews(id) {
+            alert(`Viewing news #${id}`);
+        }
+
+        function editNews(id) {
+            alert(`Editing news #${id}`);
+        }
+
+        function deleteNews(id) {
+            if (confirm(`Are you sure you want to delete news #${id}?`)) {
+                alert(`News #${id} deleted`);
+            }
+        }
+
+        function addNews() {
+            alert('Adding new news article...');
+        }
+
+        function publishNews() {
+            alert('News published successfully!');
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+</body>
+                              </html>
