@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Management - MediCare Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar" id="sidebar">...</aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="dashboard-header-left">
+                    <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+                    <div>
+                        <h1>Website Management</h1>
+                        <p>Manage website content and settings</p>
+                    </div>
+                </div>
+                <div class="dashboard-header-right">
+                    <div class="dashboard-header-actions">
+                        <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=2563eb&color=fff" alt="Admin" class="user-avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Website Settings -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div style="background: var(--white); border-radius: 12px; padding: 25px; border: 1px solid var(--light-gray);">
+                    <h3 style="margin-bottom: 20px;"><i class="fas fa-globe" style="color: var(--primary-color);"></i> General Settings</h3>
+                    <div class="form-group">
+                        <label>Site Title</label>
+                        <input type="text" value="MediCare Hospital" style="width: 100%; padding: 10px; border: 1px solid var(--light-gray); border-radius: 8px;">
+                    </div>
+                    <div class="form-group">
+                        <label>Site Description</label>
+                        <textarea rows="3" style="width: 100%; padding: 10px; border: 1px solid var(--light-gray); border-radius: 8px;">Providing quality healthcare services with compassion and excellence since 2010.</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Copyright Text</label>
+                        <input type="text" value="© 2024 MediCare Hospital. All rights reserved." style="width: 100%; padding: 10px; border: 1px solid var(--light-gray); border-radius: 8px;">
+                    </div>
+                    <button class="btn btn-primary" onclick="saveWebsiteSettings()"><i class="fas fa-save"></i> Save Settings</button>
+                </div>
+
+                <div style="background: var(--white); border-radius: 12px; padding: 25px; border: 1px solid var(--light-gray);">
+                    <h3 style="margin-bottom: 20px;"><i class="fas fa-palette" style="color: var(--secondary-color);"></i> Appearance</h3>
+                    <div class="form-group">
+                        <label>Primary Color</label>
+                        <input type="color" value="#2563eb" style="width: 100%; height: 40px; border: 1px solid var(--light-gray); border-radius: 8px;">
+                    </div>
+                    <div class="form-group">
+                        <label>Secondary Color</label>
+                        <input type="color" value="#7c3aed" style="width: 100%; height: 40px; border: 1px solid var(--light-gray); border-radius: 8px;">
+                    </div>
+                    <div class="form-group">
+                        <label>Logo</label>
+                        <input type="file" accept="image/*" style="width: 100%; padding: 8px; border: 1px solid var(--light-gray); border-radius: 8px;">
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <button class="btn btn-primary" onclick="saveAppearance()"><i class="fas fa-save"></i> Save</button>
+                        <button class="btn btn-outline" onclick="previewWebsite()"><i class="fas fa-eye"></i> Preview</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pages Management -->
+            <div style="margin-top: 25px; background: var(--white); border-radius: 12px; padding: 25px; border: 1px solid var(--light-gray);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h3><i class="fas fa-file-alt" style="color: var(--accent-green);"></i> Pages</h3>
+                    <button class="btn btn-sm btn-primary" onclick="addPage()"><i class="fas fa-plus"></i> Add Page</button>
+                </div>
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Page</th>
+                            <th>Last Updated</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Home</td>
+                            <td>Jan 20, 2024</td>
+                            <td><span class="status-badge completed">Published</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-edit" onclick="editPage(1)"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-view" onclick="viewPage(1)"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>About Us</td>
+                            <td>Jan 15, 2024</td>
+                            <td><span class="status-badge completed">Published</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-edit" onclick="editPage(2)"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-view" onclick="viewPage(2)"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Contact</td>
+                            <td>Jan 10, 2024</td>
+                            <td><span class="status-badge warning">Draft</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-edit" onclick="editPage(3)"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-view" onclick="viewPage(3)"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'admin-login.html';
+            }
+        }
+
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+            localStorage.setItem('theme', html.getAttribute('data-theme'));
+        }
+
+        function saveWebsiteSettings() {
+            alert('Website settings saved successfully!');
+        }
+
+        function saveAppearance() {
+            alert('Appearance settings saved successfully!');
+        }
+
+        function previewWebsite() {
+            window.open('../index.html', '_blank');
+        }
+
+        function addPage() {
+            alert('Adding new page...');
+        }
+
+        function editPage(id) {
+            alert(`Editing page #${id}`);
+        }
+
+        function viewPage(id) {
+            alert(`Viewing page #${id}`);
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+</body>
+                                                                                                                        </html>
