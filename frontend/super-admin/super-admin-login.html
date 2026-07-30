@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Admin Login - MediCare Hospital</title>
+    <title>Super Admin Login - Ghimbi Adventist General Hospital</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="../css/animations.css">
-    <link rel="stylesheet" href="../css/dark-mode.css">
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
 </head>
 <body>
     <div class="login-page">
@@ -22,59 +20,61 @@
         </div>
 
         <div class="login-container">
-            <div class="login-card" style="border: 2px solid #7c3aed;">
+            <div class="login-card" style="max-width: 450px; border: 2px solid #7c3aed;">
                 <div class="login-header">
                     <div class="logo">
-                        <img src="../images/logo.svg" alt="MediCare Hospital">
-                        <span>Medi<span>Care</span></span>
+                        <img src="../images/logo.svg" alt="Ghimbi Adventist">
+                        <span style="font-size: 20px;">Ghimbi <span style="color: #7c3aed;">Adventist</span></span>
                     </div>
-                    <h1 style="color: #7c3aed;">Super Admin Portal</h1>
-                    <p>Full system administration and management</p>
-                    <span class="badge badge-primary" style="font-size: 12px; margin-top: 5px;"><i class="fas fa-crown"></i> Highest Privileges</span>
+                    <h1 style="font-size: 24px; color: #7c3aed;">👑 Super Admin</h1>
+                    <p style="font-size: 14px; color: #64748b;">Full system administration</p>
+                    <span style="display: inline-block; background: #7c3aed; color: white; padding: 2px 12px; border-radius: 20px; font-size: 11px;">Highest Privileges</span>
                 </div>
 
-                <form class="login-form" id="loginForm">
-                    <div class="form-group">
-                        <label>Email Address</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-envelope"></i>
-                            <input type="email" id="emailInput" placeholder="Enter your email" value="superadmin@medicare.com" required>
+                <form id="loginForm">
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 14px; font-weight: 600; display: block; margin-bottom: 5px;">Email Address</label>
+                        <div style="position: relative;">
+                            <i class="fas fa-envelope" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #94a3b8;"></i>
+                            <input type="email" id="emailInput" value="muhammadthe3rdd@gmail.com" style="width: 100%; padding: 12px 15px 12px 45px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 14px;">
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>Password</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-lock"></i>
-                            <input type="password" id="passwordInput" placeholder="Enter your password" value="superadmin123" required>
-                            <button type="button" class="toggle-password" onclick="togglePassword()">
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 14px; font-weight: 600; display: block; margin-bottom: 5px;">Password</label>
+                        <div style="position: relative;">
+                            <i class="fas fa-lock" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #94a3b8;"></i>
+                            <input type="password" id="passwordInput" value="superadmin123" style="width: 100%; padding: 12px 15px 12px 45px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 14px;">
+                            <button type="button" onclick="togglePassword()" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #94a3b8; cursor: pointer;">
                                 <i class="fas fa-eye"></i>
                             </button>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>Two-Factor Authentication</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-shield-alt"></i>
-                            <input type="text" placeholder="Enter 2FA code" required>
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 14px; font-weight: 600; display: block; margin-bottom: 5px;">2FA Code</label>
+                        <div style="position: relative;">
+                            <i class="fas fa-shield-alt" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #94a3b8;"></i>
+                            <input type="text" placeholder="Enter 2FA code" style="width: 100%; padding: 12px 15px 12px 45px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 14px;">
                         </div>
                     </div>
 
-                    <div class="login-options">
-                        <label class="remember-me">
-                            <input type="checkbox" checked>
-                            <span>Remember me</span>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
+                            <input type="checkbox" checked> Remember me
                         </label>
-                        <a href="#" class="forgot-password">Forgot password?</a>
+                        <a href="#" style="font-size: 14px; color: #7c3aed; text-decoration: none;">Forgot password?</a>
                     </div>
 
-                    <button type="submit" class="login-btn" id="loginBtn" style="background: linear-gradient(135deg, #7c3aed, #6d28d9);">
+                    <button type="submit" id="loginBtn" style="width: 100%; padding: 14px; background: linear-gradient(135deg, #7c3aed, #6d28d9); color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
                         <i class="fas fa-crown"></i> Sign In as Super Admin
                     </button>
 
-                    <div class="login-footer">
-                        <p>Need help? <a href="#">Contact System Administrator</a></p>
+                    <div style="text-align: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;">
+                        <p style="font-size: 13px; color: #94a3b8;">
+                            <i class="fas fa-shield-alt" style="color: #7c3aed;"></i> 
+                            Full System Access · 2FA Protected
+                        </p>
                     </div>
                 </form>
             </div>
@@ -84,7 +84,7 @@
     <script>
         function togglePassword() {
             const input = document.getElementById('passwordInput');
-            const icon = document.querySelector('.toggle-password i');
+            const icon = document.querySelector('.fa-eye, .fa-eye-slash');
             if (input.type === 'password') {
                 input.type = 'text';
                 icon.className = 'fas fa-eye-slash';
@@ -97,8 +97,9 @@
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = document.getElementById('loginBtn');
-            btn.classList.add('loading');
-            btn.innerHTML = '<i class="fas fa-spinner"></i> Signing In...';
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing In...';
+            btn.style.opacity = '0.7';
+            
             setTimeout(() => {
                 window.location.href = 'super-admin-dashboard.html';
             }, 1500);
