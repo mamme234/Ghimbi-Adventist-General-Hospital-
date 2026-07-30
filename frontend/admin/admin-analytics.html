@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - MediCare Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar" id="sidebar">...</aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="dashboard-header-left">
+                    <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+                    <div>
+                        <h1>Analytics</h1>
+                        <p>Hospital performance metrics and insights</p>
+                    </div>
+                </div>
+                <div class="dashboard-header-right">
+                    <div class="dashboard-header-actions">
+                        <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=2563eb&color=fff" alt="Admin" class="user-avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Time Period Selector -->
+            <div style="display: flex; gap: 10px; margin-bottom: 25px;">
+                <button class="btn btn-primary btn-sm" onclick="setPeriod('week')">This Week</button>
+                <button class="btn btn-outline btn-sm" onclick="setPeriod('month')">This Month</button>
+                <button class="btn btn-outline btn-sm" onclick="setPeriod('quarter')">This Quarter</button>
+                <button class="btn btn-outline btn-sm" onclick="setPeriod('year')">This Year</button>
+                <button class="btn btn-outline btn-sm" style="margin-left: auto;" onclick="customPeriod()">Custom Period</button>
+            </div>
+
+            <!-- Analytics Charts -->
+            <section class="dashboard-charts">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Patient Visits</h3>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="patientVisitsChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Revenue Overview</h3>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dashboard-charts" style="margin-top: 20px;">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Department Performance</h3>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="departmentChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Patient Satisfaction</h3>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="satisfactionChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Metrics -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 25px;">
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray);">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 14px; color: var(--mid-gray);">Avg. Wait Time</span>
+                        <i class="fas fa-clock" style="color: var(--primary-color);"></i>
+                    </div>
+                    <div style="font-size: 28px; font-weight: 700; margin-top: 10px;">12 min</div>
+                    <div style="font-size: 12px; color: var(--accent-green);"><i class="fas fa-arrow-down"></i> 8% improvement</div>
+                </div>
+
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray);">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 14px; color: var(--mid-gray);">Bed Occupancy</span>
+                        <i class="fas fa-bed" style="color: var(--secondary-color);"></i>
+                    </div>
+                    <div style="font-size: 28px; font-weight: 700; margin-top: 10px;">62%</div>
+                    <div style="font-size: 12px; color: var(--accent-yellow);"><i class="fas fa-arrow-up"></i> 3% increase</div>
+                </div>
+
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray);">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 14px; color: var(--mid-gray);">Patient Satisfaction</span>
+                        <i class="fas fa-star" style="color: var(--accent-yellow);"></i>
+                    </div>
+                    <div style="font-size: 28px; font-weight: 700; margin-top: 10px;">4.8 ★</div>
+                    <div style="font-size: 12px; color: var(--accent-green);"><i class="fas fa-arrow-up"></i> 0.2 increase</div>
+                </div>
+
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray);">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 14px; color: var(--mid-gray);">Readmission Rate</span>
+                        <i class="fas fa-hospital" style="color: var(--accent-red);"></i>
+                    </div>
+                    <div style="font-size: 28px; font-weight: 700; margin-top: 10px;">3.2%</div>
+                    <div style="font-size: 12px; color: var(--accent-green);"><i class="fas fa-arrow-down"></i> 0.5% decrease</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'admin-login.html';
+            }
+        }
+
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+            localStorage.setItem('theme', html.getAttribute('data-theme'));
+        }
+
+        function setPeriod(period) {
+            alert(`Showing data for ${period}`);
+            document.querySelectorAll('.btn-primary.btn-sm').forEach(btn => btn.className = 'btn btn-outline btn-sm');
+            event.target.className = 'btn btn-primary btn-sm';
+        }
+
+        function customPeriod() {
+            alert('Select custom period...');
+        }
+
+        // Initialize Charts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Patient Visits Chart
+            new Chart(document.getElementById('patientVisitsChart'), {
+                type: 'line',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Visits',
+                        data: [120, 150, 180, 200, 170, 90, 60],
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+
+            // Revenue Chart
+            new Chart(document.getElementById('revenueChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Revenue',
+                        data: [5000, 7500, 8200, 9500, 8800, 4500, 3000],
+                        backgroundColor: '#22c55e',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+
+            // Department Performance
+            new Chart(document.getElementById('departmentChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Cardiology', 'Neurology', 'Orthopedics', 'Pediatrics', 'Others'],
+                    datasets: [{
+                        data: [30, 25, 20, 15, 10],
+                        backgroundColor: ['#2563eb', '#7c3aed', '#22c55e', '#f59e0b', '#ec4899']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom' } }
+                }
+            });
+
+            // Satisfaction Chart
+            new Chart(document.getElementById('satisfactionChart'), {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Satisfaction Score',
+                        data: [4.2, 4.3, 4.5, 4.6, 4.7, 4.8],
+                        borderColor: '#f59e0b',
+                        backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { min: 3.5, max: 5 }
+                    }
+                }
+            });
+        });
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+</body>
+                      </html>
