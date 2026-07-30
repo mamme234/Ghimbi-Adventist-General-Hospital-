@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article - MediCare Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/component-styles.css">
+</head>
+<body>
+    <div id="loading-screen"><div class="loader-container"><div class="hospital-loader"><div class="heartbeat"></div><div class="pulse-ring"></div></div><div class="loader-text"><span>M</span><span>e</span><span>d</span><span>i</span><span>C</span><span>a</span><span>r</span><span>e</span></div><div class="loader-progress"><div class="progress-bar" id="loader-progress-bar"></div></div><p class="loading-message">Loading article...</p></div></div>
+
+    <!-- Top Bar -->
+    <div class="top-bar" id="topBar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <div class="contact-info">
+                        <a href="tel:+251911234567"><i class="fas fa-phone-alt"></i> +251 911 234 567</a>
+                        <a href="mailto:info@medicare.com"><i class="fas fa-envelope"></i> info@medicare.com</a>
+                        <span><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</span>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <div class="emergency-number"><i class="fas fa-ambulance"></i><span>Emergency: <strong>911</strong></span></div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="mainNav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo"><a href="index.html"><img src="images/logo.svg" alt="MediCare Hospital" class="logo-img"><span class="logo-text">Medi<span>Care</span></span></a></div>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a href="departments.html" class="nav-link"><i class="fas fa-hospital"></i> Departments</a></li>
+                    <li class="nav-item"><a href="doctors.html" class="nav-link"><i class="fas fa-user-md"></i> Doctors</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link"><i class="fas fa-stethoscope"></i> Services</a></li>
+                    <li class="nav-item"><a href="appointments.html" class="nav-link"><i class="fas fa-calendar-check"></i> Book Appointment</a></li>
+                    <li class="nav-item"><a href="news.html" class="nav-link active"><i class="fas fa-newspaper"></i> News</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="search-toggle" id="searchToggle"><i class="fas fa-search"></i></button>
+                    <a href="patient-login.html" class="btn-login"><i class="fas fa-user-circle"></i> Login</a>
+                    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Content -->
+    <section class="article-content">
+        <div class="container">
+            <div class="article-container">
+                <div class="article-main">
+                    <nav aria-label="Breadcrumb">
+                        <ol class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="separator"><i class="fas fa-chevron-right"></i></li>
+                            <li><a href="news.html">News</a></li>
+                            <li class="separator"><i class="fas fa-chevron-right"></i></li>
+                            <li aria-current="page">Article</li>
+                        </ol>
+                    </nav>
+
+                    <article>
+                        <div class="article-header">
+                            <div class="article-meta">
+                                <span><i class="fas fa-calendar-alt"></i> January 15, 2024</span>
+                                <span><i class="fas fa-tag"></i> Announcement</span>
+                                <span><i class="fas fa-user"></i> By Admin</span>
+                            </div>
+                            <h1>MediCare Hospital Launches New Telemedicine Service</h1>
+                            <div class="article-featured-image">
+                                <img src="images/news/featured.jpg" alt="Telemedicine Service">
+                            </div>
+                        </div>
+
+                        <div class="article-body">
+                            <p>We are proud to announce the launch of our new telemedicine service, allowing patients to consult with our expert doctors from the comfort of their homes. This innovative service is part of our commitment to making healthcare more accessible and convenient for our patients.</p>
+
+                            <h2>What is Telemedicine?</h2>
+                            <p>Telemedicine is a healthcare service that allows patients to consult with doctors remotely using video calls, phone calls, or messaging. This technology enables patients to receive medical advice, diagnosis, and treatment without having to visit the hospital physically.</p>
+
+                            <h2>Benefits of Our Telemedicine Service</h2>
+                            <ul>
+                                <li><strong>Convenience:</strong> Consult with doctors from anywhere</li>
+                                <li><strong>Time-saving:</strong> No travel or waiting time</li>
+                                <li><strong>Accessibility:</strong> Healthcare available to remote areas</li>
+                                <li><strong>Safety:</strong> Reduced exposure to infections</li>
+                                <li><strong>Continuity:</strong> Easy follow-up consultations</li>
+                            </ul>
+
+                            <h2>How to Use Telemedicine</h2>
+                            <ol>
+                                <li>Log in to your patient portal account</li>
+                                <li>Select "Telemedicine Consultation"</li>
+                                <li>Choose your preferred doctor</li>
+                                <li>Select a convenient time slot</li>
+                                <li>Connect for your virtual consultation</li>
+                            </ol>
+
+                            <blockquote>
+                                "We are excited to offer this service to our patients. Telemedicine represents the future of healthcare, and we are committed to providing the best possible care through this technology." 
+                                <cite>- Dr. Abebe Kebede, CEO</cite>
+                            </blockquote>
+
+                            <h2>Frequently Asked Questions</h2>
+                            <div class="faq-article">
+                                <div class="faq-item">
+                                    <h4>Is telemedicine covered by insurance?</h4>
+                                    <p>Many insurance providers cover telemedicine consultations. Please check with your insurance provider for details.</p>
+                                </div>
+                                <div class="faq-item">
+                                    <h4>What conditions can be treated via telemedicine?</h4>
+                                    <p>Telemedicine is suitable for non-emergency conditions such as colds, allergies, minor infections, medication refills, and follow-up consultations.</p>
+                                </div>
+                                <div class="faq-item">
+                                    <h4>How do I prepare for a telemedicine consultation?</h4>
+                                    <p>Ensure you have a stable internet connection, a quiet private space, and any relevant medical records or test results ready.</p>
+                                </div>
+                            </div>
+
+                            <div class="article-cta">
+                                <h3>Ready to Try Telemedicine?</h3>
+                                <p>Book your virtual consultation today and experience healthcare from the comfort of your home.</p>
+                                <a href="appointments.html" class="btn btn-primary">Book Telemedicine Appointment</a>
+                            </div>
+                        </div>
+
+                        <div class="article-footer">
+                            <div class="article-tags">
+                                <span class="tag">Telemedicine</span>
+                                <span class="tag">Healthcare</span>
+                                <span class="tag">Innovation</span>
+                                <span class="tag">Technology</span>
+                            </div>
+                            <div class="article-share">
+                                <span>Share this article:</span>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Related Articles -->
+                    <section class="related-articles">
+                        <h3>Related Articles</h3>
+                        <div class="related-grid">
+                            <div class="related-card">
+                                <img src="images/news/news1.jpg" alt="Related Article">
+                                <h4>10 Tips for a Healthy Heart</h4>
+                                <a href="article.html?id=2" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                            <div class="related-card">
+                                <img src="images/news/news2.jpg" alt="Related Article">
+                                <h4>Free Health Camp in Addis Ababa</h4>
+                                <a href="article.html?id=3" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                            <div class="related-card">
+                                <img src="images/news/news3.jpg" alt="Related Article">
+                                <h4>MediCare Wins Best Hospital Award</h4>
+                                <a href="article.html?id=4" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="article-sidebar">
+                    <div class="sidebar-widget">
+                        <h4>Recent Articles</h4>
+                        <ul>
+                            <li><a href="article.html?id=2">10 Tips for a Healthy Heart</a></li>
+                            <li><a href="article.html?id=3">Free Health Camp in Addis Ababa</a></li>
+                            <li><a href="article.html?id=4">MediCare Wins Best Hospital Award</a></li>
+                            <li><a href="article.html?id=5">Understanding Nutrition for Better Health</a></li>
+                            <li><a href="article.html?id=6">New MRI Machine Installed</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h4>Categories</h4>
+                        <ul>
+                            <li><a href="#">Announcements</a></li>
+                            <li><a href="#">Health Articles</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Achievements</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h4>Subscribe</h4>
+                        <p>Get the latest articles delivered to your inbox</p>
+                        <form class="sidebar-newsletter">
+                            <input type="email" placeholder="Your email">
+                            <button type="submit" class="btn btn-primary btn-block">Subscribe</button>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Banner -->
+    <section class="emergency-banner">
+        <div class="container">
+            <div class="emergency-content">
+                <div class="emergency-text">
+                    <i class="fas fa-ambulance"></i>
+                    <div><h2>Emergency Services Available 24/7</h2><p>Immediate medical attention when you need it most</p></div>
+                </div>
+                <div class="emergency-contact">
+                    <a href="tel:911" class="emergency-number"><i class="fas fa-phone"></i> Emergency: 911</a>
+                    <a href="emergency.html" class="btn btn-light">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo"><img src="images/logo-white.svg" alt="MediCare"><span>MediCare Hospital</span></div>
+                    <p>Providing quality healthcare services with compassion and excellence since 2010.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="about.html">About Us</a></li><li><a href="departments.html">Departments</a></li><li><a href="doctors.html">Doctors</a></li><li><a href="services.html">Services</a></li></ul></div>
+                <div class="footer-links"><h4>Patient Services</h4><ul><li><a href="appointments.html">Book Appointment</a></li><li><a href="patient-login.html">Patient Portal</a></li><li><a href="laboratory.html">Lab Results</a></li><li><a href="pharmacy.html">Pharmacy</a></li></ul></div>
+                <div class="footer-contact"><h4>Contact Info</h4><ul><li><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</li><li><i class="fas fa-phone"></i> +251 911 234 567</li><li><i class="fas fa-envelope"></i> info@medicare.com</li><li><i class="fas fa-clock"></i> 24/7 Emergency Services</li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 MediCare Hospital. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms & Conditions</a><a href="faq.html">FAQ</a></div></div>
+        </div>
+    </footer>
+
+    <!-- AI Assistant -->
+    <div class="ai-assistant" id="aiAssistant">
+        <button class="ai-toggle" id="aiToggle"><i class="fas fa-robot"></i><span class="ai-badge">AI</span></button>
+        <div class="ai-chat" id="aiChat">
+            <div class="ai-header"><i class="fas fa-robot"></i><h4>AI Health Assistant</h4><button class="ai-close"><i class="fas fa-times"></i></button></div>
+            <div class="ai-messages" id="aiMessages"><div class="message ai"><p>👋 Hello! I'm your AI health assistant.</p></div></div>
+            <div class="ai-input"><input type="text" placeholder="Ask me anything..." id="aiInput"><button id="aiSend"><i class="fas fa-paper-plane"></i></button></div>
+        </div>
+    </div>
+
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/qr.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/scanner.js"></script>
+</body>
+      </html>
