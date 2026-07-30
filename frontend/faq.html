@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - MediCare Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/component-styles.css">
+</head>
+<body>
+    <div id="loading-screen"><div class="loader-container"><div class="hospital-loader"><div class="heartbeat"></div><div class="pulse-ring"></div></div><div class="loader-text"><span>M</span><span>e</span><span>d</span><span>i</span><span>C</span><span>a</span><span>r</span><span>e</span></div><div class="loader-progress"><div class="progress-bar" id="loader-progress-bar"></div></div><p class="loading-message">Loading FAQs...</p></div></div>
+
+    <!-- Top Bar -->
+    <div class="top-bar" id="topBar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <div class="contact-info">
+                        <a href="tel:+251911234567"><i class="fas fa-phone-alt"></i> +251 911 234 567</a>
+                        <a href="mailto:info@medicare.com"><i class="fas fa-envelope"></i> info@medicare.com</a>
+                        <span><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</span>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <div class="emergency-number"><i class="fas fa-ambulance"></i><span>Emergency: <strong>911</strong></span></div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="mainNav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo"><a href="index.html"><img src="images/logo.svg" alt="MediCare Hospital" class="logo-img"><span class="logo-text">Medi<span>Care</span></span></a></div>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a href="departments.html" class="nav-link"><i class="fas fa-hospital"></i> Departments</a></li>
+                    <li class="nav-item"><a href="doctors.html" class="nav-link"><i class="fas fa-user-md"></i> Doctors</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link"><i class="fas fa-stethoscope"></i> Services</a></li>
+                    <li class="nav-item"><a href="appointments.html" class="nav-link"><i class="fas fa-calendar-check"></i> Book Appointment</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="search-toggle" id="searchToggle"><i class="fas fa-search"></i></button>
+                    <a href="patient-login.html" class="btn-login"><i class="fas fa-user-circle"></i> Login</a>
+                    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Frequently Asked Questions</h1>
+                <p>Find answers to common questions about our hospital and services</p>
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="separator"><i class="fas fa-chevron-right"></i></li>
+                        <li aria-current="page">FAQ</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Search -->
+    <section class="faq-search">
+        <div class="container">
+            <div class="faq-search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="faqSearch" placeholder="Search frequently asked questions...">
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Categories -->
+    <section class="faq-categories">
+        <div class="container">
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all">All Questions</button>
+                <button class="category-tab" data-category="general">General</button>
+                <button class="category-tab" data-category="appointments">Appointments</button>
+                <button class="category-tab" data-category="billing">Billing & Insurance</button>
+                <button class="category-tab" data-category="services">Services</button>
+                <button class="category-tab" data-category="emergency">Emergency</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-accordion">
+                <!-- Category: General -->
+                <div class="faq-item" data-category="general">
+                    <div class="faq-question">
+                        <h3>What are the hospital visiting hours?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>General visiting hours are from 9:00 AM to 8:00 PM daily. ICU visiting hours are from 4:00 PM to 6:00 PM. Please check with the department for any specific restrictions or special visiting arrangements.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="general">
+                    <div class="faq-question">
+                        <h3>How do I get to MediCare Hospital?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We are located in Addis Ababa, Bole Sub-city, Woreda 03, near Bole International Airport. You can use public transportation or taxi services. We have ample parking available for visitors and patients.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="general">
+                    <div class="faq-question">
+                        <h3>What documents should I bring for my visit?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Please bring your ID, insurance card, referral letter (if any), previous medical records, and list of current medications. If you're a new patient, arrive 15 minutes early for registration.</p>
+                    </div>
+                </div>
+
+                <!-- Category: Appointments -->
+                <div class="faq-item" data-category="appointments">
+                    <div class="faq-question">
+                        <h3>How do I book an appointment?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can book an appointment through our online booking system at appointments.html, call us at +251 911 234 567, or visit our reception desk in person. We recommend booking at least 2-3 days in advance.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="appointments">
+                    <div class="faq-question">
+                        <h3>Can I cancel or reschedule my appointment?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, you can cancel or reschedule your appointment by calling our reception or through the patient portal. Please provide at least 24 hours notice to avoid cancellation fees.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="appointments">
+                    <div class="faq-question">
+                        <h3>What if I need a same-day appointment?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We reserve a limited number of same-day appointments for urgent cases. Please call us early in the morning to check availability or visit our emergency department for urgent medical needs.</p>
+                    </div>
+                </div>
+
+                <!-- Category: Billing & Insurance -->
+                <div class="faq-item" data-category="billing">
+                    <div class="faq-question">
+                        <h3>What insurance plans do you accept?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept most major insurance plans. Please contact our billing department at +251 911 234 567 ext. 404 to confirm if your specific insurance is accepted.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="billing">
+                    <div class="faq-question">
+                        <h3>How do I pay my hospital bill?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can pay your bill online through the patient portal, at our billing office, or via bank transfer. We accept cash, credit/debit cards, and mobile money payments.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="billing">
+                    <div class="faq-question">
+                        <h3>Do you offer payment plans?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer flexible payment plans for patients who need financial assistance. Please speak with our billing department to discuss your options.</p>
+                    </div>
+                </div>
+
+                <!-- Category: Services -->
+                <div class="faq-item" data-category="services">
+                    <div class="faq-question">
+                        <h3>What diagnostic services are available?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer comprehensive diagnostic services including laboratory testing, radiology (X-Ray, MRI, CT Scan, Ultrasound), cardiac testing, and specialized pathology services.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="services">
+                    <div class="faq-question">
+                        <h3>How long does it take to get test results?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most test results are available within 24-48 hours. Emergency results are available within a few hours. You can access your results through the patient portal.</p>
+                    </div>
+                </div>
+
+                <!-- Category: Emergency -->
+                <div class="faq-item" data-category="emergency">
+                    <div class="faq-question">
+                        <h3>What should I do in a medical emergency?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>In a medical emergency, call 911 immediately. If you're at or near the hospital, go directly to our emergency department. Do not wait if you experience chest pain, difficulty breathing, severe bleeding, or sudden confusion.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="emergency">
+                    <div class="faq-question">
+                        <h3>Is the emergency department open 24/7?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, our emergency department is open 24 hours a day, 7 days a week, 365 days a year. We have a dedicated team of emergency physicians and nurses always ready to provide immediate care.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="emergency">
+                    <div class="faq-question">
+                        <h3>Does MediCare have ambulance services?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we have a fleet of fully equipped ambulances staffed by trained paramedics. Call our emergency number at +251 911 234 567 to request an ambulance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Results -->
+            <div class="no-results" id="faqNoResults" style="display: none;">
+                <div class="empty-state">
+                    <i class="fas fa-search"></i>
+                    <h3>No FAQs Found</h3>
+                    <p>Try adjusting your search or browse by category</p>
+                </div>
+            </div>
+
+            <!-- Still Have Questions -->
+            <div class="faq-contact">
+                <h3>Still Have Questions?</h3>
+                <p>Our team is here to help. Contact us directly and we'll be happy to assist you.</p>
+                <div class="faq-contact-buttons">
+                    <a href="contact.html" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact Us</a>
+                    <a href="tel:+251911234567" class="btn btn-secondary"><i class="fas fa-phone"></i> Call Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Banner -->
+    <section class="emergency-banner">
+        <div class="container">
+            <div class="emergency-content">
+                <div class="emergency-text">
+                    <i class="fas fa-ambulance"></i>
+                    <div><h2>Emergency Services Available 24/7</h2><p>Immediate medical attention when you need it most</p></div>
+                </div>
+                <div class="emergency-contact">
+                    <a href="tel:911" class="emergency-number"><i class="fas fa-phone"></i> Emergency: 911</a>
+                    <a href="emergency.html" class="btn btn-light">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo"><img src="images/logo-white.svg" alt="MediCare"><span>MediCare Hospital</span></div>
+                    <p>Providing quality healthcare services with compassion and excellence since 2010.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="about.html">About Us</a></li><li><a href="departments.html">Departments</a></li><li><a href="doctors.html">Doctors</a></li><li><a href="services.html">Services</a></li></ul></div>
+                <div class="footer-links"><h4>Patient Services</h4><ul><li><a href="appointments.html">Book Appointment</a></li><li><a href="patient-login.html">Patient Portal</a></li><li><a href="laboratory.html">Lab Results</a></li><li><a href="pharmacy.html">Pharmacy</a></li></ul></div>
+                <div class="footer-contact"><h4>Contact Info</h4><ul><li><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</li><li><i class="fas fa-phone"></i> +251 911 234 567</li><li><i class="fas fa-envelope"></i> info@medicare.com</li><li><i class="fas fa-clock"></i> 24/7 Emergency Services</li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 MediCare Hospital. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms & Conditions</a><a href="faq.html">FAQ</a></div></div>
+        </div>
+    </footer>
+
+    <!-- AI Assistant -->
+    <div class="ai-assistant" id="aiAssistant">
+        <button class="ai-toggle" id="aiToggle"><i class="fas fa-robot"></i><span class="ai-badge">AI</span></button>
+        <div class="ai-chat" id="aiChat">
+            <div class="ai-header"><i class="fas fa-robot"></i><h4>AI Health Assistant</h4><button class="ai-close"><i class="fas fa-times"></i></button></div>
+            <div class="ai-messages" id="aiMessages"><div class="message ai"><p>👋 Hello! I'm your AI health assistant.</p></div></div>
+            <div class="ai-input"><input type="text" placeholder="Ask me anything..." id="aiInput"><button id="aiSend"><i class="fas fa-paper-plane"></i></button></div>
+        </div>
+    </div>
+
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/qr.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/scanner.js"></script>
+</body>
+                                                                    </html>
