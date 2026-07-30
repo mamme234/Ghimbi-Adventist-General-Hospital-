@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments - MediCare Hospital</title>
+    <meta name="description" content="Explore all medical departments at MediCare Hospital.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/component-styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="hospital-loader">
+                <div class="heartbeat"></div>
+                <div class="pulse-ring"></div>
+            </div>
+            <div class="loader-text">
+                <span>M</span><span>e</span><span>d</span><span>i</span>
+                <span>C</span><span>a</span><span>r</span><span>e</span>
+            </div>
+            <div class="loader-progress">
+                <div class="progress-bar" id="loader-progress-bar"></div>
+            </div>
+            <p class="loading-message">Loading departments...</p>
+        </div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar" id="topBar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <div class="contact-info">
+                        <a href="tel:+251911234567"><i class="fas fa-phone-alt"></i> +251 911 234 567</a>
+                        <a href="mailto:info@medicare.com"><i class="fas fa-envelope"></i> info@medicare.com</a>
+                        <span><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</span>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <div class="emergency-number"><i class="fas fa-ambulance"></i><span>Emergency: <strong>911</strong></span></div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="mainNav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="MediCare Hospital" class="logo-img">
+                        <span class="logo-text">Medi<span>Care</span></span>
+                    </a>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active"><i class="fas fa-hospital"></i> Departments <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="departments.html">All Departments</a></li>
+                            <li><a href="department.html?dept=cardiology">Cardiology</a></li>
+                            <li><a href="department.html?dept=neurology">Neurology</a></li>
+                            <li><a href="department.html?dept=orthopedics">Orthopedics</a></li>
+                            <li><a href="department.html?dept=pediatrics">Pediatrics</a></li>
+                            <li><a href="department.html?dept=gynecology">Gynecology</a></li>
+                            <li><a href="department.html?dept=radiology">Radiology</a></li>
+                            <li><a href="department.html?dept=emergency">Emergency</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="doctors.html" class="nav-link"><i class="fas fa-user-md"></i> Doctors</a></li>
+                    <li class="nav-item"><a href="appointments.html" class="nav-link"><i class="fas fa-calendar-check"></i> Book Appointment</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="search-toggle" id="searchToggle"><i class="fas fa-search"></i></button>
+                    <a href="patient-login.html" class="btn-login"><i class="fas fa-user-circle"></i> Login</a>
+                    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <button class="search-close" id="searchClose"><i class="fas fa-times"></i></button>
+        <div class="search-container">
+            <form class="search-form"><input type="text" placeholder="Search for departments..." id="searchInput"><button type="submit"><i class="fas fa-search"></i></button></form>
+            <div class="search-suggestions">
+                <div class="suggestion-group">
+                    <h4>Popular Departments</h4>
+                    <a href="department.html?dept=cardiology">Cardiology</a>
+                    <a href="department.html?dept=neurology">Neurology</a>
+                    <a href="department.html?dept=orthopedics">Orthopedics</a>
+                    <a href="department.html?dept=emergency">Emergency</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Our Departments</h1>
+                <p>World-class medical care across multiple specialties</p>
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="separator"><i class="fas fa-chevron-right"></i></li>
+                        <li aria-current="page">Departments</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Department Filters -->
+    <section class="department-filters">
+        <div class="container">
+            <div class="filter-bar">
+                <div class="search-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="departmentSearch" placeholder="Search departments by name..." class="filter-input">
+                </div>
+                <div class="filter-group">
+                    <select id="departmentFilter" class="filter-select">
+                        <option value="all">All Departments</option>
+                        <option value="cardiology">Cardiology</option>
+                        <option value="neurology">Neurology</option>
+                        <option value="orthopedics">Orthopedics</option>
+                        <option value="pediatrics">Pediatrics</option>
+                        <option value="gynecology">Gynecology</option>
+                        <option value="radiology">Radiology</option>
+                        <option value="emergency">Emergency</option>
+                        <option value="dermatology">Dermatology</option>
+                        <option value="ophthalmology">Ophthalmology</option>
+                    </select>
+                </div>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid"><i class="fas fa-th"></i></button>
+                    <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Grid -->
+    <section class="departments-section">
+        <div class="container">
+            <div class="departments-grid" id="departmentsGrid">
+                <!-- Department Card 1 -->
+                <div class="department-card animate-on-scroll" data-department="cardiology">
+                    <div class="department-image">
+                        <img src="images/departments/cardiology.jpg" alt="Cardiology Department">
+                        <div class="department-badge">24/7</div>
+                    </div>
+                    <div class="department-info">
+                        <div class="department-icon"><i class="fas fa-heart"></i></div>
+                        <h3>Cardiology</h3>
+                        <p>Comprehensive heart care services including diagnosis, treatment, and rehabilitation.</p>
+                        <div class="department-meta">
+                            <span><i class="fas fa-user-md"></i> 15 Doctors</span>
+                            <span><i class="fas fa-bed"></i> 30 Beds</span>
+                            <span><i class="fas fa-clock"></i> 24/7</span>
+                        </div>
+                        <div class="department-actions">
+                            <a href="department.html?dept=cardiology" class="btn btn-primary btn-sm">View Details</a>
+                            <a href="appointments.html?dept=cardiology" class="btn btn-outline btn-sm">Book Appointment</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department Card 2 -->
+                <div class="department-card animate-on-scroll" data-department="neurology">
+                    <div class="department-image">
+                        <img src="images/departments/neurology.jpg" alt="Neurology Department">
+                    </div>
+                    <div class="department-info">
+                        <div class="department-icon"><i class="fas fa-brain"></i></div>
+                        <h3>Neurology</h3>
+                        <p>Advanced diagnosis and treatment for brain, nervous system, and spinal cord disorders.</p>
+                        <div class="department-meta">
+                            <span><i class="fas fa-user-md"></i> 12 Doctors</span>
+                            <span><i class="fas fa-bed"></i> 25 Beds</span>
+                            <span><i class="fas fa-clock"></i> 8:00 AM - 8:00 PM</span>
+                        </div>
+                        <div class="department-actions">
+                            <a href="department.html?dept=neurology" class="btn btn-primary btn-sm">View Details</a>
+                            <a href="appointments.html?dept=neurology" class="btn btn-outline btn-sm">Book Appointment</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department Card 3 -->
+                <div class="department-card animate-on-scroll" data-department="orthopedics">
+                    <div class="department-image">
+                        <img src="images/departments/orthopedics.jpg" alt="Orthopedics Department">
+                    </div>
+                    <div class="department-info">
+                        <div class="department-icon"><i class="fas fa-bone"></i></div>
+                        <h3>Orthopedics</h3>
+                        <p>Expert care for bones, joints, muscles, and sports injuries with advanced surgical options.</p>
+                        <div class="department-meta">
+                            <span><i class="fas fa-user-md"></i> 10 Doctors</span>
+                            <span><i class="fas fa-bed"></i> 20 Beds</span>
+                            <span><i class="fas fa-clock"></i> 8:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="department-actions">
+                            <a href="department.html?dept=orthopedics" class="btn btn-primary btn-sm">View Details</a>
+                            <a href="appointments.html?dept=orthopedics" class="btn btn-outline btn-sm">Book Appointment</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department Card 4 -->
+                <div class="department-card animate-on-scroll" data-department="pediatrics">
+                    <div class="department-image">
+                        <img src="images/departments/pediatrics.jpg" alt="Pediatrics Department">
+                    </div>
+                    <div class="department-info">
+                        <div class="department-icon"><i class="fas fa-child"></i></div>
+                        <h3>Pediatrics</h3>
+                        <p>Specialized healthcare for infants, children, and adolescents in a child-friendly environment.</p>
+                        <div class="department-meta">
+                            <span><i class="fas fa-user-md"></i> 8 Doctors</span>
+                            <span><i class="fas fa-bed"></i> 25 Beds</span>
+                            <span><i class="fas fa-clock"></i> 8:00 AM - 8:00 PM</span>
+                        </div>
+                        <div class="department-actions">
+                            <a href="department.html?dept=pediatrics" class="btn btn-primary btn-sm">View Details</a>
+                            <a href="appointments.html?dept=pediatrics" class="btn btn-outline btn-sm">Book Appointment</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department Card 5 -->
+                <div class="department-card animate-on-scroll" data-department="gynecology">
+                    <div class="department-image">
+                        <img src="images/departments/gynecology.jpg" alt="Gynecology Department">
+                    </div>
+                    <div class="department-info">
+                        <div class="department-icon"><i class="fas fa-female"></i></div>
+                        <h3>Gynecology</h3>
+                        <p>Comprehensive women's health services including obstetrics, fertility, and reproductive health.</p>
+                        <div class="department-meta">
+                            <span><i class="fas fa-user-md"></i> 9 Doctors</span>
+                            <span><i class="fas fa-bed"></i> 30 Beds</span>
+                            <span><i class="fas fa-clock"></i> 24/7</span>
+                        </div>
+                        <div class="department-actions">
+                            <a href="department.html?dept=gynecology" class="btn btn-primary btn-sm">View Details</a>
+                            <a href="appointments.html?dept=gynecology" class="btn btn-outline btn-sm">Book Appointment</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department Card 6 -->
+                <div class="department-card animate-on-scroll" data-department="radiology">
+                    <div class="department-image">
+                        <img src="images/departments/radiology.jpg" alt="Radiology Department">
+                    </div>
+                    <div class="department-info">
+                        <div class="department-icon"><i class="fas fa-x-ray"></i></div>
+                        <h3>Radiology</h3>
+                        <p>State-of-the-art imaging services including X-Ray, MRI, CT Scan, and Ultrasound.</p>
+                        <div class="department-meta">
+                            <span><i class="fas fa-user-md"></i> 6 Doctors</span>
+                            <span><i class="fas fa-microscope"></i> Advanced Imaging</span>
+                            <span><i class="fas fa-clock"></i> 7:00 AM - 9:00 PM</span>
+                        </div>
+                        <div class="department-actions">
+                            <a href="department.html?dept=radiology" class="btn btn-primary btn-sm">View Details</a>
+                            <a href="appointments.html?dept=radiology" class="btn btn-outline btn-sm">Book Appointment</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department Card 7 -->
+                <div class="department-card animate-on-scroll" data-department="emergency">
+                    <div class="department-image">
+                        <img src="images/departments/emergency.jpg" alt="Emergency Department">
+                        <div class="department-badge">24/7</div>
+                    </div>
+                    <div class="department-info">
+                        <div class="department-icon"><i class="fas fa-ambulance"></i></div>
+                        <h3>Emergency</h3>
+                        <p>24/7 emergency care with rapid response teams and fully equipped trauma center.</p>
+                        <div class="department-meta">
+                            <span><i class="fas fa-user-md"></i> 12 Doctors</span>
+                            <span><i class="fas fa-bed"></i> 40 Beds</span>
+                            <span><i class="fas fa-clock"></i> 24/7</span>
+                        </div>
+                        <div class="department-actions">
+                            <a href="department.html?dept=emergency" class="btn btn-primary btn-sm">View Details</a>
+                            <a href="emergency.html" class="btn btn-danger btn-sm">Emergency</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department Card 8 -->
+                <div class="department-card animate-on-scroll" data-department="dermatology">
+                    <div class="department-image">
+                        <img src="images/departments/dermatology.jpg" alt="Dermatology Department">
+                    </div>
+                    <div class="department-info">
+                        <div class="department-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                        <h3>Dermatology</h3>
+                        <p>Expert care for skin, hair, and nail conditions with advanced treatment options.</p>
+                        <div class="department-meta">
+                            <span><i class="fas fa-user-md"></i> 5 Doctors</span>
+                            <span><i class="fas fa-clinic-medical"></i> Skin Care</span>
+                            <span><i class="fas fa-clock"></i> 8:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="department-actions">
+                            <a href="department.html?dept=dermatology" class="btn btn-primary btn-sm">View Details</a>
+                            <a href="appointments.html?dept=dermatology" class="btn btn-outline btn-sm">Book Appointment</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department Card 9 -->
+                <div class="department-card animate-on-scroll" data-department="ophthalmology">
+                    <div class="department-image">
+                        <img src="images/departments/ophthalmology.jpg" alt="Ophthalmology Department">
+                    </div>
+                    <div class="department-info">
+                        <div class="department-icon"><i class="fas fa-eye"></i></div>
+                        <h3>Ophthalmology</h3>
+                        <p>Comprehensive eye care including vision correction, cataract surgery, and treatment.</p>
+                        <div class="department-meta">
+                            <span><i class="fas fa-user-md"></i> 6 Doctors</span>
+                            <span><i class="fas fa-surgery"></i> Surgeries</span>
+                            <span><i class="fas fa-clock"></i> 8:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="department-actions">
+                            <a href="department.html?dept=ophthalmology" class="btn btn-primary btn-sm">View Details</a>
+                            <a href="appointments.html?dept=ophthalmology" class="btn btn-outline btn-sm">Book Appointment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Results -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <div class="empty-state">
+                    <i class="fas fa-search"></i>
+                    <h3>No Departments Found</h3>
+                    <p>Try adjusting your search or filter criteria</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Banner -->
+    <section class="emergency-banner">
+        <div class="container">
+            <div class="emergency-content">
+                <div class="emergency-text">
+                    <i class="fas fa-ambulance"></i>
+                    <div>
+                        <h2>Emergency Services Available 24/7</h2>
+                        <p>Immediate medical attention when you need it most</p>
+                    </div>
+                </div>
+                <div class="emergency-contact">
+                    <a href="tel:911" class="emergency-number"><i class="fas fa-phone"></i> Emergency: 911</a>
+                    <a href="emergency.html" class="btn btn-light">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="images/logo-white.svg" alt="MediCare">
+                        <span>MediCare Hospital</span>
+                    </div>
+                    <p>Providing quality healthcare services with compassion and excellence since 2010.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="departments.html">Departments</a></li>
+                        <li><a href="doctors.html">Doctors</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Patient Services</h4>
+                    <ul>
+                        <li><a href="appointments.html">Book Appointment</a></li>
+                        <li><a href="patient-login.html">Patient Portal</a></li>
+                        <li><a href="laboratory.html">Lab Results</a></li>
+                        <li><a href="pharmacy.html">Pharmacy</a></li>
+                        <li><a href="emergency.html">Emergency</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</li>
+                        <li><i class="fas fa-phone"></i> +251 911 234 567</li>
+                        <li><i class="fas fa-envelope"></i> info@medicare.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Emergency Services</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MediCare Hospital. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="faq.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Assistant -->
+    <div class="ai-assistant" id="aiAssistant">
+        <button class="ai-toggle" id="aiToggle"><i class="fas fa-robot"></i><span class="ai-badge">AI</span></button>
+        <div class="ai-chat" id="aiChat">
+            <div class="ai-header"><i class="fas fa-robot"></i><h4>AI Health Assistant</h4><button class="ai-close"><i class="fas fa-times"></i></button></div>
+            <div class="ai-messages" id="aiMessages"><div class="message ai"><p>👋 Hello! I'm your AI health assistant. How can I help you today?</p></div></div>
+            <div class="ai-input"><input type="text" placeholder="Ask me anything..." id="aiInput"><button id="aiSend"><i class="fas fa-paper-plane"></i></button></div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/qr.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/scanner.js"></script>
+</body>
+                  </html>
