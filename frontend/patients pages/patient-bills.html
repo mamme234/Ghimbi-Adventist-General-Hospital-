@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bills & Payments - MediCare Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar (same as previous) -->
+        <aside class="dashboard-sidebar" id="sidebar">...</aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="dashboard-header-left">
+                    <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+                    <div>
+                        <h1>Bills & Payments</h1>
+                        <p>View and manage your medical bills</p>
+                    </div>
+                </div>
+                <div class="dashboard-header-right">
+                    <div class="dashboard-search">
+                        <input type="text" placeholder="Search bills...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="dashboard-header-actions">
+                        <button><i class="fas fa-bell"></i></button>
+                        <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=2563eb&color=fff" alt="John Doe" class="user-avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Billing Summary -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 15px; margin-bottom: 25px;">
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 28px; font-weight: 700; color: var(--primary-color);">$1,250</div>
+                    <div style="font-size: 14px; color: var(--mid-gray);">Total Billed</div>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 28px; font-weight: 700; color: var(--accent-green);">$800</div>
+                    <div style="font-size: 14px; color: var(--mid-gray);">Paid</div>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 28px; font-weight: 700; color: var(--accent-red);">$450</div>
+                    <div style="font-size: 14px; color: var(--mid-gray);">Due Amount</div>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 28px; font-weight: 700; color: var(--accent-yellow);">$200</div>
+                    <div style="font-size: 14px; color: var(--mid-gray);">Insurance Covered</div>
+                </div>
+            </div>
+
+            <!-- Bills List -->
+            <div class="dashboard-table-container">
+                <div class="dashboard-table-header">
+                    <h3>All Bills</h3>
+                    <button class="btn btn-sm btn-outline" onclick="downloadAllBills()"><i class="fas fa-download"></i> Download All</button>
+                </div>
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Bill #</th>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#BILL-2024-001</td>
+                            <td>Jan 20, 2024</td>
+                            <td>Cardiology Consultation</td>
+                            <td>$250</td>
+                            <td><span class="status-badge completed">Paid</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewBill(1)"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="downloadBill(1)"><i class="fas fa-download"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#BILL-2024-002</td>
+                            <td>Jan 15, 2024</td>
+                            <td>Neurology Consultation</td>
+                            <td>$300</td>
+                            <td><span class="status-badge warning">Pending</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewBill(2)"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="downloadBill(2)"><i class="fas fa-download"></i></button>
+                                    <button class="btn-primary" style="background: #22c55e;" onclick="payBill(2)"><i class="fas fa-credit-card"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#BILL-2024-003</td>
+                            <td>Jan 10, 2024</td>
+                            <td>Laboratory Tests</td>
+                            <td>$150</td>
+                            <td><span class="status-badge completed">Paid</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewBill(3)"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="downloadBill(3)"><i class="fas fa-download"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#BILL-2024-004</td>
+                            <td>Jan 5, 2024</td>
+                            <td>MRI Scan</td>
+                            <td>$550</td>
+                            <td><span class="status-badge warning">Pending</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewBill(4)"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="downloadBill(4)"><i class="fas fa-download"></i></button>
+                                    <button class="btn-primary" style="background: #22c55e;" onclick="payBill(4)"><i class="fas fa-credit-card"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Payment Methods -->
+            <div style="margin-top: 25px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray);">
+                    <h3 style="margin-bottom: 15px;"><i class="fas fa-credit-card" style="color: var(--primary-color);"></i> Quick Pay</h3>
+                    <p style="color: var(--mid-gray);">Pay your pending bills securely online</p>
+                    <div style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
+                        <button class="btn btn-primary" onclick="payNow()"><i class="fas fa-credit-card"></i> Pay Now</button>
+                        <button class="btn btn-outline" onclick="viewPaymentHistory()"><i class="fas fa-history"></i> History</button>
+                    </div>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray);">
+                    <h3 style="margin-bottom: 15px;"><i class="fas fa-shield-alt" style="color: var(--accent-green);"></i> Insurance</h3>
+                    <p style="color: var(--mid-gray);">Coverage: Ethiopia Insurance Corporation</p>
+                    <div style="margin-top: 15px;">
+                        <span class="badge badge-success"><i class="fas fa-check-circle"></i> Active</span>
+                        <span style="margin-left: 10px; font-size: 14px; color: var(--mid-gray);">Policy: EIC-2024-00123</span>
+                    </div>
+                    <button class="btn btn-sm btn-outline" style="margin-top: 10px;" onclick="viewInsurance()"><i class="fas fa-file-invoice"></i> View Coverage</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'patient-login.html';
+            }
+        }
+
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+            localStorage.setItem('theme', html.getAttribute('data-theme'));
+        }
+
+        function viewBill(id) {
+            alert(`Viewing bill #${id}`);
+        }
+
+        function downloadBill(id) {
+            alert(`Downloading bill #${id}`);
+        }
+
+        function payBill(id) {
+            if (confirm(`Pay bill #${id}?`)) {
+                alert(`Processing payment for bill #${id}...`);
+            }
+        }
+
+        function downloadAllBills() {
+            alert('Downloading all bills...');
+        }
+
+        function payNow() {
+            alert('Redirecting to payment gateway...');
+        }
+
+        function viewPaymentHistory() {
+            alert('Viewing payment history...');
+        }
+
+        function viewInsurance() {
+            alert('Viewing insurance coverage details...');
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+</body>
+  </html>
