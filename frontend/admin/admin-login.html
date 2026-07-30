@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login - MediCare Hospital</title>
+    <title>Admin Login - Ghimbi Adventist General Hospital</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="../css/animations.css">
-    <link rel="stylesheet" href="../css/dark-mode.css">
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
 </head>
 <body>
     <div class="login-page">
@@ -22,19 +20,89 @@
         </div>
 
         <div class="login-container">
-            <div class="login-card">
+            <div class="login-card" style="max-width: 450px;">
                 <div class="login-header">
                     <div class="logo">
-                        <img src="../images/logo.svg" alt="MediCare Hospital">
-                        <span>Medi<span>Care</span></span>
+                        <img src="../images/logo.svg" alt="Ghimbi Adventist">
+                        <span style="font-size: 20px;">Ghimbi <span style="color: #1a6e3c;">Adventist</span></span>
                     </div>
-                    <h1>Administrator Portal</h1>
-                    <p>Manage hospital operations and settings</p>
+                    <h1 style="font-size: 24px;">🛡️ Admin Portal</h1>
+                    <p style="font-size: 14px; color: #64748b;">Sign in to manage the hospital</p>
                 </div>
 
-                <div class="role-selector">
-                    <div class="role-option" data-role="patient">
-                        <i class="fas fa-user"></i>
+                <form id="loginForm">
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 14px; font-weight: 600; display: block; margin-bottom: 5px;">Email Address</label>
+                        <div style="position: relative;">
+                            <i class="fas fa-envelope" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #94a3b8;"></i>
+                            <input type="email" id="emailInput" value="muhammadthe3rdd@gmail.com" style="width: 100%; padding: 12px 15px 12px 45px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 14px;">
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 14px; font-weight: 600; display: block; margin-bottom: 5px;">Password</label>
+                        <div style="position: relative;">
+                            <i class="fas fa-lock" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #94a3b8;"></i>
+                            <input type="password" id="passwordInput" value="admin123" style="width: 100%; padding: 12px 15px 12px 45px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 14px;">
+                            <button type="button" onclick="togglePassword()" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #94a3b8; cursor: pointer;">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
+                            <input type="checkbox" checked> Remember me
+                        </label>
+                        <a href="#" style="font-size: 14px; color: #1a6e3c; text-decoration: none;">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" id="loginBtn" style="width: 100%; padding: 14px; background: linear-gradient(135deg, #1a6e3c, #2a8a4a); color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                        <i class="fas fa-sign-in-alt"></i> Sign In as Admin
+                    </button>
+
+                    <div style="text-align: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;">
+                        <p style="font-size: 13px; color: #94a3b8;">
+                            <i class="fas fa-shield-alt" style="color: #1a6e3c;"></i> 
+                            Secure login · Admin Access Only
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const input = document.getElementById('passwordInput');
+            const icon = document.querySelector('.fa-eye, .fa-eye-slash');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.className = 'fas fa-eye-slash';
+            } else {
+                input.type = 'password';
+                icon.className = 'fas fa-eye';
+            }
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('loginBtn');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing In...';
+            btn.style.opacity = '0.7';
+            
+            setTimeout(() => {
+                window.location.href = 'admin-dashboard.html';
+            }, 1500);
+        });
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+</body>
+</html>                        <i class="fas fa-user"></i>
                         <span>Patient</span>
                     </div>
                     <div class="role-option" data-role="doctor">
