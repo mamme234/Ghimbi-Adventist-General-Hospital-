@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receptionist Dashboard - MediCare Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="dashboard-sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <img src="../images/logo.svg" alt="MediCare">
+                <span>Medi<span>Care</span></span>
+            </div>
+            <div class="sidebar-user">
+                <img src="https://ui-avatars.com/api/?name=Reception&background=f59e0b&color=fff" alt="Receptionist" class="sidebar-user-avatar">
+                <div class="sidebar-user-info">
+                    <h4>Jane Smith</h4>
+                    <p>Receptionist</p>
+                </div>
+            </div>
+            <nav class="sidebar-menu">
+                <div class="sidebar-menu-group">
+                    <div class="sidebar-menu-group-title">Main</div>
+                    <a href="receptionist-dashboard.html" class="sidebar-menu-item active"><i class="fas fa-th-large"></i><span>Dashboard</span></a>
+                    <a href="#" class="sidebar-menu-item"><i class="fas fa-user-plus"></i><span>Register Patient</span></a>
+                    <a href="#" class="sidebar-menu-item"><i class="fas fa-id-card"></i><span>Print Patient Card</span></a>
+                    <a href="#" class="sidebar-menu-item"><i class="fas fa-users"></i><span>Queue</span><span class="badge">5</span></a>
+                    <a href="#" class="sidebar-menu-item"><i class="fas fa-calendar-check"></i><span>Appointment Booking</span></a>
+                    <a href="#" class="sidebar-menu-item"><i class="fas fa-search"></i><span>Search Patient</span></a>
+                    <a href="#" class="sidebar-menu-item"><i class="fas fa-user-friends"></i><span>Visitors</span></a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="receptionist-login.html" class="sidebar-menu-item" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i><span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="dashboard-header-left">
+                    <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+                    <div>
+                        <h1>Reception Dashboard</h1>
+                        <p>Welcome back, Jane!</p>
+                    </div>
+                </div>
+                <div class="dashboard-header-right">
+                    <div class="dashboard-search">
+                        <input type="text" placeholder="Search patient...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="dashboard-header-actions">
+                        <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+                        <img src="https://ui-avatars.com/api/?name=Reception&background=f59e0b&color=fff" alt="Receptionist" class="user-avatar">
+                    </div>
+                </div>
+            </header>
+
+            <section class="dashboard-cards">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header"><h3>Today's Patients</h3><i class="fas fa-users" style="color: #2563eb;"></i></div>
+                    <div class="dashboard-card-value">18</div>
+                    <div class="dashboard-card-change positive"><i class="fas fa-arrow-up"></i> 12 checked in</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header"><h3>Queue</h3><i class="fas fa-clock" style="color: #f59e0b;"></i></div>
+                    <div class="dashboard-card-value">5</div>
+                    <div class="dashboard-card-change negative"><i class="fas fa-user"></i> Waiting</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header"><h3>Appointments</h3><i class="fas fa-calendar-check" style="color: #22c55e;"></i></div>
+                    <div class="dashboard-card-value">8</div>
+                    <div class="dashboard-card-change positive"><i class="fas fa-check-circle"></i> Today</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header"><h3>Visitors</h3><i class="fas fa-user-friends" style="color: #7c3aed;"></i></div>
+                    <div class="dashboard-card-value">6</div>
+                    <div class="dashboard-card-change"><i class="fas fa-clock"></i> Checked in</div>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 25px;">
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center; cursor: pointer;" onclick="registerPatient()">
+                    <i class="fas fa-user-plus" style="font-size: 28px; color: var(--primary-color);"></i>
+                    <h4 style="margin-top: 10px;">Register Patient</h4>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center; cursor: pointer;" onclick="printCard()">
+                    <i class="fas fa-id-card" style="font-size: 28px; color: var(--secondary-color);"></i>
+                    <h4 style="margin-top: 10px;">Print Card</h4>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center; cursor: pointer;" onclick="bookAppointment()">
+                    <i class="fas fa-calendar-plus" style="font-size: 28px; color: var(--accent-green);"></i>
+                    <h4 style="margin-top: 10px;">Book Appointment</h4>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center; cursor: pointer;" onclick="viewQueue()">
+                    <i class="fas fa-users" style="font-size: 28px; color: var(--accent-red);"></i>
+                    <h4 style="margin-top: 10px;">View Queue</h4>
+                </div>
+            </section>
+
+            <!-- Patient Queue -->
+            <section class="dashboard-table-container">
+                <div class="dashboard-table-header">
+                    <h3>Patient Queue</h3>
+                    <button class="btn btn-sm btn-primary" onclick="callNextPatient()"><i class="fas fa-bell"></i> Call Next</button>
+                </div>
+                <table class="dashboard-table">
+                    <thead>
+                        <tr><th>#</th><th>Patient</th><th>Department</th><th>Doctor</th><th>Time</th><th>Status</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><strong>John Doe</strong></td>
+                            <td>Cardiology</td>
+                            <td>Dr. Johnson</td>
+                            <td>10:00 AM</td>
+                            <td><span class="status-badge in-progress">In Progress</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><strong>Jane Smith</strong></td>
+                            <td>Neurology</td>
+                            <td>Dr. Chen</td>
+                            <td>10:30 AM</td>
+                            <td><span class="status-badge pending">Waiting</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><strong>David Williams</strong></td>
+                            <td>Orthopedics</td>
+                            <td>Dr. Hassan</td>
+                            <td>11:00 AM</td>
+                            <td><span class="status-badge pending">Waiting</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'receptionist-login.html';
+            }
+        }
+
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+            localStorage.setItem('theme', html.getAttribute('data-theme'));
+        }
+
+        function registerPatient() {
+            alert('Opening patient registration form...');
+        }
+
+        function printCard() {
+            alert('Printing patient card...');
+        }
+
+        function bookAppointment() {
+            alert('Opening appointment booking...');
+        }
+
+        function viewQueue() {
+            alert('Viewing full patient queue...');
+        }
+
+        function callNextPatient() {
+            alert('Calling next patient...');
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+</body>
+                  </html>
