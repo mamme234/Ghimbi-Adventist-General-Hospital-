@@ -1,0 +1,623 @@
+/* ============================================
+   LOGIN STYLES - COMPLETE
+============================================ */
+
+/* ============================================
+   LOGIN CONTAINER
+============================================ */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a365d, #2d6a9f);
+    position: relative;
+    overflow: hidden;
+}
+
+.login-page::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.2), transparent 70%);
+    animation: floatSlow 20s ease-in-out infinite;
+}
+
+.login-page::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.15), transparent 70%);
+    animation: floatSlow 25s ease-in-out infinite reverse;
+}
+
+/* ============================================
+   LOGIN BACKGROUND ANIMATIONS
+============================================ */
+.login-bg-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.login-bg-shapes .shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    animation: floatBubble 15s ease-in-out infinite;
+}
+
+.login-bg-shapes .shape:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    right: -100px;
+    animation-delay: 0s;
+}
+
+.login-bg-shapes .shape:nth-child(2) {
+    width: 200px;
+    height: 200px;
+    bottom: -50px;
+    left: -50px;
+    animation-delay: 3s;
+}
+
+.login-bg-shapes .shape:nth-child(3) {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 10%;
+    animation-delay: 6s;
+}
+
+.login-bg-shapes .shape:nth-child(4) {
+    width: 100px;
+    height: 100px;
+    bottom: 20%;
+    right: 10%;
+    animation-delay: 9s;
+}
+
+@keyframes floatBubble {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+    50% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+    75% {
+        transform: translate(20px, 30px) scale(1.05);
+    }
+}
+
+/* ============================================
+   LOGIN CARD
+============================================ */
+.login-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 420px;
+    padding: var(--spacing-md);
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-2xl);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all var(--transition-base);
+}
+
+.login-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.login-header .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.login-header .logo img {
+    height: 45px;
+}
+
+.login-header .logo span {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    color: var(--near-black);
+}
+
+.login-header .logo span span {
+    color: var(--primary-color);
+}
+
+.login-header h1 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--near-black);
+    margin-bottom: var(--spacing-xs);
+}
+
+.login-header p {
+    color: var(--mid-gray);
+    font-size: var(--font-size-sm);
+}
+
+/* ============================================
+   LOGIN FORM
+============================================ */
+.login-form {
+    margin-top: var(--spacing-lg);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-group label {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--near-black);
+    margin-bottom: var(--spacing-xs);
+}
+
+.form-group .input-wrapper {
+    position: relative;
+}
+
+.form-group .input-wrapper i {
+    position: absolute;
+    left: var(--spacing-md);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--mid-gray);
+    font-size: var(--font-size-base);
+    transition: color var(--transition-fast);
+}
+
+.form-group .input-wrapper input {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) calc(var(--spacing-md) * 2 + 20px);
+    border: 2px solid var(--light-gray);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    transition: all var(--transition-fast);
+    background: var(--white);
+    color: var(--near-black);
+}
+
+.form-group .input-wrapper input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    outline: none;
+}
+
+.form-group .input-wrapper input:focus + i {
+    color: var(--primary-color);
+}
+
+.form-group .input-wrapper .toggle-password {
+    position: absolute;
+    right: var(--spacing-md);
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: var(--mid-gray);
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    font-size: var(--font-size-base);
+}
+
+.form-group .input-wrapper .toggle-password:hover {
+    color: var(--near-black);
+}
+
+/* ============================================
+   LOGIN OPTIONS
+============================================ */
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: var(--spacing-lg) 0;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    cursor: pointer;
+}
+
+.remember-me input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.remember-me label {
+    font-size: var(--font-size-sm);
+    color: var(--dark-gray);
+    cursor: pointer;
+}
+
+.forgot-password {
+    font-size: var(--font-size-sm);
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.forgot-password:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* ============================================
+   LOGIN BUTTONS
+============================================ */
+.login-btn {
+    width: 100%;
+    padding: var(--spacing-md);
+    background: var(--primary-gradient);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+}
+
+.login-btn:active {
+    transform: scale(0.98);
+}
+
+.login-btn i {
+    font-size: var(--font-size-lg);
+}
+
+.login-btn.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.login-btn.loading i {
+    animation: spin 1s linear infinite;
+}
+
+/* ============================================
+   QR LOGIN
+============================================ */
+.qr-login-section {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--light-gray);
+}
+
+.qr-login-section p {
+    font-size: var(--font-size-sm);
+    color: var(--mid-gray);
+    margin-bottom: var(--spacing-sm);
+}
+
+.qr-login-btn {
+    background: transparent;
+    border: 2px solid var(--light-gray);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: var(--dark-gray);
+}
+
+.qr-login-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: rgba(37, 99, 235, 0.05);
+}
+
+.qr-login-btn i {
+    font-size: var(--font-size-xl);
+}
+
+/* ============================================
+   QR SCANNER MODAL
+============================================ */
+.qr-scanner-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-scanner-modal.active {
+    display: flex;
+}
+
+.qr-scanner-modal .modal-content {
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    text-align: center;
+}
+
+.qr-scanner-modal .modal-close {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: transparent;
+    border: none;
+    font-size: var(--font-size-2xl);
+    cursor: pointer;
+    color: var(--dark-gray);
+    transition: all var(--transition-fast);
+}
+
+.qr-scanner-modal .modal-close:hover {
+    color: var(--near-black);
+    transform: rotate(90deg);
+}
+
+.qr-scanner-modal .scanner-video {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: var(--radius-md);
+    background: #000;
+    margin: var(--spacing-md) auto;
+}
+
+.qr-scanner-modal .scanner-controls {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-top: var(--spacing-md);
+}
+
+.qr-scanner-modal .scanner-controls button {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+}
+
+.qr-scanner-modal .scanner-controls .btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.qr-scanner-modal .scanner-controls .btn-primary:hover {
+    background: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+.qr-scanner-modal .scanner-controls .btn-secondary {
+    background: var(--light-gray);
+    color: var(--dark-gray);
+}
+
+.qr-scanner-modal .scanner-controls .btn-secondary:hover {
+    background: var(--mid-gray);
+    color: var(--white);
+}
+
+/* ============================================
+   LOGIN FOOTER
+============================================ */
+.login-footer {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--light-gray);
+}
+
+.login-footer p {
+    font-size: var(--font-size-sm);
+    color: var(--mid-gray);
+}
+
+.login-footer a {
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.login-footer a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* ============================================
+   ROLE SELECTOR
+============================================ */
+.role-selector {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.role-selector .role-option {
+    padding: var(--spacing-sm);
+    border: 2px solid var(--light-gray);
+    border-radius: var(--radius-md);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    background: var(--white);
+}
+
+.role-selector .role-option:hover {
+    border-color: var(--primary-color);
+    background: rgba(37, 99, 235, 0.05);
+}
+
+.role-selector .role-option.active {
+    border-color: var(--primary-color);
+    background: rgba(37, 99, 235, 0.08);
+}
+
+.role-selector .role-option i {
+    font-size: var(--font-size-2xl);
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: var(--spacing-xs);
+}
+
+.role-selector .role-option span {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+
+/* ============================================
+   RESPONSIVE LOGIN
+============================================ */
+@media (max-width: 576px) {
+    .login-container {
+        padding: var(--spacing-sm);
+    }
+    
+    .login-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .login-header h1 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .role-selector {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .login-options {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--spacing-sm);
+    }
+    
+    .qr-scanner-modal .modal-content {
+        padding: var(--spacing-md);
+    }
+}
+
+/* ============================================
+   DARK MODE LOGIN
+============================================ */
+[data-theme="dark"] .login-card {
+    background: rgba(30, 41, 59, 0.95);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .login-header .logo span {
+    color: var(--dark-text);
+}
+
+[data-theme="dark"] .login-header h1 {
+    color: var(--dark-text);
+}
+
+[data-theme="dark"] .form-group label {
+    color: var(--dark-text);
+}
+
+[data-theme="dark"] .form-group .input-wrapper input {
+    background: var(--dark-bg);
+    border-color: var(--dark-border);
+    color: var(--dark-text);
+}
+
+[data-theme="dark"] .form-group .input-wrapper input:focus {
+    border-color: var(--primary-color);
+}
+
+[data-theme="dark"] .login-footer {
+    border-color: var(--dark-border);
+}
+
+[data-theme="dark"] .login-footer p {
+    color: var(--dark-muted);
+}
+
+[data-theme="dark"] .role-selector .role-option {
+    background: var(--dark-bg);
+    border-color: var(--dark-border);
+}
+
+[data-theme="dark"] .role-selector .role-option span {
+    color: var(--dark-text);
+}
+
+[data-theme="dark"] .remember-me label {
+    color: var(--dark-text);
+}
+
+[data-theme="dark"] .qr-login-section {
+    border-color: var(--dark-border);
+}
+
+[data-theme="dark"] .qr-scanner-modal .modal-content {
+    background: var(--dark-card);
+}
+
+[data-theme="dark"] .qr-scanner-modal .modal-close {
+    color: var(--dark-muted);
+}
+
+[data-theme="dark"] .qr-scanner-modal .modal-close:hover {
+    color: var(--dark-text);
+  }
