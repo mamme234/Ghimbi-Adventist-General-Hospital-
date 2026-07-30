@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Settings - MediCare Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="dashboard-sidebar" id="sidebar" style="background: linear-gradient(180deg, #1e1b4b, #312e81);">...</aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="dashboard-header-left">
+                    <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+                    <div>
+                        <h1>API Settings</h1>
+                        <p>Configure API keys and integrations</p>
+                    </div>
+                </div>
+                <div class="dashboard-header-right">
+                    <div class="dashboard-header-actions">
+                        <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+                        <img src="https://ui-avatars.com/api/?name=Super+Admin&background=7c3aed&color=fff" alt="Super Admin" class="user-avatar">
+                    </div>
+                </div>
+            </header>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <!-- API Keys -->
+                <div style="background: var(--white); border-radius: 12px; padding: 25px; border: 1px solid var(--light-gray);">
+                    <h3 style="margin-bottom: 20px;"><i class="fas fa-key" style="color: var(--primary-color);"></i> API Keys</h3>
+                    <div style="padding: 12px; background: var(--off-white); border-radius: 8px; margin-bottom: 15px;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <span><strong>Production Key</strong></span>
+                            <span class="badge badge-success"><i class="fas fa-check-circle"></i> Active</span>
+                        </div>
+                        <code style="display: block; margin-top: 8px; background: var(--near-black); color: white; padding: 8px; border-radius: 4px; font-size: 12px;">
+                            pk_live_medicare_xxxxxxxxxxxxxxxxxxxx
+                        </code>
+                        <div style="margin-top: 10px; display: flex; gap: 10px;">
+                            <button class="btn btn-sm btn-outline" onclick="copyKey()"><i class="fas fa-copy"></i> Copy</button>
+                            <button class="btn btn-sm btn-danger" onclick="regenerateKey()"><i class="fas fa-sync"></i> Regenerate</button>
+                        </div>
+                    </div>
+                    <div style="padding: 12px; background: var(--off-white); border-radius: 8px;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <span><strong>Test Key</strong></span>
+                            <span class="badge badge-warning"><i class="fas fa-clock"></i> Test Mode</span>
+                        </div>
+                        <code style="display: block; margin-top: 8px; background: var(--near-black); color: white; padding: 8px; border-radius: 4px; font-size: 12px;">
+                            pk_test_medicare_xxxxxxxxxxxxxxxxxxxx
+                        </code>
+                        <div style="margin-top: 10px; display: flex; gap: 10px;">
+                            <button class="btn btn-sm btn-outline" onclick="copyKey()"><i class="fas fa-copy"></i> Copy</button>
+                            <button class="btn btn-sm btn-danger" onclick="regenerateKey()"><i class="fas fa-sync"></i> Regenerate</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: 15px; width: 100%;" onclick="generateNewKey()"><i class="fas fa-plus"></i> Generate New API Key</button>
+                </div>
+
+                <!-- API Configuration -->
+                <div style="background: var(--white); border-radius: 12px; padding: 25px; border: 1px solid var(--light-gray);">
+                    <h3 style="margin-bottom: 20px;"><i class="fas fa-cog" style="color: var(--secondary-color);"></i> API Configuration</h3>
+                    <div class="form-group">
+                        <label>API Version</label>
+                        <select style="width: 100%; padding: 10px; border: 1px solid var(--light-gray); border-radius: 8px;">
+                            <option value="v1">v1.0.0</option>
+                            <option value="v2" selected>v2.0.0</option>
+                            <option value="v3">v3.0.0</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Rate Limit</label>
+                        <select style="width: 100%; padding: 10px; border: 1px solid var(--light-gray); border-radius: 8px;">
+                            <option value="100">100 requests/minute</option>
+                            <option value="500" selected>500 requests/minute</option>
+                            <option value="1000">1000 requests/minute</option>
+                            <option value="5000">5000 requests/minute</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>API Base URL</label>
+                        <input type="text" value="https://api.medicare.com/v2" style="width: 100%; padding: 10px; border: 1px solid var(--light-gray); border-radius: 8px;">
+                    </div>
+                    <button class="btn btn-primary" onclick="saveAPISettings()" style="width: 100%;"><i class="fas fa-save"></i> Save API Settings</button>
+                </div>
+            </div>
+
+            <!-- API Logs -->
+            <div style="margin-top: 25px; background: var(--white); border-radius: 12px; padding: 25px; border: 1px solid var(--light-gray);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h3><i class="fas fa-history" style="color: var(--accent-blue);"></i> API Logs</h3>
+                    <button class="btn btn-sm btn-outline" onclick="clearLogs()"><i class="fas fa-trash"></i> Clear Logs</button>
+                </div>
+                <table class="dashboard-table">
+                    <thead>
+                        <tr><th>Time</th><th>Endpoint</th><th>Method</th><th>Status</th><th>Response Time</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jan 20, 2024 10:30</td>
+                            <td>/api/v2/patients</td>
+                            <td><span class="badge badge-success">GET</span></td>
+                            <td><span class="status-badge completed">200 OK</span></td>
+                            <td>45ms</td>
+                        </tr>
+                        <tr>
+                            <td>Jan 20, 2024 10:25</td>
+                            <td>/api/v2/appointments</td>
+                            <td><span class="badge badge-primary">POST</span></td>
+                            <td><span class="status-badge completed">201 Created</span></td>
+                            <td>67ms</td>
+                        </tr>
+                        <tr>
+                            <td>Jan 20, 2024 10:15</td>
+                            <td>/api/v2/doctors</td>
+                            <td><span class="badge badge-success">GET</span></td>
+                            <td><span class="status-badge warning">429 Too Many</span></td>
+                            <td>23ms</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'super-admin-login.html';
+            }
+        }
+
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+            localStorage.setItem('theme', html.getAttribute('data-theme'));
+        }
+
+        function copyKey() {
+            alert('API key copied to clipboard!');
+        }
+
+        function regenerateKey() {
+            if (confirm('Regenerate API key? This will invalidate the current key.')) {
+                alert('API key regenerated successfully!');
+            }
+        }
+
+        function generateNewKey() {
+            alert('New API key generated!');
+        }
+
+        function saveAPISettings() {
+            alert('API settings saved successfully!');
+        }
+
+        function clearLogs() {
+            if (confirm('Clear all API logs?')) {
+                alert('API logs cleared!');
+            }
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+</body>
+                  </html>
