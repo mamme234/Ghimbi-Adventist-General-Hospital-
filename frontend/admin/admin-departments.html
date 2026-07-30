@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Departments - MediCare Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar (same as admin-dashboard) -->
+        <aside class="dashboard-sidebar" id="sidebar">...</aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="dashboard-header-left">
+                    <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+                    <div>
+                        <h1>Manage Departments</h1>
+                        <p>View and manage all hospital departments</p>
+                    </div>
+                </div>
+                <div class="dashboard-header-right">
+                    <div class="dashboard-search">
+                        <input type="text" placeholder="Search departments...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="dashboard-header-actions">
+                        <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=2563eb&color=fff" alt="Admin" class="user-avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Department Stats -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 25px;">
+                <div style="background: var(--white); border-radius: 12px; padding: 15px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 24px; font-weight: 700; color: var(--primary-color);">8</div>
+                    <div style="font-size: 12px; color: var(--mid-gray);">Total Departments</div>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 15px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 24px; font-weight: 700; color: var(--accent-green);">6</div>
+                    <div style="font-size: 12px; color: var(--mid-gray);">Active Departments</div>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 15px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 24px; font-weight: 700; color: var(--accent-yellow);">2</div>
+                    <div style="font-size: 12px; color: var(--mid-gray);">Inactive Departments</div>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 15px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 24px; font-weight: 700; color: var(--secondary-color);">12</div>
+                    <div style="font-size: 12px; color: var(--mid-gray);">Department Heads</div>
+                </div>
+            </div>
+
+            <!-- Departments Grid -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray);">
+                    <div style="display: flex; justify-content: space-between; align-items: start;">
+                        <div>
+                            <h3>Cardiology</h3>
+                            <p style="color: var(--mid-gray); font-size: 14px;">12 doctors, 30 beds</p>
+                        </div>
+                        <span class="status-badge completed">Active</span>
+                    </div>
+                    <div style="margin-top: 15px; display: flex; gap: 10px;">
+                        <button class="btn btn-sm btn-primary" onclick="editDepartment(1)"><i class="fas fa-edit"></i></button>
+                        <button class="btn btn-sm btn-outline" onclick="viewDepartment(1)"><i class="fas fa-eye"></i></button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteDepartment(1)"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray);">
+                    <div style="display: flex; justify-content: space-between; align-items: start;">
+                        <div>
+                            <h3>Neurology</h3>
+                            <p style="color: var(--mid-gray); font-size: 14px;">8 doctors, 25 beds</p>
+                        </div>
+                        <span class="status-badge completed">Active</span>
+                    </div>
+                    <div style="margin-top: 15px; display: flex; gap: 10px;">
+                        <button class="btn btn-sm btn-primary" onclick="editDepartment(2)"><i class="fas fa-edit"></i></button>
+                        <button class="btn btn-sm btn-outline" onclick="viewDepartment(2)"><i class="fas fa-eye"></i></button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteDepartment(2)"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray);">
+                    <div style="display: flex; justify-content: space-between; align-items: start;">
+                        <div>
+                            <h3>Orthopedics</h3>
+                            <p style="color: var(--mid-gray); font-size: 14px;">10 doctors, 20 beds</p>
+                        </div>
+                        <span class="status-badge completed">Active</span>
+                    </div>
+                    <div style="margin-top: 15px; display: flex; gap: 10px;">
+                        <button class="btn btn-sm btn-primary" onclick="editDepartment(3)"><i class="fas fa-edit"></i></button>
+                        <button class="btn btn-sm btn-outline" onclick="viewDepartment(3)"><i class="fas fa-eye"></i></button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteDepartment(3)"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 20px; text-align: center;">
+                <button class="btn btn-primary" onclick="addDepartment()"><i class="fas fa-plus"></i> Add New Department</button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'admin-login.html';
+            }
+        }
+
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+            localStorage.setItem('theme', html.getAttribute('data-theme'));
+        }
+
+        function viewDepartment(id) {
+            alert(`Viewing department #${id}`);
+        }
+
+        function editDepartment(id) {
+            alert(`Editing department #${id}`);
+        }
+
+        function deleteDepartment(id) {
+            if (confirm(`Are you sure you want to delete department #${id}?`)) {
+                alert(`Department #${id} deleted`);
+            }
+        }
+
+        function addDepartment() {
+            alert('Adding new department...');
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+</body>
+  </html>
