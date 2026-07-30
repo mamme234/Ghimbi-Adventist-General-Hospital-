@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Management - MediCare Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar" id="sidebar">...</aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="dashboard-header-left">
+                    <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+                    <div>
+                        <h1>Gallery Management</h1>
+                        <p>Manage hospital photos and videos</p>
+                    </div>
+                </div>
+                <div class="dashboard-header-right">
+                    <div class="dashboard-header-actions">
+                        <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=2563eb&color=fff" alt="Admin" class="user-avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Gallery Stats -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 25px;">
+                <div style="background: var(--white); border-radius: 12px; padding: 15px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 24px; font-weight: 700; color: var(--primary-color);">24</div>
+                    <div style="font-size: 12px; color: var(--mid-gray);">Total Images</div>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 15px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 24px; font-weight: 700; color: var(--accent-green);">4</div>
+                    <div style="font-size: 12px; color: var(--mid-gray);">Videos</div>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 15px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 24px; font-weight: 700; color: var(--secondary-color);">5</div>
+                    <div style="font-size: 12px; color: var(--mid-gray);">Albums</div>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 15px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div style="font-size: 24px; font-weight: 700; color: var(--accent-yellow);">3</div>
+                    <div style="font-size: 12px; color: var(--mid-gray);">Pending Uploads</div>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 25px;">
+                <div style="position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 1; background: var(--light-gray);">
+                    <img src="https://via.placeholder.com/300x300/2563eb/FFFFFF?text=Gallery+1" alt="Gallery" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; top: 10px; right: 10px; display: flex; gap: 5px;">
+                        <button class="btn btn-sm btn-primary" onclick="editImage(1)" style="padding: 4px 8px; font-size: 10px;"><i class="fas fa-edit"></i></button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteImage(1)" style="padding: 4px 8px; font-size: 10px;"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+                <div style="position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 1; background: var(--light-gray);">
+                    <img src="https://via.placeholder.com/300x300/7c3aed/FFFFFF?text=Gallery+2" alt="Gallery" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; top: 10px; right: 10px; display: flex; gap: 5px;">
+                        <button class="btn btn-sm btn-primary" onclick="editImage(2)" style="padding: 4px 8px; font-size: 10px;"><i class="fas fa-edit"></i></button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteImage(2)" style="padding: 4px 8px; font-size: 10px;"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+                <div style="position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 1; background: var(--light-gray);">
+                    <img src="https://via.placeholder.com/300x300/22c55e/FFFFFF?text=Gallery+3" alt="Gallery" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; top: 10px; right: 10px; display: flex; gap: 5px;">
+                        <button class="btn btn-sm btn-primary" onclick="editImage(3)" style="padding: 4px 8px; font-size: 10px;"><i class="fas fa-edit"></i></button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteImage(3)" style="padding: 4px 8px; font-size: 10px;"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+                <div style="position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 1; background: var(--light-gray); display: flex; align-items: center; justify-content: center; border: 2px dashed var(--light-gray);">
+                    <button class="btn btn-primary" onclick="uploadImage()" style="background: transparent; border: none; color: var(--primary-color);">
+                        <i class="fas fa-plus-circle" style="font-size: 48px;"></i>
+                        <div style="font-size: 14px; margin-top: 10px;">Upload Image</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Upload Area -->
+            <div style="background: var(--white); border-radius: 12px; padding: 30px; border: 2px dashed var(--light-gray); text-align: center;">
+                <i class="fas fa-cloud-upload-alt" style="font-size: 48px; color: var(--primary-color);"></i>
+                <h3 style="margin-top: 15px;">Upload Images & Videos</h3>
+                <p style="color: var(--mid-gray);">Drag and drop files here or click to browse</p>
+                <input type="file" multiple accept="image/*,video/*" style="display: none;" id="fileUpload">
+                <button class="btn btn-primary" onclick="document.getElementById('fileUpload').click()"><i class="fas fa-upload"></i> Select Files</button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'admin-login.html';
+            }
+        }
+
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+            localStorage.setItem('theme', html.getAttribute('data-theme'));
+        }
+
+        function editImage(id) {
+            alert(`Editing image #${id}`);
+        }
+
+        function deleteImage(id) {
+            if (confirm(`Are you sure you want to delete image #${id}?`)) {
+                alert(`Image #${id} deleted`);
+            }
+        }
+
+        function uploadImage() {
+            document.getElementById('fileUpload').click();
+        }
+
+        document.getElementById('fileUpload').addEventListener('change', function(e) {
+            if (e.target.files.length > 0) {
+                alert(`Uploaded ${e.target.files.length} files successfully!`);
+            }
+        });
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+</body>
+                  </html>
