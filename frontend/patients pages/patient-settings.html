@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - MediCare Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar (same as previous) -->
+        <aside class="dashboard-sidebar" id="sidebar">...</aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="dashboard-header-left">
+                    <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+                    <div>
+                        <h1>Settings</h1>
+                        <p>Manage your account preferences</p>
+                    </div>
+                </div>
+                <div class="dashboard-header-right">
+                    <div class="dashboard-search">
+                        <input type="text" placeholder="Search settings...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="dashboard-header-actions">
+                        <button><i class="fas fa-bell"></i></button>
+                        <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=2563eb&color=fff" alt="John Doe" class="user-avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Settings Tabs -->
+            <div style="display: flex; gap: 10px; margin-bottom: 25px; border-bottom: 2px solid var(--light-gray); padding-bottom: 10px; flex-wrap: wrap;">
+                <button class="btn btn-primary btn-sm active" onclick="showTab('account')">Account</button>
+                <button class="btn btn-outline btn-sm" onclick="showTab('security')">Security</button>
+                <button class="btn btn-outline btn-sm" onclick="showTab('notifications')">Notifications</button>
+                <button class="btn btn-outline btn-sm" onclick="showTab('privacy')">Privacy</button>
+            </div>
+
+            <!-- Account Settings -->
+            <div id="accountTab">
+                <div style="background: var(--white); border-radius: 12px; padding: 25px; border: 1px solid var(--light-gray); margin-bottom: 20px;">
+                    <h3 style="margin-bottom: 20px;">Profile Information</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div>
+                            <label style="font-size: 12px; color: var(--mid-gray);">Full Name</label>
+                            <p style="font-weight: 600;">John Doe</p>
+                        </div>
+                        <div>
+                            <label style="font-size: 12px; color: var(--mid-gray);">Email</label>
+                            <p style="font-weight: 600;">john.doe@email.com</p>
+                        </div>
+                        <div>
+                            <label style="font-size: 12px; color: var(--mid-gray);">Phone</label>
+                            <p style="font-weight: 600;">+251 911 234 567</p>
+                        </div>
+                        <div>
+                            <label style="font-size: 12px; color: var(--mid-gray);">Date of Birth</label>
+                            <p style="font-weight: 600;">January 15, 1985</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: 15px;" onclick="editProfile()"><i class="fas fa-edit"></i> Edit Profile</button>
+                </div>
+
+                <div style="background: var(--white); border-radius: 12px; padding: 25px; border: 1px solid var(--light-gray);">
+                    <h3 style="margin-bottom: 20px;">Change Password</h3>
+                    <form>
+                        <div class="form-group">
+                            <label>Current Password</label>
+                            <input type="password" placeholder="Enter current password">
+                        </div>
+                        <div class="form-group">
+                            <label>New Password</label>
+                            <input type="password" placeholder="Enter new password">
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm New Password</label>
+                            <input type="password" placeholder="Confirm new password">
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Update Password</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Security Settings -->
+            <div id="securityTab" style="display: none;">
+                <div style="background: var(--white); border-radius: 12px; padding: 25px; border: 1px solid var(--light-gray); margin-bottom: 20px;">
+                    <h3 style="margin-bottom: 20px;">Two-Factor Authentication</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--light-gray);">
+                        <div>
+                            <strong>Two-Factor Authentication</strong>
+                            <p style="font-size: 14px; color: var(--mid-gray); margin: 5px 0 0;">Add an extra layer of security</p>
+                        </div>
+                        <div class="toggle-switch" onclick="toggle2FA()" style="width: 50px; height: 28px; background: #cbd5e1; border-radius: 14px; cursor: pointer; position: relative; transition: all 0.3s ease;">
+                            <div style="width: 24px; height: 24px; background: white; border-radius: 50%; position: absolute; top: 2px; left: 2px; transition: all 0.3s ease;"></div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0;">
+                        <div>
+                            <strong>SMS Verification</strong>
+                            <p style="font-size: 14px; color: var(--mid-gray); margin: 5px 0 0;">Receive verification codes via SMS</p>
+                        </div>
+                        <div class="toggle-switch" onclick="toggleSMS()" style="width: 50px; height: 28px; background: #22c55e; border-radius: 14px; cursor: pointer; position: relative; transition: all 0.3s ease;">
+                            <div style="width: 24px; height: 24px; background: white; border-radius: 50%; position: absolute; top: 2px; right: 2px; transition: all 0.3s ease;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: var(--white); border-radius: 12px; padding: 25px; border: 1px solid var(--light-gray);">
+                    <h3 style="margin-bottom: 20px;">Sessions</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--light-gray);">
+                        <div>
+                            <strong>Current Session</strong>
+                            <p style="font-size: 14px; color: var(--mid-gray); margin: 5px 0 0;">Chrome - Addis Ababa, Ethiopia</p>
+                        </div>
+                        <span class="badge badge-success">Active</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0;">
+                        <div>
+                            <strong>Other Sessions</strong>
+                            <p style="font-size: 14px; color: var(--mid-gray); margin: 5px 0 0;">No other active sessions</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-danger" onclick="logoutAllSessions()"><i class="fas fa-sign-out-alt"></i> Logout All Devices</button>
+                </div>
+            </div>
+
+            <!-- Notifications Settings -->
+            <div id="notificationsTab" style="display: none;">
+                <div style="background: var(--white); border-radius: 12px; padding: 25px; border: 1px solid var(--light-gray);">
+                    <h3 style="margin-bottom: 20px;">Notification Preferences</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--light-gray);">
+                        <div>
+                            <strong>Appointment Reminders</strong>
+                            <p style="font-size: 14px; color: var(--mid-gray); margin: 5px 0 0;">Get reminders about upcoming appointments</p>
+                        </div>
+                        <div class="toggle-switch" onclick="toggleAppointmentReminders()" style="width: 50px; height: 28px; background: #22c55e; border-radius: 14px; cursor: pointer; position: relative; transition: all 0.3s ease;">
+                            <div style="width: 24px; height: 24px; background: white; border-radius: 50%; position: absolute; top: 2px; right: 2px; transition: all 0.3s ease;"></div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--light-gray);">
+                        <div>
+                            <strong>Lab Results</strong>
+                            <p style="font-size: 14px; color: var(--mid-gray); margin: 5px 0 0;">Get notified when lab results are ready</p>
+                        </div>
+                        <div class="toggle-switch" onclick="toggleLabNotifications()" style="width: 50px; height: 28px; background: #22c55e; border-radius: 14px; cursor: pointer; position: relative; transition: all 0.3s ease;">
+                            <div style="width: 24px; height: 24px; background: white; border-radius: 50%; position: absolute; top: 2px; right: 2px; transition: all 0.3s ease;"></div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--light-gray);">
+                        <div>
+                            <strong>Billing Updates</strong>
+                            <p style="font-size: 14px; color: var(--mid-gray); margin: 5px 0 0;">Get updates about bills and payments</p>
+                        </div>
+                        <div class="toggle-switch" onclick="toggleBillingNotifications()" style="width: 50px; height: 28px; background: #22c55e; border-radius: 14px; cursor: pointer; position: relative; transition: all 0.3s ease;">
+                            <div style="width: 24px; height: 24px; background: white; border-radius: 50%; position: absolute; top: 2px; right: 2px; transition: all 0.3s ease;"></div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0;">
+                        <div>
+                            <strong>Health Tips</strong>
+                            <p style="font-size: 14px; color: var(--mid-gray); margin: 5px 0 0;">Receive health tips and wellness advice</p>
+                        </div>
+                        <div class="toggle-switch" onclick="toggleHealthTips()" style="width: 50px; height: 28px; background: #cbd5e1; border-radius: 14px; cursor: pointer; position: relative; transition: all 0.3s ease;">
+                            <div style="width: 24px; height: 24px; background: white; border-radius: 50%; position: absolute; top: 2px; left: 2px; transition: all 0.3s ease;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Privacy Settings -->
+            <div id="privacyTab" style="display: none;">
+                <div style="background: var(--white); border-radius: 12px; padding: 25px; border: 1px solid var(--light-gray);">
+                    <h3 style="margin-bottom: 20px;">Privacy Settings</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--light-gray);">
+                        <div>
+                            <strong>Share Medical Records</strong>
+                            <p style="font-size: 14px; color: var(--mid-gray); margin: 5px 0 0;">Allow doctors to view your medical history</p>
+                        </div>
+                        <div class="toggle-switch" onclick="toggleShareRecords()" style="width: 50px; height: 28px; background: #22c55e; border-radius: 14px; cursor: pointer; position: relative; transition: all 0.3s ease;">
+                            <div style="width: 24px; height: 24px; background: white; border-radius: 50%; position: absolute; top: 2px; right: 2px; transition: all 0.3s ease;"></div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--light-gray);">
+                        <div>
+                            <strong>Data Analytics</strong>
+                            <p style="font-size: 14px; color: var(--mid-gray); margin: 5px 0 0;">Allow anonymous data for research</p>
+                        </div>
+                        <div class="toggle-switch" onclick="toggleAnalytics()" style="width: 50px; height: 28px; background: #cbd5e1; border-radius: 14px; cursor: pointer; position: relative; transition: all 0.3s ease;">
+                            <div style="width: 24px; height: 24px; background: white; border-radius: 50%; position: absolute; top: 2px; left: 2px; transition: all 0.3s ease;"></div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0;">
+                        <div>
+                            <strong>Profile Visibility</strong>
+                            <p style="font-size: 14px; color: var(--mid-gray); margin: 5px 0 0;">Make your profile visible to other patients</p>
+                        </div>
+                        <div class="toggle-switch" onclick="toggleVisibility()" style="width: 50px; height: 28px; background: #cbd5e1; border-radius: 14px; cursor: pointer; position: relative; transition: all 0.3s ease;">
+                            <div style="width: 24px; height: 24px; background: white; border-radius: 50%; position: absolute; top: 2px; left: 2px; transition: all 0.3s ease;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: var(--white); border-radius: 12px; padding: 25px; border: 1px solid var(--light-gray); margin-top: 20px;">
+                    <h3 style="margin-bottom: 20px; color: #dc2626;">Danger Zone</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--light-gray);">
+                        <div>
+                            <strong>Delete Account</strong>
+                            <p style="font-size: 14px; color: var(--mid-gray); margin: 5px 0 0;">Permanently delete your account and all data</p>
+                        </div>
+                        <button class="btn btn-danger" onclick="deleteAccount()"><i class="fas fa-trash"></i> Delete Account</button>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0;">
+                        <div>
+                            <strong>Download Data</strong>
+                            <p style="font-size: 14px; color: var(--mid-gray); margin: 5px 0 0;">Download all your personal data</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="downloadData()"><i class="fas fa-download"></i> Download</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'patient-login.html';
+            }
+        }
+
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+            localStorage.setItem('theme', html.getAttribute('data-theme'));
+        }
+
+        function showTab(tab) {
+            // Hide all tabs
+            document.querySelectorAll('[id$="Tab"]').forEach(el => el.style.display = 'none');
+            // Show selected tab
+            document.getElementById(tab + 'Tab').style.display = 'block';
+            // Update button styles
+            document.querySelectorAll('.btn-primary, .btn-outline').forEach(btn => {
+                btn.className = 'btn btn-outline btn-sm';
+            });
+            event.target.className = 'btn btn-primary btn-sm active';
+        }
+
+        function editProfile() {
+            alert('Editing profile...');
+        }
+
+        function toggle2FA() {
+            alert('Two-factor authentication toggled');
+        }
+
+        function toggleSMS() {
+            alert('SMS verification toggled');
+        }
+
+        function logoutAllSessions() {
+            if (confirm('Logout all devices?')) {
+                alert('All devices logged out');
+            }
+        }
+
+        function toggleAppointmentReminders() {
+            alert('Appointment reminders toggled');
+        }
+
+        function toggleLabNotifications() {
+            alert('Lab notifications toggled');
+        }
+
+        function toggleBillingNotifications() {
+            alert('Billing notifications toggled');
+        }
+
+        function toggleHealthTips() {
+            alert('Health tips toggled');
+        }
+
+        function toggleShareRecords() {
+            alert('Share medical records toggled');
+        }
+
+        function toggleAnalytics() {
+            alert('Data analytics toggled');
+        }
+
+        function toggleVisibility() {
+            alert('Profile visibility toggled');
+        }
+
+        function deleteAccount() {
+            if (confirm('Are you sure you want to delete your account? This cannot be undone!')) {
+                if (confirm('Please confirm again: Delete account?')) {
+                    alert('Account deleted successfully');
+                }
+            }
+        }
+
+        function downloadData() {
+            alert('Downloading your data...');
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+</body>
+                          </html>
