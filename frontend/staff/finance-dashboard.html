@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Dashboard - MediCare Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="dashboard-sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <img src="../images/logo.svg" alt="MediCare">
+                <span>Medi<span>Care</span></span>
+            </div>
+            <div class="sidebar-user">
+                <img src="https://ui-avatars.com/api/?name=Finance&background=22c55e&color=fff" alt="Finance" class="sidebar-user-avatar">
+                <div class="sidebar-user-info">
+                    <h4>David Tesfaye</h4>
+                    <p>Finance Manager</p>
+                </div>
+            </div>
+            <nav class="sidebar-menu">
+                <div class="sidebar-menu-group">
+                    <div class="sidebar-menu-group-title">Main</div>
+                    <a href="finance-dashboard.html" class="sidebar-menu-item active"><i class="fas fa-th-large"></i><span>Dashboard</span></a>
+                    <a href="#" class="sidebar-menu-item"><i class="fas fa-file-invoice"></i><span>Billing</span></a>
+                    <a href="#" class="sidebar-menu-item"><i class="fas fa-credit-card"></i><span>Payments</span></a>
+                    <a href="#" class="sidebar-menu-item"><i class="fas fa-shield-alt"></i><span>Insurance</span></a>
+                    <a href="#" class="sidebar-menu-item"><i class="fas fa-file-alt"></i><span>Reports</span></a>
+                    <a href="#" class="sidebar-menu-item"><i class="fas fa-chart-line"></i><span>Revenue</span></a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="finance-login.html" class="sidebar-menu-item" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i><span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="dashboard-header-left">
+                    <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+                    <div>
+                        <h1>Finance Dashboard</h1>
+                        <p>Welcome back, David!</p>
+                    </div>
+                </div>
+                <div class="dashboard-header-right">
+                    <div class="dashboard-search">
+                        <input type="text" placeholder="Search invoices...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="dashboard-header-actions">
+                        <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+                        <img src="https://ui-avatars.com/api/?name=Finance&background=22c55e&color=fff" alt="Finance" class="user-avatar">
+                    </div>
+                </div>
+            </header>
+
+            <section class="dashboard-cards">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header"><h3>Total Revenue</h3><i class="fas fa-chart-line" style="color: #2563eb;"></i></div>
+                    <div class="dashboard-card-value">$125,000</div>
+                    <div class="dashboard-card-change positive"><i class="fas fa-arrow-up"></i> 12% increase</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header"><h3>Pending Bills</h3><i class="fas fa-clock" style="color: #f59e0b;"></i></div>
+                    <div class="dashboard-card-value">$45,000</div>
+                    <div class="dashboard-card-change negative"><i class="fas fa-clock"></i> 15 overdue</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header"><h3>Insurance Claims</h3><i class="fas fa-shield-alt" style="color: #7c3aed;"></i></div>
+                    <div class="dashboard-card-value">$30,000</div>
+                    <div class="dashboard-card-change"><i class="fas fa-clock"></i> Pending</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header"><h3>This Month</h3><i class="fas fa-calendar-alt" style="color: #22c55e;"></i></div>
+                    <div class="dashboard-card-value">$18,500</div>
+                    <div class="dashboard-card-change positive"><i class="fas fa-arrow-up"></i> 8% growth</div>
+                </div>
+            </section>
+
+            <!-- Recent Transactions -->
+            <section class="dashboard-table-container">
+                <div class="dashboard-table-header">
+                    <h3>Recent Transactions</h3>
+                    <button class="btn btn-sm btn-primary" onclick="createInvoice()"><i class="fas fa-plus"></i> Create Invoice</button>
+                </div>
+                <table class="dashboard-table">
+                    <thead>
+                        <tr><th>Invoice #</th><th>Patient</th><th>Department</th><th>Amount</th><th>Status</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#INV-2024-001</td>
+                            <td>John Doe</td>
+                            <td>Cardiology</td>
+                            <td>$250</td>
+                            <td><span class="status-badge completed">Paid</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewInvoice(1)"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="downloadInvoice(1)"><i class="fas fa-download"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#INV-2024-002</td>
+                            <td>Jane Smith</td>
+                            <td>Neurology</td>
+                            <td>$300</td>
+                            <td><span class="status-badge warning">Pending</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewInvoice(2)"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="markPaid(2)"><i class="fas fa-check"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Quick Actions -->
+            <section style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 25px;">
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center; cursor: pointer;" onclick="generateReport()">
+                    <i class="fas fa-file-alt" style="font-size: 28px; color: var(--primary-color);"></i>
+                    <h4 style="margin-top: 10px;">Generate Report</h4>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center; cursor: pointer;" onclick="viewRevenue()">
+                    <i class="fas fa-chart-bar" style="font-size: 28px; color: var(--accent-green);"></i>
+                    <h4 style="margin-top: 10px;">Revenue Analysis</h4>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center; cursor: pointer;" onclick="processInsurance()">
+                    <i class="fas fa-shield-alt" style="font-size: 28px; color: var(--secondary-color);"></i>
+                    <h4 style="margin-top: 10px;">Insurance Claims</h4>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center; cursor: pointer;" onclick="viewBudget()">
+                    <i class="fas fa-calculator" style="font-size: 28px; color: var(--accent-red);"></i>
+                    <h4 style="margin-top: 10px;">Budget Overview</h4>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'finance-login.html';
+            }
+        }
+
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+            localStorage.setItem('theme', html.getAttribute('data-theme'));
+        }
+
+        function viewInvoice(id) {
+            alert(`Viewing invoice #${id}`);
+        }
+
+        function downloadInvoice(id) {
+            alert(`Downloading invoice #${id}`);
+        }
+
+        function markPaid(id) {
+            if (confirm(`Mark invoice #${id} as paid?`)) {
+                alert(`Invoice #${id} marked as paid`);
+            }
+        }
+
+        function createInvoice() {
+            alert('Creating new invoice...');
+        }
+
+        function generateReport() {
+            alert('Generating report...');
+        }
+
+        function viewRevenue() {
+            alert('Viewing revenue analysis...');
+        }
+
+        function processInsurance() {
+            alert('Processing insurance claims...');
+        }
+
+        function viewBudget() {
+            alert('Viewing budget overview...');
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+</body>
+                      </html>
