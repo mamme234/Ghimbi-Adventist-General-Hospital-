@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - MediCare Hospital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #f8fafc;
+            color: #1e293b;
+            padding: 20px;
+        }
+
+        .offline-container {
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+            padding: 50px 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .offline-icon {
+            font-size: 72px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .offline-icon .signal {
+            display: inline-block;
+            animation: pulse-signal 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-signal {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(0.9);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+
+        .hospital-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .hospital-logo svg {
+            width: 50px;
+            height: 50px;
+        }
+
+        .hospital-logo span {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1e293b;
+        }
+
+        .hospital-logo span span {
+            color: #2563eb;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .subtitle strong {
+            color: #2563eb;
+        }
+
+        .offline-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .offline-feature {
+            background: #f8fafc;
+            padding: 12px 14px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #334155;
+            border: 1px solid #e2e8f0;
+        }
+
+        .offline-feature i {
+            color: #2563eb;
+            font-size: 16px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .offline-feature .check {
+            color: #22c55e;
+        }
+
+        .retry-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .retry-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+        }
+
+        .retry-btn:active {
+            transform: scale(0.96);
+        }
+
+        .retry-btn i {
+            font-size: 18px;
+        }
+
+        .retry-btn .spinner {
+            display: none;
+            animation: spin 0.8s linear infinite;
+        }
+
+        .retry-btn.loading .spinner {
+            display: inline-block;
+        }
+
+        .retry-btn.loading .btn-text {
+            display: none;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .connection-status {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .connection-status .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ef4444;
+            display: inline-block;
+            animation: blink-dot 1.5s ease-in-out infinite;
+        }
+
+        @keyframes blink-dot {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        .connection-status .dot.online {
+            background: #22c55e;
+        }
+
+        .cached-pages {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .cached-pages h4 {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .cached-pages .page-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .cached-pages .page-links a {
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 13px;
+            padding: 4px 12px;
+            background: #eff6ff;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .cached-pages .page-links a:hover {
+            background: #dbeafe;
+        }
+
+        /* Dark Mode */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #0f172a;
+                color: #f1f5f9;
+            }
+
+            .offline-container {
+                background: #1e293b;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            }
+
+            .hospital-logo span {
+                color: #f1f5f9;
+            }
+
+            h1 {
+                color: #f1f5f9;
+            }
+
+            .subtitle {
+                color: #94a3b8;
+            }
+
+            .offline-feature {
+                background: #0f172a;
+                border-color: #334155;
+                color: #cbd5e1;
+            }
+
+            .offline-feature i {
+                color: #60a5fa;
+            }
+
+            .cached-pages {
+                border-color: #334155;
+            }
+
+            .cached-pages .page-links a {
+                background: #1e293b;
+                color: #60a5fa;
+            }
+
+            .cached-pages .page-links a:hover {
+                background: #334155;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 480px) {
+            .offline-container {
+                padding: 30px 20px;
+            }
+
+            .offline-icon {
+                font-size: 56px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .offline-features {
+                grid-template-columns: 1fr;
+            }
+
+            .offline-feature {
+                font-size: 13px;
+                padding: 10px 12px;
+            }
+
+            .retry-btn {
+                padding: 12px 30px;
+                font-size: 14px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hospital-logo span {
+                font-size: 22px;
+            }
+
+            .hospital-logo svg {
+                width: 40px;
+                height: 40px;
+            }
+
+            .cached-pages .page-links a {
+                font-size: 12px;
+                padding: 3px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <!-- Logo -->
+        <div class="hospital-logo">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Cross Symbol -->
+                <rect x="35" y="15" width="30" height="70" rx="4" fill="#2563eb"/>
+                <rect x="15" y="35" width="70" height="30" rx="4" fill="#2563eb"/>
+                <!-- Heart Shape -->
+                <circle cx="50" cy="50" r="45" stroke="#2563eb" stroke-width="2" opacity="0.15"/>
+                <path d="M50 65C50 65 30 50 30 40C30 32 36 26 44 26C48 26 50 28 50 28C50 28 52 26 56 26C64 26 70 32 70 40C70 50 50 65 50 65Z" fill="#2563eb" opacity="0.1"/>
+            </svg>
+            <span>Medi<span>Care</span></span>
+        </div>
+
+        <!-- Offline Icon -->
+        <div class="offline-icon">
+            <span class="signal">📡</span>
+        </div>
+
+        <h1>You're Offline</h1>
+
+        <p class="subtitle">
+            Please check your internet connection and try again.
+            <br>
+            <strong>Some features may be limited while offline.</strong>
+        </p>
+
+        <!-- Offline Features -->
+        <div class="offline-features">
+            <div class="offline-feature">
+                <span class="check">✓</span>
+                Browse previously viewed pages
+            </div>
+            <div class="offline-feature">
+                <span class="check">✓</span>
+                View cached medical records
+            </div>
+            <div class="offline-feature">
+                <span class="check">✓</span>
+                Access saved prescriptions
+            </div>
+            <div class="offline-feature">
+                <span class="check">✓</span>
+                View emergency contacts
+            </div>
+        </div>
+
+        <!-- Retry Button -->
+        <button class="retry-btn" id="retryBtn" onclick="retryConnection()">
+            <i class="fas fa-sync-alt spinner"></i>
+            <span class="btn-text"><i class="fas fa-sync-alt"></i> Try Again</span>
+        </button>
+
+        <!-- Connection Status -->
+        <div class="connection-status">
+            <span class="dot" id="statusDot"></span>
+            <span id="statusText">Checking connection...</span>
+        </div>
+
+        <!-- Cached Pages -->
+        <div class="cached-pages">
+            <h4>📄 Available Offline Pages</h4>
+            <div class="page-links">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/departments.html">Departments</a>
+                <a href="/doctors.html">Doctors</a>
+                <a href="/services.html">Services</a>
+                <a href="/emergency.html">Emergency</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Font Awesome for icons
+        const fontAwesome = document.createElement('link');
+        fontAwesome.rel = 'stylesheet';
+        fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+        document.head.appendChild(fontAwesome);
+
+        // Connection status
+        const statusDot = document.getElementById('statusDot');
+        const statusText = document.getElementById('statusText');
+        const retryBtn = document.getElementById('retryBtn');
+
+        function updateConnectionStatus(online) {
+            if (online) {
+                statusDot.className = 'dot online';
+                statusText.textContent = 'Connected! Redirecting...';
+                setTimeout(() => {
+                    window.location.href = '/';
+                }, 1500);
+            } else {
+                statusDot.className = 'dot';
+                statusText.textContent = 'Still offline. Please check your connection.';
+            }
+        }
+
+        function checkConnection() {
+            if (navigator.onLine) {
+                updateConnectionStatus(true);
+            } else {
+                updateConnectionStatus(false);
+            }
+        }
+
+        function retryConnection() {
+            retryBtn.classList.add('loading');
+            statusText.textContent = 'Checking connection...';
+            statusDot.className = 'dot';
+
+            setTimeout(() => {
+                checkConnection();
+                retryBtn.classList.remove('loading');
+            }, 1500);
+        }
+
+        // Listen for online/offline events
+        window.addEventListener('online', () => {
+            updateConnectionStatus(true);
+        });
+
+        window.addEventListener('offline', () => {
+            updateConnectionStatus(false);
+        });
+
+        // Initial check
+        checkConnection();
+
+        // Periodic check every 10 seconds
+        setInterval(() => {
+            if (navigator.onLine) {
+                updateConnectionStatus(true);
+            }
+        }, 10000);
+
+        // Service Worker registration for offline support
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(() => {
+                    console.log('Service Worker registered for offline support');
+                })
+                .catch((error) => {
+                    console.error('Service Worker registration failed:', error);
+                });
+        }
+    </script>
+</body>
+  </html>
