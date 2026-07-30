@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Settings - MediCare Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="dashboard-sidebar" id="sidebar" style="background: linear-gradient(180deg, #1e1b4b, #312e81);">...</aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="dashboard-header-left">
+                    <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+                    <div>
+                        <h1>Security Settings</h1>
+                        <p>Configure system security and authentication</p>
+                    </div>
+                </div>
+                <div class="dashboard-header-right">
+                    <div class="dashboard-header-actions">
+                        <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+                        <img src="https://ui-avatars.com/api/?name=Super+Admin&background=7c3aed&color=fff" alt="Super Admin" class="user-avatar">
+                    </div>
+                </div>
+            </header>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <!-- Authentication -->
+                <div style="background: var(--white); border-radius: 12px; padding: 25px; border: 1px solid var(--light-gray);">
+                    <h3 style="margin-bottom: 20px;"><i class="fas fa-lock" style="color: var(--primary-color);"></i> Authentication</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--light-gray);">
+                        <div>
+                            <strong>Two-Factor Authentication</strong>
+                            <p style="font-size: 14px; color: var(--mid-gray);">Require 2FA for all users</p>
+                        </div>
+                        <div class="toggle-switch" onclick="toggle2FA()" style="width: 50px; height: 28px; background: #22c55e; border-radius: 14px; cursor: pointer; position: relative; transition: all 0.3s ease;">
+                            <div style="width: 24px; height: 24px; background: white; border-radius: 50%; position: absolute; top: 2px; right: 2px; transition: all 0.3s ease;"></div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--light-gray);">
+                        <div>
+                            <strong>Password Policy</strong>
+                            <p style="font-size: 14px; color: var(--mid-gray);">Minimum 12 chars with special characters</p>
+                        </div>
+                        <button class="btn btn-sm btn-outline" onclick="editPasswordPolicy()"><i class="fas fa-edit"></i> Edit</button>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0;">
+                        <div>
+                            <strong>Session Timeout</strong>
+                            <p style="font-size: 14px; color: var(--mid-gray);">Auto-logout after 30 minutes</p>
+                        </div>
+                        <button class="btn btn-sm btn-outline" onclick="editSessionTimeout()"><i class="fas fa-edit"></i> Edit</button>
+                    </div>
+                </div>
+
+                <!-- Security Features -->
+                <div style="background: var(--white); border-radius: 12px; padding: 25px; border: 1px solid var(--light-gray);">
+                    <h3 style="margin-bottom: 20px;"><i class="fas fa-shield-alt" style="color: var(--secondary-color);"></i> Security Features</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--light-gray);">
+                        <div>
+                            <strong>IP Whitelist</strong>
+                            <p style="font-size: 14px; color: var(--mid-gray);;">Restrict access to specific IPs</p>
+                        </div>
+                        <button class="btn btn-sm btn-outline" onclick="editIPWhitelist()"><i class="fas fa-edit"></i> Edit</button>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--light-gray);">
+                        <div>
+                            <strong>Rate Limiting</strong>
+                            <p style="font-size: 14px; color: var(--mid-gray);;">Limit API requests per minute</p>
+                        </div>
+                        <div class="toggle-switch" onclick="toggleRateLimit()" style="width: 50px; height: 28px; background: #22c55e; border-radius: 14px; cursor: pointer; position: relative; transition: all 0.3s ease;">
+                            <div style="width: 24px; height: 24px; background: white; border-radius: 50%; position: absolute; top: 2px; right: 2px; transition: all 0.3s ease;"></div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0;">
+                        <div>
+                            <strong>Audit Logging</strong>
+                            <p style="font-size: 14px; color: var(--mid-gray);;">Log all security events</p>
+                        </div>
+                        <div class="toggle-switch" onclick="toggleAuditLog()" style="width: 50px; height: 28px; background: #22c55e; border-radius: 14px; cursor: pointer; position: relative; transition: all 0.3s ease;">
+                            <div style="width: 24px; height: 24px; background: white; border-radius: 50%; position: absolute; top: 2px; right: 2px; transition: all 0.3s ease;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Log -->
+            <div style="margin-top: 25px; background: var(--white); border-radius: 12px; padding: 25px; border: 1px solid var(--light-gray);">
+                <h3 style="margin-bottom: 20px;"><i class="fas fa-history" style="color: var(--accent-red);"></i> Recent Security Events</h3>
+                <table class="dashboard-table">
+                    <thead>
+                        <tr><th>Time</th><th>Event</th><th>User</th><th>IP Address</th><th>Status</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jan 20, 2024 10:30</td>
+                            <td>Login Attempt</td>
+                            <td>john.doe@medicare.com</td>
+                            <td>192.168.1.100</td>
+                            <td><span class="status-badge completed">Success</span></td>
+                        </tr>
+                        <tr>
+                            <td>Jan 20, 2024 10:15</td>
+                            <td>Failed Login</td>
+                            <td>unknown@medicare.com</td>
+                            <td>192.168.1.200</td>
+                            <td><span class="status-badge warning">Blocked</span></td>
+                        </tr>
+                        <tr>
+                            <td>Jan 20, 2024 09:45</td>
+                            <td>Password Changed</td>
+                            <td>sarah.j@medicare.com</td>
+                            <td>192.168.1.101</td>
+                            <td><span class="status-badge completed">Success</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'super-admin-login.html';
+            }
+        }
+
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+            localStorage.setItem('theme', html.getAttribute('data-theme'));
+        }
+
+        function toggle2FA() {
+            alert('Two-factor authentication toggled');
+        }
+
+        function toggleRateLimit() {
+            alert('Rate limiting toggled');
+        }
+
+        function toggleAuditLog() {
+            alert('Audit logging toggled');
+        }
+
+        function editPasswordPolicy() {
+            alert('Editing password policy...');
+        }
+
+        function editSessionTimeout() {
+            alert('Editing session timeout...');
+        }
+
+        function editIPWhitelist() {
+            alert('Editing IP whitelist...');
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+</body>
+          </html>
