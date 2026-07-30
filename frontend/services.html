@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Services - MediCare Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/component-styles.css">
+</head>
+<body>
+    <div id="loading-screen"><div class="loader-container"><div class="hospital-loader"><div class="heartbeat"></div><div class="pulse-ring"></div></div><div class="loader-text"><span>M</span><span>e</span><span>d</span><span>i</span><span>C</span><span>a</span><span>r</span><span>e</span></div><div class="loader-progress"><div class="progress-bar" id="loader-progress-bar"></div></div><p class="loading-message">Loading services...</p></div></div>
+
+    <!-- Top Bar -->
+    <div class="top-bar" id="topBar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <div class="contact-info">
+                        <a href="tel:+251911234567"><i class="fas fa-phone-alt"></i> +251 911 234 567</a>
+                        <a href="mailto:info@medicare.com"><i class="fas fa-envelope"></i> info@medicare.com</a>
+                        <span><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</span>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <div class="emergency-number"><i class="fas fa-ambulance"></i><span>Emergency: <strong>911</strong></span></div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="mainNav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo"><a href="index.html"><img src="images/logo.svg" alt="MediCare Hospital" class="logo-img"><span class="logo-text">Medi<span>Care</span></span></a></div>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a href="departments.html" class="nav-link"><i class="fas fa-hospital"></i> Departments</a></li>
+                    <li class="nav-item"><a href="doctors.html" class="nav-link"><i class="fas fa-user-md"></i> Doctors</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link active"><i class="fas fa-stethoscope"></i> Services</a></li>
+                    <li class="nav-item"><a href="appointments.html" class="nav-link"><i class="fas fa-calendar-check"></i> Book Appointment</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="search-toggle" id="searchToggle"><i class="fas fa-search"></i></button>
+                    <a href="patient-login.html" class="btn-login"><i class="fas fa-user-circle"></i> Login</a>
+                    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Our Medical Services</h1>
+                <p>Comprehensive healthcare services tailored to your needs</p>
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="separator"><i class="fas fa-chevron-right"></i></li>
+                        <li aria-current="page">Services</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Categories -->
+    <section class="services-categories">
+        <div class="container">
+            <div class="category-nav">
+                <button class="category-btn active" data-category="all">All Services</button>
+                <button class="category-btn" data-category="diagnostic">Diagnostic</button>
+                <button class="category-btn" data-category="surgical">Surgical</button>
+                <button class="category-btn" data-category="emergency">Emergency</button>
+                <button class="category-btn" data-category="specialized">Specialized</button>
+                <button class="category-btn" data-category="preventive">Preventive</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-section">
+        <div class="container">
+            <div class="services-grid" id="servicesGrid">
+                <!-- Service 1 - Diagnostic -->
+                <div class="service-card animate-on-scroll" data-category="diagnostic">
+                    <div class="service-icon"><i class="fas fa-microscope"></i></div>
+                    <div class="service-content">
+                        <h3>Laboratory Services</h3>
+                        <p>Comprehensive diagnostic testing including blood work, pathology, and microbiology.</p>
+                        <div class="service-meta">
+                            <span><i class="fas fa-clock"></i> Results in 24hrs</span>
+                            <span><i class="fas fa-check-circle"></i> 100+ Tests</span>
+                        </div>
+                        <a href="laboratory.html" class="btn btn-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Service 2 - Diagnostic -->
+                <div class="service-card animate-on-scroll" data-category="diagnostic">
+                    <div class="service-icon"><i class="fas fa-x-ray"></i></div>
+                    <div class="service-content">
+                        <h3>Radiology & Imaging</h3>
+                        <p>Advanced imaging services including X-Ray, MRI, CT Scan, and Ultrasound.</p>
+                        <div class="service-meta">
+                            <span><i class="fas fa-clock"></i> Same-day results</span>
+                            <span><i class="fas fa-check-circle"></i> State-of-the-art</span>
+                        </div>
+                        <a href="radiology.html" class="btn btn-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Service 3 - Surgical -->
+                <div class="service-card animate-on-scroll" data-category="surgical">
+                    <div class="service-icon"><i class="fas fa-scalpel"></i></div>
+                    <div class="service-content">
+                        <h3>Surgical Services</h3>
+                        <p>Expert surgical care across multiple specialties with modern operating theaters.</p>
+                        <div class="service-meta">
+                            <span><i class="fas fa-clock"></i> 5+ Surgeries daily</span>
+                            <span><i class="fas fa-check-circle"></i> 95% success rate</span>
+                        </div>
+                        <a href="surgery.html" class="btn btn-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Service 4 - Emergency -->
+                <div class="service-card animate-on-scroll" data-category="emergency">
+                    <div class="service-icon"><i class="fas fa-ambulance"></i></div>
+                    <div class="service-content">
+                        <h3>Emergency Services</h3>
+                        <p>24/7 emergency care with rapid response teams and fully equipped trauma center.</p>
+                        <div class="service-meta">
+                            <span><i class="fas fa-clock"></i> 24/7 Available</span>
+                            <span><i class="fas fa-check-circle"></i> Rapid response</span>
+                        </div>
+                        <a href="emergency.html" class="btn btn-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Service 5 - Specialized -->
+                <div class="service-card animate-on-scroll" data-category="specialized">
+                    <div class="service-icon"><i class="fas fa-heart"></i></div>
+                    <div class="service-content">
+                        <h3>Cardiac Care</h3>
+                        <p>Comprehensive heart care from diagnosis to treatment and rehabilitation.</p>
+                        <div class="service-meta">
+                            <span><i class="fas fa-clock"></i> 24/7 Cardiac unit</span>
+                            <span><i class="fas fa-check-circle"></i> Expert cardiologists</span>
+                        </div>
+                        <a href="department.html?dept=cardiology" class="btn btn-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Service 6 - Specialized -->
+                <div class="service-card animate-on-scroll" data-category="specialized">
+                    <div class="service-icon"><i class="fas fa-brain"></i></div>
+                    <div class="service-content">
+                        <h3>Neurology Services</h3>
+                        <p>Advanced diagnosis and treatment for brain and nervous system disorders.</p>
+                        <div class="service-meta">
+                            <span><i class="fas fa-clock"></i> Specialized care</span>
+                            <span><i class="fas fa-check-circle"></i> Expert neurologists</span>
+                        </div>
+                        <a href="department.html?dept=neurology" class="btn btn-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Service 7 - Specialized -->
+                <div class="service-card animate-on-scroll" data-category="specialized">
+                    <div class="service-icon"><i class="fas fa-bone"></i></div>
+                    <div class="service-content">
+                        <h3>Orthopedic Services</h3>
+                        <p>Expert care for bones, joints, and sports injuries with advanced treatment.</p>
+                        <div class="service-meta">
+                            <span><i class="fas fa-clock"></i> Specialized care</span>
+                            <span><i class="fas fa-check-circle"></i> Top surgeons</span>
+                        </div>
+                        <a href="department.html?dept=orthopedics" class="btn btn-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Service 8 - Preventive -->
+                <div class="service-card animate-on-scroll" data-category="preventive">
+                    <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="service-content">
+                        <h3>Health Checkups</h3>
+                        <p>Comprehensive health screening packages for early detection and prevention.</p>
+                        <div class="service-meta">
+                            <span><i class="fas fa-clock"></i> 2-3 hours</span>
+                            <span><i class="fas fa-check-circle"></i> 50+ tests</span>
+                        </div>
+                        <a href="health-packages.html" class="btn btn-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Service 9 - Specialized -->
+                <div class="service-card animate-on-scroll" data-category="specialized">
+                    <div class="service-icon"><i class="fas fa-child"></i></div>
+                    <div class="service-content">
+                        <h3>Pediatric Care</h3>
+                        <p>Specialized healthcare for infants, children, and adolescents.</p>
+                        <div class="service-meta">
+                            <span><i class="fas fa-clock"></i> Child-friendly</span>
+                            <span><i class="fas fa-check-circle"></i> Expert pediatricians</span>
+                        </div>
+                        <a href="department.html?dept=pediatrics" class="btn btn-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Service 10 - Specialized -->
+                <div class="service-card animate-on-scroll" data-category="specialized">
+                    <div class="service-icon"><i class="fas fa-female"></i></div>
+                    <div class="service-content">
+                        <h3>Women's Health</h3>
+                        <p>Comprehensive gynecological and maternity care for women of all ages.</p>
+                        <div class="service-meta">
+                            <span><i class="fas fa-clock"></i> 24/7 maternity</span>
+                            <span><i class="fas fa-check-circle"></i> Expert care</span>
+                        </div>
+                        <a href="maternity.html" class="btn btn-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Service 11 - Specialized -->
+                <div class="service-card animate-on-scroll" data-category="specialized">
+                    <div class="service-icon"><i class="fas fa-eye"></i></div>
+                    <div class="service-content">
+                        <h3>Eye Care</h3>
+                        <p>Comprehensive ophthalmology services including surgery and vision correction.</p>
+                        <div class="service-meta">
+                            <span><i class="fas fa-clock"></i> Specialized care</span>
+                            <span><i class="fas fa-check-circle"></i> Advanced equipment</span>
+                        </div>
+                        <a href="department.html?dept=ophthalmology" class="btn btn-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Service 12 - Preventive -->
+                <div class="service-card animate-on-scroll" data-category="preventive">
+                    <div class="service-icon"><i class="fas fa-syringe"></i></div>
+                    <div class="service-content">
+                        <h3>Vaccination Services</h3>
+                        <p>Complete vaccination programs for children and adults.</p>
+                        <div class="service-meta">
+                            <span><i class="fas fa-clock"></i> Walk-in available</span>
+                            <span><i class="fas fa-check-circle"></i> All vaccines</span>
+                        </div>
+                        <a href="services.html" class="btn btn-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Pricing Banner -->
+    <section class="pricing-banner">
+        <div class="container">
+            <div class="pricing-content">
+                <h2>Affordable Healthcare Packages</h2>
+                <p>Choose from our range of health packages designed for your needs</p>
+                <a href="health-packages.html" class="btn btn-primary btn-lg">View Packages</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Banner -->
+    <section class="emergency-banner">
+        <div class="container">
+            <div class="emergency-content">
+                <div class="emergency-text">
+                    <i class="fas fa-ambulance"></i>
+                    <div><h2>Emergency Services Available 24/7</h2><p>Immediate medical attention when you need it most</p></div>
+                </div>
+                <div class="emergency-contact">
+                    <a href="tel:911" class="emergency-number"><i class="fas fa-phone"></i> Emergency: 911</a>
+                    <a href="emergency.html" class="btn btn-light">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo"><img src="images/logo-white.svg" alt="MediCare"><span>MediCare Hospital</span></div>
+                    <p>Providing quality healthcare services with compassion and excellence since 2010.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="about.html">About Us</a></li><li><a href="departments.html">Departments</a></li><li><a href="doctors.html">Doctors</a></li><li><a href="services.html">Services</a></li></ul></div>
+                <div class="footer-links"><h4>Patient Services</h4><ul><li><a href="appointments.html">Book Appointment</a></li><li><a href="patient-login.html">Patient Portal</a></li><li><a href="laboratory.html">Lab Results</a></li><li><a href="pharmacy.html">Pharmacy</a></li></ul></div>
+                <div class="footer-contact"><h4>Contact Info</h4><ul><li><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</li><li><i class="fas fa-phone"></i> +251 911 234 567</li><li><i class="fas fa-envelope"></i> info@medicare.com</li><li><i class="fas fa-clock"></i> 24/7 Emergency Services</li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 MediCare Hospital. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms & Conditions</a><a href="faq.html">FAQ</a></div></div>
+        </div>
+    </footer>
+
+    <!-- AI Assistant -->
+    <div class="ai-assistant" id="aiAssistant">
+        <button class="ai-toggle" id="aiToggle"><i class="fas fa-robot"></i><span class="ai-badge">AI</span></button>
+        <div class="ai-chat" id="aiChat">
+            <div class="ai-header"><i class="fas fa-robot"></i><h4>AI Health Assistant</h4><button class="ai-close"><i class="fas fa-times"></i></button></div>
+            <div class="ai-messages" id="aiMessages"><div class="message ai"><p>👋 Hello! I'm your AI health assistant.</p></div></div>
+            <div class="ai-input"><input type="text" placeholder="Ask me anything..." id="aiInput"><button id="aiSend"><i class="fas fa-paper-plane"></i></button></div>
+        </div>
+    </div>
+
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/qr.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/scanner.js"></script>
+</body>
+</html>
