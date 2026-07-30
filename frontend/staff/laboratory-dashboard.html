@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratory Dashboard - MediCare Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="dashboard-sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <img src="../images/logo.svg" alt="MediCare">
+                <span>Medi<span>Care</span></span>
+            </div>
+            <div class="sidebar-user">
+                <img src="https://ui-avatars.com/api/?name=Lab+Tech&background=7c3aed&color=fff" alt="Lab Technician" class="sidebar-user-avatar">
+                <div class="sidebar-user-info">
+                    <h4>Dr. Sarah Lee</h4>
+                    <p>Lab Technician</p>
+                </div>
+            </div>
+            <nav class="sidebar-menu">
+                <div class="sidebar-menu-group">
+                    <div class="sidebar-menu-group-title">Main</div>
+                    <a href="laboratory-dashboard.html" class="sidebar-menu-item active"><i class="fas fa-th-large"></i><span>Dashboard</span></a>
+                    <a href="#" class="sidebar-menu-item"><i class="fas fa-flask"></i><span>Pending Tests</span><span class="badge">6</span></a>
+                    <a href="#" class="sidebar-menu-item"><i class="fas fa-vial"></i><span>Sample Tracking</span></a>
+                    <a href="#" class="sidebar-menu-item"><i class="fas fa-file-medical-alt"></i><span>Results</span></a>
+                    <a href="#" class="sidebar-menu-item"><i class="fas fa-print"></i><span>Print Reports</span></a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="laboratory-login.html" class="sidebar-menu-item" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i><span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="dashboard-header-left">
+                    <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+                    <div>
+                        <h1>Laboratory Dashboard</h1>
+                        <p>Welcome back, Dr. Lee!</p>
+                    </div>
+                </div>
+                <div class="dashboard-header-right">
+                    <div class="dashboard-search">
+                        <input type="text" placeholder="Search tests...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="dashboard-header-actions">
+                        <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+                        <img src="https://ui-avatars.com/api/?name=Lab+Tech&background=7c3aed&color=fff" alt="Lab Technician" class="user-avatar">
+                    </div>
+                </div>
+            </header>
+
+            <section class="dashboard-cards">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header"><h3>Pending Tests</h3><i class="fas fa-clock" style="color: #f59e0b;"></i></div>
+                    <div class="dashboard-card-value">6</div>
+                    <div class="dashboard-card-change negative"><i class="fas fa-clock"></i> 3 urgent</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header"><h3>In Progress</h3><i class="fas fa-flask" style="color: #2563eb;"></i></div>
+                    <div class="dashboard-card-value">4</div>
+                    <div class="dashboard-card-change positive"><i class="fas fa-microscope"></i> Testing</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header"><h3>Completed Today</h3><i class="fas fa-check-circle" style="color: #22c55e;"></i></div>
+                    <div class="dashboard-card-value">8</div>
+                    <div class="dashboard-card-change positive"><i class="fas fa-arrow-up"></i> Ready</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header"><h3>Total Samples</h3><i class="fas fa-vial" style="color: #7c3aed;"></i></div>
+                    <div class="dashboard-card-value">18</div>
+                    <div class="dashboard-card-change"><i class="fas fa-database"></i> Processed</div>
+                </div>
+            </section>
+
+            <!-- Pending Tests -->
+            <section class="dashboard-table-container">
+                <div class="dashboard-table-header">
+                    <h3>Pending Tests</h3>
+                    <button class="btn btn-sm btn-primary" onclick="processTest()"><i class="fas fa-play"></i> Process Test</button>
+                </div>
+                <table class="dashboard-table">
+                    <thead>
+                        <tr><th>Test #</th><th>Patient</th><th>Test Type</th><th>Date</th><th>Priority</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#LAB-2024-001</td>
+                            <td>John Doe</td>
+                            <td>Complete Blood Count</td>
+                            <td>Jan 20, 2024</td>
+                            <td><span class="badge badge-danger">Urgent</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewTest(1)"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="processTest()"><i class="fas fa-play"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#LAB-2024-002</td>
+                            <td>Jane Smith</td>
+                            <td>Lipid Profile</td>
+                            <td>Jan 20, 2024</td>
+                            <td><span class="badge badge-warning">Normal</span></td>
+                            <td>
+                                <div class="table-actions-btns">
+                                    <button class="btn-view" onclick="viewTest(2)"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-edit" onclick="processTest()"><i class="fas fa-play"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Quick Actions -->
+            <section style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 25px;">
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center; cursor: pointer;" onclick="scanSample()">
+                    <i class="fas fa-qrcode" style="font-size: 28px; color: var(--primary-color);"></i>
+                    <h4 style="margin-top: 10px;">Scan Sample</h4>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center; cursor: pointer;" onclick="enterResults()">
+                    <i class="fas fa-file-medical-alt" style="font-size: 28px; color: var(--accent-green);"></i>
+                    <h4 style="margin-top: 10px;">Enter Results</h4>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center; cursor: pointer;" onclick="printReport()">
+                    <i class="fas fa-print" style="font-size: 28px; color: var(--secondary-color);"></i>
+                    <h4 style="margin-top: 10px;">Print Report</h4>
+                </div>
+                <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center; cursor: pointer;" onclick="viewHistory()">
+                    <i class="fas fa-history" style="font-size: 28px; color: var(--accent-red);"></i>
+                    <h4 style="margin-top: 10px;">View History</h4>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'laboratory-login.html';
+            }
+        }
+
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+            localStorage.setItem('theme', html.getAttribute('data-theme'));
+        }
+
+        function viewTest(id) {
+            alert(`Viewing test #${id}`);
+        }
+
+        function processTest() {
+            alert('Processing test...');
+        }
+
+        function scanSample() {
+            alert('Scanning sample...');
+        }
+
+        function enterResults() {
+            alert('Entering test results...');
+        }
+
+        function printReport() {
+            alert('Printing report...');
+        }
+
+        function viewHistory() {
+            alert('Viewing test history...');
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+</body>
+                          </html>
