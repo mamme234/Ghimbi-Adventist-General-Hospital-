@@ -1,136 +1,151 @@
+// backend/controllers/patientController.js
 const Patient = require('../models/Patient');
 const User = require('../models/User');
-const Appointment = require('../models/Appointment');
-const QRCode = require('qrcode');
-const { uploadFile } = require('../upload');
+const { uploadFile } = require('../services/upload');  // ✅ Correct path
 
-exports.createPatient = async (req, res) => {
-  try {
-    const { email, password, firstName, lastName, phone, ...patientData } = req.body;
-
-    // Check if user exists
-    let user = await User.findOne({ email });
-    if (user) {
-      return res.status(400).json({
-        success: false,
-        message: 'User already exists with this email',
-      });
-    }
-
-    // Create user
-    user = new User({
-      email,
-      password,
-      firstName,
-      lastName,
-      phone,
-      role: 'patient',
-      hospitalBranch: patientData.hospitalBranch,
-    });
-    await user.save();
-
-    // Create patient
-    const patient = new Patient({
-      user: user._id,
-      ...patientData,
-    });
-    await patient.save();
-
-    // Generate QR code
-    const qrData = JSON.stringify({
-      patientId: patient.patientId,
-      name: `${firstName} ${lastName}`,
-      phone,
-    });
-    const qrCode = await QRCode.toDataURL(qrData);
-    patient.qrCode = qrCode;
-    await patient.save();
-
-    res.status(201).json({
-      success: true,
-      data: patient,
-      message: 'Patient registered successfully',
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: 'Error creating patient',
-      error: error.message,
-    });
-  }
-};
-
+// Get all patients
 exports.getPatients = async (req, res) => {
   try {
-    const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 10;
-    const skip = (page - 1) * limit;
-    const search = req.query.search || '';
-
-    const query = {};
-    if (search) {
-      query.$or = [
-        { patientId: { $regex: search, $options: 'i' } },
-        { 'user.firstName': { $regex: search, $options: 'i' } },
-        { 'user.lastName': { $regex: search, $options: 'i' } },
-      ];
-    }
-
-    const patients = await Patient.find(query)
-      .populate('user', '-password -refreshToken')
-      .populate('primaryPhysician', 'user specialization')
-      .skip(skip)
-      .limit(limit)
-      .sort({ createdAt: -1 });
-
-    const total = await Patient.countDocuments(query);
-
+    const patients = await Patient.find().populate('user');
     res.json({
       success: true,
-      data: patients,
-      pagination: {
-        page,
-        limit,
-        total,
-        pages: Math.ceil(total / limit),
-      },
+      data: patients
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      message: 'Error fetching patients',
-      error: error.message,
+      message: error.message
     });
   }
 };
 
+// Get patient by ID
 exports.getPatientById = async (req, res) => {
   try {
-    const patient = await Patient.findById(req.params.id)
-      .populate('user', '-password -refreshToken')
-      .populate('primaryPhysician', 'user specialization')
-      .populate('admissions')
-      .populate({
-        path: 'medicalHistory.doctor',
-        select: 'user specialization',
-      });
-
+    const patient = await Patient.findById(req.params.id).populate('user');
     if (!patient) {
       return res.status(404).json({
         success: false,
-        message: 'Patient not found',
+        message: 'Patient not found'
       });
     }
-
     res.json({
       success: true,
-      data: patient,
+      data: patient
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      message: 'Error fetching patient',
-      error: error.message,
+      message: error.message
+    });
+  }
+};
+
+// Create patient
+exports.createPatient = async (req, res) => {
+  try {
+    const patient = new Patient(req.body);
+    await patient.save();
+    res.status(201).json({
+      success: true,
+      data: patient
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message
+    });
+  }
+};
+
+// Update patient
+exports.updatePatient = async (req, res) => {
+  try {
+    const patient = await Patient.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true, runValidators: true }
+    );
+    if (!patient) {
+      return res.status(404).json({
+        success: false,
+        message: 'Patient not found'
+      });
+    }
+    res.json({
+      success: true,
+      data: patient
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message
+    });
+  }
+};
+
+// Delete patient
+exports.deletePatient = async (req, res) => {
+  try {
+    const patient = await Patient.findByIdAndDelete(req.params.id);
+    if (!patient) {
+      return res.status(404).json({
+        success: false,
+        message: 'Patient not found'
+      });
+    }
+    res.json({
+      success: true,
+      message: 'Patient deleted successfully'
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message
+    });
+  }
+};
+
+// Upload patient document
+exports.uploadPatientDocument = async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({
+        success: false,
+        message: 'No file uploaded'
+      });
+    }
+
+    const result = await uploadFile(req.file, 'uploads/patients');
+    
+    if (!result.success) {
+      return res.status(500).json({
+        success: false,
+        message: result.error
+      });
+    }
+
+    // Update patient with document reference
+    const patient = await Patient.findById(req.params.id);
+    if (patient) {
+      patient.documents = patient.documents || [];
+      patient.documents.push({
+        name: req.file.originalname,
+        url: result.filePath,
+        uploadedAt: new Date()
+      });
+      await patient.save();
+    }
+
+    res.json({
+      success: true,
+      data: result,
+      message: 'File uploaded successfully'
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message
     });
   }
 };
