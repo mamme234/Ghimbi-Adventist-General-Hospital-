@@ -2,9 +2,9 @@ services:
   - type: web
     name: hospital-backend
     runtime: docker
-    repo: https://github.com/yourusername/hospital-management-system
-    plan: starter
-    region: frankfurt
+    repo: https://github.com/mamme234/Ghimbi-Adventist-General-Hospital-.git
+    plan: free
+    region: 
     dockerfilePath: ./backend/Dockerfile
     dockerContext: ./backend
     buildCommand: docker build -t hospital-backend -f ./backend/Dockerfile ./backend
@@ -15,7 +15,7 @@ services:
       - key: PORT
         value: 5000
       - key: FRONTEND_URL
-        value: https://your-frontend.vercel.app
+        value: https://ghimbi-adventist-general-hospital-2.vercel.app
       - key: MONGO_URI
         sync: false
       - key: JWT_SECRET
