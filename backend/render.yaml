@@ -1,12 +1,21 @@
 services:
   - type: web
     name: hospital-backend
-    env: node
-    buildCommand: npm install
+    runtime: docker
+    repo: https://github.com/yourusername/hospital-management-system
+    plan: starter
+    region: frankfurt
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    buildCommand: docker build -t hospital-backend -f ./backend/Dockerfile ./backend
     startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
+      - key: PORT
+        value: 5000
+      - key: FRONTEND_URL
+        value: https://your-frontend.vercel.app
       - key: MONGO_URI
         sync: false
       - key: JWT_SECRET
@@ -29,6 +38,19 @@ services:
         sync: false
       - key: PAYMENT_SECRET_KEY
         sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
     healthCheckPath: /health
     autoDeploy: true
-    plan: starter
+    ignoredPaths:
+      - .gitignore
+      - README.md
+      - .vscode/
+      - .github/
+      - docs/
+      - tests/
+      - .env.example
+      - docker-compose.yml
+    dockerCommand: npm start
