@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medical Records - MediCare Hospital</title>
+    <title>Medical Records - Ghimbi Adventist General Hospital</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
 </head>
 <body>
     <div class="dashboard-container">
-        <!-- Sidebar (same as previous) -->
         <aside class="dashboard-sidebar" id="sidebar">
             <div class="sidebar-brand">
-                <img src="images/logo.svg" alt="MediCare">
-                <span>Medi<span>Care</span></span>
+                <img src="../images/logo.svg" alt="Ghimbi Adventist">
+                <span>Ghimbi <span>Adventist</span></span>
             </div>
             <div class="sidebar-user">
-                <img src="https://ui-avatars.com/api/?name=John+Doe&background=2563eb&color=fff" alt="John Doe" class="sidebar-user-avatar">
+                <img src="https://ui-avatars.com/api/?name=John+Doe&background=1a6e3c&color=fff" alt="John Doe" class="sidebar-user-avatar">
                 <div class="sidebar-user-info">
                     <h4>John Doe</h4>
                     <p>Patient ID: P-2024-001</p>
@@ -58,7 +57,6 @@
             </div>
         </aside>
 
-        <!-- Main Content -->
         <main class="dashboard-main">
             <header class="dashboard-header">
                 <div class="dashboard-header-left">
@@ -74,34 +72,31 @@
                         <button><i class="fas fa-search"></i></button>
                     </div>
                     <div class="dashboard-header-actions">
-                        <button><i class="fas fa-bell"></i></button>
                         <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
-                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=2563eb&color=fff" alt="John Doe" class="user-avatar">
+                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=1a6e3c&color=fff" alt="John Doe" class="user-avatar">
                     </div>
                 </div>
             </header>
 
-            <!-- Record Summary -->
             <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 25px;">
                 <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center;">
-                    <div style="font-size: 28px; font-weight: 700; color: var(--primary-color);">15</div>
+                    <div style="font-size: 28px; font-weight: 700; color: #1a6e3c;">15</div>
                     <div style="font-size: 14px; color: var(--mid-gray);">Total Visits</div>
                 </div>
                 <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center;">
-                    <div style="font-size: 28px; font-weight: 700; color: var(--accent-green);">8</div>
+                    <div style="font-size: 28px; font-weight: 700; color: #22c55e;">8</div>
                     <div style="font-size: 14px; color: var(--mid-gray);">Diagnoses</div>
                 </div>
                 <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center;">
-                    <div style="font-size: 28px; font-weight: 700; color: var(--accent-blue);">12</div>
+                    <div style="font-size: 28px; font-weight: 700; color: #2563eb;">12</div>
                     <div style="font-size: 14px; color: var(--mid-gray);">Procedures</div>
                 </div>
                 <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center;">
-                    <div style="font-size: 28px; font-weight: 700; color: var(--accent-yellow);">5</div>
+                    <div style="font-size: 28px; font-weight: 700; color: #f59e0b;">5</div>
                     <div style="font-size: 14px; color: var(--mid-gray);">Allergies</div>
                 </div>
             </div>
 
-            <!-- Records List -->
             <div class="dashboard-table-container">
                 <div class="dashboard-table-header">
                     <h3>Medical History</h3>
@@ -170,10 +165,9 @@
                 </table>
             </div>
 
-            <!-- Allergies & Conditions -->
             <div style="margin-top: 25px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                 <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray);">
-                    <h3 style="margin-bottom: 15px;"><i class="fas fa-allergies" style="color: var(--accent-red);"></i> Allergies</h3>
+                    <h3 style="margin-bottom: 15px;"><i class="fas fa-allergies" style="color: #dc2626;"></i> Allergies</h3>
                     <ul style="list-style: none; padding: 0;">
                         <li style="padding: 8px 0; border-bottom: 1px solid var(--light-gray); display: flex; justify-content: space-between;">
                             <span>Penicillin</span>
@@ -190,7 +184,7 @@
                     </ul>
                 </div>
                 <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray);">
-                    <h3 style="margin-bottom: 15px;"><i class="fas fa-notes-medical" style="color: var(--primary-color);"></i> Chronic Conditions</h3>
+                    <h3 style="margin-bottom: 15px;"><i class="fas fa-notes-medical" style="color: #1a6e3c;"></i> Chronic Conditions</h3>
                     <ul style="list-style: none; padding: 0;">
                         <li style="padding: 8px 0; border-bottom: 1px solid var(--light-gray);">
                             <span style="font-weight: 600;">Hypertension</span>
@@ -246,4 +240,4 @@
         }
     </script>
 </body>
-                  </html>
+                        </html>
