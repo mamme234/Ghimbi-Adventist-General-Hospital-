@@ -3,21 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radiology Results - MediCare Hospital</title>
+    <title>Radiology Results - Ghimbi Adventist General Hospital</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
 </head>
 <body>
     <div class="dashboard-container">
-        <!-- Sidebar (same as previous) -->
-        <aside class="dashboard-sidebar" id="sidebar">...</aside>
+        <aside class="dashboard-sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <img src="../images/logo.svg" alt="Ghimbi Adventist">
+                <span>Ghimbi <span>Adventist</span></span>
+            </div>
+            <div class="sidebar-user">
+                <img src="https://ui-avatars.com/api/?name=John+Doe&background=1a6e3c&color=fff" alt="John Doe" class="sidebar-user-avatar">
+                <div class="sidebar-user-info">
+                    <h4>John Doe</h4>
+                    <p>Patient ID: P-2024-001</p>
+                </div>
+            </div>
+            <nav class="sidebar-menu">
+                <div class="sidebar-menu-group">
+                    <div class="sidebar-menu-group-title">Main</div>
+                    <a href="patient-dashboard.html" class="sidebar-menu-item"><i class="fas fa-th-large"></i><span>Dashboard</span></a>
+                    <a href="patient-profile.html" class="sidebar-menu-item"><i class="fas fa-user"></i><span>Profile</span></a>
+                    <a href="patient-appointments.html" class="sidebar-menu-item"><i class="fas fa-calendar-check"></i><span>Appointments</span><span class="badge">3</span></a>
+                </div>
+                <div class="sidebar-menu-group">
+                    <div class="sidebar-menu-group-title">Medical</div>
+                    <a href="patient-records.html" class="sidebar-menu-item"><i class="fas fa-file-medical"></i><span>Medical Records</span></a>
+                    <a href="patient-prescriptions.html" class="sidebar-menu-item"><i class="fas fa-prescription"></i><span>Prescriptions</span></a>
+                    <a href="patient-lab-results.html" class="sidebar-menu-item"><i class="fas fa-flask"></i><span>Lab Results</span></a>
+                    <a href="patient-radiology.html" class="sidebar-menu-item active"><i class="fas fa-x-ray"></i><span>Radiology Results</span></a>
+                </div>
+                <div class="sidebar-menu-group">
+                    <div class="sidebar-menu-group-title">Billing</div>
+                    <a href="patient-bills.html" class="sidebar-menu-item"><i class="fas fa-file-invoice-dollar"></i><span>Bills & Payments</span><span class="badge" style="background: #ef4444;">2</span></a>
+                </div>
+                <div class="sidebar-menu-group">
+                    <div class="sidebar-menu-group-title">Account</div>
+                    <a href="patient-messages.html" class="sidebar-menu-item"><i class="fas fa-envelope"></i><span>Messages</span><span class="badge" style="background: #f59e0b;">1</span></a>
+                    <a href="patient-settings.html" class="sidebar-menu-item"><i class="fas fa-cog"></i><span>Settings</span></a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="patient-login.html" class="sidebar-menu-item" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i><span>Logout</span>
+                </a>
+            </div>
+        </aside>
 
-        <!-- Main Content -->
         <main class="dashboard-main">
             <header class="dashboard-header">
                 <div class="dashboard-header-left">
@@ -33,30 +72,27 @@
                         <button><i class="fas fa-search"></i></button>
                     </div>
                     <div class="dashboard-header-actions">
-                        <button><i class="fas fa-bell"></i></button>
                         <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
-                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=2563eb&color=fff" alt="John Doe" class="user-avatar">
+                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=1a6e3c&color=fff" alt="John Doe" class="user-avatar">
                     </div>
                 </div>
             </header>
 
-            <!-- Results Summary -->
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 25px;">
                 <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center;">
-                    <div style="font-size: 28px; font-weight: 700; color: var(--primary-color);">6</div>
+                    <div style="font-size: 28px; font-weight: 700; color: #1a6e3c;">6</div>
                     <div style="font-size: 14px; color: var(--mid-gray);">Total Imaging</div>
                 </div>
                 <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center;">
-                    <div style="font-size: 28px; font-weight: 700; color: var(--accent-green);">4</div>
+                    <div style="font-size: 28px; font-weight: 700; color: #22c55e;">4</div>
                     <div style="font-size: 14px; color: var(--mid-gray);">Reports Available</div>
                 </div>
                 <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center;">
-                    <div style="font-size: 28px; font-weight: 700; color: var(--accent-yellow);">2</div>
+                    <div style="font-size: 28px; font-weight: 700; color: #f59e0b;">2</div>
                     <div style="font-size: 14px; color: var(--mid-gray);">Images Available</div>
                 </div>
             </div>
 
-            <!-- Radiology Results List -->
             <div class="dashboard-table-container">
                 <div class="dashboard-table-header">
                     <h3>Imaging Studies</h3>
@@ -75,7 +111,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><i class="fas fa-x-ray" style="color: var(--primary-color);"></i> X-Ray</td>
+                            <td><i class="fas fa-x-ray" style="color: #1a6e3c;"></i> X-Ray</td>
                             <td>Jan 20, 2024</td>
                             <td>Chest</td>
                             <td>Normal</td>
@@ -88,7 +124,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><i class="fas fa-wave-square" style="color: var(--secondary-color);"></i> Ultrasound</td>
+                            <td><i class="fas fa-wave-square" style="color: #7c3aed;"></i> Ultrasound</td>
                             <td>Jan 15, 2024</td>
                             <td>Abdomen</td>
                             <td>Pending</td>
@@ -100,7 +136,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><i class="fas fa-brain" style="color: var(--accent-purple);"></i> MRI</td>
+                            <td><i class="fas fa-brain" style="color: #8b5cf6;"></i> MRI</td>
                             <td>Dec 10, 2023</td>
                             <td>Brain</td>
                             <td>Normal</td>
@@ -113,7 +149,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><i class="fas fa-ct-scan" style="color: var(--accent-red);"></i> CT Scan</td>
+                            <td><i class="fas fa-ct-scan" style="color: #dc2626;"></i> CT Scan</td>
                             <td>Nov 5, 2023</td>
                             <td>Chest</td>
                             <td>Normal</td>
@@ -129,7 +165,6 @@
                 </table>
             </div>
 
-            <!-- Image Viewer Preview -->
             <div style="margin-top: 25px; background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray);">
                 <h3>Recent Images</h3>
                 <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 15px;">
@@ -206,4 +241,4 @@
         }
     </script>
 </body>
-                          </html>
+                                                                                                                      </html>
