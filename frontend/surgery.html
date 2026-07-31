@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surgical Services - MediCare Hospital</title>
+    <title>Surgical Services - Ghimbi Adventist General Hospital</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -13,57 +13,27 @@
     <link rel="stylesheet" href="css/component-styles.css">
 </head>
 <body>
-    <div id="loading-screen"><div class="loader-container"><div class="hospital-loader"><div class="heartbeat"></div><div class="pulse-ring"></div></div><div class="loader-text"><span>M</span><span>e</span><span>d</span><span>i</span><span>C</span><span>a</span><span>r</span><span>e</span></div><div class="loader-progress"><div class="progress-bar" id="loader-progress-bar"></div></div><p class="loading-message">Loading surgical services...</p></div></div>
-
-    <!-- Top Bar -->
-    <div class="top-bar" id="topBar">
-        <div class="container">
-            <div class="top-bar-content">
-                <div class="top-bar-left">
-                    <div class="contact-info">
-                        <a href="tel:+251911234567"><i class="fas fa-phone-alt"></i> +251 911 234 567</a>
-                        <a href="mailto:info@medicare.com"><i class="fas fa-envelope"></i> info@medicare.com</a>
-                        <span><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</span>
-                    </div>
-                </div>
-                <div class="top-bar-right">
-                    <div class="emergency-number"><i class="fas fa-ambulance"></i><span>Emergency: <strong>911</strong></span></div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
-                </div>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="hospital-loader">
+                <div class="heartbeat"></div>
+                <div class="pulse-ring"></div>
             </div>
+            <div class="loader-text">
+                <span>G</span><span>h</span><span>i</span><span>m</span><span>b</span><span>i</span>
+                <span> </span>
+                <span>A</span><span>d</span><span>v</span><span>e</span><span>n</span><span>t</span><span>i</span><span>s</span><span>t</span>
+            </div>
+            <div class="loader-progress">
+                <div class="progress-bar" id="loader-progress-bar"></div>
+            </div>
+            <p class="loading-message">Loading surgical services...</p>
         </div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="mainNav">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo"><a href="index.html"><img src="images/logo.svg" alt="MediCare Hospital" class="logo-img"><span class="logo-text">Medi<span>Care</span></span></a></div>
-                <ul class="nav-menu" id="navMenu">
-                    <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
-                    <li class="nav-item"><a href="departments.html" class="nav-link"><i class="fas fa-hospital"></i> Departments</a></li>
-                    <li class="nav-item"><a href="doctors.html" class="nav-link"><i class="fas fa-user-md"></i> Doctors</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link active"><i class="fas fa-stethoscope"></i> Services</a></li>
-                    <li class="nav-item"><a href="appointments.html" class="nav-link"><i class="fas fa-calendar-check"></i> Book Appointment</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
-                <div class="nav-actions">
-                    <button class="search-toggle" id="searchToggle"><i class="fas fa-search"></i></button>
-                    <a href="patient-login.html" class="btn-login"><i class="fas fa-user-circle"></i> Login</a>
-                    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <div class="top-bar" id="topBar">...</div>
+    <nav class="navbar" id="mainNav">...</nav>
 
-    <!-- Page Header -->
     <section class="page-header" style="background: linear-gradient(135deg, #2563eb, #1d4ed8);">
         <div class="container">
             <div class="page-header-content">
@@ -82,15 +52,14 @@
         </div>
     </section>
 
-    <!-- Surgical Overview -->
     <section class="surgery-overview">
         <div class="container">
-            <div class="surgery-content">
+            <div class="surgery-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
                 <div class="surgery-text animate-on-scroll">
                     <span class="section-tag">Surgical Care</span>
                     <h2>Advanced Surgical Services</h2>
                     <p>Our surgical department offers a comprehensive range of surgical procedures using the latest minimally invasive techniques and state-of-the-art equipment. Our team of highly skilled surgeons ensures the best possible outcomes for our patients.</p>
-                    <div class="surgery-stats">
+                    <div class="surgery-stats" style="display: flex; gap: 40px; margin-top: 20px;">
                         <div class="stat-item">
                             <span class="stat-number" data-count="5000">0</span>
                             <span class="stat-label">Surgeries Performed</span>
@@ -106,155 +75,68 @@
                     </div>
                 </div>
                 <div class="surgery-image animate-on-scroll">
-                    <img src="images/surgery.jpg" alt="Surgical Services">
+                    <img src="images/surgery.jpg" alt="Surgical Services" style="border-radius: 12px; width: 100%;">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Surgical Specialties -->
     <section class="surgical-specialties">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Specialties</span>
                 <h2>Surgical Specialties</h2>
             </div>
-            <div class="specialties-grid">
-                <div class="specialty-card animate-on-scroll">
-                    <i class="fas fa-heart"></i>
-                    <h3>Cardiothoracic Surgery</h3>
-                    <p>Heart and chest surgery including bypass, valve replacement, and lung surgery</p>
-                    <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+            <div class="specialties-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                <div class="specialty-card animate-on-scroll" style="background: var(--white); padding: 25px; border-radius: 12px; border: 1px solid var(--light-gray); text-align: center;">
+                    <i class="fas fa-heart" style="font-size: 36px; color: #dc2626;"></i>
+                    <h3 style="margin-top: 15px;">Cardiothoracic Surgery</h3>
+                    <p style="color: #64748b;">Heart and chest surgery including bypass, valve replacement, and lung surgery</p>
+                    <a href="#" class="btn btn-primary btn-sm" style="margin-top: 15px;">Learn More</a>
                 </div>
-                <div class="specialty-card animate-on-scroll">
-                    <i class="fas fa-brain"></i>
-                    <h3>Neurosurgery</h3>
-                    <p>Brain and spinal cord surgery for tumors, trauma, and neurological conditions</p>
-                    <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+                <div class="specialty-card animate-on-scroll" style="background: var(--white); padding: 25px; border-radius: 12px; border: 1px solid var(--light-gray); text-align: center;">
+                    <i class="fas fa-brain" style="font-size: 36px; color: #7c3aed;"></i>
+                    <h3 style="margin-top: 15px;">Neurosurgery</h3>
+                    <p style="color: #64748b;">Brain and spinal cord surgery for tumors, trauma, and neurological conditions</p>
+                    <a href="#" class="btn btn-primary btn-sm" style="margin-top: 15px;">Learn More</a>
                 </div>
-                <div class="specialty-card animate-on-scroll">
-                    <i class="fas fa-bone"></i>
-                    <h3>Orthopedic Surgery</h3>
-                    <p>Joint replacement, fracture repair, and sports injury surgery</p>
-                    <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+                <div class="specialty-card animate-on-scroll" style="background: var(--white); padding: 25px; border-radius: 12px; border: 1px solid var(--light-gray); text-align: center;">
+                    <i class="fas fa-bone" style="font-size: 36px; color: #f59e0b;"></i>
+                    <h3 style="margin-top: 15px;">Orthopedic Surgery</h3>
+                    <p style="color: #64748b;">Joint replacement, fracture repair, and sports injury surgery</p>
+                    <a href="#" class="btn btn-primary btn-sm" style="margin-top: 15px;">Learn More</a>
                 </div>
-                <div class="specialty-card animate-on-scroll">
-                    <i class="fas fa-female"></i>
-                    <h3>Gynecological Surgery</h3>
-                    <p>Hysterectomy, fibroid removal, and reproductive surgery</p>
-                    <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+                <div class="specialty-card animate-on-scroll" style="background: var(--white); padding: 25px; border-radius: 12px; border: 1px solid var(--light-gray); text-align: center;">
+                    <i class="fas fa-female" style="font-size: 36px; color: #ec4899;"></i>
+                    <h3 style="margin-top: 15px;">Gynecological Surgery</h3>
+                    <p style="color: #64748b;">Hysterectomy, fibroid removal, and reproductive surgery</p>
+                    <a href="#" class="btn btn-primary btn-sm" style="margin-top: 15px;">Learn More</a>
                 </div>
-                <div class="specialty-card animate-on-scroll">
-                    <i class="fas fa-cut"></i>
-                    <h3>General Surgery</h3>
-                    <p>Appendectomy, gallbladder removal, and hernia repair</p>
-                    <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+                <div class="specialty-card animate-on-scroll" style="background: var(--white); padding: 25px; border-radius: 12px; border: 1px solid var(--light-gray); text-align: center;">
+                    <i class="fas fa-cut" style="font-size: 36px; color: #2563eb;"></i>
+                    <h3 style="margin-top: 15px;">General Surgery</h3>
+                    <p style="color: #64748b;">Appendectomy, gallbladder removal, and hernia repair</p>
+                    <a href="#" class="btn btn-primary btn-sm" style="margin-top: 15px;">Learn More</a>
                 </div>
-                <div class="specialty-card animate-on-scroll">
-                    <i class="fas fa-eye"></i>
-                    <h3>Ophthalmic Surgery</h3>
-                    <p>Cataract, glaucoma, and refractive surgery</p>
-                    <a href="#" class="btn btn-primary btn-sm">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Surgeons -->
-    <section class="surgical-team">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Team</span>
-                <h2>Our Surgical Team</h2>
-            </div>
-            <div class="team-grid">
-                <div class="surgeon-card animate-on-scroll">
-                    <img src="images/surgeons/surgeon1.jpg" alt="Dr. David Williams">
-                    <h4>Dr. David Williams</h4>
-                    <span>Head of Surgery</span>
-                    <p>20 years experience in cardiothoracic surgery</p>
-                </div>
-                <div class="surgeon-card animate-on-scroll">
-                    <img src="images/surgeons/surgeon2.jpg" alt="Dr. Maria Santos">
-                    <h4>Dr. Maria Santos</h4>
-                    <span>Orthopedic Surgeon</span>
-                    <p>15 years experience in joint replacement</p>
-                </div>
-                <div class="surgeon-card animate-on-scroll">
-                    <img src="images/surgeons/surgeon3.jpg" alt="Dr. James O'Brien">
-                    <h4>Dr. James O'Brien</h4>
-                    <span>Neurosurgeon</span>
-                    <p>12 years experience in brain surgery</p>
-                </div>
-                <div class="surgeon-card animate-on-scroll">
-                    <img src="images/surgeons/surgeon4.jpg" alt="Dr. Helen Kim">
-                    <h4>Dr. Helen Kim</h4>
-                    <span>General Surgeon</span>
-                    <p>10 years experience in general surgery</p>
+                <div class="specialty-card animate-on-scroll" style="background: var(--white); padding: 25px; border-radius: 12px; border: 1px solid var(--light-gray); text-align: center;">
+                    <i class="fas fa-eye" style="font-size: 36px; color: #22c55e;"></i>
+                    <h3 style="margin-top: 15px;">Ophthalmic Surgery</h3>
+                    <p style="color: #64748b;">Cataract, glaucoma, and refractive surgery</p>
+                    <a href="#" class="btn btn-primary btn-sm" style="margin-top: 15px;">Learn More</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Recovery Information -->
-    <section class="recovery-info">
-        <div class="container">
-            <div class="recovery-content">
-                <h2>Recovery Information</h2>
-                <p>What to expect during your surgical recovery</p>
-                <div class="recovery-grid">
-                    <div class="recovery-card">
-                        <i class="fas fa-clock"></i>
-                        <h4>Before Surgery</h4>
-                        <ul>
-                            <li>Follow pre-operative instructions</li>
-                            <li>Fasting guidelines</li>
-                            <li>Medication review</li>
-                            <li>Pre-surgical tests</li>
-                        </ul>
-                    </div>
-                    <div class="recovery-card">
-                        <i class="fas fa-hospital"></i>
-                        <h4>During Surgery</h4>
-                        <ul>
-                            <li>Advanced monitoring</li>
-                            <li>Minimally invasive techniques</li>
-                            <li>Pain management</li>
-                            <li>Safety protocols</li>
-                        </ul>
-                    </div>
-                    <div class="recovery-card">
-                        <i class="fas fa-heartbeat"></i>
-                        <h4>After Surgery</h4>
-                        <ul>
-                            <li>Post-operative care</li>
-                            <li>Pain management</li>
-                            <li>Physical therapy</li>
-                            <li>Follow-up appointments</li>
-                        </ul>
-                    </div>
-                    <div class="recovery-card">
-                        <i class="fas fa-home"></i>
-                        <h4>Home Recovery</h4>
-                        <ul>
-                            <li>Care instructions</li>
-                            <li>Medication schedule</li>
-                            <li>Activity restrictions</li>
-                            <li>Emergency contacts</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Emergency Banner -->
     <section class="emergency-banner">
         <div class="container">
             <div class="emergency-content">
                 <div class="emergency-text">
                     <i class="fas fa-ambulance"></i>
-                    <div><h2>Emergency Services Available 24/7</h2><p>Immediate medical attention when you need it most</p></div>
+                    <div>
+                        <h2>Emergency Services Available 24/7</h2>
+                        <p>Immediate medical attention when you need it most</p>
+                    </div>
                 </div>
                 <div class="emergency-contact">
                     <a href="tel:911" class="emergency-number"><i class="fas fa-phone"></i> Emergency: 911</a>
@@ -264,40 +146,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <div class="footer-logo"><img src="images/logo-white.svg" alt="MediCare"><span>MediCare Hospital</span></div>
-                    <p>Providing quality healthcare services with compassion and excellence since 2010.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="about.html">About Us</a></li><li><a href="departments.html">Departments</a></li><li><a href="doctors.html">Doctors</a></li><li><a href="services.html">Services</a></li></ul></div>
-                <div class="footer-links"><h4>Patient Services</h4><ul><li><a href="appointments.html">Book Appointment</a></li><li><a href="patient-login.html">Patient Portal</a></li><li><a href="laboratory.html">Lab Results</a></li><li><a href="pharmacy.html">Pharmacy</a></li></ul></div>
-                <div class="footer-contact"><h4>Contact Info</h4><ul><li><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</li><li><i class="fas fa-phone"></i> +251 911 234 567</li><li><i class="fas fa-envelope"></i> info@medicare.com</li><li><i class="fas fa-clock"></i> 24/7 Emergency Services</li></ul></div>
-            </div>
-            <div class="footer-bottom"><p>&copy; 2024 MediCare Hospital. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms & Conditions</a><a href="faq.html">FAQ</a></div></div>
-        </div>
-    </footer>
-
-    <!-- AI Assistant -->
-    <div class="ai-assistant" id="aiAssistant">
-        <button class="ai-toggle" id="aiToggle"><i class="fas fa-robot"></i><span class="ai-badge">AI</span></button>
-        <div class="ai-chat" id="aiChat">
-            <div class="ai-header"><i class="fas fa-robot"></i><h4>AI Health Assistant</h4><button class="ai-close"><i class="fas fa-times"></i></button></div>
-            <div class="ai-messages" id="aiMessages"><div class="message ai"><p>👋 Hello! I'm your AI health assistant.</p></div></div>
-            <div class="ai-input"><input type="text" placeholder="Ask me anything..." id="aiInput"><button id="aiSend"><i class="fas fa-paper-plane"></i></button></div>
-        </div>
-    </div>
-
-    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+    <footer class="footer">...</footer>
+    <div class="ai-assistant" id="aiAssistant">...</div>
+    <button class="scroll-top" id="scrollTop">...</button>
 
     <script src="js/main.js"></script>
     <script src="js/api.js"></script>
@@ -307,4 +158,4 @@
     <script src="js/ai.js"></script>
     <script src="js/scanner.js"></script>
 </body>
-                                                                                                                                                                                                                              </html>
+    </html>
