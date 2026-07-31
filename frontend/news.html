@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital News - MediCare Hospital</title>
+    <title>Hospital News - Ghimbi Adventist General Hospital</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -13,58 +13,27 @@
     <link rel="stylesheet" href="css/component-styles.css">
 </head>
 <body>
-    <div id="loading-screen"><div class="loader-container"><div class="hospital-loader"><div class="heartbeat"></div><div class="pulse-ring"></div></div><div class="loader-text"><span>M</span><span>e</span><span>d</span><span>i</span><span>C</span><span>a</span><span>r</span><span>e</span></div><div class="loader-progress"><div class="progress-bar" id="loader-progress-bar"></div></div><p class="loading-message">Loading news...</p></div></div>
-
-    <!-- Top Bar -->
-    <div class="top-bar" id="topBar">
-        <div class="container">
-            <div class="top-bar-content">
-                <div class="top-bar-left">
-                    <div class="contact-info">
-                        <a href="tel:+251911234567"><i class="fas fa-phone-alt"></i> +251 911 234 567</a>
-                        <a href="mailto:info@medicare.com"><i class="fas fa-envelope"></i> info@medicare.com</a>
-                        <span><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</span>
-                    </div>
-                </div>
-                <div class="top-bar-right">
-                    <div class="emergency-number"><i class="fas fa-ambulance"></i><span>Emergency: <strong>911</strong></span></div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
-                </div>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="hospital-loader">
+                <div class="heartbeat"></div>
+                <div class="pulse-ring"></div>
             </div>
+            <div class="loader-text">
+                <span>G</span><span>h</span><span>i</span><span>m</span><span>b</span><span>i</span>
+                <span> </span>
+                <span>A</span><span>d</span><span>v</span><span>e</span><span>n</span><span>t</span><span>i</span><span>s</span><span>t</span>
+            </div>
+            <div class="loader-progress">
+                <div class="progress-bar" id="loader-progress-bar"></div>
+            </div>
+            <p class="loading-message">Loading news...</p>
         </div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="mainNav">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo"><a href="index.html"><img src="images/logo.svg" alt="MediCare Hospital" class="logo-img"><span class="logo-text">Medi<span>Care</span></span></a></div>
-                <ul class="nav-menu" id="navMenu">
-                    <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
-                    <li class="nav-item"><a href="departments.html" class="nav-link"><i class="fas fa-hospital"></i> Departments</a></li>
-                    <li class="nav-item"><a href="doctors.html" class="nav-link"><i class="fas fa-user-md"></i> Doctors</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link"><i class="fas fa-stethoscope"></i> Services</a></li>
-                    <li class="nav-item"><a href="appointments.html" class="nav-link"><i class="fas fa-calendar-check"></i> Book Appointment</a></li>
-                    <li class="nav-item"><a href="news.html" class="nav-link active"><i class="fas fa-newspaper"></i> News</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
-                <div class="nav-actions">
-                    <button class="search-toggle" id="searchToggle"><i class="fas fa-search"></i></button>
-                    <a href="patient-login.html" class="btn-login"><i class="fas fa-user-circle"></i> Login</a>
-                    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <div class="top-bar" id="topBar">...</div>
+    <nav class="navbar" id="mainNav">...</nav>
 
-    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
             <div class="page-header-content">
@@ -81,129 +50,93 @@
         </div>
     </section>
 
-    <!-- News Categories -->
     <section class="news-categories">
         <div class="container">
-            <div class="category-filters">
-                <button class="category-btn active" data-category="all">All News</button>
-                <button class="category-btn" data-category="announcements">Announcements</button>
-                <button class="category-btn" data-category="health">Health Articles</button>
-                <button class="category-btn" data-category="events">Events</button>
-                <button class="category-btn" data-category="achievements">Achievements</button>
+            <div class="category-filters" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px;">
+                <button class="category-btn active" data-category="all" style="padding: 8px 20px; border-radius: 25px; border: none; background: #1a6e3c; color: white; cursor: pointer;">All News</button>
+                <button class="category-btn" data-category="announcements" style="padding: 8px 20px; border-radius: 25px; border: 1px solid #e2e8f0; background: transparent; color: #475569; cursor: pointer;">Announcements</button>
+                <button class="category-btn" data-category="health" style="padding: 8px 20px; border-radius: 25px; border: 1px solid #e2e8f0; background: transparent; color: #475569; cursor: pointer;">Health Articles</button>
+                <button class="category-btn" data-category="events" style="padding: 8px 20px; border-radius: 25px; border: 1px solid #e2e8f0; background: transparent; color: #475569; cursor: pointer;">Events</button>
+                <button class="category-btn" data-category="achievements" style="padding: 8px 20px; border-radius: 25px; border: 1px solid #e2e8f0; background: transparent; color: #475569; cursor: pointer;">Achievements</button>
             </div>
         </div>
     </section>
 
-    <!-- News Grid -->
     <section class="news-grid-section">
         <div class="container">
-            <div class="news-grid" id="newsGrid">
+            <div class="news-grid" id="newsGrid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
                 <!-- Featured News -->
-                <div class="news-card featured animate-on-scroll" data-category="announcements">
-                    <div class="news-image">
-                        <img src="images/news/featured.jpg" alt="Featured News">
-                        <span class="news-tag">Featured</span>
+                <div class="news-card featured animate-on-scroll" data-category="announcements" style="grid-column: span 3; background: var(--white); border-radius: 16px; overflow: hidden; border: 1px solid var(--light-gray);">
+                    <div class="news-image" style="position: relative; height: 300px;">
+                        <img src="images/news/featured.jpg" alt="Featured News" style="width: 100%; height: 100%; object-fit: cover;">
+                        <span class="news-tag" style="position: absolute; top: 20px; left: 20px; background: #dc2626; color: white; padding: 4px 16px; border-radius: 20px; font-size: 12px;">Featured</span>
                     </div>
-                    <div class="news-content">
-                        <div class="news-meta">
+                    <div class="news-content" style="padding: 25px;">
+                        <div class="news-meta" style="display: flex; gap: 20px; font-size: 14px; color: #64748b; margin-bottom: 10px;">
                             <span><i class="fas fa-calendar-alt"></i> January 15, 2024</span>
                             <span><i class="fas fa-tag"></i> Announcement</span>
                         </div>
-                        <h3>MediCare Hospital Launches New Telemedicine Service</h3>
-                        <p>We are proud to announce the launch of our new telemedicine service, allowing patients to consult with our expert doctors from the comfort of their homes...</p>
-                        <a href="article.html?id=1" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <h3 style="font-size: 22px;">Ghimbi Adventist Launches New Telemedicine Service</h3>
+                        <p style="color: #64748b; line-height: 1.7;">We are proud to announce the launch of our new telemedicine service, allowing patients to consult with our expert doctors from the comfort of their homes...</p>
+                        <a href="article.html?id=1" class="read-more" style="color: #1a6e3c; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <!-- News 2 -->
-                <div class="news-card animate-on-scroll" data-category="health">
-                    <div class="news-image">
-                        <img src="images/news/news1.jpg" alt="Health Tips">
+                <div class="news-card animate-on-scroll" data-category="health" style="background: var(--white); border-radius: 12px; overflow: hidden; border: 1px solid var(--light-gray);">
+                    <div class="news-image" style="height: 200px;">
+                        <img src="images/news/news1.jpg" alt="Health Tips" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span><i class="fas fa-calendar-alt"></i> January 12, 2024</span>
+                    <div class="news-content" style="padding: 20px;">
+                        <div class="news-meta" style="display: flex; gap: 15px; font-size: 13px; color: #64748b; margin-bottom: 8px;">
+                            <span><i class="fas fa-calendar-alt"></i> Jan 12, 2024</span>
                             <span><i class="fas fa-tag"></i> Health Article</span>
                         </div>
-                        <h3>10 Tips for a Healthy Heart</h3>
-                        <p>Learn about the essential habits that can help you maintain a healthy heart and prevent cardiovascular diseases...</p>
-                        <a href="article.html?id=2" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <h4>10 Tips for a Healthy Heart</h4>
+                        <p style="color: #64748b; font-size: 14px; line-height: 1.6;">Learn about the essential habits that can help you maintain a healthy heart...</p>
+                        <a href="article.html?id=2" class="read-more" style="color: #1a6e3c; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 14px;">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <!-- News 3 -->
-                <div class="news-card animate-on-scroll" data-category="events">
-                    <div class="news-image">
-                        <img src="images/news/news2.jpg" alt="Health Camp">
+                <div class="news-card animate-on-scroll" data-category="events" style="background: var(--white); border-radius: 12px; overflow: hidden; border: 1px solid var(--light-gray);">
+                    <div class="news-image" style="height: 200px;">
+                        <img src="images/news/news2.jpg" alt="Health Camp" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span><i class="fas fa-calendar-alt"></i> January 10, 2024</span>
+                    <div class="news-content" style="padding: 20px;">
+                        <div class="news-meta" style="display: flex; gap: 15px; font-size: 13px; color: #64748b; margin-bottom: 8px;">
+                            <span><i class="fas fa-calendar-alt"></i> Jan 10, 2024</span>
                             <span><i class="fas fa-tag"></i> Event</span>
                         </div>
-                        <h3>Free Health Camp in Addis Ababa</h3>
-                        <p>Join us for a free health camp offering medical consultations, health screenings, and wellness education...</p>
-                        <a href="article.html?id=3" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <h4>Free Health Camp in Ghimbi</h4>
+                        <p style="color: #64748b; font-size: 14px; line-height: 1.6;">Join us for a free health camp offering medical consultations and health screenings...</p>
+                        <a href="article.html?id=3" class="read-more" style="color: #1a6e3c; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 14px;">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <!-- News 4 -->
-                <div class="news-card animate-on-scroll" data-category="achievements">
-                    <div class="news-image">
-                        <img src="images/news/news3.jpg" alt="Award">
+                <div class="news-card animate-on-scroll" data-category="achievements" style="background: var(--white); border-radius: 12px; overflow: hidden; border: 1px solid var(--light-gray);">
+                    <div class="news-image" style="height: 200px;">
+                        <img src="images/news/news3.jpg" alt="Award" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span><i class="fas fa-calendar-alt"></i> January 8, 2024</span>
+                    <div class="news-content" style="padding: 20px;">
+                        <div class="news-meta" style="display: flex; gap: 15px; font-size: 13px; color: #64748b; margin-bottom: 8px;">
+                            <span><i class="fas fa-calendar-alt"></i> Jan 8, 2024</span>
                             <span><i class="fas fa-tag"></i> Achievement</span>
                         </div>
-                        <h3>MediCare Wins Best Hospital Award 2024</h3>
-                        <p>We are honored to announce that MediCare Hospital has been recognized as the Best Hospital in Ethiopia for 2024...</p>
-                        <a href="article.html?id=4" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- News 5 -->
-                <div class="news-card animate-on-scroll" data-category="health">
-                    <div class="news-image">
-                        <img src="images/news/news4.jpg" alt="Nutrition">
-                    </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span><i class="fas fa-calendar-alt"></i> January 5, 2024</span>
-                            <span><i class="fas fa-tag"></i> Health Article</span>
-                        </div>
-                        <h3>Understanding Nutrition for Better Health</h3>
-                        <p>Discover the importance of balanced nutrition and how it affects your overall health and well-being...</p>
-                        <a href="article.html?id=5" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- News 6 -->
-                <div class="news-card animate-on-scroll" data-category="announcements">
-                    <div class="news-image">
-                        <img src="images/news/news5.jpg" alt="New Equipment">
-                    </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span><i class="fas fa-calendar-alt"></i> January 3, 2024</span>
-                            <span><i class="fas fa-tag"></i> Announcement</span>
-                        </div>
-                        <h3>New MRI Machine Installed</h3>
-                        <p>We have installed a state-of-the-art 3T MRI machine to provide better imaging services for our patients...</p>
-                        <a href="article.html?id=6" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <h4>Ghimbi Adventist Wins Best Hospital Award 2024</h4>
+                        <p style="color: #64748b; font-size: 14px; line-height: 1.6;">We are honored to announce that Ghimbi Adventist has been recognized as the Best Hospital...</p>
+                        <a href="article.html?id=4" class="read-more" style="color: #1a6e3c; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 14px;">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
 
-            <!-- Load More -->
-            <div class="text-center">
+            <div class="text-center" style="margin-top: 30px;">
                 <button class="btn btn-secondary" id="loadMoreNews">Load More News</button>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter -->
     <section class="newsletter">
         <div class="container">
             <div class="newsletter-content">
@@ -217,13 +150,15 @@
         </div>
     </section>
 
-    <!-- Emergency Banner -->
     <section class="emergency-banner">
         <div class="container">
             <div class="emergency-content">
                 <div class="emergency-text">
                     <i class="fas fa-ambulance"></i>
-                    <div><h2>Emergency Services Available 24/7</h2><p>Immediate medical attention when you need it most</p></div>
+                    <div>
+                        <h2>Emergency Services Available 24/7</h2>
+                        <p>Immediate medical attention when you need it most</p>
+                    </div>
                 </div>
                 <div class="emergency-contact">
                     <a href="tel:911" class="emergency-number"><i class="fas fa-phone"></i> Emergency: 911</a>
@@ -233,40 +168,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <div class="footer-logo"><img src="images/logo-white.svg" alt="MediCare"><span>MediCare Hospital</span></div>
-                    <p>Providing quality healthcare services with compassion and excellence since 2010.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="about.html">About Us</a></li><li><a href="departments.html">Departments</a></li><li><a href="doctors.html">Doctors</a></li><li><a href="services.html">Services</a></li></ul></div>
-                <div class="footer-links"><h4>Patient Services</h4><ul><li><a href="appointments.html">Book Appointment</a></li><li><a href="patient-login.html">Patient Portal</a></li><li><a href="laboratory.html">Lab Results</a></li><li><a href="pharmacy.html">Pharmacy</a></li></ul></div>
-                <div class="footer-contact"><h4>Contact Info</h4><ul><li><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</li><li><i class="fas fa-phone"></i> +251 911 234 567</li><li><i class="fas fa-envelope"></i> info@medicare.com</li><li><i class="fas fa-clock"></i> 24/7 Emergency Services</li></ul></div>
-            </div>
-            <div class="footer-bottom"><p>&copy; 2024 MediCare Hospital. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms & Conditions</a><a href="faq.html">FAQ</a></div></div>
-        </div>
-    </footer>
-
-    <!-- AI Assistant -->
-    <div class="ai-assistant" id="aiAssistant">
-        <button class="ai-toggle" id="aiToggle"><i class="fas fa-robot"></i><span class="ai-badge">AI</span></button>
-        <div class="ai-chat" id="aiChat">
-            <div class="ai-header"><i class="fas fa-robot"></i><h4>AI Health Assistant</h4><button class="ai-close"><i class="fas fa-times"></i></button></div>
-            <div class="ai-messages" id="aiMessages"><div class="message ai"><p>👋 Hello! I'm your AI health assistant.</p></div></div>
-            <div class="ai-input"><input type="text" placeholder="Ask me anything..." id="aiInput"><button id="aiSend"><i class="fas fa-paper-plane"></i></button></div>
-        </div>
-    </div>
-
-    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+    <footer class="footer">...</footer>
+    <div class="ai-assistant" id="aiAssistant">...</div>
+    <button class="scroll-top" id="scrollTop">...</button>
 
     <script src="js/main.js"></script>
     <script src="js/api.js"></script>
@@ -276,4 +180,4 @@
     <script src="js/ai.js"></script>
     <script src="js/scanner.js"></script>
 </body>
-                          </html>
+    </html>
