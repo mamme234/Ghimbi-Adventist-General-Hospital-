@@ -1,64 +1,34 @@
+// backend/routes/appointments.js
 const express = require('express');
 const router = express.Router();
-const { protect, authorize } = require('../middleware/auth');
-const {
-  createAppointment,
-  getAppointments,
-  getAppointmentById,
-  updateAppointment,
-  cancelAppointment,
-  confirmAppointment,
-  rescheduleAppointment,
-  getDoctorAvailability,
-  getAppointmentStats,
-  getAppointmentByDate,
-  startAppointment,
-  completeAppointment,
-  markNoShow
-} = require('../controllers/appointmentController');
+const { protect } = require('../middleware/auth');
+const appointmentController = require('../controllers/appointmentController');
 
+// All routes require authentication
 router.use(protect);
 
-router.route('/')
-  .get(getAppointments)
-  .post(authorize('doctor', 'receptionist'), createAppointment);
+// GET all appointments
+router.get('/', appointmentController.getAppointments);
 
-router.route('/:id')
-  .get(getAppointmentById)
-  .put(authorize('doctor', 'receptionist'), updateAppointment);
+// GET appointment by ID
+router.get('/:id', appointmentController.getAppointmentById);
 
-router.post('/:id/cancel', 
-  authorize('doctor', 'receptionist', 'patient'), 
-  cancelAppointment
-);
+// POST create appointment
+router.post('/', appointmentController.createAppointment);
 
-router.post('/:id/confirm', 
-  authorize('receptionist'), 
-  confirmAppointment
-);
+// PUT update appointment
+router.put('/:id', appointmentController.updateAppointment);
 
-router.post('/:id/reschedule', 
-  authorize('doctor', 'receptionist'), 
-  rescheduleAppointment
-);
+// DELETE appointment
+router.delete('/:id', appointmentController.deleteAppointment);
 
-router.get('/doctor/availability', getDoctorAvailability);
-router.get('/stats', authorize('administrator'), getAppointmentStats);
-router.get('/date/:date', getAppointmentByDate);
+// POST cancel appointment
+router.post('/:id/cancel', appointmentController.cancelAppointment);
 
-router.post('/:id/start', 
-  authorize('doctor'), 
-  startAppointment
-);
+// POST confirm appointment
+router.post('/:id/confirm', appointmentController.confirmAppointment);
 
-router.post('/:id/complete', 
-  authorize('doctor'), 
-  completeAppointment
-);
-
-router.post('/:id/no-show', 
-  authorize('receptionist'), 
-  markNoShow
-);
+// GET doctor availability
+router.get('/doctor/availability', appointmentController.getDoctorAvailability);
 
 module.exports = router;
