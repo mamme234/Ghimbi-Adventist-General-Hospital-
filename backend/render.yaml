@@ -1,21 +1,26 @@
 services:
   - type: web
     name: hospital-backend
-    runtime: docker
-    repo: https://github.com/mamme234/Ghimbi-Adventist-General-Hospital-.git
-    plan: free
-    region: 
-    dockerfilePath: ./backend/Dockerfile
-    dockerContext: ./backend
-    buildCommand: docker build -t hospital-backend -f ./backend/Dockerfile ./backend
+    runtime: node
+    repo: https://github.com/yourusername/hospital-management-system
+    plan: starter
+    region: frankfurt
+    buildCommand: npm install
     startCommand: npm start
+    preDeployCommand: |
+      echo "Running pre-deploy tasks..."
+      npm run render:predeploy
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         value: 5000
       - key: FRONTEND_URL
-        value: https://ghimbi-adventist-general-hospital-2.vercel.app
+        value: https://your-frontend.vercel.app
+      - key: RUN_MIGRATIONS
+        value: true
+      - key: CREATE_INDEXES
+        value: true
       - key: MONGO_URI
         sync: false
       - key: JWT_SECRET
@@ -53,4 +58,5 @@ services:
       - tests/
       - .env.example
       - docker-compose.yml
-    dockerCommand: npm start
+      - Dockerfile
+      - .dockerignore
