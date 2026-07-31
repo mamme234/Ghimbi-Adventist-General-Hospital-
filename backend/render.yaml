@@ -2,9 +2,9 @@ services:
   - type: web
     name: hospital-backend
     runtime: node
-    repo: https://github.com/yourusername/hospital-management-system
-    plan: starter
-    region: frankfurt
+    repo: https://github.com/mamme234/Ghimbi-Adventist-General-Hospital-.git
+    plan: free
+    region: Virginia 
     buildCommand: npm install
     startCommand: npm start
     preDeployCommand: |
@@ -16,7 +16,7 @@ services:
       - key: PORT
         value: 5000
       - key: FRONTEND_URL
-        value: https://your-frontend.vercel.app
+        value: https://ghimbi-adventist-general-hospital-n.vercel.app
       - key: RUN_MIGRATIONS
         value: true
       - key: CREATE_INDEXES
