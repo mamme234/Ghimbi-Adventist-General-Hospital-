@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emergency Services - MediCare Hospital</title>
+    <title>Emergency Services - Ghimbi Adventist General Hospital</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -13,66 +13,38 @@
     <link rel="stylesheet" href="css/component-styles.css">
 </head>
 <body>
-    <div id="loading-screen"><div class="loader-container"><div class="hospital-loader"><div class="heartbeat"></div><div class="pulse-ring"></div></div><div class="loader-text"><span>M</span><span>e</span><span>d</span><span>i</span><span>C</span><span>a</span><span>r</span><span>e</span></div><div class="loader-progress"><div class="progress-bar" id="loader-progress-bar"></div></div><p class="loading-message">Loading emergency services...</p></div></div>
-
-    <!-- Top Bar -->
-    <div class="top-bar" id="topBar">
-        <div class="container">
-            <div class="top-bar-content">
-                <div class="top-bar-left">
-                    <div class="contact-info">
-                        <a href="tel:+251911234567"><i class="fas fa-phone-alt"></i> +251 911 234 567</a>
-                        <a href="mailto:info@medicare.com"><i class="fas fa-envelope"></i> info@medicare.com</a>
-                        <span><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</span>
-                    </div>
-                </div>
-                <div class="top-bar-right">
-                    <div class="emergency-number"><i class="fas fa-ambulance"></i><span>Emergency: <strong>911</strong></span></div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
-                </div>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="hospital-loader">
+                <div class="heartbeat"></div>
+                <div class="pulse-ring"></div>
             </div>
+            <div class="loader-text">
+                <span>G</span><span>h</span><span>i</span><span>m</span><span>b</span><span>i</span>
+                <span> </span>
+                <span>A</span><span>d</span><span>v</span><span>e</span><span>n</span><span>t</span><span>i</span><span>s</span><span>t</span>
+            </div>
+            <div class="loader-progress">
+                <div class="progress-bar" id="loader-progress-bar"></div>
+            </div>
+            <p class="loading-message">Loading emergency services...</p>
         </div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="mainNav">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo"><a href="index.html"><img src="images/logo.svg" alt="MediCare Hospital" class="logo-img"><span class="logo-text">Medi<span>Care</span></span></a></div>
-                <ul class="nav-menu" id="navMenu">
-                    <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
-                    <li class="nav-item"><a href="departments.html" class="nav-link"><i class="fas fa-hospital"></i> Departments</a></li>
-                    <li class="nav-item"><a href="doctors.html" class="nav-link"><i class="fas fa-user-md"></i> Doctors</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link"><i class="fas fa-stethoscope"></i> Services</a></li>
-                    <li class="nav-item"><a href="appointments.html" class="nav-link"><i class="fas fa-calendar-check"></i> Book Appointment</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
-                <div class="nav-actions">
-                    <button class="search-toggle" id="searchToggle"><i class="fas fa-search"></i></button>
-                    <a href="patient-login.html" class="btn-login"><i class="fas fa-user-circle"></i> Login</a>
-                    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <div class="top-bar" id="topBar">...</div>
+    <nav class="navbar" id="mainNav">...</nav>
 
-    <!-- Emergency Hero Banner -->
     <section class="emergency-hero">
         <div class="container">
-            <div class="emergency-hero-content">
+            <div class="emergency-hero-content" style="background: linear-gradient(135deg, #dc2626, #991b1b); padding: 60px; border-radius: 16px; color: white; text-align: center;">
                 <div class="emergency-hero-text">
-                    <div class="emergency-badge"><i class="fas fa-ambulance"></i> 24/7 Emergency Services</div>
-                    <h1>Immediate Medical Care When You Need It Most</h1>
-                    <p>Our emergency department is fully equipped to handle any medical emergency with rapid response and expert care.</p>
-                    <div class="emergency-hero-buttons">
-                        <a href="tel:911" class="btn btn-emergency btn-lg"><i class="fas fa-phone"></i> Call Emergency: 911</a>
+                    <div class="emergency-badge" style="display: inline-block; background: rgba(255,255,255,0.2); padding: 8px 20px; border-radius: 50px; font-size: 14px;">
+                        <i class="fas fa-ambulance"></i> 24/7 Emergency Services
+                    </div>
+                    <h1 style="font-size: 36px; margin-top: 20px;">Immediate Medical Care When You Need It Most</h1>
+                    <p style="font-size: 18px; opacity: 0.9; margin: 20px 0;">Our emergency department is fully equipped to handle any medical emergency with rapid response and expert care.</p>
+                    <div class="emergency-hero-buttons" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                        <a href="tel:911" class="btn btn-light btn-lg"><i class="fas fa-phone"></i> Call Emergency: 911</a>
                         <a href="ambulance.html" class="btn btn-primary btn-lg"><i class="fas fa-ambulance"></i> Request Ambulance</a>
                     </div>
                 </div>
@@ -80,79 +52,41 @@
         </div>
     </section>
 
-    <!-- Emergency Contact Numbers -->
     <section class="emergency-contacts">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Emergency Contacts</span>
                 <h2>Emergency Contact Numbers</h2>
             </div>
-            <div class="contacts-grid">
-                <div class="contact-card animate-on-scroll">
-                    <i class="fas fa-phone"></i>
+            <div class="contacts-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                <div class="contact-card animate-on-scroll" style="text-align: center; padding: 30px; background: var(--white); border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <i class="fas fa-phone" style="font-size: 32px; color: #dc2626;"></i>
                     <h4>Emergency Hotline</h4>
-                    <p class="contact-number">911</p>
+                    <p class="contact-number" style="font-size: 24px; font-weight: 700; color: #dc2626;">911</p>
                     <p>Available 24/7</p>
                 </div>
-                <div class="contact-card animate-on-scroll">
-                    <i class="fas fa-ambulance"></i>
+                <div class="contact-card animate-on-scroll" style="text-align: center; padding: 30px; background: var(--white); border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <i class="fas fa-ambulance" style="font-size: 32px; color: #2563eb;"></i>
                     <h4>Ambulance Service</h4>
-                    <p class="contact-number">+251 911 234 567</p>
+                    <p class="contact-number" style="font-size: 24px; font-weight: 700; color: #2563eb;">+251 911 234 567</p>
                     <p>Rapid response</p>
                 </div>
-                <div class="contact-card animate-on-scroll">
-                    <i class="fas fa-hospital"></i>
+                <div class="contact-card animate-on-scroll" style="text-align: center; padding: 30px; background: var(--white); border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <i class="fas fa-hospital" style="font-size: 32px; color: #7c3aed;"></i>
                     <h4>Hospital Switchboard</h4>
-                    <p class="contact-number">+251 911 234 568</p>
+                    <p class="contact-number" style="font-size: 24px; font-weight: 700; color: #7c3aed;">+251 911 234 568</p>
                     <p>24/7 Support</p>
                 </div>
-                <div class="contact-card animate-on-scroll">
-                    <i class="fas fa-heart"></i>
+                <div class="contact-card animate-on-scroll" style="text-align: center; padding: 30px; background: var(--white); border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <i class="fas fa-heart" style="font-size: 32px; color: #ef4444;"></i>
                     <h4>Cardiac Emergency</h4>
-                    <p class="contact-number">+251 911 234 569</p>
+                    <p class="contact-number" style="font-size: 24px; font-weight: 700; color: #ef4444;">+251 911 234 569</p>
                     <p>Cardiac care team</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Emergency Services -->
-    <section class="emergency-services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Our Services</span>
-                <h2>Emergency Services</h2>
-            </div>
-            <div class="emergency-services-grid">
-                <div class="emergency-service-card animate-on-scroll">
-                    <i class="fas fa-ambulance"></i>
-                    <h3>Ambulance Services</h3>
-                    <p>Fully equipped ambulances with paramedics ready for rapid response</p>
-                    <a href="ambulance.html" class="btn btn-primary btn-sm">Request Now</a>
-                </div>
-                <div class="emergency-service-card animate-on-scroll">
-                    <i class="fas fa-trauma"></i>
-                    <h3>Trauma Center</h3>
-                    <p>Level 1 trauma center with specialized teams for critical injuries</p>
-                    <a href="#" class="btn btn-primary btn-sm">Learn More</a>
-                </div>
-                <div class="emergency-service-card animate-on-scroll">
-                    <i class="fas fa-heartbeat"></i>
-                    <h3>Cardiac Emergency</h3>
-                    <p>24/7 cardiac care with immediate intervention for heart attacks</p>
-                    <a href="#" class="btn btn-primary btn-sm">Learn More</p>
-                </div>
-                <div class="emergency-service-card animate-on-scroll">
-                    <i class="fas fa-brain"></i>
-                    <h3>Stroke Response</h3>
-                    <p>Rapid stroke response team for immediate treatment</p>
-                    <a href="#" class="btn btn-primary btn-sm">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- First Aid Tips -->
     <section class="first-aid-tips">
         <div class="container">
             <div class="section-header">
@@ -160,77 +94,78 @@
                 <h2>First Aid Tips</h2>
                 <p>Basic first aid knowledge can save lives</p>
             </div>
-            <div class="tips-grid">
-                <div class="tip-card animate-on-scroll">
-                    <div class="tip-icon"><i class="fas fa-heart"></i></div>
+            <div class="tips-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                <div class="tip-card animate-on-scroll" style="padding: 25px; background: var(--white); border-radius: 12px; border: 1px solid var(--light-gray);">
+                    <div class="tip-icon" style="font-size: 32px; color: #dc2626; margin-bottom: 15px;"><i class="fas fa-heart"></i></div>
                     <h4>CPR</h4>
                     <p>If someone is unconscious and not breathing, call 911 and start CPR immediately.</p>
-                    <button class="btn btn-outline btn-sm read-more">Read More</button>
+                    <button class="btn btn-outline btn-sm read-more" style="margin-top: 10px;">Read More</button>
                 </div>
-                <div class="tip-card animate-on-scroll">
-                    <div class="tip-icon"><i class="fas fa-hand-holding-water"></i></div>
+                <div class="tip-card animate-on-scroll" style="padding: 25px; background: var(--white); border-radius: 12px; border: 1px solid var(--light-gray);">
+                    <div class="tip-icon" style="font-size: 32px; color: #2563eb; margin-bottom: 15px;"><i class="fas fa-hand-holding-water"></i></div>
                     <h4>Bleeding Control</h4>
                     <p>Apply direct pressure to the wound with a clean cloth. Maintain pressure until help arrives.</p>
-                    <button class="btn btn-outline btn-sm read-more">Read More</button>
+                    <button class="btn btn-outline btn-sm read-more" style="margin-top: 10px;">Read More</button>
                 </div>
-                <div class="tip-card animate-on-scroll">
-                    <div class="tip-icon"><i class="fas fa-burn"></i></div>
+                <div class="tip-card animate-on-scroll" style="padding: 25px; background: var(--white); border-radius: 12px; border: 1px solid var(--light-gray);">
+                    <div class="tip-icon" style="font-size: 32px; color: #f59e0b; margin-bottom: 15px;"><i class="fas fa-burn"></i></div>
                     <h4>Burns</h4>
                     <p>Cool the burn with running water for at least 20 minutes. Cover with a clean cloth.</p>
-                    <button class="btn btn-outline btn-sm read-more">Read More</button>
+                    <button class="btn btn-outline btn-sm read-more" style="margin-top: 10px;">Read More</button>
                 </div>
-                <div class="tip-card animate-on-scroll">
-                    <div class="tip-icon"><i class="fas fa-bone"></i></div>
+                <div class="tip-card animate-on-scroll" style="padding: 25px; background: var(--white); border-radius: 12px; border: 1px solid var(--light-gray);">
+                    <div class="tip-icon" style="font-size: 32px; color: #7c3aed; margin-bottom: 15px;"><i class="fas fa-bone"></i></div>
                     <h4>Fractures</h4>
                     <p>Immobilize the injured area. Use a splint if available and seek medical help.</p>
-                    <button class="btn btn-outline btn-sm read-more">Read More</button>
+                    <button class="btn btn-outline btn-sm read-more" style="margin-top: 10px;">Read More</button>
                 </div>
-                <div class="tip-card animate-on-scroll">
-                    <div class="tip-icon"><i class="fas fa-smog"></i></div>
+                <div class="tip-card animate-on-scroll" style="padding: 25px; background: var(--white); border-radius: 12px; border: 1px solid var(--light-gray);">
+                    <div class="tip-icon" style="font-size: 32px; color: #22c55e; margin-bottom: 15px;"><i class="fas fa-smog"></i></div>
                     <h4>Choking</h4>
                     <p>Perform the Heimlich maneuver. Call 911 if the person cannot breathe.</p>
-                    <button class="btn btn-outline btn-sm read-more">Read More</button>
+                    <button class="btn btn-outline btn-sm read-more" style="margin-top: 10px;">Read More</button>
                 </div>
-                <div class="tip-card animate-on-scroll">
-                    <div class="tip-icon"><i class="fas fa-thermometer-half"></i></div>
+                <div class="tip-card animate-on-scroll" style="padding: 25px; background: var(--white); border-radius: 12px; border: 1px solid var(--light-gray);">
+                    <div class="tip-icon" style="font-size: 32px; color: #ec4899; margin-bottom: 15px;"><i class="fas fa-thermometer-half"></i></div>
                     <h4>Heat Stroke</h4>
                     <p>Move to a cool area, remove excess clothing, and apply cool water to the skin.</p>
-                    <button class="btn btn-outline btn-sm read-more">Read More</button>
+                    <button class="btn btn-outline btn-sm read-more" style="margin-top: 10px;">Read More</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Emergency Location -->
     <section class="emergency-location">
         <div class="container">
-            <div class="location-content">
+            <div class="location-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
                 <div class="location-info">
                     <span class="section-tag">Location</span>
                     <h2>Find Our Emergency Department</h2>
                     <p>Our emergency department is easily accessible and open 24/7</p>
-                    <ul class="location-details">
-                        <li><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</li>
-                        <li><i class="fas fa-phone"></i> +251 911 234 567</li>
-                        <li><i class="fas fa-clock"></i> 24/7 Open</li>
-                        <li><i class="fas fa-car"></i> Ample parking available</li>
+                    <ul class="location-details" style="list-style: none; padding: 0; margin-top: 20px;">
+                        <li style="padding: 8px 0;"><i class="fas fa-map-marker-alt" style="color: #dc2626; width: 25px;"></i> Ghimbi, Ethiopia</li>
+                        <li style="padding: 8px 0;"><i class="fas fa-phone" style="color: #dc2626; width: 25px;"></i> +251 911 234 567</li>
+                        <li style="padding: 8px 0;"><i class="fas fa-clock" style="color: #dc2626; width: 25px;"></i> 24/7 Open</li>
+                        <li style="padding: 8px 0;"><i class="fas fa-car" style="color: #dc2626; width: 25px;"></i> Ample parking available</li>
                     </ul>
-                    <a href="#" class="btn btn-primary"><i class="fas fa-directions"></i> Get Directions</a>
+                    <a href="#" class="btn btn-primary" style="margin-top: 15px;"><i class="fas fa-directions"></i> Get Directions</a>
                 </div>
                 <div class="location-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.5!2d38.7!3d9.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDAnMDAuMCJOIDM4wrAwMCcwMC4wIkU!5e0!3m2!1sen!2s!4v1234567890" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.5!2d38.7!3d9.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDAnMDAuMCJOIDM4wrAwMCcwMC4wIkE!5e0!3m2!1sen!2s!4v1234567890" width="100%" height="300" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Emergency Banner -->
     <section class="emergency-banner">
         <div class="container">
             <div class="emergency-content">
                 <div class="emergency-text">
                     <i class="fas fa-ambulance"></i>
-                    <div><h2>Emergency Services Available 24/7</h2><p>Immediate medical attention when you need it most</p></div>
+                    <div>
+                        <h2>Emergency Services Available 24/7</h2>
+                        <p>Immediate medical attention when you need it most</p>
+                    </div>
                 </div>
                 <div class="emergency-contact">
                     <a href="tel:911" class="emergency-number"><i class="fas fa-phone"></i> Emergency: 911</a>
@@ -240,40 +175,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <div class="footer-logo"><img src="images/logo-white.svg" alt="MediCare"><span>MediCare Hospital</span></div>
-                    <p>Providing quality healthcare services with compassion and excellence since 2010.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="about.html">About Us</a></li><li><a href="departments.html">Departments</a></li><li><a href="doctors.html">Doctors</a></li><li><a href="services.html">Services</a></li></ul></div>
-                <div class="footer-links"><h4>Patient Services</h4><ul><li><a href="appointments.html">Book Appointment</a></li><li><a href="patient-login.html">Patient Portal</a></li><li><a href="laboratory.html">Lab Results</a></li><li><a href="pharmacy.html">Pharmacy</a></li></ul></div>
-                <div class="footer-contact"><h4>Contact Info</h4><ul><li><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</li><li><i class="fas fa-phone"></i> +251 911 234 567</li><li><i class="fas fa-envelope"></i> info@medicare.com</li><li><i class="fas fa-clock"></i> 24/7 Emergency Services</li></ul></div>
-            </div>
-            <div class="footer-bottom"><p>&copy; 2024 MediCare Hospital. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms & Conditions</a><a href="faq.html">FAQ</a></div></div>
-        </div>
-    </footer>
-
-    <!-- AI Assistant -->
-    <div class="ai-assistant" id="aiAssistant">
-        <button class="ai-toggle" id="aiToggle"><i class="fas fa-robot"></i><span class="ai-badge">AI</span></button>
-        <div class="ai-chat" id="aiChat">
-            <div class="ai-header"><i class="fas fa-robot"></i><h4>AI Health Assistant</h4><button class="ai-close"><i class="fas fa-times"></i></button></div>
-            <div class="ai-messages" id="aiMessages"><div class="message ai"><p>👋 Hello! I'm your AI health assistant.</p></div></div>
-            <div class="ai-input"><input type="text" placeholder="Ask me anything..." id="aiInput"><button id="aiSend"><i class="fas fa-paper-plane"></i></button></div>
-        </div>
-    </div>
-
-    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+    <footer class="footer">...</footer>
+    <div class="ai-assistant" id="aiAssistant">...</div>
+    <button class="scroll-top" id="scrollTop">...</button>
 
     <script src="js/main.js"></script>
     <script src="js/api.js"></script>
@@ -283,4 +187,4 @@
     <script src="js/ai.js"></script>
     <script src="js/scanner.js"></script>
 </body>
-  </html>
+                    </html>
