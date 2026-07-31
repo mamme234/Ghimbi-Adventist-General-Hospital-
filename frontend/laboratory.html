@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratory Services - MediCare Hospital</title>
+    <title>Laboratory Services - Ghimbi Adventist General Hospital</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -13,57 +13,27 @@
     <link rel="stylesheet" href="css/component-styles.css">
 </head>
 <body>
-    <div id="loading-screen"><div class="loader-container"><div class="hospital-loader"><div class="heartbeat"></div><div class="pulse-ring"></div></div><div class="loader-text"><span>M</span><span>e</span><span>d</span><span>i</span><span>C</span><span>a</span><span>r</span><span>e</span></div><div class="loader-progress"><div class="progress-bar" id="loader-progress-bar"></div></div><p class="loading-message">Loading laboratory services...</p></div></div>
-
-    <!-- Top Bar -->
-    <div class="top-bar" id="topBar">
-        <div class="container">
-            <div class="top-bar-content">
-                <div class="top-bar-left">
-                    <div class="contact-info">
-                        <a href="tel:+251911234567"><i class="fas fa-phone-alt"></i> +251 911 234 567</a>
-                        <a href="mailto:info@medicare.com"><i class="fas fa-envelope"></i> info@medicare.com</a>
-                        <span><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</span>
-                    </div>
-                </div>
-                <div class="top-bar-right">
-                    <div class="emergency-number"><i class="fas fa-ambulance"></i><span>Emergency: <strong>911</strong></span></div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
-                </div>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="hospital-loader">
+                <div class="heartbeat"></div>
+                <div class="pulse-ring"></div>
             </div>
+            <div class="loader-text">
+                <span>G</span><span>h</span><span>i</span><span>m</span><span>b</span><span>i</span>
+                <span> </span>
+                <span>A</span><span>d</span><span>v</span><span>e</span><span>n</span><span>t</span><span>i</span><span>s</span><span>t</span>
+            </div>
+            <div class="loader-progress">
+                <div class="progress-bar" id="loader-progress-bar"></div>
+            </div>
+            <p class="loading-message">Loading laboratory services...</p>
         </div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="mainNav">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo"><a href="index.html"><img src="images/logo.svg" alt="MediCare Hospital" class="logo-img"><span class="logo-text">Medi<span>Care</span></span></a></div>
-                <ul class="nav-menu" id="navMenu">
-                    <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
-                    <li class="nav-item"><a href="departments.html" class="nav-link"><i class="fas fa-hospital"></i> Departments</a></li>
-                    <li class="nav-item"><a href="doctors.html" class="nav-link"><i class="fas fa-user-md"></i> Doctors</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link active"><i class="fas fa-stethoscope"></i> Services</a></li>
-                    <li class="nav-item"><a href="appointments.html" class="nav-link"><i class="fas fa-calendar-check"></i> Book Appointment</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
-                <div class="nav-actions">
-                    <button class="search-toggle" id="searchToggle"><i class="fas fa-search"></i></button>
-                    <a href="patient-login.html" class="btn-login"><i class="fas fa-user-circle"></i> Login</a>
-                    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <div class="top-bar" id="topBar">...</div>
+    <nav class="navbar" id="mainNav">...</nav>
 
-    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
             <div class="page-header-content">
@@ -82,15 +52,14 @@
         </div>
     </section>
 
-    <!-- Lab Overview -->
     <section class="lab-overview">
         <div class="container">
-            <div class="lab-content">
+            <div class="lab-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
                 <div class="lab-text animate-on-scroll">
                     <span class="section-tag">About Our Lab</span>
                     <h2>State-of-the-Art Diagnostic Laboratory</h2>
                     <p>Our fully accredited laboratory provides comprehensive diagnostic testing services using the latest technology and equipment. With a team of experienced pathologists and technicians, we ensure accurate and timely results.</p>
-                    <div class="lab-stats">
+                    <div class="lab-stats" style="display: flex; gap: 40px; margin-top: 20px;">
                         <div class="stat-item">
                             <span class="stat-number" data-count="100">0</span>
                             <span class="stat-label">+ Tests Available</span>
@@ -106,13 +75,12 @@
                     </div>
                 </div>
                 <div class="lab-image animate-on-scroll">
-                    <img src="images/laboratory.jpg" alt="MediCare Laboratory">
+                    <img src="images/laboratory.jpg" alt="Ghimbi Adventist Laboratory" style="border-radius: 12px; width: 100%;">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Available Tests -->
     <section class="available-tests">
         <div class="container">
             <div class="section-header">
@@ -120,139 +88,110 @@
                 <h2>Available Diagnostic Tests</h2>
                 <p>Over 100 tests available with quick results</p>
             </div>
-            <div class="tests-grid">
-                <div class="test-category">
-                    <h3><i class="fas fa-tint"></i> Blood Tests</h3>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Complete Blood Count (CBC)</li>
-                        <li><i class="fas fa-check-circle"></i> Blood Sugar (FBS, RBS)</li>
-                        <li><i class="fas fa-check-circle"></i> Lipid Profile</li>
-                        <li><i class="fas fa-check-circle"></i> Liver Function Test</li>
-                        <li><i class="fas fa-check-circle"></i> Kidney Function Test</li>
-                        <li><i class="fas fa-check-circle"></i> Thyroid Function Test</li>
+            <div class="tests-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                <div class="test-category" style="background: var(--white); padding: 20px; border-radius: 12px; border: 1px solid var(--light-gray);">
+                    <h3 style="color: #1a6e3c;"><i class="fas fa-tint"></i> Blood Tests</h3>
+                    <ul style="list-style: none; padding: 0; margin-top: 10px;">
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Complete Blood Count (CBC)</li>
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Blood Sugar (FBS, RBS)</li>
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Lipid Profile</li>
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Liver Function Test</li>
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Kidney Function Test</li>
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Thyroid Function Test</li>
                     </ul>
                 </div>
-                <div class="test-category">
-                    <h3><i class="fas fa-flask"></i> Pathology</h3>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Biopsy Analysis</li>
-                        <li><i class="fas fa-check-circle"></i> Cytology</li>
-                        <li><i class="fas fa-check-circle"></i> Histopathology</li>
-                        <li><i class="fas fa-check-circle"></i> Fine Needle Aspiration</li>
-                        <li><i class="fas fa-check-circle"></i> Bone Marrow Analysis</li>
-                        <li><i class="fas fa-check-circle"></i> Tumor Markers</li>
+                <div class="test-category" style="background: var(--white); padding: 20px; border-radius: 12px; border: 1px solid var(--light-gray);">
+                    <h3 style="color: #7c3aed;"><i class="fas fa-flask"></i> Pathology</h3>
+                    <ul style="list-style: none; padding: 0; margin-top: 10px;">
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Biopsy Analysis</li>
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Cytology</li>
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Histopathology</li>
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Fine Needle Aspiration</li>
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Bone Marrow Analysis</li>
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Tumor Markers</li>
                     </ul>
                 </div>
-                <div class="test-category">
-                    <h3><i class="fas fa-biohazard"></i> Microbiology</h3>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Bacterial Culture</li>
-                        <li><i class="fas fa-check-circle"></i> Antibiotic Sensitivity</li>
-                        <li><i class="fas fa-check-circle"></i> Viral Testing</li>
-                        <li><i class="fas fa-check-circle"></i> Fungal Culture</li>
-                        <li><i class="fas fa-check-circle"></i> Parasite Detection</li>
-                        <li><i class="fas fa-check-circle"></i> PCR Tests</li>
+                <div class="test-category" style="background: var(--white); padding: 20px; border-radius: 12px; border: 1px solid var(--light-gray);">
+                    <h3 style="color: #2563eb;"><i class="fas fa-biohazard"></i> Microbiology</h3>
+                    <ul style="list-style: none; padding: 0; margin-top: 10px;">
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Bacterial Culture</li>
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Antibiotic Sensitivity</li>
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Viral Testing</li>
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Fungal Culture</li>
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Parasite Detection</li>
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> PCR Tests</li>
                     </ul>
                 </div>
-                <div class="test-category">
-                    <h3><i class="fas fa-vial"></i> Specialized Tests</h3>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Hormone Assays</li>
-                        <li><i class="fas fa-check-circle"></i> Allergy Testing</li>
-                        <li><i class="fas fa-check-circle"></i> Genetic Testing</li>
-                        <li><i class="fas fa-check-circle"></i> Drug Screening</li>
-                        <li><i class="fas fa-check-circle"></i> Nutritional Analysis</li>
-                        <li><i class="fas fa-check-circle"></i> Heavy Metal Testing</li>
+                <div class="test-category" style="background: var(--white); padding: 20px; border-radius: 12px; border: 1px solid var(--light-gray);">
+                    <h3 style="color: #ec4899;"><i class="fas fa-vial"></i> Specialized Tests</h3>
+                    <ul style="list-style: none; padding: 0; margin-top: 10px;">
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Hormone Assays</li>
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Allergy Testing</li>
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Genetic Testing</li>
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Drug Screening</li>
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Nutritional Analysis</li>
+                        <li style="padding: 5px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Heavy Metal Testing</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Test Preparation -->
     <section class="test-preparation">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Preparation</span>
                 <h2>Test Preparation Guidelines</h2>
             </div>
-            <div class="prep-grid">
-                <div class="prep-card animate-on-scroll">
-                    <i class="fas fa-clock"></i>
-                    <h4>Fasting Tests</h4>
-                    <p>Some tests require 8-12 hours of fasting. Please check with your doctor or our staff.</p>
+            <div class="prep-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                <div class="prep-card animate-on-scroll" style="background: var(--white); padding: 25px; border-radius: 12px; border: 1px solid var(--light-gray); text-align: center;">
+                    <i class="fas fa-clock" style="font-size: 32px; color: #1a6e3c;"></i>
+                    <h4 style="margin-top: 15px;">Fasting Tests</h4>
+                    <p style="color: #64748b;">Some tests require 8-12 hours of fasting. Please check with your doctor or our staff.</p>
                 </div>
-                <div class="prep-card animate-on-scroll">
-                    <i class="fas fa-prescription-bottle"></i>
-                    <h4>Medication</h4>
-                    <p>Inform us about any medications you are taking as they may affect test results.</p>
+                <div class="prep-card animate-on-scroll" style="background: var(--white); padding: 25px; border-radius: 12px; border: 1px solid var(--light-gray); text-align: center;">
+                    <i class="fas fa-prescription-bottle" style="font-size: 32px; color: #7c3aed;"></i>
+                    <h4 style="margin-top: 15px;">Medication</h4>
+                    <p style="color: #64748b;">Inform us about any medications you are taking as they may affect test results.</p>
                 </div>
-                <div class="prep-card animate-on-scroll">
-                    <i class="fas fa-water"></i>
-                    <h4>Hydration</h4>
-                    <p>Stay hydrated with water unless advised otherwise. Avoid caffeinated beverages.</p>
+                <div class="prep-card animate-on-scroll" style="background: var(--white); padding: 25px; border-radius: 12px; border: 1px solid var(--light-gray); text-align: center;">
+                    <i class="fas fa-water" style="font-size: 32px; color: #2563eb;"></i>
+                    <h4 style="margin-top: 15px;">Hydration</h4>
+                    <p style="color: #64748b;">Stay hydrated with water unless advised otherwise. Avoid caffeinated beverages.</p>
                 </div>
-                <div class="prep-card animate-on-scroll">
-                    <i class="fas fa-id-card"></i>
-                    <h4>Documents</h4>
-                    <p>Bring your ID, insurance card, and any previous medical records.</p>
+                <div class="prep-card animate-on-scroll" style="background: var(--white); padding: 25px; border-radius: 12px; border: 1px solid var(--light-gray); text-align: center;">
+                    <i class="fas fa-id-card" style="font-size: 32px; color: #f59e0b;"></i>
+                    <h4 style="margin-top: 15px;">Documents</h4>
+                    <p style="color: #64748b;">Bring your ID, insurance card, and any previous medical records.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Download Results -->
     <section class="download-results">
         <div class="container">
-            <div class="download-content">
+            <div class="download-content" style="background: linear-gradient(135deg, #1a6e3c, #2a8a4a); border-radius: 12px; padding: 40px; text-align: center; color: white;">
                 <div class="download-text">
                     <h2>Access Your Lab Results Online</h2>
-                    <p>View and download your laboratory results securely through our patient portal</p>
+                    <p style="opacity: 0.9;">View and download your laboratory results securely through our patient portal</p>
                 </div>
-                <div class="download-actions">
-                    <a href="patient-login.html" class="btn btn-primary btn-lg"><i class="fas fa-user-circle"></i> Login to Portal</a>
-                    <a href="patient-login.html" class="btn btn-secondary btn-lg"><i class="fas fa-registered"></i> Register Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lab Hours & Contact -->
-    <section class="lab-contact">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <i class="fas fa-clock"></i>
-                    <h4>Working Hours</h4>
-                    <p>Monday - Friday: 7:00 AM - 9:00 PM</p>
-                    <p>Saturday: 8:00 AM - 5:00 PM</p>
-                    <p>Sunday: 9:00 AM - 2:00 PM</p>
-                </div>
-                <div class="contact-card">
-                    <i class="fas fa-phone"></i>
-                    <h4>Contact Lab</h4>
-                    <p>Phone: +251 911 234 567 ext. 202</p>
-                    <p>Email: lab@medicare.com</p>
-                    <a href="tel:+251911234567" class="btn btn-primary btn-sm">Call Now</a>
-                </div>
-                <div class="contact-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h4>Location</h4>
-                    <p>Ground Floor, Main Building</p>
-                    <p>Addis Ababa, Ethiopia</p>
-                    <a href="#" class="btn btn-primary btn-sm">Get Directions</a>
+                <div class="download-actions" style="display: flex; gap: 15px; justify-content: center; margin-top: 20px; flex-wrap: wrap;">
+                    <a href="patients/patient-login.html" class="btn btn-light btn-lg"><i class="fas fa-user-circle"></i> Login to Portal</a>
+                    <a href="patients/patient-login.html" class="btn btn-secondary btn-lg"><i class="fas fa-registered"></i> Register Now</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Emergency Banner -->
     <section class="emergency-banner">
         <div class="container">
             <div class="emergency-content">
                 <div class="emergency-text">
                     <i class="fas fa-ambulance"></i>
-                    <div><h2>Emergency Services Available 24/7</h2><p>Immediate medical attention when you need it most</p></div>
+                    <div>
+                        <h2>Emergency Services Available 24/7</h2>
+                        <p>Immediate medical attention when you need it most</p>
+                    </div>
                 </div>
                 <div class="emergency-contact">
                     <a href="tel:911" class="emergency-number"><i class="fas fa-phone"></i> Emergency: 911</a>
@@ -262,40 +201,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <div class="footer-logo"><img src="images/logo-white.svg" alt="MediCare"><span>MediCare Hospital</span></div>
-                    <p>Providing quality healthcare services with compassion and excellence since 2010.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="about.html">About Us</a></li><li><a href="departments.html">Departments</a></li><li><a href="doctors.html">Doctors</a></li><li><a href="services.html">Services</a></li></ul></div>
-                <div class="footer-links"><h4>Patient Services</h4><ul><li><a href="appointments.html">Book Appointment</a></li><li><a href="patient-login.html">Patient Portal</a></li><li><a href="laboratory.html">Lab Results</a></li><li><a href="pharmacy.html">Pharmacy</a></li></ul></div>
-                <div class="footer-contact"><h4>Contact Info</h4><ul><li><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</li><li><i class="fas fa-phone"></i> +251 911 234 567</li><li><i class="fas fa-envelope"></i> info@medicare.com</li><li><i class="fas fa-clock"></i> 24/7 Emergency Services</li></ul></div>
-            </div>
-            <div class="footer-bottom"><p>&copy; 2024 MediCare Hospital. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms & Conditions</a><a href="faq.html">FAQ</a></div></div>
-        </div>
-    </footer>
-
-    <!-- AI Assistant -->
-    <div class="ai-assistant" id="aiAssistant">
-        <button class="ai-toggle" id="aiToggle"><i class="fas fa-robot"></i><span class="ai-badge">AI</span></button>
-        <div class="ai-chat" id="aiChat">
-            <div class="ai-header"><i class="fas fa-robot"></i><h4>AI Health Assistant</h4><button class="ai-close"><i class="fas fa-times"></i></button></div>
-            <div class="ai-messages" id="aiMessages"><div class="message ai"><p>👋 Hello! I'm your AI health assistant.</p></div></div>
-            <div class="ai-input"><input type="text" placeholder="Ask me anything..." id="aiInput"><button id="aiSend"><i class="fas fa-paper-plane"></i></button></div>
-        </div>
-    </div>
-
-    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+    <footer class="footer">...</footer>
+    <div class="ai-assistant" id="aiAssistant">...</div>
+    <button class="scroll-top" id="scrollTop">...</button>
 
     <script src="js/main.js"></script>
     <script src="js/api.js"></script>
@@ -305,4 +213,4 @@
     <script src="js/ai.js"></script>
     <script src="js/scanner.js"></script>
 </body>
-  </html>
+                                                        </html>
