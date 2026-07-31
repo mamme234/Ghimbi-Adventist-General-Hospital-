@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Login - MediCare Hospital</title>
+    <title>Patient Login - Ghimbi Adventist General Hospital</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/dark-mode.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
 </head>
 <body>
     <div class="login-page">
-        <!-- Background Shapes -->
         <div class="login-bg-shapes">
             <div class="shape"></div>
             <div class="shape"></div>
@@ -26,27 +23,11 @@
             <div class="login-card">
                 <div class="login-header">
                     <div class="logo">
-                        <img src="images/logo.svg" alt="MediCare Hospital">
-                        <span>Medi<span>Care</span></span>
+                        <img src="../images/logo.svg" alt="Ghimbi Adventist">
+                        <span>Ghimbi <span>Adventist</span></span>
                     </div>
                     <h1>Patient Portal</h1>
                     <p>Access your health records and manage appointments</p>
-                </div>
-
-                <!-- Role Selector -->
-                <div class="role-selector">
-                    <div class="role-option active" data-role="patient">
-                        <i class="fas fa-user"></i>
-                        <span>Patient</span>
-                    </div>
-                    <div class="role-option" data-role="doctor">
-                        <i class="fas fa-user-md"></i>
-                        <span>Doctor</span>
-                    </div>
-                    <div class="role-option" data-role="admin">
-                        <i class="fas fa-user-cog"></i>
-                        <span>Admin</span>
-                    </div>
                 </div>
 
                 <form class="login-form" id="loginForm">
@@ -54,7 +35,7 @@
                         <label>Email Address</label>
                         <div class="input-wrapper">
                             <i class="fas fa-envelope"></i>
-                            <input type="email" id="emailInput" placeholder="Enter your email" value="patient@medicare.com" required>
+                            <input type="email" id="emailInput" placeholder="Enter your email" value="muhammadthe3rdd@gmail.com" required>
                         </div>
                     </div>
 
@@ -96,7 +77,6 @@
         </div>
     </div>
 
-    <!-- QR Scanner Modal -->
     <div class="qr-scanner-modal" id="qrScannerModal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeQRScanner()"><i class="fas fa-times"></i></button>
@@ -111,7 +91,6 @@
     </div>
 
     <script>
-        // Toggle password visibility
         function togglePassword() {
             const input = document.getElementById('passwordInput');
             const icon = document.querySelector('.toggle-password i');
@@ -124,31 +103,16 @@
             }
         }
 
-        // Role selection
-        document.querySelectorAll('.role-option').forEach(option => {
-            option.addEventListener('click', function() {
-                document.querySelectorAll('.role-option').forEach(o => o.classList.remove('active'));
-                this.classList.add('active');
-                // Update login button text based on role
-                const role = this.dataset.role;
-                const btn = document.getElementById('loginBtn');
-                btn.innerHTML = `<i class="fas fa-sign-in-alt"></i> Sign In as ${role.charAt(0).toUpperCase() + role.slice(1)}`;
-            });
-        });
-
-        // Login form submission
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = document.getElementById('loginBtn');
             btn.classList.add('loading');
             btn.innerHTML = '<i class="fas fa-spinner"></i> Signing In...';
-
             setTimeout(() => {
                 window.location.href = 'patient-dashboard.html';
             }, 1500);
         });
 
-        // QR Scanner functions
         function openQRScanner() {
             document.getElementById('qrScannerModal').classList.add('active');
         }
@@ -178,17 +142,14 @@
             }
         }
 
-        // Close modal on outside click
         document.getElementById('qrScannerModal').addEventListener('click', function(e) {
             if (e.target === this) closeQRScanner();
         });
 
-        // Demo login with Enter key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') {
-                document.getElementById('loginForm').dispatchEvent(new Event('submit'));
-            }
-        });
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
     </script>
 </body>
-  </html>
+    </html>
