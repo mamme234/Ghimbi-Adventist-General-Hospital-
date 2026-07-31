@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Appointments - MediCare Hospital</title>
+    <title>My Appointments - Ghimbi Adventist General Hospital</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
 </head>
 <body>
     <div class="dashboard-container">
-        <!-- Sidebar (same as previous) -->
         <aside class="dashboard-sidebar" id="sidebar">
             <div class="sidebar-brand">
-                <img src="images/logo.svg" alt="MediCare">
-                <span>Medi<span>Care</span></span>
+                <img src="../images/logo.svg" alt="Ghimbi Adventist">
+                <span>Ghimbi <span>Adventist</span></span>
             </div>
             <div class="sidebar-user">
-                <img src="https://ui-avatars.com/api/?name=John+Doe&background=2563eb&color=fff" alt="John Doe" class="sidebar-user-avatar">
+                <img src="https://ui-avatars.com/api/?name=John+Doe&background=1a6e3c&color=fff" alt="John Doe" class="sidebar-user-avatar">
                 <div class="sidebar-user-info">
                     <h4>John Doe</h4>
                     <p>Patient ID: P-2024-001</p>
@@ -58,7 +57,6 @@
             </div>
         </aside>
 
-        <!-- Main Content -->
         <main class="dashboard-main">
             <header class="dashboard-header">
                 <div class="dashboard-header-left">
@@ -74,23 +72,20 @@
                         <button><i class="fas fa-search"></i></button>
                     </div>
                     <div class="dashboard-header-actions">
-                        <button><i class="fas fa-bell"></i></button>
                         <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
-                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=2563eb&color=fff" alt="John Doe" class="user-avatar">
+                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=1a6e3c&color=fff" alt="John Doe" class="user-avatar">
                     </div>
                 </div>
             </header>
 
-            <!-- Appointment Filters -->
             <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
                 <button class="btn btn-primary btn-sm">All</button>
                 <button class="btn btn-outline btn-sm">Upcoming</button>
                 <button class="btn btn-outline btn-sm">Completed</button>
                 <button class="btn btn-outline btn-sm">Cancelled</button>
-                <a href="appointments.html" class="btn btn-success btn-sm" style="margin-left: auto;"><i class="fas fa-plus"></i> New Appointment</a>
+                <a href="../appointments.html" class="btn btn-success btn-sm" style="margin-left: auto;"><i class="fas fa-plus"></i> New Appointment</a>
             </div>
 
-            <!-- Appointments List -->
             <div class="dashboard-table-container">
                 <table class="dashboard-table">
                     <thead>
@@ -167,20 +162,19 @@
                 </table>
             </div>
 
-            <!-- Upcoming Appointments Summary -->
             <div style="margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
                 <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center;">
-                    <i class="fas fa-calendar-check" style="font-size: 32px; color: var(--primary-color);"></i>
+                    <i class="fas fa-calendar-check" style="font-size: 32px; color: #1a6e3c;"></i>
                     <h3 style="margin-top: 10px;">3</h3>
                     <p style="color: var(--mid-gray);">Upcoming Appointments</p>
                 </div>
                 <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center;">
-                    <i class="fas fa-check-circle" style="font-size: 32px; color: var(--accent-green);"></i>
+                    <i class="fas fa-check-circle" style="font-size: 32px; color: #22c55e;"></i>
                     <h3 style="margin-top: 10px;">12</h3>
                     <p style="color: var(--mid-gray);">Completed Appointments</p>
                 </div>
                 <div style="background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--light-gray); text-align: center;">
-                    <i class="fas fa-clock" style="font-size: 32px; color: var(--accent-yellow);"></i>
+                    <i class="fas fa-clock" style="font-size: 32px; color: #f59e0b;"></i>
                     <h3 style="margin-top: 10px;">2</h3>
                     <p style="color: var(--mid-gray);">Pending Approval</p>
                 </div>
@@ -226,4 +220,4 @@
         }
     </script>
 </body>
-                                            </html>
+                                                                                  </html>
