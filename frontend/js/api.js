@@ -1,10 +1,13 @@
 // ============================================
-   API MODULE - Connect Frontend to Backend
+// API MODULE - Connect Frontend to Render Backend
+// Ghimbi Adventist General Hospital
+// Backend URL: https://ghimbi-adventist-general-hospital-1.onrender.com
 // ============================================
 
 class API {
     constructor(config = {}) {
-        this.baseURL = config.baseURL || 'http://localhost:3000/api';
+        // Use the Render backend URL
+        this.baseURL = config.baseURL || 'https://ghimbi-adventist-general-hospital-1.onrender.com/api';
         this.timeout = config.timeout || 30000;
         this.headers = {
             'Content-Type': 'application/json',
@@ -147,34 +150,55 @@ class API {
     }
 
     // ============================================
-    // API ENDPOINTS - PUBLIC
+    // API ENDPOINTS - AUTH
     // ============================================
     
-    // Auth endpoints
-    async login(credentials) {
-        return this.post('/auth/login', credentials);
+    // Patient Login
+    async patientLogin(email, password) {
+        return this.post('/auth/patient-login', { email, password });
     }
 
-    async register(userData) {
+    // Doctor Login
+    async doctorLogin(email, password) {
+        return this.post('/auth/doctor-login', { email, password });
+    }
+
+    // Admin Login
+    async adminLogin(email, password) {
+        return this.post('/auth/admin-login', { email, password });
+    }
+
+    // Super Admin Login
+    async superAdminLogin(email, password) {
+        return this.post('/auth/super-admin-login', { email, password });
+    }
+
+    // Register Patient
+    async registerPatient(userData) {
         return this.post('/auth/register', userData);
     }
 
+    // Logout
     async logout() {
         return this.post('/auth/logout');
     }
 
+    // Refresh Token
     async refreshToken(refreshToken) {
         return this.post('/auth/refresh', { refreshToken });
     }
 
+    // Reset Password
     async resetPassword(email) {
         return this.post('/auth/reset-password', { email });
     }
 
+    // Change Password
     async changePassword(data) {
         return this.post('/auth/change-password', data);
     }
 
+    // Verify Email
     async verifyEmail(token) {
         return this.get(`/auth/verify-email/${token}`);
     }
@@ -486,7 +510,7 @@ class API {
     // ============================================
     
     createWebSocket(endpoint) {
-        const wsURL = this.baseURL.replace('http', 'ws') + endpoint;
+        const wsURL = this.baseURL.replace('http', 'ws').replace('/api', '') + endpoint;
         return new WebSocket(wsURL);
     }
 
@@ -549,15 +573,36 @@ class API {
 // CREATE AND EXPORT API INSTANCE
 // ============================================
 
-// Default configuration
-const API_URL = window.API_URL || 'https://api.medicare.com/api';
+// Use Render backend URL
+const API_URL = 'https://ghimbi-adventist-general-hospital-1.onrender.com/api';
 
 const api = new API({
     baseURL: API_URL,
     timeout: 30000
 });
 
-// Auto-initialize with token from localStorage
+// ============================================
+// TEST CONNECTION
+// ============================================
+
+async function testConnection() {
+    try {
+        const response = await api.get('/health');
+        console.log('✅ Backend connected:', response);
+        return true;
+    } catch (error) {
+        console.warn('⚠️ Backend connection failed:', error.message);
+        console.warn('Using demo mode...');
+        return false;
+    }
+}
+
+// Run connection test
+testConnection();
+
+// ============================================
+// AUTO-INITIALIZE WITH TOKEN
+// ============================================
 const savedToken = localStorage.getItem('auth_token');
 if (savedToken) {
     api.setAuthToken(savedToken);
@@ -567,6 +612,7 @@ if (savedToken) {
 // GLOBAL EXPOSURE
 // ============================================
 window.api = api;
+window.testConnection = testConnection;
 
 // ============================================
 // REQUEST INTERCEPTOR - Add loading indicators
@@ -596,4 +642,4 @@ api.addResponseInterceptor(async (response) => {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = api;
     module.exports.API = API;
-  }
+   }
