@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Departments - MediCare Hospital</title>
-    <meta name="description" content="Explore all medical departments at MediCare Hospital.">
-    
+    <title>Departments - Ghimbi Adventist General Hospital</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -15,7 +13,6 @@
     <link rel="stylesheet" href="css/component-styles.css">
 </head>
 <body>
-    <!-- Loading Screen -->
     <div id="loading-screen">
         <div class="loader-container">
             <div class="hospital-loader">
@@ -23,8 +20,9 @@
                 <div class="pulse-ring"></div>
             </div>
             <div class="loader-text">
-                <span>M</span><span>e</span><span>d</span><span>i</span>
-                <span>C</span><span>a</span><span>r</span><span>e</span>
+                <span>G</span><span>h</span><span>i</span><span>m</span><span>b</span><span>i</span>
+                <span> </span>
+                <span>A</span><span>d</span><span>v</span><span>e</span><span>n</span><span>t</span><span>i</span><span>s</span><span>t</span>
             </div>
             <div class="loader-progress">
                 <div class="progress-bar" id="loader-progress-bar"></div>
@@ -33,19 +31,21 @@
         </div>
     </div>
 
-    <!-- Top Bar -->
     <div class="top-bar" id="topBar">
         <div class="container">
             <div class="top-bar-content">
                 <div class="top-bar-left">
                     <div class="contact-info">
                         <a href="tel:+251911234567"><i class="fas fa-phone-alt"></i> +251 911 234 567</a>
-                        <a href="mailto:info@medicare.com"><i class="fas fa-envelope"></i> info@medicare.com</a>
-                        <span><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</span>
+                        <a href="mailto:info@ghimbiadventist.org"><i class="fas fa-envelope"></i> info@ghimbiadventist.org</a>
+                        <span><i class="fas fa-map-marker-alt"></i> Ghimbi, Ethiopia</span>
                     </div>
                 </div>
                 <div class="top-bar-right">
-                    <div class="emergency-number"><i class="fas fa-ambulance"></i><span>Emergency: <strong>911</strong></span></div>
+                    <div class="emergency-number">
+                        <i class="fas fa-ambulance"></i>
+                        <span>Emergency: <strong>911</strong></span>
+                    </div>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -59,14 +59,13 @@
         </div>
     </div>
 
-    <!-- Navigation -->
     <nav class="navbar" id="mainNav">
         <div class="container">
             <div class="nav-content">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="images/logo.svg" alt="MediCare Hospital" class="logo-img">
-                        <span class="logo-text">Medi<span>Care</span></span>
+                        <img src="images/logo.svg" alt="Ghimbi Adventist" class="logo-img">
+                        <span class="logo-text">Ghimbi <span>Adventist</span></span>
                     </a>
                 </div>
                 <ul class="nav-menu" id="navMenu">
@@ -80,41 +79,23 @@
                             <li><a href="department.html?dept=orthopedics">Orthopedics</a></li>
                             <li><a href="department.html?dept=pediatrics">Pediatrics</a></li>
                             <li><a href="department.html?dept=gynecology">Gynecology</a></li>
-                            <li><a href="department.html?dept=radiology">Radiology</a></li>
                             <li><a href="department.html?dept=emergency">Emergency</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a href="doctors.html" class="nav-link"><i class="fas fa-user-md"></i> Doctors</a></li>
                     <li class="nav-item"><a href="appointments.html" class="nav-link"><i class="fas fa-calendar-check"></i> Book Appointment</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link"><i class="fas fa-stethoscope"></i> Services</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
                 <div class="nav-actions">
                     <button class="search-toggle" id="searchToggle"><i class="fas fa-search"></i></button>
-                    <a href="patient-login.html" class="btn-login"><i class="fas fa-user-circle"></i> Login</a>
+                    <a href="patients/patient-login.html" class="btn-login"><i class="fas fa-user-circle"></i> Login</a>
                     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Search Overlay -->
-    <div class="search-overlay" id="searchOverlay">
-        <button class="search-close" id="searchClose"><i class="fas fa-times"></i></button>
-        <div class="search-container">
-            <form class="search-form"><input type="text" placeholder="Search for departments..." id="searchInput"><button type="submit"><i class="fas fa-search"></i></button></form>
-            <div class="search-suggestions">
-                <div class="suggestion-group">
-                    <h4>Popular Departments</h4>
-                    <a href="department.html?dept=cardiology">Cardiology</a>
-                    <a href="department.html?dept=neurology">Neurology</a>
-                    <a href="department.html?dept=orthopedics">Orthopedics</a>
-                    <a href="department.html?dept=emergency">Emergency</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
             <div class="page-header-content">
@@ -131,7 +112,6 @@
         </div>
     </section>
 
-    <!-- Department Filters -->
     <section class="department-filters">
         <div class="container">
             <div class="filter-bar">
@@ -161,11 +141,10 @@
         </div>
     </section>
 
-    <!-- Departments Grid -->
     <section class="departments-section">
         <div class="container">
             <div class="departments-grid" id="departmentsGrid">
-                <!-- Department Card 1 -->
+                <!-- Cardiology -->
                 <div class="department-card animate-on-scroll" data-department="cardiology">
                     <div class="department-image">
                         <img src="images/departments/cardiology.jpg" alt="Cardiology Department">
@@ -187,7 +166,7 @@
                     </div>
                 </div>
 
-                <!-- Department Card 2 -->
+                <!-- Neurology -->
                 <div class="department-card animate-on-scroll" data-department="neurology">
                     <div class="department-image">
                         <img src="images/departments/neurology.jpg" alt="Neurology Department">
@@ -208,7 +187,7 @@
                     </div>
                 </div>
 
-                <!-- Department Card 3 -->
+                <!-- Orthopedics -->
                 <div class="department-card animate-on-scroll" data-department="orthopedics">
                     <div class="department-image">
                         <img src="images/departments/orthopedics.jpg" alt="Orthopedics Department">
@@ -229,7 +208,7 @@
                     </div>
                 </div>
 
-                <!-- Department Card 4 -->
+                <!-- Pediatrics -->
                 <div class="department-card animate-on-scroll" data-department="pediatrics">
                     <div class="department-image">
                         <img src="images/departments/pediatrics.jpg" alt="Pediatrics Department">
@@ -250,7 +229,7 @@
                     </div>
                 </div>
 
-                <!-- Department Card 5 -->
+                <!-- Gynecology -->
                 <div class="department-card animate-on-scroll" data-department="gynecology">
                     <div class="department-image">
                         <img src="images/departments/gynecology.jpg" alt="Gynecology Department">
@@ -271,7 +250,7 @@
                     </div>
                 </div>
 
-                <!-- Department Card 6 -->
+                <!-- Radiology -->
                 <div class="department-card animate-on-scroll" data-department="radiology">
                     <div class="department-image">
                         <img src="images/departments/radiology.jpg" alt="Radiology Department">
@@ -292,7 +271,7 @@
                     </div>
                 </div>
 
-                <!-- Department Card 7 -->
+                <!-- Emergency -->
                 <div class="department-card animate-on-scroll" data-department="emergency">
                     <div class="department-image">
                         <img src="images/departments/emergency.jpg" alt="Emergency Department">
@@ -313,51 +292,8 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Department Card 8 -->
-                <div class="department-card animate-on-scroll" data-department="dermatology">
-                    <div class="department-image">
-                        <img src="images/departments/dermatology.jpg" alt="Dermatology Department">
-                    </div>
-                    <div class="department-info">
-                        <div class="department-icon"><i class="fas fa-hand-holding-heart"></i></div>
-                        <h3>Dermatology</h3>
-                        <p>Expert care for skin, hair, and nail conditions with advanced treatment options.</p>
-                        <div class="department-meta">
-                            <span><i class="fas fa-user-md"></i> 5 Doctors</span>
-                            <span><i class="fas fa-clinic-medical"></i> Skin Care</span>
-                            <span><i class="fas fa-clock"></i> 8:00 AM - 6:00 PM</span>
-                        </div>
-                        <div class="department-actions">
-                            <a href="department.html?dept=dermatology" class="btn btn-primary btn-sm">View Details</a>
-                            <a href="appointments.html?dept=dermatology" class="btn btn-outline btn-sm">Book Appointment</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Department Card 9 -->
-                <div class="department-card animate-on-scroll" data-department="ophthalmology">
-                    <div class="department-image">
-                        <img src="images/departments/ophthalmology.jpg" alt="Ophthalmology Department">
-                    </div>
-                    <div class="department-info">
-                        <div class="department-icon"><i class="fas fa-eye"></i></div>
-                        <h3>Ophthalmology</h3>
-                        <p>Comprehensive eye care including vision correction, cataract surgery, and treatment.</p>
-                        <div class="department-meta">
-                            <span><i class="fas fa-user-md"></i> 6 Doctors</span>
-                            <span><i class="fas fa-surgery"></i> Surgeries</span>
-                            <span><i class="fas fa-clock"></i> 8:00 AM - 6:00 PM</span>
-                        </div>
-                        <div class="department-actions">
-                            <a href="department.html?dept=ophthalmology" class="btn btn-primary btn-sm">View Details</a>
-                            <a href="appointments.html?dept=ophthalmology" class="btn btn-outline btn-sm">Book Appointment</a>
-                        </div>
-                    </div>
-                </div>
             </div>
 
-            <!-- No Results -->
             <div class="no-results" id="noResults" style="display: none;">
                 <div class="empty-state">
                     <i class="fas fa-search"></i>
@@ -368,7 +304,6 @@
         </div>
     </section>
 
-    <!-- Emergency Banner -->
     <section class="emergency-banner">
         <div class="container">
             <div class="emergency-content">
@@ -387,16 +322,15 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
                     <div class="footer-logo">
-                        <img src="images/logo-white.svg" alt="MediCare">
-                        <span>MediCare Hospital</span>
+                        <img src="images/logo-white.svg" alt="Ghimbi Adventist">
+                        <span>Ghimbi Adventist</span>
                     </div>
-                    <p>Providing quality healthcare services with compassion and excellence since 2010.</p>
+                    <p>Providing quality healthcare services with compassion and excellence in Ghimbi, Ethiopia.</p>
                     <div class="footer-social">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -419,7 +353,7 @@
                     <h4>Patient Services</h4>
                     <ul>
                         <li><a href="appointments.html">Book Appointment</a></li>
-                        <li><a href="patient-login.html">Patient Portal</a></li>
+                        <li><a href="patients/patient-login.html">Patient Portal</a></li>
                         <li><a href="laboratory.html">Lab Results</a></li>
                         <li><a href="pharmacy.html">Pharmacy</a></li>
                         <li><a href="emergency.html">Emergency</a></li>
@@ -428,15 +362,15 @@
                 <div class="footer-contact">
                     <h4>Contact Info</h4>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Ghimbi, Ethiopia</li>
                         <li><i class="fas fa-phone"></i> +251 911 234 567</li>
-                        <li><i class="fas fa-envelope"></i> info@medicare.com</li>
+                        <li><i class="fas fa-envelope"></i> info@ghimbiadventist.org</li>
                         <li><i class="fas fa-clock"></i> 24/7 Emergency Services</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 MediCare Hospital. All rights reserved.</p>
+                <p>&copy; 2024 Ghimbi Adventist General Hospital. All rights reserved.</p>
                 <div class="footer-bottom-links">
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms & Conditions</a>
@@ -446,7 +380,6 @@
         </div>
     </footer>
 
-    <!-- AI Assistant -->
     <div class="ai-assistant" id="aiAssistant">
         <button class="ai-toggle" id="aiToggle"><i class="fas fa-robot"></i><span class="ai-badge">AI</span></button>
         <div class="ai-chat" id="aiChat">
@@ -456,7 +389,6 @@
         </div>
     </div>
 
-    <!-- Scroll to Top -->
     <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
 
     <script src="js/main.js"></script>
@@ -467,4 +399,4 @@
     <script src="js/ai.js"></script>
     <script src="js/scanner.js"></script>
 </body>
-                  </html>
+                                                                                            </html>
