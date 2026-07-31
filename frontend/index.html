@@ -4,342 +4,437 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ghimbi Adventist General Hospital - Excellence in Healthcare</title>
-    <meta name="description" content="Leading hospital in Ghimbi, Ethiopia providing comprehensive healthcare services with state-of-the-art facilities.">
-    <meta name="keywords" content="Ghimbi Adventist Hospital, Ethiopia, Healthcare, Medical Services, Doctors">
-    
+    <meta name="description" content="Leading hospital in Ghimbi, Ethiopia providing comprehensive healthcare services.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/component-styles.css">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="images/logo-192.png">
 </head>
 <body>
-
-<div id="loading-screen">
-    <div class="loader-container">
-        <div class="hospital-loader">
-            <div class="heartbeat"></div>
-            <div class="pulse-ring"></div>
-        </div>
-        <div class="loader-text">
-            <span>G</span><span>h</span><span>i</span><span>m</span><span>b</span><span>i</span>
-            <span> </span>
-            <span>A</span><span>d</span><span>v</span><span>e</span><span>n</span><span>t</span><span>i</span><span>s</span><span>t</span>
-        </div>
-        <div class="loader-progress">
-            <div class="progress-bar" id="loader-progress-bar"></div>
-        </div>
-        <p class="loading-message">Loading your healthcare experience...</p>
-    </div>
-</div>
-
-<!-- Top Bar -->
-<div class="top-bar" id="topBar">
-    <div class="container">
-        <div class="top-bar-content">
-            <div class="top-bar-left">
-                <div class="contact-info">
-                    <a href="tel:+251911234567"><i class="fas fa-phone-alt"></i> +251 911 234 567</a>
-                    <a href="mailto:info@ghimbiadventist.org"><i class="fas fa-envelope"></i> info@ghimbiadventist.org</a>
-                    <span><i class="fas fa-map-marker-alt"></i> Ghimbi, Ethiopia</span>
-                </div>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="hospital-loader">
+                <div class="heartbeat"></div>
+                <div class="pulse-ring"></div>
             </div>
-            <div class="top-bar-right">
-                <div class="emergency-number">
-                    <i class="fas fa-ambulance"></i>
-                    <span>Emergency: <strong>911</strong></span>
-                </div>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
+            <div class="loader-text">
+                <span>G</span><span>h</span><span>i</span><span>m</span><span>b</span><span>i</span>
+                <span> </span>
+                <span>A</span><span>d</span><span>v</span><span>e</span><span>n</span><span>t</span><span>i</span><span>s</span><span>t</span>
             </div>
+            <div class="loader-progress">
+                <div class="progress-bar" id="loader-progress-bar"></div>
+            </div>
+            <p class="loading-message">Loading your healthcare experience...</p>
         </div>
     </div>
-</div>
 
-<!-- Navigation -->
-<nav class="navbar" id="mainNav">
-    <div class="container">
-        <div class="nav-content">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/logo.svg" alt="Ghimbi Adventist" class="logo-img">
-                    <span class="logo-text">Ghimbi <span>Adventist</span></span>
+    <div class="top-bar" id="topBar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <div class="contact-info">
+                        <a href="tel:+251911234567"><i class="fas fa-phone-alt"></i> +251 911 234 567</a>
+                        <a href="mailto:info@ghimbiadventist.org"><i class="fas fa-envelope"></i> info@ghimbiadventist.org</a>
+                        <span><i class="fas fa-map-marker-alt"></i> Ghimbi, Ethiopia</span>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <div class="emergency-number">
+                        <i class="fas fa-ambulance"></i>
+                        <span>Emergency: <strong>911</strong></span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar" id="mainNav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="Ghimbi Adventist" class="logo-img">
+                        <span class="logo-text">Ghimbi <span>Adventist</span></span>
+                    </a>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle"><i class="fas fa-hospital"></i> Departments <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="departments.html">All Departments</a></li>
+                            <li><a href="department.html?dept=cardiology">Cardiology</a></li>
+                            <li><a href="department.html?dept=neurology">Neurology</a></li>
+                            <li><a href="department.html?dept=orthopedics">Orthopedics</a></li>
+                            <li><a href="department.html?dept=pediatrics">Pediatrics</a></li>
+                            <li><a href="department.html?dept=gynecology">Gynecology</a></li>
+                            <li><a href="department.html?dept=emergency">Emergency</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="doctors.html" class="nav-link"><i class="fas fa-user-md"></i> Doctors</a></li>
+                    <li class="nav-item"><a href="appointments.html" class="nav-link"><i class="fas fa-calendar-check"></i> Book Appointment</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link"><i class="fas fa-stethoscope"></i> Services</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="search-toggle" id="searchToggle"><i class="fas fa-search"></i></button>
+                    <a href="patients/patient-login.html" class="btn-login"><i class="fas fa-user-circle"></i> Login</a>
+                    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="hero-slider" id="heroSlider">
+            <div class="slide active">
+                <div class="slide-bg" style="background: linear-gradient(135deg, #1a365d, #2d6a9f)">
+                    <div class="hero-particles"></div>
+                </div>
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <span class="badge">🏥 Excellence in Healthcare</span>
+                            <h1 class="hero-title">Welcome to <br><span class="highlight">Ghimbi Adventist</span></h1>
+                            <p class="hero-description">Providing world-class medical care with compassion and innovation. We're here to serve you 24/7 with expert doctors and advanced technology.</p>
+                            <div class="hero-buttons">
+                                <a href="appointments.html" class="btn btn-primary btn-lg"><i class="fas fa-calendar-plus"></i> Book Appointment</a>
+                                <a href="emergency.html" class="btn btn-emergency btn-lg"><i class="fas fa-ambulance"></i> Emergency</a>
+                                <a href="doctors.html" class="btn btn-outline-light btn-lg"><i class="fas fa-user-md"></i> Find Doctor</a>
+                            </div>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-card">
+                                <div class="stat-number" data-count="150">0</div>
+                                <div class="stat-label">Expert Doctors</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" data-count="25000">0</div>
+                                <div class="stat-label">Happy Patients</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" data-count="98">0</div>
+                                <div class="stat-label">Satisfaction Rate</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number" data-count="24">0</div>
+                                <div class="stat-label">Emergency Care</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="slider-btn prev" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+            <div class="slider-dots" id="sliderDots"></div>
+            <button class="slider-btn next" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <div class="quick-actions">
+        <div class="container">
+            <div class="actions-grid">
+                <a href="appointments.html" class="action-card"><i class="fas fa-calendar-check"></i><span>Book Appointment</span></a>
+                <a href="emergency.html" class="action-card emergency"><i class="fas fa-ambulance"></i><span>Emergency</span></a>
+                <a href="doctors.html" class="action-card"><i class="fas fa-user-md"></i><span>Find a Doctor</span></a>
+                <a href="laboratory.html" class="action-card"><i class="fas fa-flask"></i><span>Lab Tests</span></a>
+                <a href="pharmacy.html" class="action-card"><i class="fas fa-prescription-bottle"></i><span>Pharmacy</span></a>
+                <a href="patients/patient-login.html" class="action-card"><i class="fas fa-id-card"></i><span>Patient Portal</span></a>
+            </div>
+        </div>
+    </div>
+
+    <section class="statistics" id="statistics">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Numbers Speak</span>
+                <h2>Ghimbi Adventist by the Numbers</h2>
+                <p>Our commitment to healthcare excellence reflected in numbers</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-user-md"></i></div>
+                    <div class="stat-number" data-count="150">0</div>
+                    <div class="stat-label">Qualified Doctors</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-hospital-user"></i></div>
+                    <div class="stat-number" data-count="25000">0</div>
+                    <div class="stat-label">Patients Treated</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-bed"></i></div>
+                    <div class="stat-number" data-count="200">0</div>
+                    <div class="stat-label">Hospital Beds</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-smile"></i></div>
+                    <div class="stat-number" data-count="98">0</div>
+                    <div class="stat-label">Patient Satisfaction</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-award"></i></div>
+                    <div class="stat-number" data-count="12">0</div>
+                    <div class="stat-label">Years of Excellence</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-globe-africa"></i></div>
+                    <div class="stat-number" data-count="3">0</div>
+                    <div class="stat-label">Locations</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">About Us</span>
+                <h2>Why Ghimbi Adventist is Your Best Choice</h2>
+                <p>We combine expertise, technology, and compassion</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon"><i class="fas fa-user-md"></i></div>
+                    <h3>Expert Doctors</h3>
+                    <p>Team of highly qualified specialists with international experience</p>
+                    <a href="doctors.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon"><i class="fas fa-microscope"></i></div>
+                    <h3>Advanced Technology</h3>
+                    <p>State-of-the-art medical equipment for accurate diagnosis</p>
+                    <a href="services.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Compassionate Care</h3>
+                    <p>Patient-centered approach with empathy and understanding</p>
+                    <a href="about.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                    <h3>24/7 Emergency</h3>
+                    <p>Round-the-clock emergency services for immediate care</p>
+                    <a href="emergency.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon"><i class="fas fa-globe-africa"></i></div>
+                    <h3>Multiple Locations</h3>
+                    <p>Conveniently located hospitals across the region</p>
+                    <a href="contact.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h3>Affordable Care</h3>
+                    <p>Quality healthcare at competitive prices</p>
+                    <a href="health-packages.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="medical-services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Services</span>
+                <h2>Comprehensive Medical Services</h2>
+                <p>From diagnosis to treatment and recovery</p>
+            </div>
+            <div class="services-grid">
+                <a href="department.html?dept=cardiology" class="service-card">
+                    <div class="service-image"><img src="images/services/cardiology.jpg" alt="Cardiology"></div>
+                    <div class="service-info"><i class="fas fa-heart"></i><h3>Cardiology</h3><p>Comprehensive heart care services</p></div>
+                </a>
+                <a href="department.html?dept=neurology" class="service-card">
+                    <div class="service-image"><img src="images/services/neurology.jpg" alt="Neurology"></div>
+                    <div class="service-info"><i class="fas fa-brain"></i><h3>Neurology</h3><p>Brain and nervous system disorders</p></div>
+                </a>
+                <a href="department.html?dept=orthopedics" class="service-card">
+                    <div class="service-image"><img src="images/services/orthopedics.jpg" alt="Orthopedics"></div>
+                    <div class="service-info"><i class="fas fa-bone"></i><h3>Orthopedics</h3><p>Bone and joint treatments</p></div>
+                </a>
+                <a href="department.html?dept=pediatrics" class="service-card">
+                    <div class="service-image"><img src="images/services/pediatrics.jpg" alt="Pediatrics"></div>
+                    <div class="service-info"><i class="fas fa-child"></i><h3>Pediatrics</h3><p>Child healthcare services</p></div>
+                </a>
+                <a href="department.html?dept=gynecology" class="service-card">
+                    <div class="service-image"><img src="images/services/gynecology.jpg" alt="Gynecology"></div>
+                    <div class="service-info"><i class="fas fa-female"></i><h3>Gynecology</h3><p>Women's health and wellness</p></div>
+                </a>
+                <a href="department.html?dept=radiology" class="service-card">
+                    <div class="service-image"><img src="images/services/radiology.jpg" alt="Radiology"></div>
+                    <div class="service-info"><i class="fas fa-x-ray"></i><h3>Radiology</h3><p>Advanced imaging services</p></div>
                 </a>
             </div>
-            <ul class="nav-menu" id="navMenu">
-                <li class="nav-item"><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle"><i class="fas fa-hospital"></i> Departments <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="departments.html">All Departments</a></li>
-                        <li><a href="department.html?dept=cardiology">Cardiology</a></li>
-                        <li><a href="department.html?dept=neurology">Neurology</a></li>
-                        <li><a href="department.html?dept=orthopedics">Orthopedics</a></li>
-                        <li><a href="department.html?dept=pediatrics">Pediatrics</a></li>
-                        <li><a href="department.html?dept=gynecology">Gynecology</a></li>
-                        <li><a href="department.html?dept=emergency">Emergency</a></li>
+            <div class="text-center"><a href="services.html" class="btn btn-secondary">View All Services <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+    </section>
+
+    <section class="emergency-banner">
+        <div class="container">
+            <div class="emergency-content">
+                <div class="emergency-text">
+                    <i class="fas fa-ambulance"></i>
+                    <h2>Emergency Services Available 24/7</h2>
+                    <p>Immediate medical attention when you need it most</p>
+                </div>
+                <div class="emergency-contact">
+                    <a href="tel:911" class="emergency-number"><i class="fas fa-phone"></i><span>Emergency: 911</span></a>
+                    <a href="emergency.html" class="btn btn-light">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2>What Our Patients Say</h2>
+                <p>Real stories from real patients</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="images/patients/patient1.jpg" alt="Patient" class="testimonial-avatar">
+                        <div>
+                            <h4>Abebe Kebede</h4>
+                            <span>Cardiology Patient</span>
+                            <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <p>"The care I received at Ghimbi Adventist was exceptional. The doctors were knowledgeable, and the staff was incredibly supportive throughout my treatment."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="images/patients/patient2.jpg" alt="Patient" class="testimonial-avatar">
+                        <div>
+                            <h4>Tigist Haile</h4>
+                            <span>Maternity Patient</span>
+                            <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <p>"The maternity team at Ghimbi Adventist made my delivery experience comfortable and safe. I'm grateful for their professional care and support."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="images/patients/patient1.jpg" alt="Patient" class="testimonial-avatar">
+                        <div>
+                            <h4>Mohammed Ahmed</h4>
+                            <span>Orthopedic Patient</span>
+                            <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <p>"The orthopedic team at Ghimbi Adventist provided excellent care for my knee surgery. I'm back to my normal activities within weeks."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Stay updated with health tips, news, and offers</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="images/logo-white.svg" alt="Ghimbi Adventist">
+                        <span>Ghimbi Adventist</span>
+                    </div>
+                    <p>Providing quality healthcare services with compassion and excellence in Ghimbi, Ethiopia.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="departments.html">Departments</a></li>
+                        <li><a href="doctors.html">Doctors</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="careers.html">Careers</a></li>
                     </ul>
-                </li>
-                <li class="nav-item"><a href="doctors.html" class="nav-link"><i class="fas fa-user-md"></i> Doctors</a></li>
-                <li class="nav-item"><a href="appointments.html" class="nav-link"><i class="fas fa-calendar-check"></i> Book Appointment</a></li>
-                <li class="nav-item"><a href="services.html" class="nav-link"><i class="fas fa-stethoscope"></i> Services</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button class="search-toggle" id="searchToggle"><i class="fas fa-search"></i></button>
-                <a href="patients/patient-login.html" class="btn-login"><i class="fas fa-user-circle"></i> Login</a>
-                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+                </div>
+                <div class="footer-links">
+                    <h4>Patient Services</h4>
+                    <ul>
+                        <li><a href="appointments.html">Book Appointment</a></li>
+                        <li><a href="patients/patient-login.html">Patient Portal</a></li>
+                        <li><a href="laboratory.html">Lab Results</a></li>
+                        <li><a href="pharmacy.html">Pharmacy</a></li>
+                        <li><a href="emergency.html">Emergency</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Ghimbi, Ethiopia</li>
+                        <li><i class="fas fa-phone"></i> +251 911 234 567</li>
+                        <li><i class="fas fa-envelope"></i> info@ghimbiadventist.org</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Emergency Services</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </div>
-</nav>
-
-<!-- Hero Section -->
-<section class="hero" id="hero">
-    <div class="hero-slider" id="heroSlider">
-        <div class="slide active">
-            <div class="slide-bg" style="background: linear-gradient(135deg, #1a365d, #2d6a9f)">
-                <div class="hero-particles"></div>
-            </div>
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <span class="badge">🏥 Excellence in Healthcare</span>
-                        <h1 class="hero-title">
-                            Welcome to <br>
-                            <span class="highlight">Ghimbi Adventist</span>
-                        </h1>
-                        <p class="hero-description">
-                            Providing world-class medical care with compassion and innovation.
-                            We're here to serve you 24/7 with expert doctors and advanced technology.
-                        </p>
-                        <div class="hero-buttons">
-                            <a href="appointments.html" class="btn btn-primary btn-lg"><i class="fas fa-calendar-plus"></i> Book Appointment</a>
-                            <a href="emergency.html" class="btn btn-emergency btn-lg"><i class="fas fa-ambulance"></i> Emergency</a>
-                            <a href="doctors.html" class="btn btn-outline-light btn-lg"><i class="fas fa-user-md"></i> Find Doctor</a>
-                        </div>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat-card">
-                            <div class="stat-number" data-count="150">0</div>
-                            <div class="stat-label">Expert Doctors</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number" data-count="25000">0</div>
-                            <div class="stat-label">Happy Patients</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number" data-count="98">0</div>
-                            <div class="stat-label">Satisfaction Rate</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number" data-count="24">0</div>
-                            <div class="stat-label">Emergency Care</div>
-                        </div>
-                    </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ghimbi Adventist General Hospital. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="faq.html">FAQ</a>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="slider-controls">
-        <button class="slider-btn prev" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
-        <div class="slider-dots" id="sliderDots"></div>
-        <button class="slider-btn next" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
-    </div>
-</section>
+    </footer>
 
-<!-- Quick Actions -->
-<div class="quick-actions">
-    <div class="container">
-        <div class="actions-grid">
-            <a href="appointments.html" class="action-card"><i class="fas fa-calendar-check"></i><span>Book Appointment</span></a>
-            <a href="emergency.html" class="action-card emergency"><i class="fas fa-ambulance"></i><span>Emergency</span></a>
-            <a href="doctors.html" class="action-card"><i class="fas fa-user-md"></i><span>Find a Doctor</span></a>
-            <a href="laboratory.html" class="action-card"><i class="fas fa-flask"></i><span>Lab Tests</span></a>
-            <a href="pharmacy.html" class="action-card"><i class="fas fa-prescription-bottle"></i><span>Pharmacy</span></a>
-            <a href="patients/patient-login.html" class="action-card"><i class="fas fa-id-card"></i><span>Patient Portal</span></a>
+    <div class="ai-assistant" id="aiAssistant">
+        <button class="ai-toggle" id="aiToggle"><i class="fas fa-robot"></i><span class="ai-badge">AI</span></button>
+        <div class="ai-chat" id="aiChat">
+            <div class="ai-header"><i class="fas fa-robot"></i><h4>AI Health Assistant</h4><button class="ai-close"><i class="fas fa-times"></i></button></div>
+            <div class="ai-messages" id="aiMessages"><div class="message ai"><p>👋 Hello! I'm your AI health assistant. How can I help you today?</p></div></div>
+            <div class="ai-input"><input type="text" placeholder="Ask me anything..." id="aiInput"><button id="aiSend"><i class="fas fa-paper-plane"></i></button></div>
         </div>
     </div>
-</div>
 
-<!-- Statistics -->
-<section class="statistics" id="statistics">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Numbers Speak</span>
-            <h2>Ghimbi Adventist by the Numbers</h2>
-            <p>Our commitment to healthcare excellence reflected in numbers</p>
-        </div>
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-icon"><i class="fas fa-user-md"></i></div>
-                <div class="stat-number" data-count="150">0</div>
-                <div class="stat-label">Qualified Doctors</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-icon"><i class="fas fa-hospital-user"></i></div>
-                <div class="stat-number" data-count="25000">0</div>
-                <div class="stat-label">Patients Treated</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-icon"><i class="fas fa-bed"></i></div>
-                <div class="stat-number" data-count="200">0</div>
-                <div class="stat-label">Hospital Beds</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-icon"><i class="fas fa-smile"></i></div>
-                <div class="stat-number" data-count="98">0</div>
-                <div class="stat-label">Patient Satisfaction</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-icon"><i class="fas fa-award"></i></div>
-                <div class="stat-number" data-count="12">0</div>
-                <div class="stat-label">Years of Excellence</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-icon"><i class="fas fa-globe-africa"></i></div>
-                <div class="stat-number" data-count="3">0</div>
-                <div class="stat-label">Locations</div>
-            </div>
-        </div>
-    </div>
-</section>
+    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
 
-<!-- Why Choose Us -->
-<section class="why-choose-us">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">About Us</span>
-            <h2>Why Ghimbi Adventist is Your Best Choice</h2>
-            <p>We combine expertise, technology, and compassion</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card animate-on-scroll">
-                <div class="feature-icon"><i class="fas fa-user-md"></i></div>
-                <h3>Expert Doctors</h3>
-                <p>Team of highly qualified specialists with international experience</p>
-                <a href="doctors.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="feature-card animate-on-scroll">
-                <div class="feature-icon"><i class="fas fa-microscope"></i></div>
-                <h3>Advanced Technology</h3>
-                <p>State-of-the-art medical equipment for accurate diagnosis</p>
-                <a href="services.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="feature-card animate-on-scroll">
-                <div class="feature-icon"><i class="fas fa-heart"></i></div>
-                <h3>Compassionate Care</h3>
-                <p>Patient-centered approach with empathy and understanding</p>
-                <a href="about.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="feature-card animate-on-scroll">
-                <div class="feature-icon"><i class="fas fa-clock"></i></div>
-                <h3>24/7 Emergency</h3>
-                <p>Round-the-clock emergency services for immediate care</p>
-                <a href="emergency.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="feature-card animate-on-scroll">
-                <div class="feature-icon"><i class="fas fa-globe-africa"></i></div>
-                <h3>Multiple Locations</h3>
-                <p>Conveniently located hospitals across the region</p>
-                <a href="contact.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="feature-card animate-on-scroll">
-                <div class="feature-icon"><i class="fas fa-hand-holding-usd"></i></div>
-                <h3>Affordable Care</h3>
-                <p>Quality healthcare at competitive prices</p>
-                <a href="health-packages.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-about">
-                <div class="footer-logo">
-                    <img src="images/logo-white.svg" alt="Ghimbi Adventist">
-                    <span>Ghimbi Adventist</span>
-                </div>
-                <p>Providing quality healthcare services with compassion and excellence in Ghimbi, Ethiopia.</p>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="departments.html">Departments</a></li>
-                    <li><a href="doctors.html">Doctors</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Patient Services</h4>
-                <ul>
-                    <li><a href="appointments.html">Book Appointment</a></li>
-                    <li><a href="patients/patient-login.html">Patient Portal</a></li>
-                    <li><a href="laboratory.html">Lab Results</a></li>
-                    <li><a href="pharmacy.html">Pharmacy</a></li>
-                    <li><a href="emergency.html">Emergency</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h4>Contact Info</h4>
-                <ul>
-                    <li><i class="fas fa-map-marker-alt"></i> Ghimbi, Ethiopia</li>
-                    <li><i class="fas fa-phone"></i> +251 911 234 567</li>
-                    <li><i class="fas fa-envelope"></i> info@ghimbiadventist.org</li>
-                    <li><i class="fas fa-clock"></i> 24/7 Emergency Services</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Ghimbi Adventist General Hospital. All rights reserved.</p>
-            <div class="footer-bottom-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms & Conditions</a>
-                <a href="faq.html">FAQ</a>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- AI Assistant -->
-<div class="ai-assistant" id="aiAssistant">
-    <button class="ai-toggle" id="aiToggle"><i class="fas fa-robot"></i><span class="ai-badge">AI</span></button>
-    <div class="ai-chat" id="aiChat">
-        <div class="ai-header"><i class="fas fa-robot"></i><h4>AI Health Assistant</h4><button class="ai-close"><i class="fas fa-times"></i></button></div>
-        <div class="ai-messages" id="aiMessages"><div class="message ai"><p>👋 Hello! I'm your AI health assistant. How can I help you today?</p></div></div>
-        <div class="ai-input"><input type="text" placeholder="Ask me anything..." id="aiInput"><button id="aiSend"><i class="fas fa-paper-plane"></i></button></div>
-    </div>
-</div>
-
-<button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
-
-<script src="js/main.js"></script>
-<script src="js/api.js"></script>
-<script src="js/auth.js"></script>
-<script src="js/notifications.js"></script>
-<script src="js/qr.js"></script>
-<script src="js/ai.js"></script>
-<script src="js/scanner.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/qr.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/scanner.js"></script>
 </body>
                     </html>
