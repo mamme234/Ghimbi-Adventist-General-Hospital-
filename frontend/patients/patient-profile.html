@@ -3,26 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Profile - MediCare Hospital</title>
+    <title>Patient Profile - Ghimbi Adventist General Hospital</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
 </head>
 <body>
     <div class="dashboard-container">
-        <!-- Sidebar (same as dashboard) -->
         <aside class="dashboard-sidebar" id="sidebar">
-            <!-- Same sidebar content as patient-dashboard.html -->
             <div class="sidebar-brand">
-                <img src="images/logo.svg" alt="MediCare">
-                <span>Medi<span>Care</span></span>
+                <img src="../images/logo.svg" alt="Ghimbi Adventist">
+                <span>Ghimbi <span>Adventist</span></span>
             </div>
             <div class="sidebar-user">
-                <img src="https://ui-avatars.com/api/?name=John+Doe&background=2563eb&color=fff" alt="John Doe" class="sidebar-user-avatar">
+                <img src="https://ui-avatars.com/api/?name=John+Doe&background=1a6e3c&color=fff" alt="John Doe" class="sidebar-user-avatar">
                 <div class="sidebar-user-info">
                     <h4>John Doe</h4>
                     <p>Patient ID: P-2024-001</p>
@@ -59,7 +57,6 @@
             </div>
         </aside>
 
-        <!-- Main Content -->
         <main class="dashboard-main">
             <header class="dashboard-header">
                 <div class="dashboard-header-left">
@@ -75,20 +72,17 @@
                         <button><i class="fas fa-search"></i></button>
                     </div>
                     <div class="dashboard-header-actions">
-                        <button><i class="fas fa-bell"></i></button>
                         <button onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
-                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=2563eb&color=fff" alt="John Doe" class="user-avatar">
+                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=1a6e3c&color=fff" alt="John Doe" class="user-avatar">
                     </div>
                 </div>
             </header>
 
-            <!-- Profile Content -->
-            <div class="profile-container" style="display: grid; grid-template-columns: 300px 1fr; gap: 30px;">
-                <!-- Profile Card -->
-                <div class="profile-card" style="background: var(--white); border-radius: 16px; padding: 30px; text-align: center; border: 1px solid var(--light-gray); height: fit-content;">
+            <div style="display: grid; grid-template-columns: 300px 1fr; gap: 30px;">
+                <div style="background: var(--white); border-radius: 16px; padding: 30px; text-align: center; border: 1px solid var(--light-gray); height: fit-content;">
                     <div style="position: relative; display: inline-block;">
-                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=2563eb&color=fff&size=128" alt="Profile" style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--primary-color);">
-                        <button style="position: absolute; bottom: 0; right: 0; background: var(--primary-color); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; cursor: pointer;">
+                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=1a6e3c&color=fff&size=128" alt="Profile" style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid #1a6e3c;">
+                        <button style="position: absolute; bottom: 0; right: 0; background: #1a6e3c; color: white; border: none; border-radius: 50%; width: 32px; height: 32px; cursor: pointer;">
                             <i class="fas fa-camera"></i>
                         </button>
                     </div>
@@ -99,16 +93,14 @@
                         <span class="badge badge-info">Insurance Active</span>
                     </div>
                     <div style="margin-top: 20px; border-top: 1px solid var(--light-gray); padding-top: 20px;">
-                        <p style="font-size: 14px; color: var(--mid-gray);"><i class="fas fa-map-marker-alt" style="color: var(--primary-color);"></i> Addis Ababa, Ethiopia</p>
-                        <p style="font-size: 14px; color: var(--mid-gray);"><i class="fas fa-phone" style="color: var(--primary-color);"></i> +251 911 234 567</p>
-                        <p style="font-size: 14px; color: var(--mid-gray);"><i class="fas fa-envelope" style="color: var(--primary-color);"></i> john.doe@email.com</p>
+                        <p style="font-size: 14px; color: var(--mid-gray);"><i class="fas fa-map-marker-alt" style="color: #1a6e3c;"></i> Ghimbi, Ethiopia</p>
+                        <p style="font-size: 14px; color: var(--mid-gray);"><i class="fas fa-phone" style="color: #1a6e3c;"></i> +251 911 234 567</p>
+                        <p style="font-size: 14px; color: var(--mid-gray);"><i class="fas fa-envelope" style="color: #1a6e3c;"></i> john.doe@email.com</p>
                     </div>
                     <button class="btn btn-primary" style="margin-top: 20px; width: 100%;" onclick="showQRCard()"><i class="fas fa-qrcode"></i> Show QR Card</button>
                 </div>
 
-                <!-- Profile Details -->
                 <div style="display: flex; flex-direction: column; gap: 20px;">
-                    <!-- Personal Information -->
                     <div style="background: var(--white); border-radius: 16px; padding: 25px; border: 1px solid var(--light-gray);">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                             <h3>Personal Information</h3>
@@ -141,12 +133,11 @@
                             </div>
                             <div style="grid-column: span 2;">
                                 <label style="font-size: 12px; color: var(--mid-gray);">Address</label>
-                                <p style="font-weight: 600;">Bole Sub-city, Woreda 03, Addis Ababa, Ethiopia</p>
+                                <p style="font-weight: 600;">Ghimbi, Ethiopia</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Emergency Contact -->
                     <div style="background: var(--white); border-radius: 16px; padding: 25px; border: 1px solid var(--light-gray);">
                         <h3 style="margin-bottom: 20px;">Emergency Contact</h3>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
@@ -165,7 +156,6 @@
                         </div>
                     </div>
 
-                    <!-- Insurance Information -->
                     <div style="background: var(--white); border-radius: 16px; padding: 25px; border: 1px solid var(--light-gray);">
                         <h3 style="margin-bottom: 20px;">Insurance Information</h3>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
@@ -192,7 +182,6 @@
         </main>
     </div>
 
-    <!-- QR Card Modal (same as dashboard) -->
     <div class="modal-overlay" id="qrCardModal">
         <div class="modal-content" style="max-width: 400px; text-align: center;">
             <div class="modal-header">
@@ -200,13 +189,13 @@
                 <button class="modal-close" onclick="closeQRCard()"><i class="fas fa-times"></i></button>
             </div>
             <div class="modal-body">
-                <div style="background: white; padding: 30px; border-radius: 16px; border: 2px solid #2563eb;">
+                <div style="background: white; padding: 30px; border-radius: 16px; border: 2px solid #1a6e3c;">
                     <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px;">
-                        <img src="images/logo.svg" alt="MediCare" style="height: 30px;">
-                        <span style="font-weight: 700; font-size: 18px;">Medi<span style="color: #2563eb;">Care</span></span>
+                        <img src="../images/logo.svg" alt="Ghimbi Adventist" style="height: 30px;">
+                        <span style="font-weight: 700; font-size: 18px;">Ghimbi <span style="color: #1a6e3c;">Adventist</span></span>
                     </div>
                     <div id="qrCodeDisplay" style="width: 200px; height: 200px; margin: 0 auto; background: #f8fafc; border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 2px dashed #94a3b8;">
-                        <i class="fas fa-qrcode" style="font-size: 80px; color: #2563eb;"></i>
+                        <i class="fas fa-qrcode" style="font-size: 80px; color: #1a6e3c;"></i>
                     </div>
                     <div style="margin-top: 20px;">
                         <p style="font-weight: 600; color: #1e293b;">John Doe</p>
@@ -258,4 +247,4 @@
         }
     </script>
 </body>
-                      </html>
+    </html>
