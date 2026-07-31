@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radiology Services - MediCare Hospital</title>
+    <title>Radiology Services - Ghimbi Adventist General Hospital</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -13,57 +13,27 @@
     <link rel="stylesheet" href="css/component-styles.css">
 </head>
 <body>
-    <div id="loading-screen"><div class="loader-container"><div class="hospital-loader"><div class="heartbeat"></div><div class="pulse-ring"></div></div><div class="loader-text"><span>M</span><span>e</span><span>d</span><span>i</span><span>C</span><span>a</span><span>r</span><span>e</span></div><div class="loader-progress"><div class="progress-bar" id="loader-progress-bar"></div></div><p class="loading-message">Loading radiology services...</p></div></div>
-
-    <!-- Top Bar -->
-    <div class="top-bar" id="topBar">
-        <div class="container">
-            <div class="top-bar-content">
-                <div class="top-bar-left">
-                    <div class="contact-info">
-                        <a href="tel:+251911234567"><i class="fas fa-phone-alt"></i> +251 911 234 567</a>
-                        <a href="mailto:info@medicare.com"><i class="fas fa-envelope"></i> info@medicare.com</a>
-                        <span><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</span>
-                    </div>
-                </div>
-                <div class="top-bar-right">
-                    <div class="emergency-number"><i class="fas fa-ambulance"></i><span>Emergency: <strong>911</strong></span></div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
-                </div>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="hospital-loader">
+                <div class="heartbeat"></div>
+                <div class="pulse-ring"></div>
             </div>
+            <div class="loader-text">
+                <span>G</span><span>h</span><span>i</span><span>m</span><span>b</span><span>i</span>
+                <span> </span>
+                <span>A</span><span>d</span><span>v</span><span>e</span><span>n</span><span>t</span><span>i</span><span>s</span><span>t</span>
+            </div>
+            <div class="loader-progress">
+                <div class="progress-bar" id="loader-progress-bar"></div>
+            </div>
+            <p class="loading-message">Loading radiology services...</p>
         </div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="mainNav">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo"><a href="index.html"><img src="images/logo.svg" alt="MediCare Hospital" class="logo-img"><span class="logo-text">Medi<span>Care</span></span></a></div>
-                <ul class="nav-menu" id="navMenu">
-                    <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
-                    <li class="nav-item"><a href="departments.html" class="nav-link"><i class="fas fa-hospital"></i> Departments</a></li>
-                    <li class="nav-item"><a href="doctors.html" class="nav-link"><i class="fas fa-user-md"></i> Doctors</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link active"><i class="fas fa-stethoscope"></i> Services</a></li>
-                    <li class="nav-item"><a href="appointments.html" class="nav-link"><i class="fas fa-calendar-check"></i> Book Appointment</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
-                <div class="nav-actions">
-                    <button class="search-toggle" id="searchToggle"><i class="fas fa-search"></i></button>
-                    <a href="patient-login.html" class="btn-login"><i class="fas fa-user-circle"></i> Login</a>
-                    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <div class="top-bar" id="topBar">...</div>
+    <nav class="navbar" id="mainNav">...</nav>
 
-    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
             <div class="page-header-content">
@@ -82,141 +52,114 @@
         </div>
     </section>
 
-    <!-- Imaging Services -->
     <section class="imaging-services">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Services</span>
                 <h2>Advanced Imaging Services</h2>
             </div>
-            <div class="imaging-grid">
-                <div class="imaging-card animate-on-scroll">
-                    <div class="imaging-icon"><i class="fas fa-x-ray"></i></div>
+            <div class="imaging-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                <div class="imaging-card animate-on-scroll" style="background: var(--white); padding: 25px; border-radius: 12px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div class="imaging-icon" style="font-size: 48px; color: #1a6e3c; margin-bottom: 15px;"><i class="fas fa-x-ray"></i></div>
                     <h3>X-Ray</h3>
-                    <p>Digital X-Ray services for bones, chest, and various diagnostic needs.</p>
-                    <ul class="imaging-features">
-                        <li><i class="fas fa-check-circle"></i> Digital Technology</li>
-                        <li><i class="fas fa-check-circle"></i> Low Radiation</li>
-                        <li><i class="fas fa-check-circle"></i> Instant Results</li>
+                    <p style="color: #64748b;">Digital X-Ray services for bones, chest, and various diagnostic needs.</p>
+                    <ul class="imaging-features" style="list-style: none; padding: 0; margin-top: 15px; text-align: left;">
+                        <li style="padding: 4px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Digital Technology</li>
+                        <li style="padding: 4px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Low Radiation</li>
+                        <li style="padding: 4px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Instant Results</li>
                     </ul>
-                    <a href="#appointment" class="btn btn-primary btn-sm">Book Appointment</a>
+                    <a href="#appointment" class="btn btn-primary btn-sm" style="margin-top: 15px;">Book Appointment</a>
                 </div>
 
-                <div class="imaging-card animate-on-scroll">
-                    <div class="imaging-icon"><i class="fas fa-wave-square"></i></div>
+                <div class="imaging-card animate-on-scroll" style="background: var(--white); padding: 25px; border-radius: 12px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div class="imaging-icon" style="font-size: 48px; color: #7c3aed; margin-bottom: 15px;"><i class="fas fa-wave-square"></i></div>
                     <h3>Ultrasound</h3>
-                    <p>High-resolution ultrasound for abdominal, pelvic, and soft tissue imaging.</p>
-                    <ul class="imaging-features">
-                        <li><i class="fas fa-check-circle"></i> 3D/4D Technology</li>
-                        <li><i class="fas fa-check-circle"></i> Doppler Studies</li>
-                        <li><i class="fas fa-check-circle"></i> Pregnancy Scans</li>
+                    <p style="color: #64748b;">High-resolution ultrasound for abdominal, pelvic, and soft tissue imaging.</p>
+                    <ul class="imaging-features" style="list-style: none; padding: 0; margin-top: 15px; text-align: left;">
+                        <li style="padding: 4px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> 3D/4D Technology</li>
+                        <li style="padding: 4px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Doppler Studies</li>
+                        <li style="padding: 4px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Pregnancy Scans</li>
                     </ul>
-                    <a href="#appointment" class="btn btn-primary btn-sm">Book Appointment</a>
+                    <a href="#appointment" class="btn btn-primary btn-sm" style="margin-top: 15px;">Book Appointment</a>
                 </div>
 
-                <div class="imaging-card animate-on-scroll">
-                    <div class="imaging-icon"><i class="fas fa-ct-scan"></i></div>
+                <div class="imaging-card animate-on-scroll" style="background: var(--white); padding: 25px; border-radius: 12px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div class="imaging-icon" style="font-size: 48px; color: #2563eb; margin-bottom: 15px;"><i class="fas fa-ct-scan"></i></div>
                     <h3>CT Scan</h3>
-                    <p>Multi-slice CT scanning for detailed cross-sectional imaging.</p>
-                    <ul class="imaging-features">
-                        <li><i class="fas fa-check-circle"></i> 128-Slice Scanner</li>
-                        <li><i class="fas fa-check-circle"></i> 3D Reconstruction</li>
-                        <li><i class="fas fa-check-circle"></i> Contrast Studies</li>
+                    <p style="color: #64748b;">Multi-slice CT scanning for detailed cross-sectional imaging.</p>
+                    <ul class="imaging-features" style="list-style: none; padding: 0; margin-top: 15px; text-align: left;">
+                        <li style="padding: 4px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> 128-Slice Scanner</li>
+                        <li style="padding: 4px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> 3D Reconstruction</li>
+                        <li style="padding: 4px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Contrast Studies</li>
                     </ul>
-                    <a href="#appointment" class="btn btn-primary btn-sm">Book Appointment</a>
+                    <a href="#appointment" class="btn btn-primary btn-sm" style="margin-top: 15px;">Book Appointment</a>
                 </div>
 
-                <div class="imaging-card animate-on-scroll">
-                    <div class="imaging-icon"><i class="fas fa-brain"></i></div>
+                <div class="imaging-card animate-on-scroll" style="background: var(--white); padding: 25px; border-radius: 12px; border: 1px solid var(--light-gray); text-align: center;">
+                    <div class="imaging-icon" style="font-size: 48px; color: #ec4899; margin-bottom: 15px;"><i class="fas fa-brain"></i></div>
                     <h3>MRI</h3>
-                    <p>High-field MRI for detailed soft tissue and neurological imaging.</p>
-                    <ul class="imaging-features">
-                        <li><i class="fas fa-check-circle"></i> 3 Tesla Scanner</li>
-                        <li><i class="fas fa-check-circle"></i> Advanced Protocols</li>
-                        <li><i class="fas fa-check-circle"></i> Functional MRI</li>
+                    <p style="color: #64748b;">High-field MRI for detailed soft tissue and neurological imaging.</p>
+                    <ul class="imaging-features" style="list-style: none; padding: 0; margin-top: 15px; text-align: left;">
+                        <li style="padding: 4px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> 3 Tesla Scanner</li>
+                        <li style="padding: 4px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Advanced Protocols</li>
+                        <li style="padding: 4px 0;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Functional MRI</li>
                     </ul>
-                    <a href="#appointment" class="btn btn-primary btn-sm">Book Appointment</a>
+                    <a href="#appointment" class="btn btn-primary btn-sm" style="margin-top: 15px;">Book Appointment</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Technology & Equipment -->
     <section class="radiology-technology">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Technology</span>
                 <h2>State-of-the-Art Equipment</h2>
             </div>
-            <div class="tech-grid">
-                <div class="tech-item animate-on-scroll">
-                    <i class="fas fa-microscope"></i>
-                    <h4>Digital X-Ray</h4>
-                    <p>Latest digital technology with minimal radiation exposure</p>
+            <div class="tech-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                <div class="tech-item animate-on-scroll" style="background: var(--white); padding: 20px; border-radius: 12px; border: 1px solid var(--light-gray); text-align: center;">
+                    <i class="fas fa-microscope" style="font-size: 32px; color: #1a6e3c;"></i>
+                    <h4 style="margin-top: 10px;">Digital X-Ray</h4>
+                    <p style="color: #64748b;">Latest digital technology with minimal radiation exposure</p>
                 </div>
-                <div class="tech-item animate-on-scroll">
-                    <i class="fas fa-wave-square"></i>
-                    <h4>3D/4D Ultrasound</h4>
-                    <p>Advanced imaging with real-time 3D/4D capabilities</p>
+                <div class="tech-item animate-on-scroll" style="background: var(--white); padding: 20px; border-radius: 12px; border: 1px solid var(--light-gray); text-align: center;">
+                    <i class="fas fa-wave-square" style="font-size: 32px; color: #7c3aed;"></i>
+                    <h4 style="margin-top: 10px;">3D/4D Ultrasound</h4>
+                    <p style="color: #64748b;">Advanced imaging with real-time 3D/4D capabilities</p>
                 </div>
-                <div class="tech-item animate-on-scroll">
-                    <i class="fas fa-ct-scan"></i>
-                    <h4>128-Slice CT</h4>
-                    <p>High-speed, high-resolution CT scanning</p>
+                <div class="tech-item animate-on-scroll" style="background: var(--white); padding: 20px; border-radius: 12px; border: 1px solid var(--light-gray); text-align: center;">
+                    <i class="fas fa-ct-scan" style="font-size: 32px; color: #2563eb;"></i>
+                    <h4 style="margin-top: 10px;">128-Slice CT</h4>
+                    <p style="color: #64748b;">High-speed, high-resolution CT scanning</p>
                 </div>
-                <div class="tech-item animate-on-scroll">
-                    <i class="fas fa-magnet"></i>
-                    <h4>3T MRI</h4>
-                    <p>High-field MRI for superior image quality</p>
+                <div class="tech-item animate-on-scroll" style="background: var(--white); padding: 20px; border-radius: 12px; border: 1px solid var(--light-gray); text-align: center;">
+                    <i class="fas fa-magnet" style="font-size: 32px; color: #ec4899;"></i>
+                    <h4 style="margin-top: 10px;">3T MRI</h4>
+                    <p style="color: #64748b;">High-field MRI for superior image quality</p>
                 </div>
-                <div class="tech-item animate-on-scroll">
-                    <i class="fas fa-heart"></i>
-                    <h4>Cardiac Imaging</h4>
-                    <p>Specialized protocols for cardiac MRI and CT</p>
+                <div class="tech-item animate-on-scroll" style="background: var(--white); padding: 20px; border-radius: 12px; border: 1px solid var(--light-gray); text-align: center;">
+                    <i class="fas fa-heart" style="font-size: 32px; color: #dc2626;"></i>
+                    <h4 style="margin-top: 10px;">Cardiac Imaging</h4>
+                    <p style="color: #64748b;">Specialized protocols for cardiac MRI and CT</p>
                 </div>
-                <div class="tech-item animate-on-scroll">
-                    <i class="fas fa-database"></i>
-                    <h4>PACS System</h4>
-                    <p>Digital archive for immediate access to images</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Imaging Information -->
-    <section class="imaging-info">
-        <div class="container">
-            <div class="info-content">
-                <div class="info-text">
-                    <h3>Before Your Imaging Procedure</h3>
-                    <ul>
-                        <li><i class="fas fa-clock"></i> Arrive 15 minutes before your appointment</li>
-                        <li><i class="fas fa-id-card"></i> Bring your referral and identification</li>
-                        <li><i class="fas fa-prescription-bottle"></i> Inform us about any medications</li>
-                        <li><i class="fas fa-exclamation-triangle"></i> Tell us if you are pregnant or breastfeeding</li>
-                        <li><i class="fas fa-bell"></i> Wear comfortable clothing without metal</li>
-                    </ul>
-                </div>
-                <div class="info-text">
-                    <h3>After Your Procedure</h3>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Results available within 24-48 hours</li>
-                        <li><i class="fas fa-file-medical-alt"></i> Report sent to your referring doctor</li>
-                        <li><i class="fas fa-user-circle"></i> Access results via patient portal</li>
-                        <li><i class="fas fa-phone"></i> Call us with any questions</li>
-                    </ul>
+                <div class="tech-item animate-on-scroll" style="background: var(--white); padding: 20px; border-radius: 12px; border: 1px solid var(--light-gray); text-align: center;">
+                    <i class="fas fa-database" style="font-size: 32px; color: #f59e0b;"></i>
+                    <h4 style="margin-top: 10px;">PACS System</h4>
+                    <p style="color: #64748b;">Digital archive for immediate access to images</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Emergency Banner -->
     <section class="emergency-banner">
         <div class="container">
             <div class="emergency-content">
                 <div class="emergency-text">
                     <i class="fas fa-ambulance"></i>
-                    <div><h2>Emergency Services Available 24/7</h2><p>Immediate medical attention when you need it most</p></div>
+                    <div>
+                        <h2>Emergency Services Available 24/7</h2>
+                        <p>Immediate medical attention when you need it most</p>
+                    </div>
                 </div>
                 <div class="emergency-contact">
                     <a href="tel:911" class="emergency-number"><i class="fas fa-phone"></i> Emergency: 911</a>
@@ -226,40 +169,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <div class="footer-logo"><img src="images/logo-white.svg" alt="MediCare"><span>MediCare Hospital</span></div>
-                    <p>Providing quality healthcare services with compassion and excellence since 2010.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="about.html">About Us</a></li><li><a href="departments.html">Departments</a></li><li><a href="doctors.html">Doctors</a></li><li><a href="services.html">Services</a></li></ul></div>
-                <div class="footer-links"><h4>Patient Services</h4><ul><li><a href="appointments.html">Book Appointment</a></li><li><a href="patient-login.html">Patient Portal</a></li><li><a href="laboratory.html">Lab Results</a></li><li><a href="pharmacy.html">Pharmacy</a></li></ul></div>
-                <div class="footer-contact"><h4>Contact Info</h4><ul><li><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</li><li><i class="fas fa-phone"></i> +251 911 234 567</li><li><i class="fas fa-envelope"></i> info@medicare.com</li><li><i class="fas fa-clock"></i> 24/7 Emergency Services</li></ul></div>
-            </div>
-            <div class="footer-bottom"><p>&copy; 2024 MediCare Hospital. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms & Conditions</a><a href="faq.html">FAQ</a></div></div>
-        </div>
-    </footer>
-
-    <!-- AI Assistant -->
-    <div class="ai-assistant" id="aiAssistant">
-        <button class="ai-toggle" id="aiToggle"><i class="fas fa-robot"></i><span class="ai-badge">AI</span></button>
-        <div class="ai-chat" id="aiChat">
-            <div class="ai-header"><i class="fas fa-robot"></i><h4>AI Health Assistant</h4><button class="ai-close"><i class="fas fa-times"></i></button></div>
-            <div class="ai-messages" id="aiMessages"><div class="message ai"><p>👋 Hello! I'm your AI health assistant.</p></div></div>
-            <div class="ai-input"><input type="text" placeholder="Ask me anything..." id="aiInput"><button id="aiSend"><i class="fas fa-paper-plane"></i></button></div>
-        </div>
-    </div>
-
-    <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+    <footer class="footer">...</footer>
+    <div class="ai-assistant" id="aiAssistant">...</div>
+    <button class="scroll-top" id="scrollTop">...</button>
 
     <script src="js/main.js"></script>
     <script src="js/api.js"></script>
@@ -269,4 +181,4 @@
     <script src="js/ai.js"></script>
     <script src="js/scanner.js"></script>
 </body>
-          </html>
+                            </html>
