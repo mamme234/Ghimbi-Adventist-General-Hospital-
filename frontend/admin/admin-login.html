@@ -20,98 +20,34 @@
         </div>
 
         <div class="login-container">
-            <div class="login-card" style="max-width: 450px;">
+            <div class="login-card">
                 <div class="login-header">
                     <div class="logo">
                         <img src="../images/logo.svg" alt="Ghimbi Adventist">
-                        <span style="font-size: 20px;">Ghimbi <span style="color: #1a6e3c;">Adventist</span></span>
+                        <span>Ghimbi <span>Adventist</span></span>
                     </div>
-                    <h1 style="font-size: 24px;">🛡️ Admin Portal</h1>
-                    <p style="font-size: 14px; color: #64748b;">Sign in to manage the hospital</p>
+                    <h1>Admin Portal</h1>
+                    <p>Select your account to login</p>
                 </div>
 
-                <form id="loginForm">
-                    <div style="margin-bottom: 15px;">
-                        <label style="font-size: 14px; font-weight: 600; display: block; margin-bottom: 5px;">Email Address</label>
-                        <div style="position: relative;">
-                            <i class="fas fa-envelope" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #94a3b8;"></i>
-                            <input type="email" id="emailInput" value="muhammadthe3rdd@gmail.com" style="width: 100%; padding: 12px 15px 12px 45px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 14px;">
-                        </div>
+                <!-- REAL ADMINS LIST -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 15px 0;">
+                    <!-- Admin 1: Ilyas İbrahim -->
+                    <div onclick="selectAdmin('ilyas@gmail.com', 'Ilyas?', 'Ilyas İbrahim')" 
+                         style="border: 2px solid #1a6e3c; border-radius: 10px; padding: 12px; text-align: center; cursor: pointer; background: #f0fdf4;">
+                        <img src="https://ui-avatars.com/api/?name=Ilyas+İbrahim&background=1a6e3c&color=fff&size=50" style="width: 50px; height: 50px; border-radius: 50%;">
+                        <div style="font-weight: 700; font-size: 13px; margin-top: 5px;">Ilyas İbrahim</div>
+                        <div style="font-size: 11px; color: #64748b;">Administrator</div>
+                        <div style="font-size: 10px; color: #1a6e3c;">🛡️ Full Access</div>
                     </div>
 
-                    <div style="margin-bottom: 15px;">
-                        <label style="font-size: 14px; font-weight: 600; display: block; margin-bottom: 5px;">Password</label>
-                        <div style="position: relative;">
-                            <i class="fas fa-lock" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #94a3b8;"></i>
-                            <input type="password" id="passwordInput" value="admin123" style="width: 100%; padding: 12px 15px 12px 45px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 14px;">
-                            <button type="button" onclick="togglePassword()" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #94a3b8; cursor: pointer;">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                        <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
-                            <input type="checkbox" checked> Remember me
-                        </label>
-                        <a href="#" style="font-size: 14px; color: #1a6e3c; text-decoration: none;">Forgot password?</a>
-                    </div>
-
-                    <button type="submit" id="loginBtn" style="width: 100%; padding: 14px; background: linear-gradient(135deg, #1a6e3c, #2a8a4a); color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
-                        <i class="fas fa-sign-in-alt"></i> Sign In as Admin
-                    </button>
-
-                    <div style="text-align: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;">
-                        <p style="font-size: 13px; color: #94a3b8;">
-                            <i class="fas fa-shield-alt" style="color: #1a6e3c;"></i> 
-                            Secure login · Admin Access Only
-                        </p>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function togglePassword() {
-            const input = document.getElementById('passwordInput');
-            const icon = document.querySelector('.fa-eye, .fa-eye-slash');
-            if (input.type === 'password') {
-                input.type = 'text';
-                icon.className = 'fas fa-eye-slash';
-            } else {
-                input.type = 'password';
-                icon.className = 'fas fa-eye';
-            }
-        }
-
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const btn = document.getElementById('loginBtn');
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing In...';
-            btn.style.opacity = '0.7';
-            
-            setTimeout(() => {
-                window.location.href = 'admin-dashboard.html';
-            }, 1500);
-        });
-
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            document.documentElement.setAttribute('data-theme', savedTheme);
-        }
-    </script>
-</body>
-</html>                        <i class="fas fa-user"></i>
-                        <span>Patient</span>
-                    </div>
-                    <div class="role-option" data-role="doctor">
-                        <i class="fas fa-user-md"></i>
-                        <span>Doctor</span>
-                    </div>
-                    <div class="role-option active" data-role="admin">
-                        <i class="fas fa-user-cog"></i>
-                        <span>Admin</span>
+                    <!-- Admin 2: Amina Hussein -->
+                    <div onclick="selectAdmin('amina@gmail.com', 'amina456', 'Amina Hussein')" 
+                         style="border: 2px solid #e2e8f0; border-radius: 10px; padding: 12px; text-align: center; cursor: pointer;">
+                        <img src="https://ui-avatars.com/api/?name=Amina+Hussein&background=7c3aed&color=fff&size=50" style="width: 50px; height: 50px; border-radius: 50%;">
+                        <div style="font-weight: 700; font-size: 13px; margin-top: 5px;">Amina Hussein</div>
+                        <div style="font-size: 11px; color: #64748b;">Administrator</div>
+                        <div style="font-size: 10px; color: #7c3aed;">🛡️ Full Access</div>
                     </div>
                 </div>
 
@@ -120,7 +56,7 @@
                         <label>Email Address</label>
                         <div class="input-wrapper">
                             <i class="fas fa-envelope"></i>
-                            <input type="email" id="emailInput" placeholder="Enter your email" value="admin@medicare.com" required>
+                            <input type="email" id="emailInput" placeholder="Enter your email" required>
                         </div>
                     </div>
 
@@ -128,7 +64,7 @@
                         <label>Password</label>
                         <div class="input-wrapper">
                             <i class="fas fa-lock"></i>
-                            <input type="password" id="passwordInput" placeholder="Enter your password" value="admin123" required>
+                            <input type="password" id="passwordInput" placeholder="Enter your password" required>
                             <button type="button" class="toggle-password" onclick="togglePassword()">
                                 <i class="fas fa-eye"></i>
                             </button>
@@ -144,11 +80,14 @@
                     </div>
 
                     <button type="submit" class="login-btn" id="loginBtn">
-                        <i class="fas fa-sign-in-alt"></i> Sign In as Admin
+                        <i class="fas fa-sign-in-alt"></i> Sign In
                     </button>
 
                     <div class="login-footer">
-                        <p>Need help? <a href="#">Contact IT Support</a></p>
+                        <p style="font-size: 12px; color: #94a3b8; margin-top: 10px;">
+                            <i class="fas fa-shield-alt" style="color: #1a6e3c;"></i> 
+                            Secure login · Admin Access Only
+                        </p>
                     </div>
                 </form>
             </div>
@@ -156,6 +95,32 @@
     </div>
 
     <script>
+        // REAL Admin Data
+        const admins = {
+            'ilyas@gmail.com': { 
+                name: 'Ilyas İbrahim', 
+                password: 'Ilyas?',
+                role: 'Administrator'
+            },
+            'amina@gmail.com': { 
+                name: 'Amina Hussein', 
+                password: 'amina456',
+                role: 'Administrator'
+            }
+        };
+
+        function selectAdmin(email, password, name) {
+            document.getElementById('emailInput').value = email;
+            document.getElementById('passwordInput').value = password;
+            
+            document.querySelectorAll('[onclick^="selectAdmin"]').forEach(el => {
+                el.style.borderColor = '#e2e8f0';
+                el.style.background = 'transparent';
+            });
+            event.currentTarget.style.borderColor = '#1a6e3c';
+            event.currentTarget.style.background = '#f0fdf4';
+        }
+
         function togglePassword() {
             const input = document.getElementById('passwordInput');
             const icon = document.querySelector('.toggle-password i');
@@ -168,30 +133,26 @@
             }
         }
 
-        document.querySelectorAll('.role-option').forEach(option => {
-            option.addEventListener('click', function() {
-                document.querySelectorAll('.role-option').forEach(o => o.classList.remove('active'));
-                this.classList.add('active');
-                const role = this.dataset.role;
-                const btn = document.getElementById('loginBtn');
-                if (role === 'admin') {
-                    btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In as Admin';
-                } else if (role === 'doctor') {
-                    btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In as Doctor';
-                } else {
-                    btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In as Patient';
-                }
-            });
-        });
-
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            const email = document.getElementById('emailInput').value;
+            const password = document.getElementById('passwordInput').value;
             const btn = document.getElementById('loginBtn');
-            btn.classList.add('loading');
-            btn.innerHTML = '<i class="fas fa-spinner"></i> Signing In...';
-            setTimeout(() => {
-                window.location.href = 'admin-dashboard.html';
-            }, 1500);
+
+            if (admins[email] && admins[email].password === password) {
+                btn.classList.add('loading');
+                btn.innerHTML = '<i class="fas fa-spinner"></i> Signing In...';
+                btn.style.opacity = '0.7';
+                
+                sessionStorage.setItem('adminName', admins[email].name);
+                sessionStorage.setItem('adminEmail', email);
+                
+                setTimeout(() => {
+                    window.location.href = 'admin-dashboard.html';
+                }, 1500);
+            } else {
+                alert('❌ Invalid email or password. Please try again.');
+            }
         });
 
         const savedTheme = localStorage.getItem('theme');
