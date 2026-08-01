@@ -1,0 +1,335 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Patients - Doctor Dashboard</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="manifest" href="../../manifest.json">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar (same as dashboard) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="../../index.html" class="sidebar-logo">
+                    <img src="../../assets/logo.svg" alt="Gimbi Hospital">
+                    <span>Doctor Panel</span>
+                </a>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-th-large"></i> <span>Dashboard</span></a></li>
+                    <li class="active"><a href="patients.html"><i class="fas fa-users"></i> <span>My Patients</span></a></li>
+                    <li><a href="appointments.html"><i class="fas fa-calendar-check"></i> <span>Appointments</span></a></li>
+                    <li><a href="consultation.html"><i class="fas fa-stethoscope"></i> <span>Consultation</span></a></li>
+                    <li><a href="prescriptions.html"><i class="fas fa-prescription"></i> <span>Prescriptions</span></a></li>
+                    <li><a href="laboratory.html"><i class="fas fa-microscope"></i> <span>Lab Requests</span></a></li>
+                    <li><a href="radiology.html"><i class="fas fa-x-ray"></i> <span>Radiology</span></a></li>
+                    <li><a href="surgery.html"><i class="fas fa-scalpel"></i> <span>Surgery Schedule</span></a></li>
+                    <li><a href="reports.html"><i class="fas fa-file-alt"></i> <span>Reports</span></a></li>
+                    <li><a href="../profile.html"><i class="fas fa-user-circle"></i> <span>Profile</span></a></li>
+                    <li><a href="../../index.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>My Patients</h1>
+                    <p class="header-subtitle">Manage your patient list</p>
+                </div>
+                <div class="header-right">
+                    <input type="text" class="search-input" placeholder="Search patients..." id="patientSearch">
+                </div>
+            </header>
+
+            <!-- Patient Stats -->
+            <section class="patient-stats">
+                <div class="stat-card glass">
+                    <div class="stat-icon blue">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>148</h3>
+                        <p>Total Patients</p>
+                    </div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-icon green">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>95</h3>
+                        <p>Active Patients</p>
+                    </div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-icon orange">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>24</h3>
+                        <p>Follow-ups This Week</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Patient Table -->
+            <section class="patient-table">
+                <div class="table-container glass">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Patient ID</th>
+                                <th>Name</th>
+                                <th>Gender</th>
+                                <th>Age</th>
+                                <th>Last Visit</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#1245</td>
+                                <td><strong>Sarah Ahmed</strong></td>
+                                <td>Female</td>
+                                <td>34</td>
+                                <td>Today</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>
+                                    <button class="action-btn" title="View"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn" title="Consult"><i class="fas fa-stethoscope"></i></button>
+                                    <button class="action-btn" title="Prescribe"><i class="fas fa-prescription"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#1267</td>
+                                <td><strong>Tewodros Hailu</strong></td>
+                                <td>Male</td>
+                                <td>56</td>
+                                <td>Yesterday</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>
+                                    <button class="action-btn" title="View"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn" title="Consult"><i class="fas fa-stethoscope"></i></button>
+                                    <button class="action-btn" title="Prescribe"><i class="fas fa-prescription"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#1278</td>
+                                <td><strong>Birtukan Alemu</strong></td>
+                                <td>Female</td>
+                                <td>42</td>
+                                <td>2 days ago</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                                <td>
+                                    <button class="action-btn" title="View"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn" title="Consult"><i class="fas fa-stethoscope"></i></button>
+                                    <button class="action-btn" title="Prescribe"><i class="fas fa-prescription"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#1290</td>
+                                <td><strong>Kebede Tesfaye</strong></td>
+                                <td>Male</td>
+                                <td>67</td>
+                                <td>5 days ago</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>
+                                    <button class="action-btn" title="View"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn" title="Consult"><i class="fas fa-stethoscope"></i></button>
+                                    <button class="action-btn" title="Prescribe"><i class="fas fa-prescription"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#1301</td>
+                                <td><strong>Meron Abebe</strong></td>
+                                <td>Female</td>
+                                <td>29</td>
+                                <td>1 week ago</td>
+                                <td><span class="status-badge inactive">Inactive</span></td>
+                                <td>
+                                    <button class="action-btn" title="View"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn" title="Consult"><i class="fas fa-stethoscope"></i></button>
+                                    <button class="action-btn" title="Prescribe"><i class="fas fa-prescription"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="table-footer">
+                        <span>Showing 5 of 148 patients</span>
+                        <div class="pagination">
+                            <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <button class="page-btn">...</button>
+                            <button class="page-btn">30</button>
+                            <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../../js/main.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/dashboard.js"></script>
+    
+    <script>
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+        });
+
+        document.getElementById('patientSearch').addEventListener('input', function() {
+            const search = this.value.toLowerCase();
+            const rows = document.querySelectorAll('.data-table tbody tr');
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(search) ? '' : 'none';
+            });
+        });
+    </script>
+
+    <style>
+        .search-input {
+            padding: 8px 16px;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-full);
+            background: var(--bg-input);
+            color: var(--text-primary);
+            font-size: 14px;
+            width: 200px;
+            transition: all 0.3s ease;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            width: 280px;
+        }
+        .patient-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+        .table-container {
+            border-radius: var(--radius-md);
+            padding: 20px;
+            overflow-x: auto;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .data-table th {
+            text-align: left;
+            padding: 12px 16px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 14px;
+        }
+        .data-table tr:hover td {
+            background: var(--glass-bg);
+        }
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .status-badge.active {
+            background: rgba(0, 184, 148, 0.15);
+            color: #00b894;
+        }
+        .status-badge.pending {
+            background: rgba(255, 193, 7, 0.15);
+            color: #ffc107;
+        }
+        .status-badge.inactive {
+            background: rgba(220, 53, 69, 0.15);
+            color: #dc3545;
+        }
+        .action-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 4px 8px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        .action-btn:hover {
+            color: var(--primary);
+        }
+        .table-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-light);
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        .pagination {
+            display: flex;
+            gap: 4px;
+        }
+        .page-btn {
+            padding: 4px 12px;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            background: transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .page-btn:hover {
+            background: var(--glass-bg);
+        }
+        .page-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        @media (max-width: 768px) {
+            .patient-stats {
+                grid-template-columns: 1fr;
+            }
+            .search-input {
+                width: 100%;
+            }
+            .search-input:focus {
+                width: 100%;
+            }
+            .table-footer {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+</body>
+                          </html>
