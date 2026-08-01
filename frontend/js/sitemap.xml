@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    
+    <!-- Main Pages -->
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ghimbi-adventist-general-hospital-2.vercel.app/"/>
+        <image:image>
+            <image:loc>https://ghimbi-adventist-general-hospital-2.vercel.app/assets/og-image.jpg</image:loc>
+            <image:title>Gimbi Adventist General Hospital</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/about.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/departments.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/doctors.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/services.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/appointments.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/emergency.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/pharmacy.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/laboratory.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/radiology.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/contact.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/news.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/gallery.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/careers.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Patient Portal -->
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/patient-login.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/staff-login.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/admin-login.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- Department Pages -->
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/departments/cardiology.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/departments/neurology.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/departments/pediatrics.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/departments/orthopedics.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/departments/ophthalmology.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://ghimbi-adventist-general-hospital-2.vercel.app/departments/dentistry.html</loc>
+        <lastmod>2026-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+</urlset>
