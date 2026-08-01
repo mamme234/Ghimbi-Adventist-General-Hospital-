@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our comprehensive medical departments at Gimbi Adventist General Hospital">
+    <title>Departments - Gimbi Adventist General Hospital</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="heart-pulse"></div>
+            <span class="loader-text">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass" id="navbar">
+        <div class="container">
+            <div class="nav-left">
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.svg" alt="Gimbi Adventist Hospital" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-main">Gimbi Adventist</span>
+                        <span class="logo-sub">General Hospital</span>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="departments.html" class="active"><i class="fas fa-building"></i> Departments</a></li>
+                    <li><a href="doctors.html"><i class="fas fa-user-md"></i> Doctors</a></li>
+                    <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
+                    <li><a href="appointments.html"><i class="fas fa-calendar-check"></i> Appointments</a></li>
+                    <li><a href="contact.html"><i class="fas fa-phone"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+                <div class="auth-buttons">
+                    <a href="patient-login.html" class="btn btn-outline"><i class="fas fa-user"></i> Patient Login</a>
+                    <a href="staff-login.html" class="btn btn-primary"><i class="fas fa-stethoscope"></i> Staff Login</a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu (same as before) -->
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content fade-up">
+                <h1>Our Departments</h1>
+                <p>Comprehensive Medical Specialties Under One Roof</p>
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="separator">/</span>
+                    <span>Departments</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Grid -->
+    <section class="departments-main">
+        <div class="container">
+            <div class="department-filter fade-up">
+                <button class="filter-btn active" data-filter="all">All Departments</button>
+                <button class="filter-btn" data-filter="surgery">Surgery</button>
+                <button class="filter-btn" data-filter="medicine">Medicine</button>
+                <button class="filter-btn" data-filter="diagnostic">Diagnostic</button>
+                <button class="filter-btn" data-filter="emergency">Emergency</button>
+                <button class="filter-btn" data-filter="specialty">Specialty</button>
+            </div>
+
+            <div class="departments-grid">
+                <!-- Cardiology -->
+                <div class="department-full-card glass fade-up" data-category="medicine">
+                    <div class="department-full-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="department-full-content">
+                        <h3>Cardiology</h3>
+                        <p>Comprehensive heart care including diagnosis, treatment, and surgery for all cardiac conditions.</p>
+                        <div class="department-services">
+                            <span>Echocardiography</span>
+                            <span>Cardiac Catheterization</span>
+                            <span>Heart Surgery</span>
+                            <span>ECG/EKG</span>
+                        </div>
+                        <div class="department-actions">
+                            <a href="appointments.html" class="btn btn-primary btn-sm">Book Appointment</a>
+                            <a href="departments/cardiology.html" class="btn btn-outline btn-sm">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Neurology -->
+                <div class="department-full-card glass fade-up" style="--delay: 0.1s" data-category="medicine">
+                    <div class="department-full-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="department-full-content">
+                        <h3>Neurology</h3>
+                        <p>Expert care for disorders of the brain, nervous system, and spinal cord with advanced treatment options.</p>
+                        <div class="department-services">
+                            <span>Brain Surgery</span>
+                            <span>Stroke Treatment</span>
+                            <span>EEG</span>
+                            <span>Memory Clinic</span>
+                        </div>
+                        <div class="department-actions">
+                            <a href="appointments.html" class="btn btn-primary btn-sm">Book Appointment</a>
+                            <a href="departments/neurology.html" class="btn btn-outline btn-sm">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pediatrics -->
+                <div class="department-full-card glass fade-up" style="--delay: 0.2s" data-category="medicine">
+                    <div class="department-full-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <div class="department-full-content">
+                        <h3>Pediatrics</h3>
+                        <p>Specialized healthcare for children from birth to adolescence, including preventive care and treatment.</p>
+                        <div class="department-services">
+                            <span>Newborn Care</span>
+                            <span>Vaccinations</span>
+                            <span>Child Development</span>
+                            <span>Pediatric Surgery</span>
+                        </div>
+                        <div class="department-actions">
+                            <a href="appointments.html" class="btn btn-primary btn-sm">Book Appointment</a>
+                            <a href="departments/pediatrics.html" class="btn btn-outline btn-sm">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orthopedics -->
+                <div class="department-full-card glass fade-up" style="--delay: 0.3s" data-category="surgery">
+                    <div class="department-full-icon">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <div class="department-full-content">
+                        <h3>Orthopedics</h3>
+                        <p>Comprehensive care for bone, joint, and muscle conditions including sports injuries and joint replacement.</p>
+                        <div class="department-services">
+                            <span>Joint Replacement</span>
+                            <span>Sports Medicine</span>
+                            <span>Spine Surgery</span>
+                            <span>Physical Therapy</span>
+                        </div>
+                        <div class="department-actions">
+                            <a href="appointments.html" class="btn btn-primary btn-sm">Book Appointment</a>
+                            <a href="departments/orthopedics.html" class="btn btn-outline btn-sm">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ophthalmology -->
+                <div class="department-full-card glass fade-up" style="--delay: 0.4s" data-category="surgery">
+                    <div class="department-full-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="department-full-content">
+                        <h3>Ophthalmology</h3>
+                        <p>Complete eye care services including vision correction, cataract surgery, and treatment of eye diseases.</p>
+                        <div class="department-services">
+                            <span>Cataract Surgery</span>
+                            <span>LASIK</span>
+                            <span>Glaucoma Treatment</span>
+                            <span>Eye Exams</span>
+                        </div>
+                        <div class="department-actions">
+                            <a href="appointments.html" class="btn btn-primary btn-sm">Book Appointment</a>
+                            <a href="departments/ophthalmology.html" class="btn btn-outline btn-sm">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dentistry -->
+                <div class="department-full-card glass fade-up" style="--delay: 0.5s" data-category="surgery">
+                    <div class="department-full-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <div class="department-full-content">
+                        <h3>Dentistry</h3>
+                        <p>Comprehensive dental care including preventive, restorative, and cosmetic dentistry services.</p>
+                        <div class="department-services">
+                            <span>Oral Surgery</span>
+                            <span>Orthodontics</span>
+                            <span>Cosmetic Dentistry</span>
+                            <span>Emergency Dental</span>
+                        </div>
+                        <div class="department-actions">
+                            <a href="appointments.html" class="btn btn-primary btn-sm">Book Appointment</a>
+                            <a href="departments/dentistry.html" class="btn btn-outline btn-sm">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency -->
+                <div class="department-full-card glass fade-up" style="--delay: 0.6s" data-category="emergency">
+                    <div class="department-full-icon emergency-icon">
+                        <i class="fas fa-ambulance"></i>
+                    </div>
+                    <div class="department-full-content">
+                        <h3>Emergency Medicine</h3>
+                        <p>24/7 emergency care with advanced life support, trauma center, and rapid response teams.</p>
+                        <div class="department-services">
+                            <span>Trauma Care</span>
+                            <span>Critical Care</span>
+                            <span>Ambulance Service</span>
+                            <span>24/7 Emergency</span>
+                        </div>
+                        <div class="department-actions">
+                            <a href="emergency.html" class="btn btn-danger btn-sm"><i class="fas fa-phone"></i> Emergency</a>
+                            <a href="departments/emergency.html" class="btn btn-outline btn-sm">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Radiology -->
+                <div class="department-full-card glass fade-up" style="--delay: 0.7s" data-category="diagnostic">
+                    <div class="department-full-icon">
+                        <i class="fas fa-x-ray"></i>
+                    </div>
+                    <div class="department-full-content">
+                        <h3>Radiology</h3>
+                        <p>State-of-the-art imaging services including MRI, CT scan, X-ray, and ultrasound for accurate diagnosis.</p>
+                        <div class="department-services">
+                            <span>MRI</span>
+                            <span>CT Scan</span>
+                            <span>X-Ray</span>
+                            <span>Ultrasound</span>
+                        </div>
+                        <div class="department-actions">
+                            <a href="appointments.html" class="btn btn-primary btn-sm">Book Appointment</a>
+                            <a href="departments/radiology.html" class="btn btn-outline btn-sm">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Laboratory -->
+                <div class="department-full-card glass fade-up" style="--delay: 0.8s" data-category="diagnostic">
+                    <div class="department-full-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <div class="department-full-content">
+                        <h3>Laboratory Services</h3>
+                        <p>Comprehensive diagnostic testing with advanced equipment and rapid turnaround times.</p>
+                        <div class="department-services">
+                            <span>Blood Tests</span>
+                            <span>Pathology</span>
+                            <span>Microbiology</span>
+                            <span>Genetic Testing</span>
+                        </div>
+                        <div class="department-actions">
+                            <a href="appointments.html" class="btn btn-primary btn-sm">Book Appointment</a>
+                            <a href="departments/laboratory.html" class="btn btn-outline btn-sm">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Department Stats -->
+    <section class="department-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card glass fade-up">
+                    <span class="stat-number">30+</span>
+                    <span class="stat-label">Departments</span>
+                </div>
+                <div class="stat-card glass fade-up" style="--delay: 0.1s">
+                    <span class="stat-number">200+</span>
+                    <span class="stat-label">Expert Doctors</span>
+                </div>
+                <div class="stat-card glass fade-up" style="--delay: 0.2s">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Beds Capacity</span>
+                </div>
+                <div class="stat-card glass fade-up" style="--delay: 0.3s">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Patient Satisfaction</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as before) -->
+
+    <!-- Scripts (same as before) -->
+    <script src="js/main.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/ai-assistant.js"></script>
+    <script src="js/animations.js"></script>
+    
+    <script>
+        // Department filter
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filter = this.dataset.filter;
+                document.querySelectorAll('.department-full-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'grid';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+                                                                                                                   </html>
