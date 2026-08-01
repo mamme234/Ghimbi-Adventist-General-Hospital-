@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — Ghimbi Hospital</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div data-include="/frontend/components/header.html"></div>
+  <main class="container">
+    <h1>Contact Us</h1>
+    <form class="form" id="contact-form">
+      <label>Name<input type="text" name="name" required></label>
+      <label>Email<input type="email" name="email" required></label>
+      <label>Message<textarea name="message" required></textarea></label>
+      <button type="submit" class="btn primary">Send Message</button>
+    </form>
+    <div id="contact-msg"></div>
+  </main>
+  <div data-include="/frontend/components/footer.html"></div>
+  <script src="/js/api.js" defer></script>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      try{
+        await window.api.post('/contact', Object.fromEntries(fd.entries()));
+        document.getElementById('contact-msg').textContent = 'Message sent.';
+      }catch(err){
+        document.getElementById('contact-msg').textContent = 'Error sending message.';
+      }
+    })
+  </script>
+</body>
+</html>

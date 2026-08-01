@@ -1,0 +1,25 @@
+/* Core styles for the hospital frontend */
+:root{
+  --primary:#0056b3;
+  --accent:#00a6a6;
+  --bg:#f8f9fb;
+  --text:#222;
+  --muted:#666;
+  --container:1200px;
+}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Arial,Helvetica,sans-serif;margin:0;background:var(--bg);color:var(--text)}
+.container{max-width:var(--container);margin:0 auto;padding:24px}
+.header{background:#fff;border-bottom:1px solid #e6e9ef;padding:12px 24px}
+.header .brand{display:flex;align-items:center;gap:12px}
+.brand img{height:40px}
+.nav{display:flex;gap:12px}
+.hero{padding:48px 0;text-align:center}
+.cards{display:flex;gap:16px;flex-wrap:wrap}
+.card{background:#fff;padding:16px;border-radius:8px;flex:1;min-width:200px}
+.btn{display:inline-block;padding:10px 16px;border-radius:6px;border:none;background:#ddd;color:#000;text-decoration:none}
+.btn.primary{background:var(--primary);color:white}
+.form{display:flex;flex-direction:column;gap:10px;max-width:600px}
+input,textarea,select{padding:8px;border:1px solid #ddd;border-radius:6px}
+.footer{background:#fff;border-top:1px solid #e6e9ef;padding:24px;text-align:center;margin-top:48px}
+@media(max-width:800px){.cards{flex-direction:column}}

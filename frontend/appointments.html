@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Appointments — Ghimbi Hospital</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div data-include="/frontend/components/header.html"></div>
+  <main class="container">
+    <h1>Book an Appointment</h1>
+    <form id="appointment-form" class="form">
+      <label>Full name<input type="text" name="name" required></label>
+      <label>Email<input type="email" name="email" required></label>
+      <label>Department<select name="department"><option>General</option></select></label>
+      <button class="btn primary" type="submit">Request Appointment</button>
+    </form>
+    <div id="message"></div>
+  </main>
+  <div data-include="/frontend/components/footer.html"></div>
+  <script src="/js/api.js" defer></script>
+  <script src="/js/main.js" defer></script>
+  <script>
+    document.getElementById('appointment-form').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      document.getElementById('message').textContent = 'Sending...';
+      // This will call POST /api/appointments when backend exists or proxy enabled
+      try{
+        const data = new FormData(e.target);
+        const payload = Object.fromEntries(data.entries());
+        await window.api.post('/appointments', payload);
+        document.getElementById('message').textContent = 'Appointment requested.';
+      }catch(err){
+        document.getElementById('message').textContent = 'Error sending request.';
+      }
+    })
+  </script>
+</body>
+</html>
