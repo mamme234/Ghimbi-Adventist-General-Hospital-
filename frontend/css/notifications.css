@@ -1,9 +1,0 @@
-/* notifications.css
-   - Toast Messages
-   - Alerts
-   - Notification Panel
-*/
-.toast{position:fixed;right:16px;bottom:16px;z-index:var(--z-fixed)}
-.toast .item{background:#111827;color:#fff;padding:10px;border-radius:6px;margin-bottom:8px}
-.alert{padding:10px;border-radius:6px}
-
