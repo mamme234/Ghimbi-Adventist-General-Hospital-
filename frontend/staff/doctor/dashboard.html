@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard - Gimbi Adventist Hospital</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="manifest" href="../../manifest.json">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="../../index.html" class="sidebar-logo">
+                    <img src="../../assets/logo.svg" alt="Gimbi Hospital">
+                    <span>Doctor Panel</span>
+                </a>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="dashboard.html"><i class="fas fa-th-large"></i> <span>Dashboard</span></a></li>
+                    <li><a href="patients.html"><i class="fas fa-users"></i> <span>My Patients</span></a></li>
+                    <li><a href="appointments.html"><i class="fas fa-calendar-check"></i> <span>Appointments</span></a></li>
+                    <li><a href="consultation.html"><i class="fas fa-stethoscope"></i> <span>Consultation</span></a></li>
+                    <li><a href="prescriptions.html"><i class="fas fa-prescription"></i> <span>Prescriptions</span></a></li>
+                    <li><a href="laboratory.html"><i class="fas fa-microscope"></i> <span>Lab Requests</span></a></li>
+                    <li><a href="radiology.html"><i class="fas fa-x-ray"></i> <span>Radiology</span></a></li>
+                    <li><a href="surgery.html"><i class="fas fa-scalpel"></i> <span>Surgery Schedule</span></a></li>
+                    <li><a href="reports.html"><i class="fas fa-file-alt"></i> <span>Reports</span></a></li>
+                    <li><a href="telemedicine.html"><i class="fas fa-video"></i> <span>Telemedicine</span></a></li>
+                    <li><a href="../profile.html"><i class="fas fa-user-circle"></i> <span>Profile</span></a></li>
+                    <li><a href="../../index.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Welcome, Dr. Michael Alemayehu</h1>
+                    <p class="header-subtitle">Cardiology Department - Today's Schedule</p>
+                </div>
+                <div class="header-right">
+                    <button class="notification-btn" onclick="location.href='../notifications.html'">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">4</span>
+                    </button>
+                    <div class="profile-dropdown">
+                        <img src="../../assets/default-avatar.png" alt="Profile" class="profile-avatar">
+                        <span class="profile-name">Dr. Michael</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Stats Cards -->
+            <section class="dashboard-stats">
+                <div class="stat-card glass">
+                    <div class="stat-icon blue">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>148</h3>
+                        <p>Total Patients</p>
+                    </div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-icon green">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>12</h3>
+                        <p>Today's Appointments</p>
+                    </div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-icon orange">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>3</h3>
+                        <p>Waiting Patients</p>
+                    </div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-icon purple">
+                        <i class="fas fa-prescription"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>24</h3>
+                        <p>Prescriptions Today</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Patient Queue -->
+            <section class="patient-queue">
+                <div class="section-header">
+                    <h2>Patient Queue</h2>
+                    <span class="queue-count">3 Patients Waiting</span>
+                </div>
+                <div class="queue-list">
+                    <div class="queue-item glass">
+                        <div class="queue-number">01</div>
+                        <div class="queue-info">
+                            <h4>Abebe Kebede</h4>
+                            <p><i class="fas fa-heart"></i> Chest Pain</p>
+                            <span class="queue-time">Waiting: 15 min</span>
+                        </div>
+                        <div class="queue-status urgent">
+                            <span>Urgent</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm">Start Consultation</button>
+                    </div>
+                    <div class="queue-item glass">
+                        <div class="queue-number">02</div>
+                        <div class="queue-info">
+                            <h4>Helen Girma</h4>
+                            <p><i class="fas fa-heart"></i> Hypertension Follow-up</p>
+                            <span class="queue-time">Waiting: 8 min</span>
+                        </div>
+                        <div class="queue-status regular">
+                            <span>Regular</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm">Start Consultation</button>
+                    </div>
+                    <div class="queue-item glass">
+                        <div class="queue-number">03</div>
+                        <div class="queue-info">
+                            <h4>Dawit Tesfaye</h4>
+                            <p><i class="fas fa-heart"></i> ECG Review</p>
+                            <span class="queue-time">Waiting: 2 min</span>
+                        </div>
+                        <div class="queue-status regular">
+                            <span>Regular</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm">Start Consultation</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Today's Appointments -->
+            <section class="today-appointments">
+                <div class="section-header">
+                    <h2>Today's Appointments</h2>
+                    <a href="appointments.html" class="view-all">View All</a>
+                </div>
+                <div class="appointments-list">
+                    <div class="appointment-item glass">
+                        <div class="appointment-time">09:00</div>
+                        <div class="appointment-info">
+                            <h4>Patient #1245 - Sarah Ahmed</h4>
+                            <p>Cardiology - Chest Pain</p>
+                        </div>
+                        <div class="appointment-status confirmed">
+                            <span>Confirmed</span>
+                        </div>
+                    </div>
+                    <div class="appointment-item glass">
+                        <div class="appointment-time">10:30</div>
+                        <div class="appointment-info">
+                            <h4>Patient #1267 - Tewodros Hailu</h4>
+                            <p>Cardiology - Hypertension</p>
+                        </div>
+                        <div class="appointment-status confirmed">
+                            <span>Confirmed</span>
+                        </div>
+                    </div>
+                    <div class="appointment-item glass">
+                        <div class="appointment-time">13:00</div>
+                        <div class="appointment-info">
+                            <h4>Patient #1278 - Birtukan Alemu</h4>
+                            <p>Cardiology - ECG Follow-up</p>
+                        </div>
+                        <div class="appointment-status pending">
+                            <span>Pending</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../../js/main.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/dashboard.js"></script>
+    
+    <script>
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+        });
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('../../sw.js');
+        }
+    </script>
+
+    <style>
+        .queue-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+        .queue-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+        .queue-item:hover {
+            border-color: var(--primary);
+        }
+        .queue-number {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+            min-width: 40px;
+            text-align: center;
+        }
+        .queue-info {
+            flex: 1;
+        }
+        .queue-info h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .queue-info p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        .queue-info p i {
+            width: 16px;
+        }
+        .queue-time {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        .queue-status span {
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .queue-status.urgent span {
+            background: rgba(220, 53, 69, 0.15);
+            color: #dc3545;
+        }
+        .queue-status.regular span {
+            background: rgba(0, 184, 148, 0.15);
+            color: #00b894;
+        }
+        .appointment-time {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--primary);
+            min-width: 60px;
+        }
+        .queue-count {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+    </style>
+</body>
+  </html>
