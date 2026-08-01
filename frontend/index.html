@@ -67,6 +67,7 @@
                     <li><a href="doctors.html"><i class="fas fa-user-md"></i> Doctors</a></li>
                     <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
                     <li><a href="appointments.html"><i class="fas fa-calendar-check"></i> Appointments</a></li>
+                    <li><a href="news.html"><i class="fas fa-newspaper"></i> News</a></li>
                     <li><a href="contact.html"><i class="fas fa-phone"></i> Contact</a></li>
                 </ul>
             </div>
@@ -302,43 +303,95 @@
         </div>
     </section>
 
-    <!-- AI Assistant Floating Button -->
-    <button class="ai-assistant-btn" id="aiAssistantBtn">
-        <div class="ai-pulse"></div>
-        <i class="fas fa-robot"></i>
-        <span class="ai-tooltip">AI Assistant</span>
-    </button>
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header text-center fade-up">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">What Our Patients Say</h2>
+                <p class="section-description">
+                    Real stories from real patients about their experience at our hospital
+                </p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card glass fade-up">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "The care I received at Gimbi Adventist Hospital was exceptional. The doctors and nurses were professional, compassionate, and attentive to my needs."
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="assets/testimonials/patient1.jpg" alt="Patient">
+                        <div>
+                            <h4>Abebe Kebede</h4>
+                            <span>Cardiology Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass fade-up" style="--delay: 0.1s">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "I'm grateful for the excellent maternity care I received. The staff made me feel comfortable and supported throughout my pregnancy and delivery."
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="assets/testimonials/patient2.jpg" alt="Patient">
+                        <div>
+                            <h4>Helen Girma</h4>
+                            <span>Maternity Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass fade-up" style="--delay: 0.2s">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "The orthopedic team at this hospital is outstanding. My surgery was successful, and the rehabilitation program helped me recover quickly."
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="assets/testimonials/patient3.jpg" alt="Patient">
+                        <div>
+                            <h4>Tewodros Hailu</h4>
+                            <span>Orthopedic Patient</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- AI Chat Modal -->
-    <div class="ai-chat-modal" id="aiChatModal">
-        <div class="ai-chat-header glass">
-            <div class="ai-chat-title">
-                <i class="fas fa-robot"></i>
-                <span>Gimbi AI Assistant</span>
-            </div>
-            <button class="ai-chat-close" id="aiChatClose">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="ai-chat-body" id="aiChatBody">
-            <div class="ai-message ai-message-bot">
-                <div class="ai-avatar">
-                    <i class="fas fa-robot"></i>
+    <!-- Emergency CTA -->
+    <section class="emergency-cta">
+        <div class="container">
+            <div class="emergency-cta-content glass fade-up">
+                <div class="emergency-cta-icon">
+                    <i class="fas fa-ambulance"></i>
                 </div>
-                <div class="ai-message-content">
-                    Hello! I'm your AI health assistant. How can I help you today? 
-                    <small>(Please note: I provide informational support only)</small>
+                <div class="emergency-cta-text">
+                    <h2>24/7 Emergency Services</h2>
+                    <p>In case of medical emergency, call us immediately</p>
                 </div>
+                <a href="tel:+251911234567" class="btn btn-danger btn-lg">
+                    <i class="fas fa-phone"></i> +251 911 234 567
+                </a>
             </div>
         </div>
-        <div class="ai-chat-footer">
-            <input type="text" class="ai-chat-input" id="aiChatInput" 
-                   placeholder="Ask me anything about our hospital services...">
-            <button class="ai-chat-send" id="aiChatSend">
-                <i class="fas fa-paper-plane"></i>
-            </button>
-        </div>
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -411,6 +464,44 @@
         </div>
     </footer>
 
+    <!-- AI Assistant Floating Button -->
+    <button class="ai-assistant-btn" id="aiAssistantBtn">
+        <div class="ai-pulse"></div>
+        <i class="fas fa-robot"></i>
+        <span class="ai-tooltip">AI Assistant</span>
+    </button>
+
+    <!-- AI Chat Modal -->
+    <div class="ai-chat-modal" id="aiChatModal">
+        <div class="ai-chat-header glass">
+            <div class="ai-chat-title">
+                <i class="fas fa-robot"></i>
+                <span>Gimbi AI Assistant</span>
+            </div>
+            <button class="ai-chat-close" id="aiChatClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="ai-chat-body" id="aiChatBody">
+            <div class="ai-message ai-message-bot">
+                <div class="ai-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="ai-message-content">
+                    Hello! I'm your AI health assistant. How can I help you today? 
+                    <small>(Please note: I provide informational support only)</small>
+                </div>
+            </div>
+        </div>
+        <div class="ai-chat-footer">
+            <input type="text" class="ai-chat-input" id="aiChatInput" 
+                   placeholder="Ask me anything about our hospital services...">
+            <button class="ai-chat-send" id="aiChatSend">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
     <!-- Back to Top -->
     <button id="backToTop" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
@@ -430,5 +521,135 @@
                 .catch(err => console.log('SW registration failed:', err));
         }
     </script>
+
+    <style>
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .testimonial-card {
+            padding: 24px;
+            border-radius: var(--radius-lg);
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        .testimonial-rating {
+            color: #fdcb6e;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+        .testimonial-rating i {
+            margin-right: 2px;
+        }
+        .testimonial-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .testimonial-author img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .testimonial-author h4 {
+            font-weight: 600;
+            font-size: 15px;
+            margin: 0;
+        }
+        .testimonial-author span {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Emergency CTA */
+        .emergency-cta {
+            padding: 60px 0;
+        }
+        .emergency-cta-content {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            padding: 32px 40px;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.08), rgba(220, 53, 69, 0.02));
+            border: 1px solid rgba(220, 53, 69, 0.2);
+        }
+        .emergency-cta-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #dc3545, #e74c3c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            flex-shrink: 0;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        .emergency-cta-text {
+            flex: 1;
+        }
+        .emergency-cta-text h2 {
+            font-family: var(--font-primary);
+            font-weight: 800;
+            font-size: 24px;
+            margin: 0 0 4px;
+        }
+        .emergency-cta-text p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        .btn-danger {
+            background: linear-gradient(135deg, #dc3545, #e74c3c);
+            color: white;
+            border: none;
+        }
+        .btn-danger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(220, 53, 69, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .emergency-cta-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .emergency-cta-content {
+                padding: 24px;
+            }
+            .emergency-cta-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 20px;
+            }
+        }
+    </style>
 </body>
-      </html>
+    </html>
