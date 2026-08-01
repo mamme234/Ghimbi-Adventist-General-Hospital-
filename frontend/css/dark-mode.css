@@ -1,0 +1,9 @@
+/* dark-mode.css
+   - Dark Theme
+   - Theme Toggle
+   - Color Overrides
+*/
+:root[data-theme="dark"]{
+  --color-bg:#0b1220;--color-muted:#cbd5e1;--color-primary:#60a5fa
+}
+

@@ -1,0 +1,12 @@
+/* forms.css
+   - Login Forms
+   - Registration Forms
+   - Appointment Forms
+   - Search Forms
+   - Validation
+*/
+.form-group{margin-bottom:12px}
+.input{width:100%;padding:10px;border:1px solid rgba(0,0,0,0.06);border-radius:6px}
+.input:focus{outline:none;box-shadow:0 0 0 3px rgba(11,92,255,0.08)}
+.error{color:var(--color-danger);font-size:var(--fs-sm)}
+

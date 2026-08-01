@@ -1,0 +1,56 @@
+/* variables.css
+   - Primary Colors
+   - Secondary Colors
+   - Success Colors
+   - Danger Colors
+   - Warning Colors
+   - Font Sizes
+   - Font Weights
+   - Border Radius
+   - Shadows
+   - Spacing
+   - Z-index
+*/
+:root{
+  /* Colors */
+  --color-primary: #0b5cff; /* Medical Blue */
+  --color-secondary: #1fb27a; /* Emerald Green */
+  --color-accent: #f5c14b; /* Gold Accent */
+  --color-bg: #ffffff;
+  --color-muted: #6b7280;
+  --color-success: #10b981;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+
+  /* Weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Layout */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgba(16,24,40,0.05);
+  --shadow-md: 0 4px 14px rgba(16,24,40,0.08);
+
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  --z-dropdown: 900;
+  --z-fixed: 1000;
+}

@@ -1,0 +1,9 @@
+/* calendar.css
+   - Appointment Calendar
+   - Event Styles
+   - Schedule
+*/
+.calendar{background:#fff;border-radius:8px;padding:12px}
+.event{padding:8px;border-radius:6px;margin-bottom:6px}
+.event--confirmed{background:var(--color-success);color:#fff}
+

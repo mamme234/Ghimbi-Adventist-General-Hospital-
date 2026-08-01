@@ -1,0 +1,27 @@
+/* style.css
+   - CSS Variables
+   - Color Palette
+   - Reset
+   - Typography
+   - Body
+   - Layout
+   - Scrollbar
+   - Selection
+   - Container
+*/
+@import "./variables.css";
+@import "./reset.css";
+@import "./typography.css";
+
+/* Base */
+body{font-family:var(--font-sans);background:var(--color-bg);color:#111827;margin:0}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:rgba(16,24,40,0.1);border-radius:999px}
+
+/* Selection */
+::selection{background:var(--color-primary);color:#fff}
+
+.container{max-width:1200px;margin:0 auto;padding:0 16px}
+

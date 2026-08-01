@@ -1,0 +1,8 @@
+/* glassmorphism.css
+   - Glass Cards
+   - Glass Buttons
+   - Blur Background
+   - Transparent Panels
+*/
+.glass{background:rgba(255,255,255,0.6);backdrop-filter:blur(8px);border-radius:12px;border:1px solid rgba(255,255,255,0.2)}
+

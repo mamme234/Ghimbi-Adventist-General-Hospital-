@@ -1,0 +1,13 @@
+/* buttons.css
+   - Primary Button
+   - Secondary Button
+   - Emergency Button
+   - Success Button
+   - Danger Button
+   - Icon Buttons
+*/
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:8px;border:none;cursor:pointer}
+.btn-primary{background:var(--color-primary);color:#fff}
+.btn-secondary{background:var(--color-secondary);color:#fff}
+.btn-danger{background:var(--color-danger);color:#fff}
+

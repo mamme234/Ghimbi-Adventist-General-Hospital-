@@ -1,0 +1,14 @@
+/* animations.css
+   - Fade
+   - Slide
+   - Zoom
+   - Float
+   - Pulse
+   - Ripple
+   - Glow
+   - Rotate
+   - Bounce
+*/
+.fade-in{animation:fade .4s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+

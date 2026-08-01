@@ -1,0 +1,9 @@
+/* charts.css
+   - Line Charts
+   - Bar Charts
+   - Pie Charts
+   - Analytics
+*/
+.chart{width:100%;height:320px}
+.chart .legend{display:flex;gap:8px}
+

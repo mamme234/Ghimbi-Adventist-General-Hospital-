@@ -1,0 +1,14 @@
+/* print.css
+   - Patient Card
+   - Prescription
+   - Laboratory Report
+   - Invoice
+   - Medical Certificate
+   - Referral Letter
+   - Discharge Summary
+*/
+@media print{
+  body{color:#000;background:#fff}
+  .no-print{display:none}
+}
+
