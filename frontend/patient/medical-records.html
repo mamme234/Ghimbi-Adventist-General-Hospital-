@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Records - Patient Portal</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="manifest" href="../manifest.json">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" class="sidebar-logo">
+                    <img src="../assets/logo.svg" alt="Gimbi Hospital">
+                    <span>Patient Portal</span>
+                </a>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-th-large"></i> <span>Dashboard</span></a></li>
+                    <li><a href="profile.html"><i class="fas fa-user-circle"></i> <span>My Profile</span></a></li>
+                    <li><a href="appointments.html"><i class="fas fa-calendar-check"></i> <span>Appointments</span></a></li>
+                    <li class="active"><a href="medical-records.html"><i class="fas fa-notes-medical"></i> <span>Medical Records</span></a></li>
+                    <li><a href="prescriptions.html"><i class="fas fa-prescription"></i> <span>Prescriptions</span></a></li>
+                    <li><a href="laboratory-results.html"><i class="fas fa-microscope"></i> <span>Lab Results</span></a></li>
+                    <li><a href="radiology-results.html"><i class="fas fa-x-ray"></i> <span>Radiology</span></a></li>
+                    <li><a href="payments.html"><i class="fas fa-credit-card"></i> <span>Payments</span></a></li>
+                    <li><a href="insurance.html"><i class="fas fa-shield-alt"></i> <span>Insurance</span></a></li>
+                    <li><a href="qr-card.html"><i class="fas fa-qrcode"></i> <span>QR Card</span></a></li>
+                    <li><a href="telemedicine.html"><i class="fas fa-video"></i> <span>Telemedicine</span></a></li>
+                    <li><a href="messages.html"><i class="fas fa-envelope"></i> <span>Messages</span></a></li>
+                    <li><a href="notifications.html"><i class="fas fa-bell"></i> <span>Notifications</span></a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+                    <li><a href="../index.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Medical Records</h1>
+                    <p class="header-subtitle">Your complete medical history</p>
+                </div>
+                <div class="header-right">
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="all">All Records</option>
+                            <option value="consultation">Consultations</option>
+                            <option value="emergency">Emergency</option>
+                            <option value="surgery">Surgery</option>
+                            <option value="routine">Routine</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary btn-sm">
+                        <i class="fas fa-download"></i> Export
+                    </button>
+                </div>
+            </header>
+
+            <!-- Stats -->
+            <section class="record-stats">
+                <div class="stat-card glass">
+                    <div class="stat-icon blue">
+                        <i class="fas fa-notes-medical"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>12</h3>
+                        <p>Total Records</p>
+                    </div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-icon green">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>6</h3>
+                        <p>Consultations</p>
+                    </div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-icon orange">
+                        <i class="fas fa-ambulance"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>2</h3>
+                        <p>Emergency Visits</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Records List -->
+            <section class="records-list">
+                <div class="record-item glass">
+                    <div class="record-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <div class="record-info">
+                        <h4>Cardiology Consultation</h4>
+                        <p><i class="fas fa-user-md"></i> Dr. Michael Alemayehu</p>
+                        <p><i class="fas fa-calendar"></i> January 15, 2027</p>
+                        <p class="record-diagnosis">Diagnosis: Hypertension</p>
+                    </div>
+                    <div class="record-actions">
+                        <span class="record-type consultation">Consultation</span>
+                        <button class="btn btn-outline btn-sm">
+                            <i class="fas fa-eye"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="record-item glass">
+                    <div class="record-icon">
+                        <i class="fas fa-ambulance"></i>
+                    </div>
+                    <div class="record-info">
+                        <h4>Emergency Visit</h4>
+                        <p><i class="fas fa-user-md"></i> Dr. Sarah Gebre</p>
+                        <p><i class="fas fa-calendar"></i> December 20, 2026</p>
+                        <p class="record-diagnosis">Diagnosis: Chest Pain</p>
+                    </div>
+                    <div class="record-actions">
+                        <span class="record-type emergency">Emergency</span>
+                        <button class="btn btn-outline btn-sm">
+                            <i class="fas fa-eye"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="record-item glass">
+                    <div class="record-icon">
+                        <i class="fas fa-scalpel"></i>
+                    </div>
+                    <div class="record-info">
+                        <h4>Appendectomy Surgery</h4>
+                        <p><i class="fas fa-user-md"></i> Dr. Fikre Tesfaye</p>
+                        <p><i class="fas fa-calendar"></i> November 5, 2026</p>
+                        <p class="record-diagnosis">Diagnosis: Acute Appendicitis</p>
+                    </div>
+                    <div class="record-actions">
+                        <span class="record-type surgery">Surgery</span>
+                        <button class="btn btn-outline btn-sm">
+                            <i class="fas fa-eye"></i> View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="record-item glass">
+                    <div class="record-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="record-info">
+                        <h4>Routine Checkup</h4>
+                        <p><i class="fas fa-user-md"></i> Dr. Michael Alemayehu</p>
+                        <p><i class="fas fa-calendar"></i> October 10, 2026</p>
+                        <p class="record-diagnosis">Diagnosis: Normal - Preventive Care</p>
+                    </div>
+                    <div class="record-actions">
+                        <span class="record-type routine">Routine</span>
+                        <button class="btn btn-outline btn-sm">
+                            <i class="fas fa-eye"></i> View
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/dashboard.js"></script>
+    
+    <script>
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+        });
+    </script>
+
+    <style>
+        .record-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+        .records-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .record-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+        .record-item:hover {
+            border-color: var(--primary);
+        }
+        .record-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--glass-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+        .record-info {
+            flex: 1;
+        }
+        .record-info h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+        }
+        .record-info p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin: 2px 0;
+        }
+        .record-info p i {
+            width: 16px;
+        }
+        .record-diagnosis {
+            font-weight: 500;
+            color: var(--text-primary) !important;
+        }
+        .record-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .record-type {
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .record-type.consultation {
+            background: rgba(52, 152, 219, 0.15);
+            color: #3498db;
+        }
+        .record-type.emergency {
+            background: rgba(220, 53, 69, 0.15);
+            color: #dc3545;
+        }
+        .record-type.surgery {
+            background: rgba(155, 89, 182, 0.15);
+            color: #9b59b6;
+        }
+        .record-type.routine {
+            background: rgba(0, 184, 148, 0.15);
+            color: #00b894;
+        }
+        .filter-group {
+            display: inline-block;
+        }
+        .filter-group .filter-select {
+            padding: 6px 12px;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-full);
+            background: var(--bg-input);
+            color: var(--text-primary);
+            font-size: 13px;
+        }
+        @media (max-width: 768px) {
+            .record-stats {
+                grid-template-columns: 1fr;
+            }
+            .record-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .record-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</body>
+  </html>
