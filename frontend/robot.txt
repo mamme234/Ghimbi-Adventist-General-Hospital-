@@ -1,0 +1,94 @@
+# ========== ROBOTS.TXT ==========
+# Gimbi Adventist General Hospital
+# Version: 2027.1.0
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /uploads/
+Disallow: /logs/
+Disallow: /backups/
+Disallow: /temp/
+Disallow: /staff-login.html
+Disallow: /admin-login.html
+Disallow: /patient-login.html
+Disallow: /dashboards/
+Disallow: /components/
+Disallow: /uploads/
+
+# Sitemap
+Sitemap: https://ghimbi-adventist-general-hospital-2.vercel.app/sitemap.xml
+
+# Crawl delay (be respectful)
+Crawl-delay: 1
+
+# Google-specific
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /uploads/
+Disallow: /logs/
+Disallow: /backups/
+Disallow: /temp/
+Disallow: /staff-login.html
+Disallow: /admin-login.html
+Disallow: /patient-login.html
+Disallow: /dashboards/
+
+# Bing-specific
+User-agent: bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /uploads/
+
+# Yandex-specific
+User-agent: YandexBot
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+
+# Social Media Bots
+User-agent: Twitterbot
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+
+User-agent: facebookexternalhit
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+
+User-agent: LinkedInBot
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+
+# Image Bots
+User-agent: Googlebot-Image
+Allow: /assets/
+Allow: /images/
+Allow: /uploads/
+
+# Video Bots
+User-agent: Googlebot-Video
+Allow: /assets/
+Allow: /images/
+Allow: /uploads/
+
+# Unsupported User-Agents
+User-agent: *
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /logs/
+Disallow: /backups/
+Disallow: /temp/
+
+# Host
+Host: https://ghimbi-adventist-general-hospital-2.vercel.app
