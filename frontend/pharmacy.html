@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pharmacy services at Gimbi Adventist General Hospital - 24/7 medication services">
+    <title>Pharmacy - Gimbi Adventist General Hospital</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="heart-pulse"></div>
+            <span class="loader-text">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass" id="navbar">
+        <div class="container">
+            <div class="nav-left">
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.svg" alt="Gimbi Adventist Hospital" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-main">Gimbi Adventist</span>
+                        <span class="logo-sub">General Hospital</span>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="departments.html"><i class="fas fa-building"></i> Departments</a></li>
+                    <li><a href="doctors.html"><i class="fas fa-user-md"></i> Doctors</a></li>
+                    <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
+                    <li><a href="pharmacy.html" class="active"><i class="fas fa-pills"></i> Pharmacy</a></li>
+                    <li><a href="contact.html"><i class="fas fa-phone"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+                <div class="auth-buttons">
+                    <a href="patient-login.html" class="btn btn-outline"><i class="fas fa-user"></i> Patient Login</a>
+                    <a href="staff-login.html" class="btn btn-primary"><i class="fas fa-stethoscope"></i> Staff Login</a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu (same as before) -->
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content fade-up">
+                <h1>Pharmacy</h1>
+                <p>24/7 Medication Services at Your Fingertips</p>
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="separator">/</span>
+                    <span>Pharmacy</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pharmacy Search -->
+    <section class="pharmacy-search">
+        <div class="container">
+            <div class="search-bar-container glass fade-up">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="medicineSearch" placeholder="Search for medicines by name, brand, or category...">
+                    <button class="btn btn-primary" id="searchMedicine">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+                <div class="search-filters">
+                    <select id="categoryFilter" class="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="antibiotic">Antibiotics</option>
+                        <option value="analgesic">Analgesics</option>
+                        <option value="antihistamine">Antihistamines</option>
+                        <option value="antidiabetic">Antidiabetics</option>
+                        <option value="antihypertensive">Antihypertensives</option>
+                        <option value="vitamin">Vitamins</option>
+                        <option value="supplement">Supplements</option>
+                    </select>
+                    <select id="availabilityFilter" class="filter-select">
+                        <option value="all">All</option>
+                        <option value="in-stock">In Stock</option>
+                        <option value="low-stock">Low Stock</option>
+                        <option value="out-of-stock">Out of Stock</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pharmacy Services -->
+    <section class="pharmacy-services">
+        <div class="container">
+            <div class="pharmacy-services-grid">
+                <div class="pharmacy-service-card glass fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-prescription-bottle"></i>
+                    </div>
+                    <h3>Prescription Fulfillment</h3>
+                    <p>Quick and accurate prescription processing with pharmacist consultation</p>
+                </div>
+                <div class="pharmacy-service-card glass fade-up" style="--delay: 0.1s">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Home Delivery</h3>
+                    <p>Convenient medication delivery to your doorstep</p>
+                </div>
+                <div class="pharmacy-service-card glass fade-up" style="--delay: 0.2s">
+                    <div class="service-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>24/7 Service</h3>
+                    <p>Round-the-clock pharmacy services for emergency medication needs</p>
+                </div>
+                <div class="pharmacy-service-card glass fade-up" style="--delay: 0.3s">
+                    <div class="service-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Medication Counseling</h3>
+                    <p>Expert advice on medication usage, side effects, and interactions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medicine Results -->
+    <section class="medicine-results">
+        <div class="container">
+            <div class="results-header">
+                <h3>Available Medicines</h3>
+                <span class="results-count" id="resultsCount">Showing 12 results</span>
+            </div>
+            <div class="medicine-grid" id="medicineGrid">
+                <!-- Medicine Card 1 -->
+                <div class="medicine-card glass fade-up" data-category="antibiotic" data-stock="in-stock">
+                    <div class="medicine-image">
+                        <i class="fas fa-capsules"></i>
+                        <span class="stock-badge in-stock">In Stock</span>
+                    </div>
+                    <div class="medicine-info">
+                        <h4>Amoxicillin</h4>
+                        <p class="medicine-brand">Brand: Amoxil</p>
+                        <p class="medicine-strength">Strength: 500mg</p>
+                        <p class="medicine-price">Price: ETB 45.00</p>
+                        <button class="btn btn-primary btn-sm add-to-cart" data-medicine="amoxicillin">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Medicine Card 2 -->
+                <div class="medicine-card glass fade-up" style="--delay: 0.1s" data-category="analgesic" data-stock="in-stock">
+                    <div class="medicine-image">
+                        <i class="fas fa-tablets"></i>
+                        <span class="stock-badge in-stock">In Stock</span>
+                    </div>
+                    <div class="medicine-info">
+                        <h4>Ibuprofen</h4>
+                        <p class="medicine-brand">Brand: Advil</p>
+                        <p class="medicine-strength">Strength: 200mg</p>
+                        <p class="medicine-price">Price: ETB 30.00</p>
+                        <button class="btn btn-primary btn-sm add-to-cart" data-medicine="ibuprofen">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Medicine Card 3 -->
+                <div class="medicine-card glass fade-up" style="--delay: 0.2s" data-category="antihistamine" data-stock="low-stock">
+                    <div class="medicine-image">
+                        <i class="fas fa-capsules"></i>
+                        <span class="stock-badge low-stock">Low Stock</span>
+                    </div>
+                    <div class="medicine-info">
+                        <h4>Cetirizine</h4>
+                        <p class="medicine-brand">Brand: Zyrtec</p>
+                        <p class="medicine-strength">Strength: 10mg</p>
+                        <p class="medicine-price">Price: ETB 25.00</p>
+                        <button class="btn btn-primary btn-sm add-to-cart" data-medicine="cetirizine">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Medicine Card 4 -->
+                <div class="medicine-card glass fade-up" style="--delay: 0.3s" data-category="antidiabetic" data-stock="in-stock">
+                    <div class="medicine-image">
+                        <i class="fas fa-tablets"></i>
+                        <span class="stock-badge in-stock">In Stock</span>
+                    </div>
+                    <div class="medicine-info">
+                        <h4>Metformin</h4>
+                        <p class="medicine-brand">Brand: Glucophage</p>
+                        <p class="medicine-strength">Strength: 500mg</p>
+                        <p class="medicine-price">Price: ETB 60.00</p>
+                        <button class="btn btn-primary btn-sm add-to-cart" data-medicine="metformin">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Medicine Card 5 -->
+                <div class="medicine-card glass fade-up" style="--delay: 0.4s" data-category="antihypertensive" data-stock="out-of-stock">
+                    <div class="medicine-image">
+                        <i class="fas fa-capsules"></i>
+                        <span class="stock-badge out-of-stock">Out of Stock</span>
+                    </div>
+                    <div class="medicine-info">
+                        <h4>Lisinopril</h4>
+                        <p class="medicine-brand">Brand: Zestril</p>
+                        <p class="medicine-strength">Strength: 10mg</p>
+                        <p class="medicine-price">Price: ETB 55.00</p>
+                        <button class="btn btn-secondary btn-sm" disabled>
+                            <i class="fas fa-ban"></i> Unavailable
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Medicine Card 6 -->
+                <div class="medicine-card glass fade-up" style="--delay: 0.5s" data-category="vitamin" data-stock="in-stock">
+                    <div class="medicine-image">
+                        <i class="fas fa-pills"></i>
+                        <span class="stock-badge in-stock">In Stock</span>
+                    </div>
+                    <div class="medicine-info">
+                        <h4>Vitamin C</h4>
+                        <p class="medicine-brand">Brand: Nature's Way</p>
+                        <p class="medicine-strength">Strength: 1000mg</p>
+                        <p class="medicine-price">Price: ETB 35.00</p>
+                        <button class="btn btn-primary btn-sm add-to-cart" data-medicine="vitamin-c">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More -->
+            <div class="text-center mt-4">
+                <button class="btn btn-outline" id="loadMoreMedicines">
+                    <i class="fas fa-plus-circle"></i> Load More Medicines
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prescription Upload -->
+    <section class="prescription-upload">
+        <div class="container">
+            <div class="prescription-upload-card glass fade-up">
+                <div class="upload-content">
+                    <i class="fas fa-file-prescription"></i>
+                    <h3>Have a Prescription?</h3>
+                    <p>Upload your prescription for quick fulfillment</p>
+                    <div class="upload-area" id="uploadArea">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag & drop your prescription here or</p>
+                        <button class="btn btn-primary" onclick="document.getElementById('prescriptionFile').click()">
+                            <i class="fas fa-upload"></i> Browse Files
+                        </button>
+                        <input type="file" id="prescriptionFile" accept=".pdf,.jpg,.png" style="display:none">
+                        <span class="file-types">Supports: PDF, JPG, PNG (Max 5MB)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as before) -->
+
+    <!-- AI Assistant -->
+    <button class="ai-assistant-btn" id="aiAssistantBtn">
+        <div class="ai-pulse"></div>
+        <i class="fas fa-robot"></i>
+        <span class="ai-tooltip">AI Assistant</span>
+    </button>
+
+    <div class="ai-chat-modal" id="aiChatModal">
+        <div class="ai-chat-header glass">
+            <div class="ai-chat-title">
+                <i class="fas fa-robot"></i>
+                <span>Gimbi AI Assistant</span>
+            </div>
+            <button class="ai-chat-close" id="aiChatClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="ai-chat-body" id="aiChatBody"></div>
+        <div class="ai-chat-footer">
+            <input type="text" class="ai-chat-input" id="aiChatInput" placeholder="Ask me anything...">
+            <button class="ai-chat-send" id="aiChatSend">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/ai-assistant.js"></script>
+    <script src="js/animations.js"></script>
+    
+    <script>
+        // Medicine Search
+        document.getElementById('searchMedicine').addEventListener('click', function() {
+            const searchTerm = document.getElementById('medicineSearch').value.toLowerCase();
+            const category = document.getElementById('categoryFilter').value;
+            const availability = document.getElementById('availabilityFilter').value;
+            
+            let visibleCount = 0;
+            document.querySelectorAll('.medicine-card').forEach(card => {
+                const name = card.querySelector('h4').textContent.toLowerCase();
+                const brand = card.querySelector('.medicine-brand').textContent.toLowerCase();
+                const cat = card.dataset.category;
+                const stock = card.dataset.stock;
+                
+                const searchMatch = name.includes(searchTerm) || brand.includes(searchTerm);
+                const categoryMatch = category === 'all' || cat === category;
+                const availabilityMatch = availability === 'all' || 
+                    (availability === 'in-stock' && stock === 'in-stock') ||
+                    (availability === 'low-stock' && stock === 'low-stock') ||
+                    (availability === 'out-of-stock' && stock === 'out-of-stock');
+                
+                if (searchMatch && categoryMatch && availabilityMatch) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            document.getElementById('resultsCount').textContent = `Showing ${visibleCount} results`;
+        });
+
+        // Add to Cart
+        document.querySelectorAll('.add-to-cart').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const medicine = this.dataset.medicine;
+                this.textContent = '✓ Added!';
+                this.classList.remove('btn-primary');
+                this.classList.add('btn-success');
+                
+                setTimeout(() => {
+                    this.textContent = '<i class="fas fa-shopping-cart"></i> Add to Cart';
+                    this.classList.remove('btn-success');
+                    this.classList.add('btn-primary');
+                }, 2000);
+
+                if (window.gtag) {
+                    gtag('event', 'add_to_cart', {
+                        'item_name': medicine
+                    });
+                }
+            });
+        });
+
+        // Prescription Upload
+        document.getElementById('prescriptionFile').addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                const uploadArea = document.getElementById('uploadArea');
+                uploadArea.innerHTML = `
+                    <i class="fas fa-check-circle" style="color: #00b894;"></i>
+                    <p>File uploaded successfully!</p>
+                    <p style="font-size: 12px; color: var(--text-muted);">${this.files[0].name}</p>
+                    <button class="btn btn-outline btn-sm" onclick="resetUpload()">
+                        <i class="fas fa-redo"></i> Upload Another
+                    </button>
+                `;
+            }
+        });
+
+        function resetUpload() {
+            const uploadArea = document.getElementById('uploadArea');
+            uploadArea.innerHTML = `
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Drag & drop your prescription here or</p>
+                <button class="btn btn-primary" onclick="document.getElementById('prescriptionFile').click()">
+                    <i class="fas fa-upload"></i> Browse Files
+                </button>
+                <input type="file" id="prescriptionFile" accept=".pdf,.jpg,.png" style="display:none">
+                <span class="file-types">Supports: PDF, JPG, PNG (Max 5MB)</span>
+            `;
+            document.getElementById('prescriptionFile').addEventListener('change', function() {
+                if (this.files && this.files[0]) {
+                    const uploadArea = document.getElementById('uploadArea');
+                    uploadArea.innerHTML = `
+                        <i class="fas fa-check-circle" style="color: #00b894;"></i>
+                        <p>File uploaded successfully!</p>
+                        <p style="font-size: 12px; color: var(--text-muted);">${this.files[0].name}</p>
+                        <button class="btn btn-outline btn-sm" onclick="resetUpload()">
+                            <i class="fas fa-redo"></i> Upload Another
+                        </button>
+                    `;
+                }
+            });
+        }
+
+        // Drag and Drop
+        const uploadArea = document.getElementById('uploadArea');
+        uploadArea.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            this.style.borderColor = 'var(--primary)';
+            this.style.background = 'var(--glass-bg)';
+        });
+
+        uploadArea.addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            this.style.borderColor = 'var(--glass-border)';
+            this.style.background = 'transparent';
+        });
+
+        uploadArea.addEventListener('drop', function(e) {
+            e.preventDefault();
+            this.style.borderColor = 'var(--glass-border)';
+            this.style.background = 'transparent';
+            
+            const files = e.dataTransfer.files;
+            if (files && files[0]) {
+                document.getElementById('prescriptionFile').files = files;
+                document.getElementById('prescriptionFile').dispatchEvent(new Event('change'));
+            }
+        });
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>
