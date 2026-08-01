@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://ghimbi-adventist-general-hospital-.github.io/sitemap.xml

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Patient Login</title>
+  <link rel="stylesheet" href="/frontend/css/style.css">
+</head>
+<body>
+  <div data-include="/frontend/components/header.html"></div>
+  <main class="container">
+    <h1>Patient Login</h1>
+    <form action="/auth/login" method="post">
+      <label>Email <input type="email" name="email" required></label>
+      <label>Password <input type="password" name="password" required></label>
+      <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+  </main>
+  <script>document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('[data-include]').forEach(async n=>{const r=await fetch(n.getAttribute('data-include'));if(r.ok)n.innerHTML=await r.text();})})</script>
+</body>
+</html>

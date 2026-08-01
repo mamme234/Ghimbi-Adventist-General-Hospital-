@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ghimbi Adventist General Hospital</title>
+  <link rel="stylesheet" href="/frontend/css/style.css">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <div id="app">
+    <div data-include="/frontend/components/header.html"></div>
+    <div data-include="/frontend/components/navbar.html"></div>
+
+    <main>
+      <div data-include="/frontend/pages/home/hero.html"></div>
+      <div data-include="/frontend/pages/home/about-preview.html"></div>
+      <div data-include="/frontend/pages/home/services-preview.html"></div>
+      <div data-include="/frontend/pages/home/departments-preview.html"></div>
+      <div data-include="/frontend/pages/home/doctors-preview.html"></div>
+    </main>
+
+    <div data-include="/frontend/components/footer.html"></div>
+  </div>
+
+  <script type="module" src="/frontend/js/main.js"></script>
+  <script>
+    // simple client-side includer for HTML fragments
+    async function includeFragments(){
+      const nodes = document.querySelectorAll('[data-include]');
+      await Promise.all(Array.from(nodes).map(async (node)=>{
+        try{
+          const url = node.getAttribute('data-include');
+          const res = await fetch(url);
+          if(res.ok){ node.innerHTML = await res.text(); }
+        }catch(e){ console.warn('include failed', e); }
+      }));
+    }
+    document.addEventListener('DOMContentLoaded', includeFragments);
+  </script>
+</body>
+</html>

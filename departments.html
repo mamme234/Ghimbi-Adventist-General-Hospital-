@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Departments - Ghimbi Adventist General Hospital</title>
+  <link rel="stylesheet" href="/frontend/css/style.css">
+</head>
+<body>
+  <div data-include="/frontend/components/header.html"></div>
+  <div data-include="/frontend/components/navbar.html"></div>
+  <main class="container">
+    <h1>Departments</h1>
+    <p>Choose a department to learn more.</p>
+    <div data-include="/frontend/pages/departments/departments-list.html"></div>
+  </main>
+  <div data-include="/frontend/components/footer.html"></div>
+  <script>document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('[data-include]').forEach(async n=>{const r=await fetch(n.getAttribute('data-include'));if(r.ok)n.innerHTML=await r.text();})})</script>
+</body>
+</html>
