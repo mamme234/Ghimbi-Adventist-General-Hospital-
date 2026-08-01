@@ -3,41 +3,49 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Ghimbi Adventist General Hospital — Home</title>
+  <title>Ghimbi Adventist General Hospital</title>
+  <meta name="description" content="Ghimbi Adventist General Hospital — Compassionate care, modern facilities">
+  <meta property="og:title" content="Ghimbi Adventist General Hospital">
+  <link rel="stylesheet" href="/css/variables.css">
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon.ico">
 </head>
 <body>
-  <div data-include="/frontend/components/header.html"></div>
-  <main class="container">
-    <section class="hero">
-      <h1>Welcome to Ghimbi Adventist General Hospital</h1>
-      <p>Your health. Our priority.</p>
-      <a class="btn primary" href="/appointments.html">Book Appointment</a>
-    </section>
+  <div id="site-header" data-include="/components/header.html"></div>
 
-    <section class="features">
-      <h2>Why Choose Us</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Experienced Doctors</h3>
-          <p>Board certified specialists across departments.</p>
-        </article>
-        <article class="card">
-          <h3>24/7 Emergency</h3>
-          <p>Prompt and reliable emergency services.</p>
-        </article>
-        <article class="card">
-          <h3>Modern Facilities</h3>
-          <p>Advanced diagnostics and treatment options.</p>
-        </article>
+  <main id="main-content">
+    <section class="hero"> 
+      <div class="hero-inner">
+        <h1>Quality care close to home</h1>
+        <p>World-class medical services for the Ghimbi community.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="/appointments.html">Book Appointment</a>
+          <a class="btn" href="/about.html">Learn More</a>
+        </div>
       </div>
     </section>
+
+    <section class="features container">
+      <article class="feature-card"> 
+        <h3>Experienced Staff</h3>
+        <p>Specialists across multiple departments.</p>
+      </article>
+      <article class="feature-card">
+        <h3>24/7 Emergency</h3>
+        <p>Rapid response and ambulance service.</p>
+      </article>
+      <article class="feature-card">
+        <h3>Advanced Labs</h3>
+        <p>Accurate diagnostics with modern equipment.</p>
+      </article>
+    </section>
+
   </main>
 
-  <div data-include="/frontend/components/footer.html"></div>
+  <div id="site-footer" data-include="/components/footer.html"></div>
 
   <script src="/js/main.js" defer></script>
+  <script src="/js/ui.js" defer></script>
   <script src="/js/api.js" defer></script>
 </body>
 </html>

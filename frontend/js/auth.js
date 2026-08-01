@@ -1,17 +1,14 @@
-// auth.js — handles simple login form
+// auth.js — login form handler (placeholder)
 document.addEventListener('DOMContentLoaded', ()=>{
-  const form = document.getElementById('login-form');
-  if(!form) return;
-  form.addEventListener('submit', async (e)=>{
+  const f = document.getElementById('login-form');
+  if(!f) return;
+  f.addEventListener('submit', async (e)=>{
     e.preventDefault();
-    const fd = new FormData(form);
-    const data = Object.fromEntries(fd.entries());
+    const data = Object.fromEntries(new FormData(f).entries());
     try{
       const res = await window.api.post('/auth/login', data);
       localStorage.setItem('token', res.token);
-      window.location.href = '/patient-dashboard.html';
-    }catch(err){
-      document.getElementById('login-message').textContent = 'Login failed';
-    }
-  })
+      window.location.href = '/patient-portal.html';
+    }catch(err){alert('Login failed')}
+  });
 });

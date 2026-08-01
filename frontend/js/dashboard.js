@@ -1,2 +1,2 @@
-// dashboard.js — stub for dashboard interactions
-console.log('dashboard loaded');
+// dashboard.js — small dashboard interactions
+console.log('dashboard script loaded');

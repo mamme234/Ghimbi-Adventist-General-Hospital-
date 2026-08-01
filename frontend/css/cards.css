@@ -1,2 +1,2 @@
-/* Cards */
-.card{box-shadow:0 4px 10px rgba(0,0,0,0.03)}
+/* cards.css */
+.card{background:var(--surface);padding:16px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(11,13,20,0.06)}

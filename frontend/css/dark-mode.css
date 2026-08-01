@@ -1,0 +1,2 @@
+/* dark-mode.css */
+:root[data-theme='dark']{--bg:#071123;--surface:#0b1220;--text:#e8f1ff}

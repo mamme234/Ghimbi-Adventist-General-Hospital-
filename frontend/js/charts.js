@@ -1,4 +1,2 @@
-// charts.js — placeholder for charts
-export function renderChart(el){
-  el.textContent = 'Chart placeholder';
-}
+// charts.js — stub
+export function initCharts(){console.log('init charts')}

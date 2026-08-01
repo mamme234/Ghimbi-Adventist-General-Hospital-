@@ -1,4 +1,2 @@
 // scanner.js
-export function scan(){
-  return null;
-}
+export function scan(){return null}

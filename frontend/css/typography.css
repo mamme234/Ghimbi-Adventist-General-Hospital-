@@ -1,0 +1,4 @@
+/* typography.css */
+body{font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;line-height:1.5;color:var(--text);background:var(--bg)}
+h1{font-size:2rem;margin-bottom:0.5rem}
+.container{max-width:var(--container);margin:0 auto;padding:20px}

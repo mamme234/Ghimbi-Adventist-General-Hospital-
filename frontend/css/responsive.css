@@ -1,2 +1,2 @@
-/* Responsive helpers */
-@media(max-width:600px){.container{padding:12px}}
+/* responsive.css */
+@media(max-width:900px){.dashboard-layout{flex-direction:column}.sidebar{width:100%}}

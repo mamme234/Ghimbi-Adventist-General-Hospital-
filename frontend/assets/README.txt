@@ -1,0 +1,15 @@
+(binary files not included) Replace these with your real assets and images.
+- logo.png
+- favicon.ico
+- background.png
+- loading-logo.png
+- icons/*
+- fonts/*
+- images/*
+- doctors/*
+- departments/*
+- gallery/*
+- banners/*
+- videos/*
+- illustrations/*
+- certificates/*

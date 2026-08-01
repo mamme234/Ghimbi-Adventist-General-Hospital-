@@ -4,15 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Departments — Ghimbi Hospital</title>
+  <link rel="stylesheet" href="/css/variables.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <div data-include="/frontend/components/header.html"></div>
+  <div data-include="/components/header.html"></div>
   <main class="container">
     <h1>Departments</h1>
-    <p>List of departments with search and filters.</p>
+    <div id="departments-list" class="grid"></div>
   </main>
-  <div data-include="/frontend/components/footer.html"></div>
+  <div data-include="/components/footer.html"></div>
   <script src="/js/main.js" defer></script>
+  <script>
+    // sample placeholder
+    document.getElementById('departments-list').innerHTML = '<p>Departments will be displayed here.</p>'
+  </script>
 </body>
 </html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Patient Login — Ghimbi Hospital</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div data-include="/components/header.html"></div>
+  <main class="container">
+    <h1>Patient Login</h1>
+    <form id="login-form" class="form">
+      <label>Email<input type="email" name="email" required></label>
+      <label>Password<input type="password" name="password" required></label>
+      <button type="submit" class="btn primary">Login</button>
+    </form>
+  </main>
+  <div data-include="/components/footer.html"></div>
+  <script src="/js/auth.js" defer></script>
+</body>
+</html>

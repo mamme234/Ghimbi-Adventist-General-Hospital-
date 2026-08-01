@@ -1,2 +1,2 @@
-/* Print styles */
-@media print{body{color:#000;background:#fff}}
+/* print.css */
+@media print{body{background:#fff;color:#000}.no-print{display:none}}

@@ -1,3 +1,2 @@
-/* Hero styles */
-.hero{background:linear-gradient(90deg, rgba(0,86,179,0.08), rgba(0,166,166,0.04));padding:48px;border-radius:8px}
-.hero h1{font-size:2rem;margin:0}
+/* hero.css */
+.hero{background:linear-gradient(90deg,var(--accent-variant),transparent);padding:48px;border-radius:8px;margin-bottom:20px}

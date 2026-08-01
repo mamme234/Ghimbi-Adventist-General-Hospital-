@@ -7,30 +7,17 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <div data-include="/frontend/components/header.html"></div>
+  <div data-include="/components/header.html"></div>
   <main class="container">
     <h1>Contact Us</h1>
-    <form class="form" id="contact-form">
-      <label>Name<input type="text" name="name" required></label>
+    <form id="contact-form" class="form">
+      <label>Name<input name="name" required></label>
       <label>Email<input type="email" name="email" required></label>
       <label>Message<textarea name="message" required></textarea></label>
-      <button type="submit" class="btn primary">Send Message</button>
+      <button type="submit" class="btn primary">Send</button>
     </form>
-    <div id="contact-msg"></div>
   </main>
-  <div data-include="/frontend/components/footer.html"></div>
+  <div data-include="/components/footer.html"></div>
   <script src="/js/api.js" defer></script>
-  <script>
-    document.getElementById('contact-form').addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      const fd = new FormData(e.target);
-      try{
-        await window.api.post('/contact', Object.fromEntries(fd.entries()));
-        document.getElementById('contact-msg').textContent = 'Message sent.';
-      }catch(err){
-        document.getElementById('contact-msg').textContent = 'Error sending message.';
-      }
-    })
-  </script>
 </body>
 </html>

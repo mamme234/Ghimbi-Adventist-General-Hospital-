@@ -4,37 +4,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Appointments — Ghimbi Hospital</title>
+  <link rel="stylesheet" href="/css/variables.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <div data-include="/frontend/components/header.html"></div>
+  <div data-include="/components/header.html"></div>
   <main class="container">
     <h1>Book an Appointment</h1>
     <form id="appointment-form" class="form">
-      <label>Full name<input type="text" name="name" required></label>
+      <label>Full name<input name="name" required></label>
       <label>Email<input type="email" name="email" required></label>
       <label>Department<select name="department"><option>General</option></select></label>
-      <button class="btn primary" type="submit">Request Appointment</button>
+      <button type="submit" class="btn primary">Request</button>
     </form>
-    <div id="message"></div>
+    <div id="appointment-msg" role="status"></div>
   </main>
-  <div data-include="/frontend/components/footer.html"></div>
+  <div data-include="/components/footer.html"></div>
   <script src="/js/api.js" defer></script>
-  <script src="/js/main.js" defer></script>
+  <script src="/js/ui.js" defer></script>
   <script>
     document.getElementById('appointment-form').addEventListener('submit', async (e)=>{
       e.preventDefault();
-      document.getElementById('message').textContent = 'Sending...';
-      // This will call POST /api/appointments when backend exists or proxy enabled
+      const data = Object.fromEntries(new FormData(e.target).entries());
       try{
-        const data = new FormData(e.target);
-        const payload = Object.fromEntries(data.entries());
-        await window.api.post('/appointments', payload);
-        document.getElementById('message').textContent = 'Appointment requested.';
+        await window.api.post('/appointments', data);
+        document.getElementById('appointment-msg').textContent = 'Request submitted';
       }catch(err){
-        document.getElementById('message').textContent = 'Error sending request.';
+        document.getElementById('appointment-msg').textContent = 'Error';
       }
-    })
+    });
   </script>
 </body>
 </html>

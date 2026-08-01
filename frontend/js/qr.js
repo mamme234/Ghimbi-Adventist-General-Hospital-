@@ -1,4 +1,2 @@
 // qr.js
-export function generateQRCode(data){
-  return 'QR:'+data;
-}
+export function qr(data){return 'QR:'+data}

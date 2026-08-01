@@ -1,2 +1,3 @@
-/* Forms */
-.form label{display:flex;flex-direction:column}
+/* forms.css */
+.form{display:flex;flex-direction:column;gap:10px}
+input,textarea,select{padding:8px;border:1px solid #e6e9ef;border-radius:8px}
