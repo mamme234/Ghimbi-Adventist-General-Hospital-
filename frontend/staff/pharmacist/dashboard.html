@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacist Dashboard - Gimbi Adventist Hospital</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="manifest" href="../../manifest.json">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="../../index.html" class="sidebar-logo">
+                    <img src="../../assets/logo.svg" alt="Gimbi Hospital">
+                    <span>Pharmacy</span>
+                </a>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="dashboard.html"><i class="fas fa-th-large"></i> <span>Dashboard</span></a></li>
+                    <li><a href="inventory.html"><i class="fas fa-boxes"></i> <span>Inventory</span></a></li>
+                    <li><a href="medicines.html"><i class="fas fa-pills"></i> <span>Medicines</span></a></li>
+                    <li><a href="prescriptions.html"><i class="fas fa-prescription"></i> <span>Prescriptions</span></a></li>
+                    <li><a href="barcode.html"><i class="fas fa-barcode"></i> <span>Barcode Scanner</span></a></li>
+                    <li><a href="suppliers.html"><i class="fas fa-truck"></i> <span>Suppliers</span></a></li>
+                    <li><a href="reports.html"><i class="fas fa-file-alt"></i> <span>Reports</span></a></li>
+                    <li><a href="../profile.html"><i class="fas fa-user-circle"></i> <span>Profile</span></a></li>
+                    <li><a href="../../index.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Pharmacy Dashboard</h1>
+                    <p class="header-subtitle">Welcome, Pharmacist Dawit</p>
+                </div>
+                <div class="header-right">
+                    <button class="notification-btn"><i class="fas fa-bell"></i><span class="badge">5</span></button>
+                    <div class="profile-dropdown">
+                        <img src="../../assets/default-avatar.png" alt="Profile" class="profile-avatar">
+                        <span class="profile-name">Dawit</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Stats Cards -->
+            <section class="dashboard-stats">
+                <div class="stat-card glass">
+                    <div class="stat-icon blue">
+                        <i class="fas fa-prescription"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>24</h3>
+                        <p>Pending Prescriptions</p>
+                    </div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-icon green">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>1,245</h3>
+                        <p>Total Medicines</p>
+                    </div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-icon orange">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>8</h3>
+                        <p>Low Stock Items</p>
+                    </div>
+                </div>
+                <div class="stat-card glass">
+                    <div class="stat-icon purple">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>156</h3>
+                        <p>Dispensed Today</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="actions-grid">
+                    <a href="prescriptions.html" class="action-card glass">
+                        <i class="fas fa-prescription"></i>
+                        <span>View Prescriptions</span>
+                    </a>
+                    <a href="barcode.html" class="action-card glass">
+                        <i class="fas fa-barcode"></i>
+                        <span>Scan Barcode</span>
+                    </a>
+                    <a href="inventory.html" class="action-card glass">
+                        <i class="fas fa-boxes"></i>
+                        <span>Check Inventory</span>
+                    </a>
+                    <a href="reports.html" class="action-card glass">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Generate Report</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Pending Prescriptions -->
+            <section class="pending-prescriptions">
+                <div class="section-header">
+                    <h2>Pending Prescriptions</h2>
+                    <a href="prescriptions.html" class="view-all">View All</a>
+                </div>
+                <div class="prescription-list">
+                    <div class="prescription-item glass">
+                        <div class="prescription-info">
+                            <h4>Patient: Sarah Ahmed</h4>
+                            <p><i class="fas fa-user-md"></i> Dr. Michael Alemayehu</p>
+                            <p><i class="fas fa-pills"></i> Amoxicillin 500mg - 30 tablets</p>
+                        </div>
+                        <div class="prescription-actions">
+                            <span class="prescription-status pending">Pending</span>
+                            <button class="btn btn-primary btn-sm">Process</button>
+                        </div>
+                    </div>
+                    <div class="prescription-item glass">
+                        <div class="prescription-info">
+                            <h4>Patient: Tewodros Hailu</h4>
+                            <p><i class="fas fa-user-md"></i> Dr. Michael Alemayehu</p>
+                            <p><i class="fas fa-pills"></i> Metformin 500mg - 60 tablets</p>
+                        </div>
+                        <div class="prescription-actions">
+                            <span class="prescription-status pending">Pending</span>
+                            <button class="btn btn-primary btn-sm">Process</button>
+                        </div>
+                    </div>
+                    <div class="prescription-item glass">
+                        <div class="prescription-info">
+                            <h4>Patient: Birtukan Alemu</h4>
+                            <p><i class="fas fa-user-md"></i> Dr. Sarah Gebre</p>
+                            <p><i class="fas fa-pills"></i> Cetirizine 10mg - 20 tablets</p>
+                        </div>
+                        <div class="prescription-actions">
+                            <span class="prescription-status pending">Pending</span>
+                            <button class="btn btn-primary btn-sm">Process</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Low Stock Alert -->
+            <section class="low-stock">
+                <div class="section-header">
+                    <h2>Low Stock Alert</h2>
+                    <a href="inventory.html" class="view-all">View All</a>
+                </div>
+                <div class="stock-list">
+                    <div class="stock-item glass">
+                        <div class="stock-info">
+                            <h4>Amoxicillin 500mg</h4>
+                            <p>Current Stock: <span class="stock-count">45</span> / Min: 50</p>
+                        </div>
+                        <button class="btn btn-outline btn-sm">Reorder</button>
+                    </div>
+                    <div class="stock-item glass">
+                        <div class="stock-info">
+                            <h4>Metformin 500mg</h4>
+                            <p>Current Stock: <span class="stock-count">32</span> / Min: 40</p>
+                        </div>
+                        <button class="btn btn-outline btn-sm">Reorder</button>
+                    </div>
+                    <div class="stock-item glass">
+                        <div class="stock-info">
+                            <h4>Ibuprofen 200mg</h4>
+                            <p>Current Stock: <span class="stock-count">18</span> / Min: 30</p>
+                        </div>
+                        <button class="btn btn-outline btn-sm">Reorder</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../../js/main.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/dashboard.js"></script>
+    
+    <script>
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+        });
+    </script>
+
+    <style>
+        .prescription-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+        .prescription-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 18px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
+        }
+        .prescription-info h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0;
+        }
+        .prescription-info p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin: 2px 0;
+        }
+        .prescription-info p i {
+            width: 16px;
+        }
+        .prescription-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .prescription-status {
+            padding: 3px 10px;
+            border-radius: var(--radius-full);
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .prescription-status.pending {
+            background: rgba(255, 193, 7, 0.15);
+            color: #ffc107;
+        }
+        .prescription-status.completed {
+            background: rgba(0, 184, 148, 0.15);
+            color: #00b894;
+        }
+        .stock-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .stock-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
+        }
+        .stock-info h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0;
+        }
+        .stock-info p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        .stock-count {
+            font-weight: 700;
+            color: #dc3545;
+        }
+        @media (max-width: 768px) {
+            .prescription-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .prescription-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</body>
+                          </html>
