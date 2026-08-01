@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Patient Portal</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="manifest" href="../manifest.json">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" class="sidebar-logo">
+                    <img src="../assets/logo.svg" alt="Gimbi Hospital">
+                    <span>Patient Portal</span>
+                </a>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-th-large"></i> <span>Dashboard</span></a></li>
+                    <li><a href="profile.html"><i class="fas fa-user-circle"></i> <span>My Profile</span></a></li>
+                    <li><a href="appointments.html"><i class="fas fa-calendar-check"></i> <span>Appointments</span></a></li>
+                    <li><a href="medical-records.html"><i class="fas fa-notes-medical"></i> <span>Medical Records</span></a></li>
+                    <li><a href="prescriptions.html"><i class="fas fa-prescription"></i> <span>Prescriptions</span></a></li>
+                    <li><a href="laboratory-results.html"><i class="fas fa-microscope"></i> <span>Lab Results</span></a></li>
+                    <li><a href="radiology-results.html"><i class="fas fa-x-ray"></i> <span>Radiology</span></a></li>
+                    <li><a href="payments.html"><i class="fas fa-credit-card"></i> <span>Payments</span></a></li>
+                    <li><a href="insurance.html"><i class="fas fa-shield-alt"></i> <span>Insurance</span></a></li>
+                    <li><a href="qr-card.html"><i class="fas fa-qrcode"></i> <span>QR Card</span></a></li>
+                    <li><a href="telemedicine.html"><i class="fas fa-video"></i> <span>Telemedicine</span></a></li>
+                    <li><a href="messages.html"><i class="fas fa-envelope"></i> <span>Messages</span></a></li>
+                    <li><a href="notifications.html"><i class="fas fa-bell"></i> <span>Notifications</span></a></li>
+                    <li class="active"><a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+                    <li><a href="../index.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Settings</h1>
+                    <p class="header-subtitle">Manage your account preferences</p>
+                </div>
+            </header>
+
+            <!-- Settings Sections -->
+            <section class="settings-section">
+                <div class="settings-card glass">
+                    <h3><i class="fas fa-user-cog"></i> Account Settings</h3>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label for="settingsName">Full Name</label>
+                            <input type="text" id="settingsName" class="input" value="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="settingsEmail">Email Address</label>
+                            <input type="email" id="settingsEmail" class="input" value="john.doe@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="settingsPhone">Phone Number</label>
+                            <input type="tel" id="settingsPhone" class="input" value="+251 911 234 567">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Account</button>
+                    </form>
+                </div>
+
+                <div class="settings-card glass">
+                    <h3><i class="fas fa-lock"></i> Security</h3>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label for="currentPassword">Current Password</label>
+                            <input type="password" id="currentPassword" class="input" placeholder="Enter current password">
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">New Password</label>
+                            <input type="password" id="newPassword" class="input" placeholder="Enter new password">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" id="confirmPassword" class="input" placeholder="Confirm new password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Change Password</button>
+                    </form>
+                </div>
+
+                <div class="settings-card glass">
+                    <h3><i class="fas fa-bell"></i> Notification Preferences</h3>
+                    <div class="notification-settings">
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <label>Email Notifications</label>
+                                <p>Receive appointment reminders and updates via email</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <label>SMS Notifications</label>
+                                <p>Receive appointment reminders via SMS</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <label>Push Notifications</label>
+                                <p>Receive notifications in your browser</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <label>Marketing Updates</label>
+                                <p>Receive health tips and hospital updates</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary">Save Preferences</button>
+                </div>
+
+                <div class="settings-card glass">
+                    <h3><i class="fas fa-palette"></i> Theme Preferences</h3>
+                    <div class="theme-options">
+                        <button class="theme-option active" data-theme="light">
+                            <i class="fas fa-sun"></i>
+                            <span>Light</span>
+                        </button>
+                        <button class="theme-option" data-theme="dark">
+                            <i class="fas fa-moon"></i>
+                            <span>Dark</span>
+                        </button>
+                        <button class="theme-option" data-theme="system">
+                            <i class="fas fa-desktop"></i>
+                            <span>System</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="settings-card glass danger-zone">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Danger Zone</h3>
+                    <p>Permanently delete your account and all associated data.</p>
+                    <button class="btn btn-danger" id="deleteAccount">
+                        <i class="fas fa-trash"></i> Delete Account
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/dashboard.js"></script>
+    
+    <script>
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+        });
+
+        // Theme options
+        document.querySelectorAll('.theme-option').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.theme-option').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const theme = this.dataset.theme;
+                if (theme === 'light') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                } else if (theme === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                }
+            });
+        });
+
+        // Delete account confirmation
+        document.getElementById('deleteAccount').addEventListener('click', function() {
+            if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+                if (confirm('All your data will be permanently removed. Are you absolutely sure?')) {
+                    alert('Account deletion request submitted. You will receive a confirmation email.');
+                }
+            }
+        });
+    </script>
+
+    <style>
+        .settings-section {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .settings-card {
+            padding: 24px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
+        }
+        .settings-card h3 {
+            font-family: var(--font-primary);
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .settings-card h3 i {
+            width: 24px;
+            color: var(--primary);
+        }
+        .settings-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .settings-form .form-group {
+            margin-bottom: 0;
+        }
+        .settings-form .btn {
+            grid-column: span 2;
+            justify-self: start;
+        }
+        .notification-settings {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .toggle-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+        }
+        .toggle-info label {
+            display: block;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        .toggle-info p {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+        .toggle-switch {
+            position: relative;
+            width: 48px;
+            height: 26px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .toggle-slider {
+            position: absolute;
+            inset: 0;
+            background: #ccc;
+            border-radius: 26px;
+            transition: all 0.3s ease;
+        }
+        .toggle-slider::before {
+            content: '';
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        .toggle-switch input:checked + .toggle-slider {
+            background: var(--primary);
+        }
+        .toggle-switch input:checked + .toggle-slider::before {
+            transform: translateX(22px);
+        }
+        .theme-options {
+            display: flex;
+            gap: 12px;
+        }
+        .theme-option {
+            padding: 12px 24px;
+            border: 2px solid var(--border-light);
+            border-radius: var(--radius-md);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        .theme-option:hover {
+            border-color: var(--primary);
+            color: var(--text-primary);
+        }
+        .theme-option.active {
+            border-color: var(--primary);
+            background: rgba(10, 110, 74, 0.08);
+            color: var(--primary);
+        }
+        .theme-option i {
+            font-size: 18px;
+        }
+        .danger-zone {
+            border-color: #dc3545 !important;
+            background: rgba(220, 53, 69, 0.05) !important;
+        }
+        .danger-zone h3 {
+            color: #dc3545;
+        }
+        .danger-zone h3 i {
+            color: #dc3545;
+        }
+        .danger-zone p {
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+        @media (max-width: 768px) {
+            .settings-form {
+                grid-template-columns: 1fr;
+            }
+            .settings-form .btn {
+                grid-column: span 1;
+                width: 100%;
+            }
+            .theme-options {
+                flex-direction: column;
+            }
+            .theme-option {
+                justify-content: center;
+            }
+        }
+    </style>
+</body>
+</html>
